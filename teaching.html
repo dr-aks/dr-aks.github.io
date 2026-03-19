@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .course-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.8rem; transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .course-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--violet), transparent); }
+    .course-card.sky-bar::before { background: linear-gradient(90deg, var(--sky), transparent); }
+    .course-card.amber-bar::before { background: linear-gradient(90deg, var(--amber), transparent); }
+    .course-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-3px); }
+    .course-level { font-size: 0.68rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 0.6rem; }
+    .level-pg { color: var(--violet); background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.2); }
+    .level-ug { color: var(--sky); background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2); }
+    .level-both { color: var(--amber); background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); }
+    .course-title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+    .course-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.65; }
+    .course-topics { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .topic-chip { font-size: 0.72rem; font-family: var(--font-sans); color: var(--text3); background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.5rem; }
+    .membership-row { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+    .membership-row:last-child { border-bottom: none; }
+    .mem-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--amber); flex-shrink: 0; }
+    .mem-info h4 { font-family: var(--font-sans); font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .mem-info p { font-size: 0.8rem; color: var(--text3); }
+    .journal-row { padding: 0.7rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; }
+    .journal-row:last-child { border-bottom: none; }
+    .journal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--violet); flex-shrink: 0; }
+    .journal-name { color: var(--text2); flex: 1; }
+    .journal-pub { font-size: 0.72rem; font-family: var(--font-sans); color: var(--text3); }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Laboratory</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html" class="active">Teaching</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Teaching</span>
+      <h1>Courses &amp; Pedagogy</h1>
+      <p>Department of Physics &amp; Astronomical Sciences, Central University of Jammu — undergraduate and postgraduate instruction integrating current experimental research.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TEACHING PHILOSOPHY -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+      <div data-anim>
+        <span class="section-label">Approach</span>
+        <h2 class="section-title">Teaching Philosophy</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;margin-bottom:1.2rem;">Physics is best taught through the lens of active enquiry. Courses at CUJ are structured to connect foundational principles directly with open experimental questions — students in Condensed Matter Physics, for instance, regularly encounter material drawn from the group's own ongoing measurements, including live data from thermoelectric and defect-spectroscopy experiments.</p>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;margin-bottom:1.2rem;">This approach has a demonstrable record: three of the group's PhD students — including Dr. Vaishali Rathi, recipient of the Best PhD Thesis Award at UPES Dehradun — were first introduced to experimental research through taught courses before joining the laboratory. The boundary between classroom and research group is deliberately kept permeable.</p>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;">Emphasis is placed on problem solving, quantitative reasoning, and the physical interpretation of data, with problem sets that draw on published literature wherever appropriate. Students are encouraged to engage with primary sources from the first year of postgraduate study.</p>
+        <blockquote style="margin-top:1.5rem;padding:1.2rem 1.5rem;border-left:3px solid var(--violet);background:var(--bg2);border-radius:0 var(--radius) var(--radius) 0;">
+          <p style="font-family:var(--font-serif);font-style:italic;color:var(--text);font-size:0.98rem;line-height:1.6;margin:0;">"The laboratory and the lecture hall should be a continuous learning environment — not separate activities."</p>
+        </blockquote>
+      </div>
+      <div data-anim data-delay="2">
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-icon"><i class="fas fa-users"></i></div>
+          <h4 style="color:var(--text);margin-bottom:0.5rem;">Research-Integrated Instruction</h4>
+          <p style="font-size:0.85rem;color:var(--text2);">Lecture content in advanced courses is supplemented by primary literature, including the group's own publications. Students in Semiconductor Physics encounter real DLTS spectra, ZT measurements, and device I–V data as worked examples.</p>
+        </div>
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-icon teal"><i class="fas fa-microscope"></i></div>
+          <h4 style="color:var(--text);margin-bottom:0.5rem;">Laboratory-First Projects</h4>
+          <p style="font-size:0.85rem;color:var(--text2);">Over 20 M.Sc./M.Tech project students have been supervised at CUJ, UPES, and IUAC New Delhi. Projects are structured to generate data contributing to the group's research programme, giving students genuine scientific ownership.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <h4 style="color:var(--text);margin-bottom:0.5rem;">Resource Person — National Workshops</h4>
+          <p style="font-size:0.85rem;color:var(--text2);">Regularly invited to deliver lectures at national refresher courses, workshops, and winter schools — including the UGC-HRDC Refresher Course in Physics (CUH, 2026) and the IUAC Winter School on Ion Beam Physics (2023).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section section-alt">
+  <div class="container">
+    <div data-anim style="margin-bottom:2.5rem;">
+      <span class="section-label">Current Academic Year</span>
+      <h2 class="section-title">Courses Taught</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text2);font-size:0.88rem;">Central University of Jammu — Department of Physics &amp; Astronomical Sciences.</p>
+    </div>
+    <div class="grid-3" data-anim>
+
+      <div class="course-card">
+        <span class="course-level level-pg">Postgraduate</span>
+        <div class="course-title">Condensed Matter Physics</div>
+        <div class="course-desc">Crystal structure, lattice dynamics, free electron theory, energy bands, semiconductors, magnetism, and superconductivity. The course draws directly on experimental examples from the group's thermoelectric and GaN device research.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Phonons</span>
+          <span class="topic-chip">Band theory</span>
+          <span class="topic-chip">Semiconductors</span>
+          <span class="topic-chip">Magnetism</span>
+        </div>
+      </div>
+
+      <div class="course-card sky-bar">
+        <span class="course-level level-both">PG / UG</span>
+        <div class="course-title">Astronomy &amp; Astrophysics</div>
+        <div class="course-desc">Stellar structure and evolution, galactic astronomy, cosmology, and observational techniques. Offered at both undergraduate and postgraduate level, with graded mathematical treatment.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Stellar physics</span>
+          <span class="topic-chip">Cosmology</span>
+          <span class="topic-chip">Observational methods</span>
+        </div>
+      </div>
+
+      <div class="course-card amber-bar">
+        <span class="course-level level-ug">Undergraduate</span>
+        <div class="course-title">Modern Physics</div>
+        <div class="course-desc">Relativity, origins of quantum mechanics, atomic and nuclear structure, radioactivity, elementary particle physics. Emphasises historical development alongside the mathematical framework.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Special relativity</span>
+          <span class="topic-chip">Quantum origins</span>
+          <span class="topic-chip">Nuclear physics</span>
+        </div>
+      </div>
+
+      <div class="course-card sky-bar">
+        <span class="course-level level-both">UG / PG</span>
+        <div class="course-title">Thermal Physics</div>
+        <div class="course-desc">Thermodynamic laws and potentials, statistical mechanics (Maxwell–Boltzmann, Fermi–Dirac, Bose–Einstein distributions), kinetic theory, and phase transitions. Strong emphasis on physical intuition and entropy.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Thermodynamics</span>
+          <span class="topic-chip">Statistical mechanics</span>
+          <span class="topic-chip">Phase transitions</span>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="course-level level-pg">Postgraduate</span>
+        <div class="course-title">Semiconductor Physics &amp; Materials Characterisation</div>
+        <div class="course-desc">Carrier transport, p-n junctions, Schottky barriers, heterojunctions, MOSFET operation, and characterisation techniques including I–V, C–V, DLTS, Hall measurement, and thermoelectric analysis. Directly linked to laboratory instrumentation.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Carrier transport</span>
+          <span class="topic-chip">DLTS</span>
+          <span class="topic-chip">Hall measurement</span>
+          <span class="topic-chip">ZT analysis</span>
+        </div>
+      </div>
+
+      <div class="course-card amber-bar">
+        <span class="course-level level-pg">Postgraduate</span>
+        <div class="course-title">Electrodynamics</div>
+        <div class="course-desc">Electrostatics, magnetostatics, Maxwell's equations, electromagnetic waves, radiation, and relativistic electrodynamics. Standard postgraduate course following Griffiths / Jackson level treatment.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Maxwell equations</span>
+          <span class="topic-chip">EM waves</span>
+          <span class="topic-chip">Radiation</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MEMBERSHIPS & PEER REVIEW (kept on Teaching page as requested) -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+
+      <!-- Memberships -->
+      <div data-anim>
+        <span class="section-label">Academic Community</span>
+        <h2 class="section-title">Professional Memberships</h2>
+        <div class="section-divider"></div>
+        <div class="card">
+          <div class="membership-row">
+            <div class="mem-icon"><i class="fas fa-atom"></i></div>
+            <div class="mem-info">
+              <h4>Ion Beam Society of India (IBSI)</h4>
+              <p>Life Member — national society for ion-beam physics and accelerator-based materials research</p>
+            </div>
+          </div>
+          <div class="membership-row">
+            <div class="mem-icon"><i class="fas fa-microchip"></i></div>
+            <div class="mem-info">
+              <h4>Semiconductor Society of India (SSI)</h4>
+              <p>Life Member — promotes research in semiconductor science, devices, and technology</p>
+            </div>
+          </div>
+          <div class="membership-row">
+            <div class="mem-icon"><i class="fas fa-flask"></i></div>
+            <div class="mem-info">
+              <h4>Indian Physics Association (IPA)</h4>
+              <p>Member — national association of physicists across academia and research institutions</p>
+            </div>
+          </div>
+          <div class="membership-row">
+            <div class="mem-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="mem-info">
+              <h4>Materials Research Society India (MRSI)</h4>
+              <p>Member — promotes interdisciplinary materials science research across India</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Peer Review -->
+      <div data-anim data-delay="2">
+        <span class="section-label">Service to the Discipline</span>
+        <h2 class="section-title">Peer Review</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text2);font-size:0.85rem;margin-bottom:1.2rem;">Regular reviewer for the following international peer-reviewed journals:</p>
+        <div class="card">
+          <div class="journal-row">
+            <div class="journal-dot"></div>
+            <div class="journal-name">Applied Physics Letters</div>
+            <div class="journal-pub">AIP Publishing</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot" style="background:var(--sky);"></div>
+            <div class="journal-name">Journal of Applied Physics</div>
+            <div class="journal-pub">AIP Publishing</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot"></div>
+            <div class="journal-name">Semiconductor Science and Technology</div>
+            <div class="journal-pub">IOP Publishing</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot" style="background:var(--sky);"></div>
+            <div class="journal-name">Current Applied Physics</div>
+            <div class="journal-pub">Elsevier</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot"></div>
+            <div class="journal-name">Materials Science &amp; Engineering B</div>
+            <div class="journal-pub">Elsevier</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot" style="background:var(--amber);"></div>
+            <div class="journal-name">Review of Scientific Instruments</div>
+            <div class="journal-pub">AIP Publishing</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot"></div>
+            <div class="journal-name">RSC Advances</div>
+            <div class="journal-pub">Royal Society of Chemistry</div>
+          </div>
+          <div class="journal-row">
+            <div class="journal-dot" style="background:var(--sky);"></div>
+            <div class="journal-name">Physica B: Condensed Matter</div>
+            <div class="journal-pub">Elsevier</div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--text3);margin-top:0.8rem;">Full review record available on <a href="https://publons.com/researcher/3872024/ashish-kumar/" target="_blank" style="color:var(--violet);">Web of Science / Publons ↗</a></p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACADEMIC PROFILE LINKS -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Profiles</span>
+      <h2 class="section-title">Academic Profiles</h2>
+      <div class="section-divider" style="margin:0 auto 1.5rem;"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;" data-anim>
+      <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" class="btn btn-outline"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" class="btn btn-outline"><i class="fab fa-orcid"></i> ORCID</a>
+      <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" class="btn btn-outline"><i class="fab fa-researchgate"></i> ResearchGate</a>
+      <a href="https://publons.com/researcher/3872024/ashish-kumar/" target="_blank" class="btn btn-outline"><i class="fas fa-database"></i> Web of Science</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Dr. Ashish Kumar</div>
+        <p class="footer-desc">Associate Professor of Physics &amp; Astronomical Sciences, Central University of Jammu. Experimental physicist, PI of three national research projects, Lindau Nobel Laureate Meeting Alumni 2019.</p>
+        <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+          <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li><a href="mailto:dr.akmr@gmail.com">dr.akmr@gmail.com</a></li><li style="color:var(--text3);font-size:0.82rem;">Dept. Physics &amp; Astronomical Sciences</li><li style="color:var(--text3);font-size:0.82rem;">CUJ, J&amp;K — 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Ashish Kumar · Central University of Jammu</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

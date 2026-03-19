@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Laboratory — Dr. Ashish Kumar</title>
+  <title>Energy Materials &amp; Devices Laboratory — Dr. Ashish Kumar</title>
   <link rel="stylesheet" href="assets/css/style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -42,9 +42,10 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
-      <li><a href="lab.html" class="active">Lab</a></li>
+      <li><a href="lab.html" class="active">Laboratory</a></li>
       <li><a href="group.html">Group</a></li>
       <li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
       <li><a href="news.html">News</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="contact.html">Contact</a></li>
@@ -56,8 +57,8 @@
   <div class="container">
     <div class="page-hero-content fade-in">
       <span class="section-label">Laboratory</span>
-      <h1>The Measurement Lab</h1>
-      <p>Five indigenous precision measurement systems, three concurrent national projects, and an experimental philosophy rooted in building the instruments that build the science.</p>
+      <h1>Energy Materials &amp; Devices Laboratory</h1>
+      <p>Department of Physics &amp; Astronomical Sciences, Central University of Jammu. Five indigenous precision measurement systems supporting research in thermoelectrics, semiconductor devices, and ion-beam physics.</p>
     </div>
   </div>
 </div>
@@ -68,9 +69,9 @@
     <div class="grid-2" style="gap:3rem;align-items:start;">
       <div data-anim>
         <span class="section-label">Overview</span>
-        <h2 class="section-title">An Indigenous Experimental Programme</h2>
+        <h2 class="section-title">Experimental Infrastructure</h2>
         <div class="section-divider"></div>
-        <p style="margin-bottom:1rem;">The laboratory philosophy is simple but powerful: <strong>build what you need, and understand it completely.</strong> Five custom measurement systems — each independently designed, fabricated, and commissioned — give the group complete control over experiment design, data quality, and measurement range, without dependence on commercial instruments or shared infrastructure.</p>
+        <p style="margin-bottom:1rem;">The Energy Materials &amp; Devices Laboratory houses five indigenous precision measurement systems, each independently designed and commissioned by the group. This in-house instrumentation provides full experimental control across a wide range of conditions, without dependence on shared or commercial infrastructure.</p>
         <p style="margin-bottom:1rem;">The lab enables continuous measurement from <strong>liquid nitrogen temperature (80 K) to 1000 K</strong>, spanning cryogenic solid-state physics through high-temperature thermoelectric characterisation. Systems include Seebeck/resistivity, ZT, in-situ DLTS under live ion-beam, 1/f noise, and a dipstick optical cryostat.</p>
         <p>The in-situ DLTS system, operated at the <strong>IUAC beamlines (New Delhi)</strong>, represents a world-first capability — no other Indian group has demonstrated real-time DLTS of semiconductor devices under live swift heavy ion irradiation.</p>
       </div>
@@ -112,6 +113,14 @@
       <div class="system-card" data-anim data-delay="1">
         <div class="world-first" style="background:var(--bg3);border-color:var(--amber);color:var(--amber);">📄 Published · Rev. Sci. Instrum.</div>
         <h3 style="color:var(--amber);margin-bottom:0.5rem;">System I — Seebeck &amp; Resistivity</h3>
+        <!-- Circuit diagram -->
+        <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+          <img src="assets/images/seebeck-setup-diagram.jpg"
+               alt="Seebeck &amp; Resistivity Measurement Setup — Circuit Diagram"
+               style="width:100%;height:auto;display:block;"
+               onerror="this.parentElement.style.display='none';">
+        </div>
+        <p style="font-size:0.82rem;color:var(--text3);font-style:italic;margin-bottom:0.8rem;font-family:var(--font-sans);">Circuit diagram of the custom-built measurement setup. DMM + SMU controlled via IEEE-488 with LabVIEW automation.</p>
         <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Versatile system for simultaneous Seebeck coefficient and electrical resistivity measurement of wires, thin films, and bulk materials from liquid nitrogen to above room temperature.</p>
         <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ (80 K) – 650 K</span></div>
         <div class="spec-row"><span class="spec-label">Sample Geometry</span><span class="spec-val">Wire · Thin Film · Bulk</span></div>
@@ -153,6 +162,14 @@
 
       <div class="system-card" data-anim data-delay="2">
         <h3 style="color:var(--amber);margin-bottom:0.5rem;">System V — Dipstick Optical Cryostat</h3>
+        <!-- Cryostat schematic -->
+        <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
+          <img src="assets/images/cryostat-schematic.jpg"
+               alt="Dipstick Optical Cryostat — Schematic Design"
+               style="width:100%;height:auto;display:block;"
+               onerror="this.parentElement.style.display='none';">
+        </div>
+        <p style="font-size:0.82rem;color:var(--text3);font-style:italic;margin-bottom:0.8rem;font-family:var(--font-sans);">Schematic of the dipstick cryostat design showing the sample stage, feed-through, vacuum assembly, and wiring layout (numbered components 1–11).</p>
         <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Low-temperature optical system enabling simultaneous photoluminescence, optical absorption, and electrical transport characterisation. Designed for in-situ optical probing at cryogenic temperatures.</p>
         <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ (80 K) – 500 K</span></div>
         <div class="spec-row"><span class="spec-label">Capability</span><span class="spec-val">Optical + Transport (simultaneous)</span></div>
@@ -296,10 +313,11 @@
     <div class="footer-grid">
       <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
       <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
-      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
       <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
     </div>
-    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>Research drives every line</p></div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>© 2026 · Central University of Jammu</p></div>
   </div>
 </footer>
 <script src="assets/js/main.js"></script>

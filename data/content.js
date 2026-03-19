@@ -22,7 +22,7 @@
 // SECTION 1: YOUR ORCID ID
 // Get it from https://orcid.org — looks like: 0000-0002-1825-0097
 // ─────────────────────────────────────────────────────────────
-const MY_ORCID_ID = "YOUR-ORCID-ID-HERE";
+const MY_ORCID_ID = "0000-0002-5240-3472";
 
 
 // ─────────────────────────────────────────────────────────────
@@ -217,17 +217,18 @@ const GALLERY_PHOTOS = [
     category: "award"
   },
   {
-    file: "seebeck-setup-diagram.jpg",
-    caption: "Seebeck Coefficient & Resistivity Measurement Setup",
-    detail: "System I · Published in Review of Scientific Instruments, 2019",
-    category: "lab"
+    file: "profile-lindau-backdrop.jpg",
+    caption: "Dr. Ashish Kumar at Lindau Nobel Laureate Meeting",
+    detail: "69th Lindau Nobel Laureate Meeting · July 2019 · Lindau, Germany",
+    category: "award"
   },
   {
-    file: "cryostat-schematic.jpg",
-    caption: "Dipstick Optical Cryostat — Custom Design",
-    detail: "System V · 80–500 K · Simultaneous optical + transport measurements",
-    category: "lab"
+    file: "phd-group-iitdelhi.jpg",
+    caption: "PhD Research Group · IIT Delhi",
+    detail: "With supervisor Prof. Rajendra Singh · Dept. of Physics · 2010–2013",
+    category: "group"
   }
+  // Note: seebeck-setup-diagram.jpg and cryostat-schematic.jpg are used in lab.html, not gallery
   // ← ADD NEW PHOTOS ABOVE THIS LINE
   // Copy a block above, change file/caption/detail/category, add comma
   // Categories: "award" | "conference" | "lab" | "group"
