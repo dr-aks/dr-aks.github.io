@@ -12,7 +12,7 @@
 
 // ════════════════════════════════════════
 // ▶ SET YOUR ORCID ID HERE (only change needed)
-const ORCID_ID = "YOUR-ORCID-ID-HERE";  // e.g. "0000-0002-1825-0097"
+const ORCID_ID = "0000-0002-5240-3472";  // e.g. "0000-0002-1825-0097"
 // ════════════════════════════════════════
 
 const ORCID_API = `https://pub.orcid.org/v3.0/${ORCID_ID}/works`;
