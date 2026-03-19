@@ -9,28 +9,82 @@
   <style>
     .gallery-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
     .gal-btn { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 50px; color: var(--text2); background: transparent; cursor: pointer; transition: var(--transition); }
-    .gal-btn:hover, .gal-btn.active { border-color: var(--amber); color: var(--amber); background: var(--bg3); }
+    .gal-btn:hover, .gal-btn.active { border-color: var(--violet); color: var(--violet); background: var(--bg3); }
+
     .gallery-masonry { columns: 3; column-gap: 1rem; }
     @media (max-width:768px) { .gallery-masonry { columns: 2; } }
     @media (max-width:480px) { .gallery-masonry { columns: 1; } }
-    .gal-item { break-inside: avoid; margin-bottom: 1rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); cursor: pointer; position: relative; group: true; }
-    .gal-placeholder { background: var(--bg3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
-    .gal-placeholder .icon { font-size: 1.8rem; opacity: 0.3; }
-    .gal-placeholder .caption { font-size: 0.78rem; font-family: var(--font-sans); color: var(--text3); text-align: center; padding: 0.5rem 1rem; }
-    .gal-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,12,24,0.95) 0%, transparent 100%); padding: 0.8rem 1rem; font-size: 0.8rem; font-family: var(--font-sans); color: var(--text); transform: translateY(100%); transition: transform 0.3s ease; }
-    .gal-item:hover .gal-caption { transform: translateY(0); }
-    .gal-tag-badge { position: absolute; top: 0.6rem; right: 0.6rem; font-size: 0.65rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(3,12,24,0.85); border: 1px solid var(--border); color: var(--text3); }
 
-    /* Photo upload instructions */
-    .upload-guide { background: rgba(14,165,233,0.08); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
-    .upload-guide h4 { color: var(--sky); font-family: var(--font-sans); margin-bottom: 0.5rem; }
-    .upload-guide p { font-size: 0.88rem; color: var(--text2); }
+    .gal-item {
+      break-inside: avoid; margin-bottom: 1rem;
+      border-radius: var(--radius); overflow: hidden;
+      border: 1px solid var(--border); cursor: pointer;
+      position: relative; background: var(--bg3);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .gal-item:hover { box-shadow: var(--shadow); transform: translateY(-3px); }
+
+    /* Real photo */
+    .gal-item img {
+      width: 100%; height: auto; display: block;
+      transition: transform 0.4s ease;
+    }
+    .gal-item:hover img { transform: scale(1.03); }
+
+    /* Placeholder fallback */
+    .gal-placeholder {
+      height: 220px; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 0.6rem;
+      background: var(--bg3);
+    }
+    .gal-placeholder .icon { font-size: 1.8rem; opacity: 0.25; }
+    .gal-placeholder .caption { font-size: 0.78rem; font-family: var(--font-sans); color: var(--text3); text-align: center; padding: 0.5rem 1rem; line-height: 1.5; }
+
+    /* Caption overlay */
+    .gal-caption {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      background: linear-gradient(to top, rgba(10,5,30,0.92) 0%, rgba(10,5,30,0.5) 60%, transparent 100%);
+      padding: 2rem 1rem 0.8rem;
+      font-size: 0.8rem; font-family: var(--font-sans);
+      color: #fff; transform: translateY(100%);
+      transition: transform 0.3s ease;
+    }
+    .gal-item:hover .gal-caption { transform: translateY(0); }
+    .gal-caption strong { display: block; font-size: 0.85rem; margin-bottom: 0.2rem; }
+    .gal-caption span { opacity: 0.75; font-size: 0.75rem; }
+
+    /* Category badge */
+    .gal-tag-badge {
+      position: absolute; top: 0.6rem; right: 0.6rem;
+      font-size: 0.62rem; font-family: var(--font-sans); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.2rem 0.55rem; border-radius: 4px;
+      background: rgba(10,5,30,0.75); backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.15); color: #fff;
+    }
+    .gal-tag-badge.award { background: rgba(124,58,237,0.85); }
+    .gal-tag-badge.conference { background: rgba(14,165,233,0.85); }
+    .gal-tag-badge.lab { background: rgba(5,150,105,0.85); }
+    .gal-tag-badge.group { background: rgba(217,119,6,0.85); }
 
     /* Lightbox */
-    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; align-items:center; justify-content:center; }
-    .lightbox.open { display:flex; }
-    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
-    .lb-close { position:absolute; top:1.5rem; right:1.5rem; color:#fff; font-size:1.5rem; cursor:pointer; background:rgba(255,255,255,0.1); border:none; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; }
+    .lightbox {
+      display: none; position: fixed; inset: 0;
+      background: rgba(0,0,0,0.94); z-index: 2000;
+      align-items: center; justify-content: center;
+      flex-direction: column;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img { max-width: 92vw; max-height: 82vh; border-radius: 8px; box-shadow: 0 20px 80px rgba(0,0,0,0.6); }
+    .lb-caption { color: rgba(255,255,255,0.85); font-family: var(--font-sans); font-size: 0.88rem; margin-top: 1rem; text-align: center; }
+    .lb-close { position: absolute; top: 1.2rem; right: 1.2rem; color: #fff; font-size: 1.4rem; cursor: pointer; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; transition: background 0.2s; }
+    .lb-close:hover { background: rgba(255,255,255,0.2); }
+
+    /* Add photo guide box */
+    .add-photo-guide { background: var(--bg3); border: 1px dashed var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
+    .add-photo-guide i { color: var(--violet); font-size: 1.2rem; }
+    .add-photo-guide p { font-size: 0.83rem; color: var(--text2); margin: 0; }
+    .add-photo-guide code { background: var(--bg2); padding: 0.15rem 0.4rem; border-radius: 4px; color: var(--violet); font-size: 0.82rem; }
   </style>
 </head>
 <body class="lattice-bg">
@@ -55,8 +109,8 @@
   <div class="container">
     <div class="page-hero-content fade-in">
       <span class="section-label">Gallery</span>
-      <h1>Life in the Lab</h1>
-      <p>A visual record of the research programme — instruments, experiments, conferences, and the people who make the science happen.</p>
+      <h1>Science in Pictures</h1>
+      <p>A visual record of the research programme — Nobel laureates, beamlines, instruments, conferences, and the students who make the science happen.</p>
     </div>
   </div>
 </div>
@@ -64,168 +118,255 @@
 <section class="section">
   <div class="container">
 
-    <div class="upload-guide" data-anim>
-      <h4><i class="fas fa-camera" style="margin-right:0.5rem;"></i>Add Your Photos</h4>
-      <p>To populate this gallery, place your image files in the <code>assets/images/</code> folder and update the <code>&lt;img src="..."&gt;</code> tags below. Supported formats: JPG, PNG, WebP. Recommended categories: Lab Equipment, Experiments, Conferences, Group Photos, Awards, Field Work.</p>
+    <div class="add-photo-guide" data-anim>
+      <i class="fas fa-circle-plus"></i>
+      <p>To add more photos: upload image files to <code>assets/images/</code> in your GitHub repository, then copy any <code>&lt;div class="gal-item"&gt;</code> block below and update the <code>src</code>, caption, and category. Changes go live within 60 seconds.</p>
     </div>
 
+    <!-- Filter buttons -->
     <div class="gallery-filter" data-anim>
       <button class="gal-btn active" onclick="filterGallery('all', this)">All</button>
-      <button class="gal-btn" onclick="filterGallery('lab', this)">Laboratory</button>
+      <button class="gal-btn" onclick="filterGallery('award', this)">Lindau &amp; Awards</button>
       <button class="gal-btn" onclick="filterGallery('conference', this)">Conferences</button>
+      <button class="gal-btn" onclick="filterGallery('lab', this)">Lab &amp; Instruments</button>
       <button class="gal-btn" onclick="filterGallery('group', this)">Group</button>
-      <button class="gal-btn" onclick="filterGallery('award', this)">Awards</button>
-      <button class="gal-btn" onclick="filterGallery('beamline', this)">Beamline / IUAC</button>
     </div>
 
-    <div class="gallery-masonry" data-anim id="gallery-grid">
+    <!-- ============================
+         GALLERY GRID
+         To add a photo: copy any gal-item block, change src, caption, data-cat
+         Categories: award | conference | lab | group
+    ============================= -->
+    <div class="gallery-masonry" id="gallery-grid" data-anim>
 
-      <!-- Lab Equipment -->
-      <div class="gal-item" data-cat="lab" style="height:220px;">
-        <div class="gal-placeholder" style="height:220px;">
-          <i class="fas fa-thermometer-half icon" style="color:var(--amber);"></i>
-          <div class="caption">Seebeck Coefficient &amp; Resistivity Measurement System<br><small>80–650 K · Custom-built · Published in Rev. Sci. Instrum. 2019</small></div>
+      <!-- ▶ PHOTO 1: With Nobel Laureate Donna Strickland -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-donna-strickland.jpg','With Prof. Donna Strickland (Nobel Prize in Physics 2018) · Lindau Nobel Laureate Meeting, Germany, July 2019')">
+        <img src="assets/images/with-donna-strickland.jpg"
+             alt="With Nobel Laureate Prof. Donna Strickland"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:340px;">
+          <i class="fas fa-user-graduate icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">With Prof. Donna Strickland<br><small>Nobel Prize in Physics 2018 · Upload: with-donna-strickland.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Lab</div>
-        <div class="gal-caption">System I — Seebeck &amp; Resistivity (80–650 K)</div>
+        <div class="gal-tag-badge award">Nobel Laureate</div>
+        <div class="gal-caption">
+          <strong>With Prof. Donna Strickland</strong>
+          <span>Nobel Prize in Physics 2018 · Lindau, Germany · July 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="lab" style="height:280px;">
-        <div class="gal-placeholder" style="height:280px;">
-          <i class="fas fa-fire icon" style="color:var(--sky);"></i>
-          <div class="caption">ZT &amp; Thermal Conductivity Setup<br><small>300–1000 K · Complete thermoelectric characterisation</small></div>
+      <!-- ▶ PHOTO 2: ICTP Conference Group Photo -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/ictp-thermoelectricity-2019.jpg','Conference on Modern Concepts and New Materials for Thermoelectricity · ICTP, Trieste, Italy · March 11–15, 2019')">
+        <img src="assets/images/ictp-thermoelectricity-2019.jpg"
+             alt="ICTP Thermoelectricity Conference Group Photo 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:220px;">
+          <i class="fas fa-users icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">ICTP Thermoelectricity Conference 2019<br><small>Upload: ictp-thermoelectricity-2019.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Lab</div>
-        <div class="gal-caption">System II — ZT &amp; Thermal Conductivity (300–1000 K)</div>
+        <div class="gal-tag-badge conference">ICTP 2019</div>
+        <div class="gal-caption">
+          <strong>Conference on Modern Concepts &amp; New Materials for Thermoelectricity</strong>
+          <span>ICTP, Trieste, Italy · March 11–15, 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="beamline" style="height:200px;">
-        <div class="gal-placeholder" style="height:200px;">
-          <i class="fas fa-radiation icon" style="color:var(--amber);"></i>
-          <div class="caption">IUAC Beamline Experiment Setup<br><small>In-situ characterisation under live ion beam</small></div>
+      <!-- ▶ PHOTO 3: With Sir Konstantin Novoselov -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-novoselov.jpg','With Sir Konstantin S. Novoselov (Nobel Prize in Physics 2010, discoverer of Graphene) · Lindau Nobel Laureate Meeting, July 2019')">
+        <img src="assets/images/with-novoselov.jpg"
+             alt="With Nobel Laureate Sir Konstantin Novoselov"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:360px;">
+          <i class="fas fa-atom icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">With Sir Konstantin Novoselov<br><small>Nobel Prize in Physics 2010 · Upload: with-novoselov.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">IUAC</div>
-        <div class="gal-caption">In-situ DLTS under Live SHI Beam · IUAC New Delhi</div>
+        <div class="gal-tag-badge award">Nobel Laureate</div>
+        <div class="gal-caption">
+          <strong>With Sir Konstantin S. Novoselov</strong>
+          <span>Nobel Prize in Physics 2010 (Graphene) · Lindau, Germany · July 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="lab" style="height:250px;">
-        <div class="gal-placeholder" style="height:250px;">
-          <i class="fas fa-snowflake icon" style="color:var(--sky);"></i>
-          <div class="caption">Dipstick Optical Cryostat<br><small>80 K – 500 K · Optical + transport (simultaneous)</small></div>
+      <!-- ▶ PHOTO 4: Seebeck Setup Diagram -->
+      <div class="gal-item" data-cat="lab" onclick="openLightbox('assets/images/seebeck-setup-diagram.jpg','Seebeck Coefficient &amp; Electrical Resistivity Measurement Setup (System I) — Circuit diagram of the custom-built system published in Rev. Sci. Instrum. 2019')">
+        <img src="assets/images/seebeck-setup-diagram.jpg"
+             alt="Seebeck Coefficient Measurement Setup Circuit Diagram"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:240px;">
+          <i class="fas fa-thermometer-half icon" style="color:var(--amber);opacity:0.4;"></i>
+          <div class="caption">Seebeck &amp; Resistivity Setup Diagram<br><small>Upload: seebeck-setup-diagram.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Lab</div>
-        <div class="gal-caption">System V — Dipstick Optical Cryostat</div>
+        <div class="gal-tag-badge lab">System I</div>
+        <div class="gal-caption">
+          <strong>Seebeck Coefficient &amp; Resistivity Setup — Circuit Diagram</strong>
+          <span>Published · Review of Scientific Instruments, 2019 · 80–650 K</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="conference" style="height:240px;">
-        <div class="gal-placeholder" style="height:240px;">
-          <i class="fas fa-globe icon" style="color:var(--amber);"></i>
-          <div class="caption">Lindau Nobel Laureate Meeting 2019<br><small>Lindau, Germany · ~600 Young Scientists Globally</small></div>
+      <!-- ▶ PHOTO 5: Lindau Discussion -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/lindau-discussion.jpg','Scientific discussion at the 69th Lindau Nobel Laureate Meeting · July 2019, Lindau, Germany')">
+        <img src="assets/images/lindau-discussion.jpg"
+             alt="Scientific discussion at Lindau Nobel Laureate Meeting 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:300px;">
+          <i class="fas fa-comments icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">Scientific Discussion · Lindau Meeting<br><small>Upload: lindau-discussion.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Award</div>
-        <div class="gal-caption">69th Lindau Nobel Laureate Meeting · July 2019</div>
+        <div class="gal-tag-badge award">Lindau 2019</div>
+        <div class="gal-caption">
+          <strong>Scientific Discussion at Lindau Nobel Laureate Meeting</strong>
+          <span>69th Lindau Nobel Laureate Meeting · "Educate. Inspire. Connect." · 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="group" style="height:210px;">
-        <div class="gal-placeholder" style="height:210px;">
-          <i class="fas fa-users icon" style="color:var(--sky);"></i>
-          <div class="caption">Research Group<br><small>Central University of Jammu · 2024</small></div>
+      <!-- ▶ PHOTO 6: Helmholtz-Institut Mainz Group -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/helmholtz-mainz-2019.jpg','Group photo at Helmholtz-Institut Mainz · July 10, 2019 · Part of the 69th Lindau Nobel Laureate Meeting scientific excursion')">
+        <img src="assets/images/helmholtz-mainz-2019.jpg"
+             alt="Group photo at Helmholtz-Institut Mainz 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:230px;">
+          <i class="fas fa-building icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Helmholtz-Institut Mainz Group Photo<br><small>Upload: helmholtz-mainz-2019.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Group</div>
-        <div class="gal-caption">Research Group, CUJ</div>
+        <div class="gal-tag-badge conference">Mainz 2019</div>
+        <div class="gal-caption">
+          <strong>Group Photo · Helmholtz-Institut Mainz</strong>
+          <span>Lindau Meeting Excursion · July 10, 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="beamline" style="height:260px;">
-        <div class="gal-placeholder" style="height:260px;">
-          <i class="fas fa-atom icon" style="color:var(--amber);"></i>
-          <div class="caption">IUAC Beamline Hall<br><small>Inter-University Accelerator Centre, New Delhi</small></div>
+      <!-- ▶ PHOTO 7: Dipstick Cryostat Schematic -->
+      <div class="gal-item" data-cat="lab" onclick="openLightbox('assets/images/cryostat-schematic.jpg','Dipstick Optical Cryostat — Schematic diagram of the custom-built System V, capable of simultaneous optical and transport measurements from 80 K to 500 K')">
+        <img src="assets/images/cryostat-schematic.jpg"
+             alt="Dipstick Cryostat Schematic Diagram"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:300px;">
+          <i class="fas fa-snowflake icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Dipstick Optical Cryostat Schematic<br><small>Upload: cryostat-schematic.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">IUAC</div>
-        <div class="gal-caption">IUAC Pelletron Accelerator Beamline</div>
+        <div class="gal-tag-badge lab">System V</div>
+        <div class="gal-caption">
+          <strong>Dipstick Optical Cryostat — Custom Design</strong>
+          <span>80–500 K · Simultaneous optical + transport measurements</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="conference" style="height:230px;">
-        <div class="gal-placeholder" style="height:230px;">
-          <i class="fas fa-chalkboard-teacher icon" style="color:var(--sky);"></i>
-          <div class="caption">MESD 2023 — JNU New Delhi<br><small>International Conference · Invited Talk</small></div>
+      <!-- ▶ PHOTO 8: Germany/Lindau group outside building -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/lindau-india-group-2019.jpg','Indian participants at the 69th Lindau Nobel Laureate Meeting · July 9, 2019, Germany')">
+        <img src="assets/images/lindau-india-group-2019.jpg"
+             alt="Indian delegates at Lindau Nobel Laureate Meeting 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:240px;">
+          <i class="fas fa-flag icon" style="color:var(--amber);opacity:0.4;"></i>
+          <div class="caption">Indian Delegates · Lindau Meeting 2019<br><small>Upload: lindau-india-group-2019.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Conference</div>
-        <div class="gal-caption">Invited Talk at MESD 2023, JNU New Delhi</div>
+        <div class="gal-tag-badge conference">Lindau 2019</div>
+        <div class="gal-caption">
+          <strong>Indian Scientists · 69th Lindau Nobel Laureate Meeting</strong>
+          <span>Lindau, Germany · July 9, 2019</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="award" style="height:220px;">
-        <div class="gal-placeholder" style="height:220px;">
-          <i class="fas fa-trophy icon" style="color:var(--amber);"></i>
-          <div class="caption">RSC Advances Outstanding Paper Award 2024<br><small>Royal Society of Chemistry · London</small></div>
+      <!-- ▶ PLACEHOLDER: Lab group photo — replace with real photo -->
+      <div class="gal-item" data-cat="group" onclick="openLightbox('assets/images/group-cuj-2024.jpg','Research Group, Central University of Jammu · 2024')">
+        <img src="assets/images/group-cuj-2024.jpg"
+             alt="Research Group CUJ 2024"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:260px;">
+          <i class="fas fa-users icon" style="color:var(--amber);opacity:0.4;"></i>
+          <div class="caption">Research Group · CUJ 2024<br><small>Upload: group-cuj-2024.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Award</div>
-        <div class="gal-caption">RSC Outstanding Paper Award 2024</div>
+        <div class="gal-tag-badge group">Group</div>
+        <div class="gal-caption">
+          <strong>Research Group — Central University of Jammu</strong>
+          <span>Current PhD students, JRFs &amp; Project Fellows · 2024</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="lab" style="height:190px;">
-        <div class="gal-placeholder" style="height:190px;">
-          <i class="fas fa-volume-off icon" style="color:var(--sky);"></i>
-          <div class="caption">1/f Noise Measurement System<br><small>80–500 K · Custom low-noise electronics</small></div>
+      <!-- ▶ PLACEHOLDER: IUAC Beamline — replace with real photo -->
+      <div class="gal-item" data-cat="lab" onclick="openLightbox('assets/images/iuac-beamline.jpg','IUAC Pelletron Accelerator Beamline · Inter-University Accelerator Centre, New Delhi')">
+        <img src="assets/images/iuac-beamline.jpg"
+             alt="IUAC Beamline"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:220px;">
+          <i class="fas fa-radiation icon" style="color:var(--amber);opacity:0.4;"></i>
+          <div class="caption">IUAC Beamline Experiment<br><small>Upload: iuac-beamline.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Lab</div>
-        <div class="gal-caption">System IV — 1/f Noise (80–500 K)</div>
+        <div class="gal-tag-badge lab">IUAC</div>
+        <div class="gal-caption">
+          <strong>In-Situ DLTS Under Live SHI Beam</strong>
+          <span>IUAC Pelletron Accelerator · New Delhi · World's First</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="conference" style="height:250px;">
-        <div class="gal-placeholder" style="height:250px;">
-          <i class="fas fa-plane icon" style="color:var(--amber);"></i>
-          <div class="caption">DRIP XVII Conference · Valladolid, Spain 2017<br><small>International Oral Presentation</small></div>
+      <!-- ▶ PLACEHOLDER: DAE-SSPS Award — replace with real photo -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/daessps-best-poster-2025.jpg','Ms. Muskan receiving Best Poster Award at DAE-SSPS 2025')">
+        <img src="assets/images/daessps-best-poster-2025.jpg"
+             alt="Best Poster Award DAE-SSPS 2025"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:250px;">
+          <i class="fas fa-trophy icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">Best Poster Award · DAE-SSPS 2025<br><small>Upload: daessps-best-poster-2025.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Conference</div>
-        <div class="gal-caption">DRIP XVII — Valladolid, Spain · 2017</div>
+        <div class="gal-tag-badge award">Award 2025</div>
+        <div class="gal-caption">
+          <strong>Best Poster Award — Ms. Muskan</strong>
+          <span>DAE Solid State Physics Symposium (DAE-SSPS 2025)</span>
+        </div>
       </div>
 
-      <div class="gal-item" data-cat="group" style="height:240px;">
-        <div class="gal-placeholder" style="height:240px;">
-          <i class="fas fa-graduation-cap icon" style="color:var(--sky);"></i>
-          <div class="caption">PhD Thesis Award Ceremony<br><small>Dr. Vaishali Rathi — Best PhD Thesis, UPES 2025</small></div>
+      <!-- ▶ PLACEHOLDER: RSC Award — replace with real photo -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/rsc-outstanding-paper-2024.jpg','RSC Advances Outstanding Paper Award 2024 · Royal Society of Chemistry')">
+        <img src="assets/images/rsc-outstanding-paper-2024.jpg"
+             alt="RSC Advances Outstanding Paper Award 2024"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:220px;">
+          <i class="fas fa-medal icon" style="color:var(--amber);opacity:0.4;"></i>
+          <div class="caption">RSC Outstanding Paper Award 2024<br><small>Upload: rsc-outstanding-paper-2024.jpg</small></div>
         </div>
-        <div class="gal-tag-badge">Award</div>
-        <div class="gal-caption">Best PhD Thesis Award — Dr. Vaishali Rathi · UPES 2025</div>
+        <div class="gal-tag-badge award">RSC 2024</div>
+        <div class="gal-caption">
+          <strong>RSC Advances Outstanding Paper Award 2024</strong>
+          <span>Royal Society of Chemistry · PEDOT:PSS/Bi₂Te₃/rGO thermoelectric composites</span>
+        </div>
       </div>
 
+    </div><!-- end gallery-masonry -->
+
+    <!-- HOW TO ADD MORE PHOTOS -->
+    <div class="highlight-box" style="margin-top:3rem;" data-anim>
+      <h3 style="font-family:var(--font-sans);font-size:1rem;font-weight:600;margin-bottom:1rem;color:var(--text);">
+        <i class="fas fa-plus-circle" style="color:var(--violet);margin-right:0.5rem;"></i>How to Add More Photos
+      </h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:1rem;">
+        <div>
+          <div style="font-size:0.72rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--violet);margin-bottom:0.4rem;">Step 1</div>
+          <p style="font-size:0.83rem;color:var(--text2);">Go to your GitHub repository → <strong>assets/images/</strong> → click <strong>Add file → Upload files</strong></p>
+        </div>
+        <div>
+          <div style="font-size:0.72rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--violet);margin-bottom:0.4rem;">Step 2</div>
+          <p style="font-size:0.83rem;color:var(--text2);">Name your file clearly (e.g. <code style="background:var(--bg3);padding:0.1rem 0.3rem;border-radius:3px;">lab-setup-2025.jpg</code>) and upload it</p>
+        </div>
+        <div>
+          <div style="font-size:0.72rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--violet);margin-bottom:0.4rem;">Step 3</div>
+          <p style="font-size:0.83rem;color:var(--text2);">Open <strong>gallery.html</strong> → pencil icon to edit → copy any <code style="background:var(--bg3);padding:0.1rem 0.3rem;border-radius:3px;">gal-item</code> block → update the filename and caption</p>
+        </div>
+        <div>
+          <div style="font-size:0.72rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--violet);margin-bottom:0.4rem;">Step 4</div>
+          <p style="font-size:0.83rem;color:var(--text2);">Click <strong>Commit changes</strong> → photo appears live in ~60 seconds. No coding needed!</p>
+        </div>
+      </div>
     </div>
+
   </div>
 </section>
 
-<!-- PHOTO UPLOAD SECTION -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="text-center" data-anim>
-      <span class="section-label">Add Photos</span>
-      <h2 class="section-title">Contribute to the Gallery</h2>
-      <div class="section-divider" style="margin:0 auto 1rem;"></div>
-      <p style="max-width:580px;margin:0 auto 2rem;color:var(--text2);">To add real photos to this gallery, place your images in the <code style="background:var(--bg3);padding:0.2rem 0.5rem;border-radius:4px;color:var(--sky);">assets/images/</code> folder and update the HTML. Here are the recommended categories:</p>
-      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
-        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🔬</div>
-          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Lab Equipment &amp; Setups</div>
-        </div>
-        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚛️</div>
-          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">IUAC Beamline Experiments</div>
-        </div>
-        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🌍</div>
-          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">International Conferences</div>
-        </div>
-        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">👥</div>
-          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Group &amp; Students</div>
-        </div>
-        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
-          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏆</div>
-          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Awards &amp; Recognition</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+  <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
+  <img id="lb-img" src="" alt="" />
+  <div class="lb-caption" id="lb-caption"></div>
+</div>
 
 <footer>
   <div class="container">
@@ -245,13 +386,25 @@ function filterGallery(cat, btn) {
   document.querySelectorAll('.gal-btn').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   document.querySelectorAll('.gal-item').forEach(item => {
-    if (cat === 'all' || item.dataset.cat === cat) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
+    item.style.display = (cat === 'all' || item.dataset.cat === cat) ? 'block' : 'none';
   });
 }
+
+function openLightbox(src, caption) {
+  document.getElementById('lb-img').src = src;
+  document.getElementById('lb-caption').textContent = caption;
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox(e) {
+  if (!e || e.target === document.getElementById('lightbox') || e.currentTarget.classList.contains('lb-close')) {
+    document.getElementById('lightbox').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+}
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
 </script>
 </body>
 </html>
