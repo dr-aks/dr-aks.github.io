@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Ashish Kumar — Associate Professor of Physics, CUJ</title>
+  <meta name="description" content="Personal academic website of Dr. Ashish Kumar, Associate Professor, Department of Physics & Astronomical Sciences, Central University of Jammu. Expert in Thermoelectric Materials, Wide-Bandgap Semiconductors, and Ion-Beam Physics." />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ---- HERO PARTICLE CANVAS ---- */
+    #hero-canvas { position:absolute; inset:0; pointer-events:none; opacity:0.35; }
+
+    /* ---- QUOTE SECTION ---- */
+    .quote-section {
+      padding: 5rem 0;
+      text-align: center;
+      background: linear-gradient(135deg, var(--bg2), var(--bg3));
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .quote-text {
+      font-family: var(--font-serif);
+      font-size: clamp(1.1rem, 2vw, 1.6rem);
+      font-style: italic;
+      color: var(--text);
+      max-width: 760px;
+      margin: 0 auto 1rem;
+      line-height: 1.6;
+    }
+    .quote-attr { color: var(--text3); font-size: 0.88rem; }
+
+    /* ---- RECENT PUBS ---- */
+    .pub-mini { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+    .pub-mini:last-child { border-bottom: none; }
+    .pub-mini .journal { font-size: 0.8rem; color: var(--sky); font-style: italic; }
+    .pub-mini .year-badge { font-size: 0.7rem; font-family: var(--font-sans); font-weight: 700; color: var(--violet); background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.5rem; margin-left: 0.4rem; }
+    .pub-mini-title { font-family: var(--font-serif); font-size: 0.95rem; color: var(--text); line-height: 1.4; margin-bottom: 0.3rem; }
+
+    /* ---- NEWS TICKER ---- */
+    .news-chip-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1rem; }
+    .news-chip { font-size: 0.75rem; font-family: var(--font-sans); color: var(--text2); padding: 0.3rem 0.8rem; border: 1px solid var(--border); border-radius: 50px; }
+    .news-chip .dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; display: inline-block; margin-right: 0.4rem; box-shadow: 0 0 5px #22c55e; }
+
+    /* ---- FUNDING STRIP ---- */
+    .funding-item { display: flex; align-items: center; gap: 1rem; padding: 1.2rem; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); }
+    .funding-logo { font-size: 0.7rem; font-family: var(--font-sans); font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet); background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 0.3rem 0.6rem; min-width: 60px; text-align: center; }
+    .funding-details h4 { font-family: var(--font-sans); font-size: 0.88rem; color: var(--text); margin-bottom: 0.2rem; }
+    .funding-details p { font-size: 0.78rem; color: var(--text2); }
+    .funding-amount { margin-left: auto; font-family: var(--font-sans); font-size: 1rem; font-weight: 700; color: var(--amber); white-space: nowrap; }
+  </style>
+</head>
+<body class="lattice-bg">
+
+<!-- ======================== NAV ======================== -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-badge">AK</div>
+      Dr. Ashish Kumar
+    </a>
+    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ======================== HERO ======================== -->
+<section class="hero" id="home">
+  <canvas id="hero-canvas"></canvas>
+  <div class="container">
+    <div class="hero-grid">
+      <!-- LEFT: Text -->
+      <div>
+        <div class="hero-badges fade-in">
+          <span class="badge badge-gold">🏅 Lindau Nobel Laureate Meeting Alumni 2019</span>
+          <span class="badge badge-teal">DST-INSPIRE Faculty Awardee</span>
+          <span class="badge badge-muted">SERB Research Scientist</span>
+        </div>
+        <h1 class="hero-name fade-in delay-1">Dr. <span>Ashish Kumar</span></h1>
+        <p class="hero-title fade-in delay-2">Associate Professor of Physics</p>
+        <p class="hero-inst fade-in delay-2">
+          Department of Physics &amp; Astronomical Sciences<br>
+          Central University of Jammu, J&amp;K — 181143, India
+        </p>
+        <p class="hero-desc fade-in delay-3">
+          Experimental physicist specializing in wide-bandgap semiconductors, thermoelectric energy harvesting,
+          and ion-beam material engineering. PI of three concurrent national projects (ISRO · DRDO · IUAC)
+          with over ₹1.45 Crore in external funding.
+        </p>
+
+        <div class="news-chip-row fade-in delay-3">
+          <span class="news-chip"><span class="dot"></span>3 Active National Projects</span>
+          <span class="news-chip"><span class="dot"></span>78 Publications · h-index 26</span>
+          <span class="news-chip"><span class="dot"></span>PhD from IIT Delhi</span>
+        </div>
+
+        <div class="hero-cta fade-in delay-4" style="margin-top:2rem;">
+          <a href="research.html" class="btn btn-gold"><i class="fas fa-flask"></i> Explore Research</a>
+          <a href="publications.html" class="btn btn-outline"><i class="fas fa-book-open"></i> Publications</a>
+          <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Contact</a>
+        </div>
+
+        <div class="hero-social fade-in delay-4" style="margin-top:1.5rem;">
+          <a href="https://scholar.google.com" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
+          <a href="https://orcid.org" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
+          <a href="https://www.researchgate.net" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+          <a href="mailto:ashish.phy@cujammu.ac.in"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Photo -->
+      <div class="profile-wrap fade-in delay-2">
+        <div class="profile-deco"></div>
+        <div class="profile-photo">
+          <div class="placeholder">
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="40" cy="28" r="18" stroke="#7c3aed" stroke-width="2"/>
+              <path d="M10 72c0-16.6 13.4-30 30-30s30 13.4 30 30" stroke="#7c3aed" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span style="color:var(--text3);font-size:0.8rem;font-family:var(--font-sans);">Upload your photo</span>
+          </div>
+        </div>
+        <div class="profile-deco2"></div>
+        <!-- Floating badges -->
+        <div style="position:absolute;bottom:60px;right:-30px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;min-width:140px;">
+          <div style="font-size:0.7rem;color:var(--text3);font-family:var(--font-sans);margin-bottom:0.2rem;">Total Citations</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--violet);font-family:var(--font-sans);">1,680</div>
+        </div>
+        <div style="position:absolute;top:40px;left:-25px;background:var(--bg3);border:1px solid var(--border);border-radius:10px;padding:0.7rem 1rem;min-width:130px;">
+          <div style="font-size:0.7rem;color:var(--text3);font-family:var(--font-sans);margin-bottom:0.2rem;">h-index</div>
+          <div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">26</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== METRICS STRIP ======================== -->
+<div class="metrics-strip">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-item">
+        <span class="metric-num" data-target="78" data-suffix="">78</span>
+        <span class="metric-label">Publications</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="26">26</span>
+        <span class="metric-label">h-index</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="39">39</span>
+        <span class="metric-label">i10-index</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="1680">1,680</span>
+        <span class="metric-label">Citations</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="145" data-prefix="₹" data-suffix="L+">₹145L+</span>
+        <span class="metric-label">Funding (PI)</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="30" data-suffix="+">30+</span>
+        <span class="metric-label">Invited Talks</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="7">7</span>
+        <span class="metric-label">PhD Students</span>
+      </div>
+      <div class="metric-item">
+        <span class="metric-num" data-target="4">4</span>
+        <span class="metric-label">Patents</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== ABOUT ======================== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="grid-2 gap-2" style="align-items:start;">
+      <div data-anim data-delay="1">
+        <span class="section-label">About</span>
+        <h2 class="section-title">Probing Matter at the Quantum Scale</h2>
+        <div class="section-divider"></div>
+        <p style="margin-bottom:1rem;">
+          Dr. Ashish Kumar is an experimental physicist whose work bridges fundamental condensed matter physics
+          and applied energy technologies. He completed his Ph.D. from IIT Delhi in 2013 under Prof. Rajendra Singh,
+          pioneering in-situ electrical characterisation of GaN devices under live ion-beam irradiation.
+        </p>
+        <p style="margin-bottom:1rem;">
+          His decade-long tenure at the Inter-University Accelerator Centre (IUAC), New Delhi — first as a
+          DST-INSPIRE Faculty awardee and later as a SERB Research Scientist — saw him independently design
+          five custom cryogenic measurement systems and publish 30+ papers. He is now Associate Professor at
+          Central University of Jammu.
+        </p>
+        <p style="margin-bottom:2rem;">
+          His research programme spans thermoelectric energy harvesting, wide-bandgap semiconductor physics,
+          defect engineering via ion beams, 2D materials, and space instrumentation — united by a passion for
+          building indigenous scientific infrastructure.
+        </p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="group.html" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-users"></i> Meet the Group</a>
+          <a href="lab.html" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-microscope"></i> Visit the Lab</a>
+        </div>
+      </div>
+
+      <div data-anim data-delay="2">
+        <!-- Education & Awards Quick View -->
+        <div class="card" style="margin-bottom:1.2rem;">
+          <div class="card-icon"><i class="fas fa-graduation-cap"></i></div>
+          <h3 style="margin-bottom:1rem;color:var(--text);">Education</h3>
+          <div class="award-item">
+            <span class="award-year">2013</span>
+            <div><div class="award-name">Ph.D. in Physics</div><div class="award-body">IIT Delhi — Thesis: GaN Schottky Barrier Diodes &amp; SHI Irradiation</div></div>
+          </div>
+          <div class="award-item">
+            <span class="award-year">2007</span>
+            <div><div class="award-name">M.Sc. Physics</div><div class="award-body">Kurukshetra University, Haryana</div></div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-icon" style="background:rgba(14,165,233,0.1);color:var(--sky);border-color:var(--border);"><i class="fas fa-award"></i></div>
+          <h3 style="margin-bottom:1rem;color:var(--text);">Select Honours</h3>
+          <div class="award-item">
+            <span class="award-year">2019</span>
+            <div><div class="award-name">Lindau Nobel Laureate Meeting</div><div class="award-body">~600 outstanding young scientists globally · Lindau, Germany</div></div>
+          </div>
+          <div class="award-item">
+            <span class="award-year">2020</span>
+            <div><div class="award-name">SERB Research Scientist</div><div class="award-body">Awarded by SERB, Govt. of India</div></div>
+          </div>
+          <div class="award-item">
+            <span class="award-year">2015</span>
+            <div><div class="award-name">DST-INSPIRE Faculty Award</div><div class="award-body">5-year national fellowship · ₹35 Lakh project</div></div>
+          </div>
+          <div class="award-item">
+            <span class="award-year">2024</span>
+            <div><div class="award-name">RSC Advances Outstanding Paper Award</div><div class="award-body">Royal Society of Chemistry</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== RESEARCH HIGHLIGHTS ======================== -->
+<section class="section section-alt" id="research-highlights">
+  <div class="container">
+    <div class="text-center mb-3" data-anim>
+      <span class="section-label">Research</span>
+      <h2 class="section-title">Areas of Investigation</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+      <p class="section-subtitle" style="margin:0 auto;">Spanning energy materials, semiconductor physics, ion-beam science, and space instrumentation</p>
+    </div>
+    <div class="grid-3" style="grid-template-columns:repeat(auto-fill, minmax(300px,1fr));">
+      <div class="card" data-anim data-delay="1">
+        <div class="card-icon"><i class="fas fa-fire-flame-curved"></i></div>
+        <h3>Thermoelectric Materials</h3>
+        <p style="margin:0.6rem 0 1rem;">GaN, β-Ga₂O₃, SiC, organic-inorganic hybrid composites (PEDOT:PSS/Bi₂Te₃/rGO), printable flexible energy harvesting generators.</p>
+        <div class="tags"><span class="tag">Energy Harvesting</span><span class="tag">Flexible Devices</span><span class="tag gold-tag">SERB Funded</span></div>
+      </div>
+      <div class="card" data-anim data-delay="2">
+        <div class="card-icon"><i class="fas fa-atom"></i></div>
+        <h3>Wide-Bandgap Semiconductors</h3>
+        <p style="margin:0.6rem 0 1rem;">Defects in GaN, SiC, Ga₂O₃, AlN, ZnO via DLTS, 1/f noise, Hall effect, and ion-beam defect engineering across cryogenic to high temperatures.</p>
+        <div class="tags"><span class="tag">DLTS</span><span class="tag">1/f Noise</span><span class="tag">GaN · SiC · Ga₂O₃</span></div>
+      </div>
+      <div class="card" data-anim data-delay="3">
+        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+        <h3>III-V / IV Semiconductor Devices</h3>
+        <p style="margin:0.6rem 0 1rem;">GaN/AlGaN Schottky diodes, HEMT structures, SiC contacts, surface passivation, radiation-hard devices for defence and space applications.</p>
+        <div class="tags"><span class="tag">HEMT</span><span class="tag">Schottky Diodes</span><span class="tag gold-tag">DRDO Funded</span></div>
+      </div>
+      <div class="card" data-anim data-delay="1">
+        <div class="card-icon teal"><i class="fas fa-radiation"></i></div>
+        <h3>Ion–Matter Interactions</h3>
+        <p style="margin:0.6rem 0 1rem;">Swift heavy ion modification, in-situ electrical characterisation under live ion beams, defect kinetics at IUAC beamlines. World's first in-situ DLTS under live SHI beam.</p>
+        <div class="tags"><span class="tag">SHI Irradiation</span><span class="tag">In-situ DLTS</span><span class="tag gold-tag">IUAC Funded</span></div>
+      </div>
+      <div class="card" data-anim data-delay="2">
+        <div class="card-icon teal"><i class="fas fa-layer-group"></i></div>
+        <h3>2D Materials</h3>
+        <p style="margin:0.6rem 0 1rem;">Graphene engineering via SHI, MoS₂ Schottky junctions, carbon nanostructures for thermoelectric and optoelectronic applications.</p>
+        <div class="tags"><span class="tag">Graphene</span><span class="tag">MoS₂</span><span class="tag">Optoelectronics</span></div>
+      </div>
+      <div class="card" data-anim data-delay="3">
+        <div class="card-icon teal"><i class="fas fa-satellite"></i></div>
+        <h3>EUV / X-ray Space Exploration</h3>
+        <p style="margin:0.6rem 0 1rem;">Nanomaterial-based multilayer mirror prototypes for polarimetric space missions. Active ISRO RESPOND project (₹60 Lakh).</p>
+        <div class="tags"><span class="tag">ISRO RESPOND</span><span class="tag">Multilayer Mirrors</span><span class="tag gold-tag">Space Mission</span></div>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <a href="research.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> View Full Research Programme</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== QUOTE ======================== -->
+<div class="quote-section">
+  <div class="container">
+    <p class="quote-text" data-anim>
+      "The most important instrument in any laboratory is the mind that designs it —
+       curiosity turned into steel, glass, and measurement."
+    </p>
+    <span class="quote-attr">— Research Philosophy, Dr. Ashish Kumar</span>
+  </div>
+</div>
+
+<!-- ======================== ACTIVE PROJECTS ======================== -->
+<section class="section" id="funding">
+  <div class="container">
+    <div class="grid-2" style="align-items:start;gap:3rem;">
+      <div data-anim>
+        <span class="section-label">Funded Research</span>
+        <h2 class="section-title">Active National Projects</h2>
+        <div class="section-divider"></div>
+        <p style="margin-bottom:2rem;">Currently leading three simultaneous national projects totalling <strong>₹96.07 Lakh</strong> in active funding from India's premier science agencies.</p>
+
+        <div style="display:flex;flex-direction:column;gap:1rem;">
+          <div class="funding-item">
+            <div class="funding-logo">ISRO</div>
+            <div class="funding-details">
+              <h4>EUV/X-ray Multilayer Mirrors for Space Polarimetry</h4>
+              <p>RESPOND Programme · Nanomaterial-based mirrors for space missions</p>
+            </div>
+            <div class="funding-amount">₹60 L</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-logo">DRDO</div>
+            <div class="funding-details">
+              <h4>GaN/AlGaN HEMT Radiation Hardness Studies</h4>
+              <p>CARS Programme · Defence semiconductor devices</p>
+            </div>
+            <div class="funding-amount">₹26.07 L</div>
+          </div>
+          <div class="funding-item">
+            <div class="funding-logo">IUAC</div>
+            <div class="funding-details">
+              <h4>Ion-Beam Defect Engineering in Wide-Bandgap Materials</h4>
+              <p>UFR-76304 · In-situ beamline experiments</p>
+            </div>
+            <div class="funding-amount">₹10 L</div>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="margin-top:1.5rem;">
+          <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div>
+              <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);margin-bottom:0.3rem;">Total External Funding as PI</div>
+              <div style="font-size:1.8rem;font-weight:700;color:var(--amber);font-family:var(--font-sans);">₹1.45 Crore</div>
+            </div>
+            <div style="text-align:right;">
+              <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);margin-bottom:0.3rem;">Currently Active</div>
+              <div style="font-size:1.4rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">₹96.07 L</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div data-anim data-delay="2">
+        <span class="section-label">Recent Publications</span>
+        <h2 class="section-title">Latest Research Output</h2>
+        <div class="section-divider"></div>
+
+        <div class="pub-mini">
+          <div class="pub-mini-title">Enhanced Optical and Electrical Properties of NiO-GO Composite Films on PET for Optoelectronics</div>
+          <div class="journal">Chem. Inorg. Mater. (2025) · Verma B., Kumar A. et al. <span class="year-badge">2025</span></div>
+        </div>
+        <div class="pub-mini">
+          <div class="pub-mini-title">UV Protection and Photocatalytic Activity in Sm/Eu Co-Doped TiO₂ Thin Films</div>
+          <div class="journal">Mater. Sci. Eng. B (2025) · Bhandari A., Kumar A. et al. <span class="year-badge">2025</span></div>
+        </div>
+        <div class="pub-mini">
+          <div class="pub-mini-title">Enhancement in Power Factor of Sn/Zn Co-Doped Bismuth Telluride</div>
+          <div class="journal">J. Mater. Sci.: Mater. Electron. (2025) · Rani K., Kumar A. et al. <span class="year-badge">2025</span></div>
+        </div>
+        <div class="pub-mini">
+          <div class="pub-mini-title">Improved Thermoelectric Performance of PEDOT:PSS/Bi₂Te₃/rGO Ternary Composite Films</div>
+          <div class="journal">RSC Advances (2024) · Rathi V., Kumar A. et al. — <strong style="color:var(--amber);">RSC Outstanding Paper Award</strong> <span class="year-badge">2024</span></div>
+        </div>
+        <div class="pub-mini">
+          <div class="pub-mini-title">Ion-Induced Transformation of Shallow Defects into Deep-Level Defects in GaN</div>
+          <div class="journal">Nucl. Instrum. Methods B (2024) · Singh K., Kumar A. et al. <span class="year-badge">2024</span></div>
+        </div>
+
+        <div style="margin-top:1.5rem;">
+          <a href="publications.html" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-list"></i> View All 78 Publications</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== INSTRUMENTATION HIGHLIGHT ======================== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center mb-3" data-anim>
+      <span class="section-label">Indigenous Instrumentation</span>
+      <h2 class="section-title">Custom-Built Scientific Systems</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+      <p class="section-subtitle" style="margin:0 auto;">Five precision measurement systems independently designed, fabricated, and commissioned — a defining feature of the research programme</p>
+    </div>
+    <div class="grid-3" style="grid-template-columns:repeat(auto-fill,minmax(280px,1fr));">
+      <div class="card" data-anim data-delay="1" style="border-left:3px solid var(--amber);">
+        <div style="font-size:0.7rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--amber);margin-bottom:0.5rem;">System I · Published Rev. Sci. Instrum.</div>
+        <h3 style="color:var(--text);margin-bottom:0.5rem;">Seebeck &amp; Resistivity Setup</h3>
+        <p>80 K – 650 K · Wire, thin film &amp; bulk. One of very few such systems designed indigenously in India. Used by multiple collaborating groups nationally.</p>
+      </div>
+      <div class="card" data-anim data-delay="2" style="border-left:3px solid var(--amber);">
+        <div style="font-size:0.7rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--amber);margin-bottom:0.5rem;">System II · Unique in Indian Universities</div>
+        <h3 style="color:var(--text);margin-bottom:0.5rem;">Thermal Conductivity &amp; ZT Setup</h3>
+        <p>300 K – 1000 K · Complete thermoelectric figure-of-merit (ZT) characterisation. Rare capability at Indian universities.</p>
+      </div>
+      <div class="card" data-anim data-delay="3" style="border-left:3px solid var(--sky);">
+        <div style="font-size:0.7rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sky);margin-bottom:0.5rem;">System III · World First</div>
+        <h3 style="color:var(--text);margin-bottom:0.5rem;">In-Situ DLTS Under Live Ion Beam</h3>
+        <p>World's first in-situ DLTS of GaN under live SHI irradiation. No other group in India has demonstrated this capability.</p>
+      </div>
+    </div>
+    <div class="text-center mt-2">
+      <a href="lab.html" class="btn btn-outline"><i class="fas fa-microscope"></i> Explore the Laboratory</a>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== RECENT NEWS ======================== -->
+<section class="section" id="news">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+      <div data-anim>
+        <span class="section-label">Updates</span>
+        <h2 class="section-title">News &amp; Highlights</h2>
+        <div class="section-divider"></div>
+
+        <div class="timeline" style="margin-top:1.5rem;">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">March 2026</div>
+            <div class="timeline-title">Resource Person — Refresher Course in Physics</div>
+            <div class="timeline-desc">Central University of Haryana (CUH), Mahendergarh · Lecture on Deep Level Transient Spectroscopy</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2025</div>
+            <div class="timeline-title">Best PhD Thesis Award — Supervised Scholar</div>
+            <div class="timeline-desc">Dr. Vaishali Rathi's thesis on 'Fabrication of Printable Flexible Thermoelectric Devices' awarded Best PhD Thesis at UPES Dehradun Convocation.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot" style="background:var(--sky);box-shadow:0 0 8px var(--sky);"></div>
+            <div class="timeline-date">2025</div>
+            <div class="timeline-title">Best Poster Award — Supervised Scholar</div>
+            <div class="timeline-desc">Ms. Muskan awarded Best Poster at DAE Solid State Physics Symposium (DAE-SSPS 2025), one of the most prestigious annual physics symposia in India.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2024</div>
+            <div class="timeline-title">RSC Advances Outstanding Paper Award</div>
+            <div class="timeline-desc">Paper on PEDOT:PSS/Bi₂Te₃/rGO flexible thermoelectric composites selected for Outstanding Paper Award by the Royal Society of Chemistry.</div>
+          </div>
+        </div>
+        <a href="news.html" class="btn btn-outline" style="margin-top:1rem;font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-newspaper"></i> All News</a>
+      </div>
+
+      <div data-anim data-delay="2">
+        <span class="section-label">Collaborations</span>
+        <h2 class="section-title">International Partners</h2>
+        <div class="section-divider"></div>
+
+        <div style="display:flex;flex-direction:column;gap:1rem;margin-top:0.5rem;">
+          <div class="card" style="padding:1rem 1.2rem;">
+            <div class="collab-card">
+              <div class="collab-flag">🇩🇪</div>
+              <div class="collab-info">
+                <h4>Dr. Angelika Hähnel</h4>
+                <div class="inst">Helmholtz-Zentrum Dresden-Rossendorf (HZDR), Germany</div>
+                <div class="topic">TEM microstructural analysis of ion-irradiated GaN devices</div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding:1rem 1.2rem;">
+            <div class="collab-card">
+              <div class="collab-flag">🇹🇼</div>
+              <div class="collab-info">
+                <h4>Dr. Chung-Li Dong</h4>
+                <div class="inst">National Synchrotron Radiation Research Center, Taiwan</div>
+                <div class="topic">XAS and electronic structure of thermoelectric thin films</div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding:1rem 1.2rem;">
+            <div class="collab-card">
+              <div class="collab-flag">🇿🇦</div>
+              <div class="collab-info">
+                <h4>Prof. Hendrik C. Swart</h4>
+                <div class="inst">University of the Free State, South Africa</div>
+                <div class="topic">Luminescence &amp; optoelectronic properties of oxide thin films</div>
+              </div>
+            </div>
+          </div>
+          <div class="card" style="padding:1rem 1.2rem;">
+            <div class="collab-card">
+              <div class="collab-flag">🇷🇺</div>
+              <div class="collab-info">
+                <h4>Dr. Platon Karaseov &amp; Dr. Andrei Titov</h4>
+                <div class="inst">St. Petersburg Polytechnic University, Russia</div>
+                <div class="topic">SHI-induced degradation and electrical isolation of GaN</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="group.html" class="btn btn-outline" style="margin-top:1rem;font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-globe"></i> Full Collaborator Network</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================== FOOTER ======================== -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Dr. Ashish Kumar</div>
+        <p class="footer-desc">Associate Professor of Physics &amp; Astronomical Sciences, Central University of Jammu. Experimental physicist, PI of three national research projects, Lindau Nobel Laureate Meeting Alumni 2019.</p>
+        <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+          <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.researchgate.net" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Navigation</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="lab.html">Laboratory</a></li>
+          <li><a href="group.html">Research Group</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Resources</h5>
+        <ul>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li>
+          <li><a href="mailto:dr.akmr@gmail.com">dr.akmr@gmail.com</a></li>
+          <li style="color:var(--text3);font-size:0.82rem;">Dept. of Physics &amp; Astronomical Sciences</li>
+          <li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Ashish Kumar · Central University of Jammu</p>
+      <p>Built with care · Research drives every line</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+  // Particle canvas animation
+  const canvas = document.getElementById('hero-canvas');
+  if (canvas) {
+    const ctx = canvas.getContext('2d');
+    let W, H, particles = [];
+    function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let i = 0; i < 60; i++) {
+      particles.push({
+        x: Math.random() * W, y: Math.random() * H,
+        r: Math.random() * 2 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3,
+        alpha: Math.random() * 0.5 + 0.2,
+        violet: Math.random() > 0.5
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, W, H);
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
+        if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = p.violet ? `rgba(124,58,237,${p.alpha})` : `rgba(14,165,233,${p.alpha})`;
+        ctx.fill();
+      });
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(124,58,237,${0.10 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  }
+</script>
+</body>
+</html>

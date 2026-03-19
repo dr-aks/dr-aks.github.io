@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Publications — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .filter-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .filter-btn { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 50px; color: var(--text2); background: transparent; cursor: pointer; transition: var(--transition); }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--amber); color: var(--amber); background: var(--bg3); }
+    .year-group { margin-bottom: 2.5rem; }
+    .year-heading { font-family: var(--font-sans); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: var(--amber); display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+    .year-heading::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+    .pub-item { border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; background: var(--card); transition: var(--transition); margin-bottom: 0.8rem; }
+    .pub-item:hover { border-color: rgba(124,58,237,0.3); }
+    .pub-item.starred { border-left: 3px solid var(--amber); padding-left: 1.3rem; }
+    .pub-item.teal { border-left: 3px solid var(--sky); padding-left: 1.3rem; }
+    .pub-num { display: inline-block; font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; color: var(--text3); min-width: 24px; }
+    .pub-title-link { font-family: var(--font-serif); font-size: 0.98rem; color: var(--text); line-height: 1.45; font-weight: 600; }
+    .pub-meta { font-size: 0.82rem; color: var(--text3); margin-top: 0.25rem; }
+    .pub-meta .journal-name { color: var(--sky); font-style: italic; }
+    .pub-impact-note { font-size: 0.8rem; color: var(--text2); margin-top: 0.5rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.05); font-style: italic; line-height: 1.5; }
+    .pub-tags-inline { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.4rem; }
+    .pub-tag-sm { font-size: 0.65rem; font-family: var(--font-sans); padding: 0.1rem 0.45rem; border: 1px solid var(--border); border-radius: 3px; color: var(--sky); }
+    .award-tag { font-size: 0.7rem; font-family: var(--font-sans); font-weight: 700; padding: 0.15rem 0.5rem; background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; color: var(--amber); }
+    .patent-card { background: var(--card); border: 1px solid var(--border); border-left: 3px solid var(--sky); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 0.8rem; }
+    .patent-num { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700; color: var(--sky); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .conf-item { padding: 0.9rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+    .conf-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html" class="active">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Research Output</span>
+      <h1>Publications</h1>
+      <p>78 peer-reviewed journal articles · 15+ conference proceedings · 4 patents · 2 science communication articles · 30 invited talks. Data as of March 2026.</p>
+    </div>
+  </div>
+</div>
+
+<!-- METRICS -->
+<div class="metrics-strip">
+  <div class="container">
+    <div class="metrics-grid">
+      <div class="metric-item"><span class="metric-num" data-target="78">78</span><span class="metric-label">Journal Articles</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="26">26</span><span class="metric-label">h-index</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="39">39</span><span class="metric-label">i10-index</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="1680">1,680</span><span class="metric-label">Citations</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="15" data-suffix="+">15+</span><span class="metric-label">Conf. Proceedings</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="4">4</span><span class="metric-label">Patents</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="2">2</span><span class="metric-label">Sci. Communication</span></div>
+      <div class="metric-item"><span class="metric-num" data-target="30" data-suffix="+">30+</span><span class="metric-label">Invited Talks</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- PROFILES -->
+<section class="section" style="padding-top:3rem;padding-bottom:3rem;">
+  <div class="container">
+    <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;" data-anim>
+      <a href="https://scholar.google.com" target="_blank" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+      <a href="https://orcid.org" target="_blank" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fab fa-orcid"></i> ORCID</a>
+      <a href="https://www.researchgate.net" target="_blank" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fab fa-researchgate"></i> ResearchGate</a>
+      <a href="#" class="btn btn-outline" style="font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-database"></i> Web of Science</a>
+    </div>
+  </div>
+</section>
+
+<!-- TEN MOST SIGNIFICANT -->
+<section class="section section-alt">
+  <div class="container">
+    <div data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Landmark Papers</span>
+      <h2 class="section-title">Ten Most Significant Publications</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text2);font-size:0.9rem;">Starred (★) publications represent the core intellectual contributions of the research programme, selected for originality, community impact, and citation influence.</p>
+    </div>
+
+    <div data-anim>
+      <div class="pub-item starred">
+        <div><span class="pub-num">[1]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Wide Range Temperature-Dependent (80–630 K) Study of Hall Effect and Seebeck Coefficient of β-Ga₂O₃ Single Crystals</div>
+        <div class="pub-meta">Kumar, A.; Singh, S.; Tak, B.R.; Patel, A.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Applied Physics Letters</span> (2021) 118(6), 062102</div>
+        <div class="pub-impact-note">First reported Seebeck coefficient study across a wide temperature range on single crystal β-Ga₂O₃. As Ga₂O₃ emerges as the leading ultra-wide-bandgap semiconductor globally, this paper establishes the author among the earliest researchers defining its thermoelectric baseline. Covered by the Semiconductor Society of India (SSI).</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">β-Ga₂O₃</span><span class="pub-tag-sm">Seebeck Coefficient</span><span class="pub-tag-sm">Hall Effect</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[2]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Thermoelectric Properties of GaN with Carrier Concentration Modulation: An Experimental and Theoretical Investigation</div>
+        <div class="pub-meta">Kumar, A.; Singh, S.; Patel, A.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Physical Chemistry Chemical Physics</span> (2021) 23(2), 1601–1609</div>
+        <div class="pub-impact-note">Most comprehensive combined experimental and DFT theoretical study of GaN as a thermoelectric material. Established GaN's viability in the thermoelectric space — cited by multiple subsequent groups working on wide-bandgap thermoelectrics globally.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">GaN</span><span class="pub-tag-sm">Thermoelectric</span><span class="pub-tag-sm">DFT</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[3]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Enhancement of Thermopower in GaN by Ion Irradiation and Possible Mechanisms</div>
+        <div class="pub-meta">Kumar, A.; Dhillon, J.; Meena, R.; Kumar, P.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Applied Physics Letters</span> (2017) 111(22)</div>
+        <div class="pub-impact-note">First experimental demonstration that swift heavy ion irradiation can be used as a precision tool to engineer thermopower in GaN. This paper opened the ion-beam thermoelectric engineering research direction that has since defined the author's research identity and generated a series of funded projects.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">SHI Irradiation</span><span class="pub-tag-sm">Thermopower</span><span class="pub-tag-sm">GaN</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[4]</span> <span class="award-tag">★ World First</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Identification of Swift Heavy Ion Induced Defects in Pt/n-GaN Schottky Diodes by In-Situ Deep Level Transient Spectroscopy</div>
+        <div class="pub-meta">Kumar, A.; Dhillon, J.; Kumar, P.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Semiconductor Science and Technology</span> (2018) 33(8), 085008</div>
+        <div class="pub-impact-note">World's first in-situ DLTS measurement of ion-beam induced deep-level defects in GaN in real time during irradiation. The custom in-situ DLTS system was entirely designed and built by the author. No other group in India has demonstrated this experimental capability.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">In-situ DLTS</span><span class="pub-tag-sm">GaN</span><span class="pub-tag-sm">World First</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[5]</span> <span class="award-tag">★ Instrumentation</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Apparatus for Seebeck Coefficient Measurement of Wire, Thin Film, and Bulk Materials (80–650 K)</div>
+        <div class="pub-meta">Kumar, A.; Patel, A.; Singh, S.; Kandasami, A.; Kanjilal, D. · <span class="journal-name">Review of Scientific Instruments</span> (2019) 90(10)</div>
+        <div class="pub-impact-note">Original instrumentation paper describing a custom-designed versatile Seebeck and resistivity measurement system — one of very few such systems designed indigenously in India. Published in the premier instrumentation journal of the American Institute of Physics. Now used by multiple collaborating groups nationally.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">Instrumentation</span><span class="pub-tag-sm">Seebeck</span><span class="pub-tag-sm">Rev. Sci. Instrum.</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[6]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">In-Situ Transport and Microstructural Evolution in GaN Schottky Diodes and Epilayers Exposed to Swift Heavy Ion Irradiation</div>
+        <div class="pub-meta">Kumar, A.; Singh, R.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Journal of Applied Physics</span> (2018) 123(16)</div>
+        <div class="pub-impact-note">First real-time in-situ electrical characterisation of GaN devices under live SHI beam combined with post-irradiation TEM microstructural analysis. Among the most technically sophisticated experiments reported from IUAC.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">In-situ Transport</span><span class="pub-tag-sm">TEM</span><span class="pub-tag-sm">GaN</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[7]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Barrier Height Enhancement of Ni/GaN Schottky Diode Using Ru-Based Passivation Scheme</div>
+        <div class="pub-meta">Kumar, A.; Kumar, M.; Kaur, R.; Joshi, A.G.; Vinayak, S.; Singh, R. · <span class="journal-name">Applied Physics Letters</span> (2014) 104(13), 133510</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">GaN Passivation</span><span class="pub-tag-sm">Schottky Diode</span><span class="pub-tag-sm">Ruthenium</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[8]</span> <span class="award-tag">★ Landmark</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Surface States Passivation in GaN Single Crystal by Ruthenium Solution</div>
+        <div class="pub-meta">Kumar, N.; Chand, F.; Kumar, A. · <span class="journal-name">Applied Physics Letters</span> (2023) 122(1)</div>
+        <div class="pub-impact-note">Papers [7] &amp; [8] together form a connected body of work on ruthenium-based GaN passivation — published a decade apart (2014 &amp; 2023) and selected as the basis of an invited Research Review in <em>Compound Semiconductor</em> magazine (Vol. 29, Issue II, 2023) — an exceptionally rare recognition.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">GaN Passivation</span><span class="pub-tag-sm">Surface States</span><span class="pub-tag-sm">Featured in Compound Semiconductor Mag.</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[9]</span> <span class="award-tag">★ Foundational PhD Paper</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Electrical and Microstructural Analyses of 200 MeV Ag¹⁴⁺ Ion Irradiated Ni/GaN Schottky Barrier Diode</div>
+        <div class="pub-meta">Kumar, A.; Hähnel, A.; Kanjilal, D.; Singh, R. · <span class="journal-name">Applied Physics Letters</span> (2012) 101(15), 152109</div>
+        <div class="pub-impact-note">Foundational paper from the author's PhD establishing the ion-damage model for III-V Schottky barrier devices under heavy ion bombardment. First simultaneous in-situ electrical + TEM microstructural correlation study of SHI-irradiated GaN SBDs. The seed paper from which the entire subsequent research programme grew.</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">GaN SBD</span><span class="pub-tag-sm">SHI Irradiation</span><span class="pub-tag-sm">TEM</span><span class="pub-tag-sm">IUAC</span></div>
+      </div>
+
+      <div class="pub-item starred">
+        <div><span class="pub-num">[10]</span> <span class="award-tag award-tag" style="background:rgba(14,165,233,0.1);border-color:var(--sky);color:var(--sky);">★ RSC Outstanding Paper Award 2024</span></div>
+        <div class="pub-title-link" style="margin-top:0.4rem;">Improved Thermoelectric Performance of PEDOT:PSS/Bi₂Te₃/rGO Ternary Composite Films for Energy Harvesting</div>
+        <div class="pub-meta">Rathi, V.; Singh, K.; Parmar, K.; Brajpuriya, R.K.; Kumar, A. · <span class="journal-name">RSC Advances</span> (2024) 14(47), 34883</div>
+        <div class="pub-impact-note">High-performance printable flexible thermoelectric composite combining organic polymer, inorganic semiconductor, and graphene in a single ternary architecture. Selected for the RSC Advances Outstanding Student Paper Award (2025).</div>
+        <div class="pub-tags-inline"><span class="pub-tag-sm">PEDOT:PSS</span><span class="pub-tag-sm">Bi₂Te₃</span><span class="pub-tag-sm">rGO</span><span class="pub-tag-sm">Flexible Thermoelectric</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ADDITIONAL PUBLICATIONS -->
+<section class="section">
+  <div class="container">
+    <div data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Journal Articles</span>
+      <h2 class="section-title">Additional Selected Publications (Q1 / High-Impact)</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div data-anim>
+      <div class="year-group">
+        <div class="year-heading">2025</div>
+        <div class="pub-item"><div class="pub-title-link">Enhanced Optical and Electrical Properties of NiO-GO Composite Films on PET for Optoelectronics</div><div class="pub-meta">Verma, B.; Kumar, A.; Swart, H.; Kumar, V. · <span class="journal-name">Chemistry of Inorganic Materials</span> (2025) 5, 100097</div></div>
+        <div class="pub-item"><div class="pub-title-link">UV Protection and Photocatalytic Activity in Sm/Eu Co-Doped TiO₂ Thin Films</div><div class="pub-meta">Bhandari, A.; Kumar, A.; Swart, H.C.; Kumar, V. · <span class="journal-name">Materials Science &amp; Engineering B</span> (2025) 320, 118429</div></div>
+        <div class="pub-item"><div class="pub-title-link">Enhancement in Power Factor of Sn/Zn Co-Doped Bismuth Telluride</div><div class="pub-meta">Rani, K.; Gupta, V.; Kumar, A. · <span class="journal-name">Journal of Materials Science: Materials in Electronics</span> (2025) 36(6)</div></div>
+        <div class="pub-item"><div class="pub-title-link">Structural and Electrical Changes in Multilayer Graphene by Negative Oxygen Ion Bombardment</div><div class="pub-meta">Gupta, S.; Kumar, R.; Kumar, A.; Kanjilal, D. · <span class="journal-name">Results in Surfaces and Interfaces</span> (2025) 19, 100490</div></div>
+      </div>
+
+      <div class="year-group">
+        <div class="year-heading">2024</div>
+        <div class="pub-item teal"><div class="pub-title-link">Graphene-Derived Composites: A New Frontier in Thermoelectric Energy Conversion (Review)</div><div class="pub-meta">Rathi, V.; Brajpuriya, R.; Kumar, A. et al. · <span class="journal-name">Energy Advances</span> (2024) 3(2), 389–412</div></div>
+        <div class="pub-item"><div class="pub-title-link">Boosting Thermoelectric Performance of PEDOT:PSS/Bi₂Te₃ Hybrid Films via Structural and Interfacial Engineering</div><div class="pub-meta">Rathi, V.; Singh, K.; Kumar, A. et al. · <span class="journal-name">Organic Electronics</span> (2024) 133, 107103</div></div>
+        <div class="pub-item"><div class="pub-title-link">Ion-Induced Transformation of Shallow Defects into Deep-Level Defects in GaN Epilayers</div><div class="pub-meta">Singh, K.; Batra, Y.; Kumar, A. et al. · <span class="journal-name">Nuclear Instruments and Methods B</span> (2024) 552, 165362</div></div>
+        <div class="pub-item"><div class="pub-title-link">Disorder Induced in GaN Thin Films by 200 MeV Silver Ions</div><div class="pub-meta">Singh, K.; Gupta, K.; Kumar, A. et al. · <span class="journal-name">Nuclear Instruments and Methods B</span> (2024) 551, 165346</div></div>
+        <div class="pub-item"><div class="pub-title-link">Electronic Structure and Luminescence Studies of Bi-Doped MgO Nanophosphors</div><div class="pub-meta">Bishnoi, P.; Kumar, A. et al. · <span class="journal-name">Ceramics International</span> (2024) 50(9), 15657</div></div>
+      </div>
+
+      <div class="year-group">
+        <div class="year-heading">2023</div>
+        <div class="pub-item"><div class="pub-title-link">Trap Analysis on Pt-AlGaN/GaN SBD through Deep Level Transient Spectroscopy</div><div class="pub-meta">Kumar, A.; Mukherjee, J.; Rawal, D.; Asokan, K.; Kanjilal, D. · <span class="journal-name">Journal of Semiconductors</span> (2023) 44(4), 042802</div></div>
+        <div class="pub-item"><div class="pub-title-link">Impact of Swift Heavy Oxygen Ion Irradiation on Pt/GaN Schottky Diodes and Epilayers</div><div class="pub-meta">Singh, K.; Kumar, A. et al. · <span class="journal-name">Journal of Applied Physics</span> (2023) 134(16)</div></div>
+        <div class="pub-item"><div class="pub-title-link">Surface Functionalization of GaN for Biomedical Implant Applications</div><div class="pub-meta">Mishra, M.; Sharan, J.; Kumar, A. et al. · <span class="journal-name">Applied Surface Science</span> (2023) 612, 155858</div></div>
+      </div>
+
+      <div class="year-group">
+        <div class="year-heading">2019</div>
+        <div class="pub-item"><div class="pub-title-link">Tuning Electrical and Thermoelectric Properties of N Ion Implanted SrTiO₃ Thin Films</div><div class="pub-meta">Bhogra, A.; Masarrat, A.; Kumar, A. et al. · <span class="journal-name">Scientific Reports</span> (2019) 9(1), 1–11</div></div>
+        <div class="pub-item"><div class="pub-title-link">Influence of Barrier Inhomogeneities on Transport Properties of Pt/MoS₂ Schottky Barrier Junction</div><div class="pub-meta">Kumar, S.; Sanger, A.; Kumar, A. et al. · <span class="journal-name">Journal of Alloys and Compounds</span> (2019) 797, 582</div></div>
+      </div>
+
+      <div style="text-align:center;margin-top:2rem;">
+        <div class="highlight-box" style="display:inline-block;text-align:center;padding:1.5rem 3rem;">
+          <div style="font-size:0.8rem;color:var(--text3);font-family:var(--font-sans);margin-bottom:0.4rem;">Full list of 78 peer-reviewed publications available on:</div>
+          <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:0.8rem;">
+            <a href="https://scholar.google.com" target="_blank" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem;"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
+            <a href="https://orcid.org" target="_blank" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem;"><i class="fab fa-orcid"></i> ORCID</a>
+            <a href="https://www.researchgate.net" target="_blank" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1rem;"><i class="fab fa-researchgate"></i> ResearchGate</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PATENTS -->
+<section class="section section-alt">
+  <div class="container">
+    <div data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Intellectual Property</span>
+      <h2 class="section-title">Patents</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div data-anim>
+      <div class="patent-card">
+        <div class="patent-num">Indian Patent IN 44683 — Granted · 2015</div>
+        <div class="pub-title-link">A System for Providing Nest-ID Based Identification of a Geographical Location and Method Thereof</div>
+        <div class="pub-meta" style="margin-top:0.4rem;">Kumar A., Sharma R., Singh J., Behera K.</div>
+      </div>
+      <div class="patent-card">
+        <div class="patent-num">Indian Patent Application Filed · 2018</div>
+        <div class="pub-title-link">GaN-Based Thermoelectric Device</div>
+        <div class="pub-meta" style="margin-top:0.4rem;">Kumar A., Sengar S.K.</div>
+      </div>
+      <div class="patent-card">
+        <div class="patent-num">Indian Patent Application Filed · 2018</div>
+        <div class="pub-title-link">Ga₂O₃ Thermoelectric Generator for Higher-Temperature Applications</div>
+        <div class="pub-meta" style="margin-top:0.4rem;">Kumar A., Sengar S.K.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCIENCE COMMUNICATION -->
+<section class="section">
+  <div class="container">
+    <div data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Science Communication</span>
+      <h2 class="section-title">For the Broader Community</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div data-anim>
+      <div class="pub-item teal">
+        <div class="pub-title-link">'Passivating GaN with Ruthenium' — Invited Research Review</div>
+        <div class="pub-meta" style="margin-top:0.4rem;"><span class="journal-name">Compound Semiconductor</span> magazine · Vol. 29, Issue II, p. 60 · 2023 · International trade journal for the compound semiconductor industry</div>
+      </div>
+      <div class="pub-item teal">
+        <div class="pub-title-link">'Defect Engineering in Wide-Bandgap Materials for Thermoelectric Applications'</div>
+        <div class="pub-meta" style="margin-top:0.4rem;"><span class="journal-name">SSI Newsletter</span> · Issue 04/2019 · Semiconductor Society of India</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>Research drives every line</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

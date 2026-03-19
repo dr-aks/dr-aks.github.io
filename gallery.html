@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .gallery-filter { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2.5rem; }
+    .gal-btn { font-family: var(--font-sans); font-size: 0.78rem; font-weight: 500; padding: 0.4rem 1rem; border: 1px solid var(--border); border-radius: 50px; color: var(--text2); background: transparent; cursor: pointer; transition: var(--transition); }
+    .gal-btn:hover, .gal-btn.active { border-color: var(--amber); color: var(--amber); background: var(--bg3); }
+    .gallery-masonry { columns: 3; column-gap: 1rem; }
+    @media (max-width:768px) { .gallery-masonry { columns: 2; } }
+    @media (max-width:480px) { .gallery-masonry { columns: 1; } }
+    .gal-item { break-inside: avoid; margin-bottom: 1rem; border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); cursor: pointer; position: relative; group: true; }
+    .gal-placeholder { background: var(--bg3); position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.6rem; }
+    .gal-placeholder .icon { font-size: 1.8rem; opacity: 0.3; }
+    .gal-placeholder .caption { font-size: 0.78rem; font-family: var(--font-sans); color: var(--text3); text-align: center; padding: 0.5rem 1rem; }
+    .gal-caption { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(3,12,24,0.95) 0%, transparent 100%); padding: 0.8rem 1rem; font-size: 0.8rem; font-family: var(--font-sans); color: var(--text); transform: translateY(100%); transition: transform 0.3s ease; }
+    .gal-item:hover .gal-caption { transform: translateY(0); }
+    .gal-tag-badge { position: absolute; top: 0.6rem; right: 0.6rem; font-size: 0.65rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.5rem; border-radius: 4px; background: rgba(3,12,24,0.85); border: 1px solid var(--border); color: var(--text3); }
+
+    /* Photo upload instructions */
+    .upload-guide { background: rgba(14,165,233,0.08); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; margin-bottom: 2.5rem; }
+    .upload-guide h4 { color: var(--sky); font-family: var(--font-sans); margin-bottom: 0.5rem; }
+    .upload-guide p { font-size: 0.88rem; color: var(--text2); }
+
+    /* Lightbox */
+    .lightbox { display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:2000; align-items:center; justify-content:center; }
+    .lightbox.open { display:flex; }
+    .lightbox img { max-width: 90vw; max-height: 85vh; border-radius: 8px; }
+    .lb-close { position:absolute; top:1.5rem; right:1.5rem; color:#fff; font-size:1.5rem; cursor:pointer; background:rgba(255,255,255,0.1); border:none; border-radius:50%; width:40px; height:40px; display:flex; align-items:center; justify-content:center; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Gallery</span>
+      <h1>Life in the Lab</h1>
+      <p>A visual record of the research programme — instruments, experiments, conferences, and the people who make the science happen.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <div class="upload-guide" data-anim>
+      <h4><i class="fas fa-camera" style="margin-right:0.5rem;"></i>Add Your Photos</h4>
+      <p>To populate this gallery, place your image files in the <code>assets/images/</code> folder and update the <code>&lt;img src="..."&gt;</code> tags below. Supported formats: JPG, PNG, WebP. Recommended categories: Lab Equipment, Experiments, Conferences, Group Photos, Awards, Field Work.</p>
+    </div>
+
+    <div class="gallery-filter" data-anim>
+      <button class="gal-btn active" onclick="filterGallery('all', this)">All</button>
+      <button class="gal-btn" onclick="filterGallery('lab', this)">Laboratory</button>
+      <button class="gal-btn" onclick="filterGallery('conference', this)">Conferences</button>
+      <button class="gal-btn" onclick="filterGallery('group', this)">Group</button>
+      <button class="gal-btn" onclick="filterGallery('award', this)">Awards</button>
+      <button class="gal-btn" onclick="filterGallery('beamline', this)">Beamline / IUAC</button>
+    </div>
+
+    <div class="gallery-masonry" data-anim id="gallery-grid">
+
+      <!-- Lab Equipment -->
+      <div class="gal-item" data-cat="lab" style="height:220px;">
+        <div class="gal-placeholder" style="height:220px;">
+          <i class="fas fa-thermometer-half icon" style="color:var(--amber);"></i>
+          <div class="caption">Seebeck Coefficient &amp; Resistivity Measurement System<br><small>80–650 K · Custom-built · Published in Rev. Sci. Instrum. 2019</small></div>
+        </div>
+        <div class="gal-tag-badge">Lab</div>
+        <div class="gal-caption">System I — Seebeck &amp; Resistivity (80–650 K)</div>
+      </div>
+
+      <div class="gal-item" data-cat="lab" style="height:280px;">
+        <div class="gal-placeholder" style="height:280px;">
+          <i class="fas fa-fire icon" style="color:var(--sky);"></i>
+          <div class="caption">ZT &amp; Thermal Conductivity Setup<br><small>300–1000 K · Complete thermoelectric characterisation</small></div>
+        </div>
+        <div class="gal-tag-badge">Lab</div>
+        <div class="gal-caption">System II — ZT &amp; Thermal Conductivity (300–1000 K)</div>
+      </div>
+
+      <div class="gal-item" data-cat="beamline" style="height:200px;">
+        <div class="gal-placeholder" style="height:200px;">
+          <i class="fas fa-radiation icon" style="color:var(--amber);"></i>
+          <div class="caption">IUAC Beamline Experiment Setup<br><small>In-situ characterisation under live ion beam</small></div>
+        </div>
+        <div class="gal-tag-badge">IUAC</div>
+        <div class="gal-caption">In-situ DLTS under Live SHI Beam · IUAC New Delhi</div>
+      </div>
+
+      <div class="gal-item" data-cat="lab" style="height:250px;">
+        <div class="gal-placeholder" style="height:250px;">
+          <i class="fas fa-snowflake icon" style="color:var(--sky);"></i>
+          <div class="caption">Dipstick Optical Cryostat<br><small>80 K – 500 K · Optical + transport (simultaneous)</small></div>
+        </div>
+        <div class="gal-tag-badge">Lab</div>
+        <div class="gal-caption">System V — Dipstick Optical Cryostat</div>
+      </div>
+
+      <div class="gal-item" data-cat="conference" style="height:240px;">
+        <div class="gal-placeholder" style="height:240px;">
+          <i class="fas fa-globe icon" style="color:var(--amber);"></i>
+          <div class="caption">Lindau Nobel Laureate Meeting 2019<br><small>Lindau, Germany · ~600 Young Scientists Globally</small></div>
+        </div>
+        <div class="gal-tag-badge">Award</div>
+        <div class="gal-caption">69th Lindau Nobel Laureate Meeting · July 2019</div>
+      </div>
+
+      <div class="gal-item" data-cat="group" style="height:210px;">
+        <div class="gal-placeholder" style="height:210px;">
+          <i class="fas fa-users icon" style="color:var(--sky);"></i>
+          <div class="caption">Research Group<br><small>Central University of Jammu · 2024</small></div>
+        </div>
+        <div class="gal-tag-badge">Group</div>
+        <div class="gal-caption">Research Group, CUJ</div>
+      </div>
+
+      <div class="gal-item" data-cat="beamline" style="height:260px;">
+        <div class="gal-placeholder" style="height:260px;">
+          <i class="fas fa-atom icon" style="color:var(--amber);"></i>
+          <div class="caption">IUAC Beamline Hall<br><small>Inter-University Accelerator Centre, New Delhi</small></div>
+        </div>
+        <div class="gal-tag-badge">IUAC</div>
+        <div class="gal-caption">IUAC Pelletron Accelerator Beamline</div>
+      </div>
+
+      <div class="gal-item" data-cat="conference" style="height:230px;">
+        <div class="gal-placeholder" style="height:230px;">
+          <i class="fas fa-chalkboard-teacher icon" style="color:var(--sky);"></i>
+          <div class="caption">MESD 2023 — JNU New Delhi<br><small>International Conference · Invited Talk</small></div>
+        </div>
+        <div class="gal-tag-badge">Conference</div>
+        <div class="gal-caption">Invited Talk at MESD 2023, JNU New Delhi</div>
+      </div>
+
+      <div class="gal-item" data-cat="award" style="height:220px;">
+        <div class="gal-placeholder" style="height:220px;">
+          <i class="fas fa-trophy icon" style="color:var(--amber);"></i>
+          <div class="caption">RSC Advances Outstanding Paper Award 2024<br><small>Royal Society of Chemistry · London</small></div>
+        </div>
+        <div class="gal-tag-badge">Award</div>
+        <div class="gal-caption">RSC Outstanding Paper Award 2024</div>
+      </div>
+
+      <div class="gal-item" data-cat="lab" style="height:190px;">
+        <div class="gal-placeholder" style="height:190px;">
+          <i class="fas fa-volume-off icon" style="color:var(--sky);"></i>
+          <div class="caption">1/f Noise Measurement System<br><small>80–500 K · Custom low-noise electronics</small></div>
+        </div>
+        <div class="gal-tag-badge">Lab</div>
+        <div class="gal-caption">System IV — 1/f Noise (80–500 K)</div>
+      </div>
+
+      <div class="gal-item" data-cat="conference" style="height:250px;">
+        <div class="gal-placeholder" style="height:250px;">
+          <i class="fas fa-plane icon" style="color:var(--amber);"></i>
+          <div class="caption">DRIP XVII Conference · Valladolid, Spain 2017<br><small>International Oral Presentation</small></div>
+        </div>
+        <div class="gal-tag-badge">Conference</div>
+        <div class="gal-caption">DRIP XVII — Valladolid, Spain · 2017</div>
+      </div>
+
+      <div class="gal-item" data-cat="group" style="height:240px;">
+        <div class="gal-placeholder" style="height:240px;">
+          <i class="fas fa-graduation-cap icon" style="color:var(--sky);"></i>
+          <div class="caption">PhD Thesis Award Ceremony<br><small>Dr. Vaishali Rathi — Best PhD Thesis, UPES 2025</small></div>
+        </div>
+        <div class="gal-tag-badge">Award</div>
+        <div class="gal-caption">Best PhD Thesis Award — Dr. Vaishali Rathi · UPES 2025</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO UPLOAD SECTION -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-label">Add Photos</span>
+      <h2 class="section-title">Contribute to the Gallery</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+      <p style="max-width:580px;margin:0 auto 2rem;color:var(--text2);">To add real photos to this gallery, place your images in the <code style="background:var(--bg3);padding:0.2rem 0.5rem;border-radius:4px;color:var(--sky);">assets/images/</code> folder and update the HTML. Here are the recommended categories:</p>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🔬</div>
+          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Lab Equipment &amp; Setups</div>
+        </div>
+        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">⚛️</div>
+          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">IUAC Beamline Experiments</div>
+        </div>
+        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🌍</div>
+          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">International Conferences</div>
+        </div>
+        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">👥</div>
+          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Group &amp; Students</div>
+        </div>
+        <div class="card" style="max-width:200px;padding:1.2rem;text-align:center;">
+          <div style="font-size:1.5rem;margin-bottom:0.5rem;">🏆</div>
+          <div style="font-size:0.82rem;color:var(--text2);font-family:var(--font-sans);">Awards &amp; Recognition</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>Research drives every line</p></div>
+  </div>
+</footer>
+
+<script src="assets/js/main.js"></script>
+<script>
+function filterGallery(cat, btn) {
+  document.querySelectorAll('.gal-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.gal-item').forEach(item => {
+    if (cat === 'all' || item.dataset.cat === cat) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+</script>
+</body>
+</html>

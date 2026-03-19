@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .research-block {
+      display: grid; grid-template-columns: 60px 1fr; gap: 1.5rem;
+      padding: 2.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05);
+      align-items: start;
+    }
+    .research-block:last-child { border-bottom: none; }
+    .research-num {
+      font-family: var(--font-sans); font-size: 2.8rem; font-weight: 700;
+      color: rgba(124,58,237,0.2); line-height: 1; padding-top: 0.2rem;
+    }
+    .research-body h3 { color: var(--text); margin-bottom: 0.5rem; font-size: 1.3rem; }
+    .research-body .sub { font-size: 0.8rem; color: var(--amber); font-family: var(--font-sans); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 0.8rem; display: block; }
+    .research-body p { color: var(--text2); font-size: 0.95rem; line-height: 1.75; margin-bottom: 0.8rem; }
+    .key-papers { margin-top: 1rem; padding: 1rem; background: rgba(124,58,237,0.05); border-left: 2px solid var(--amber); border-radius: 0 8px 8px 0; }
+    .key-papers h5 { font-size: 0.72rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; color: var(--amber); margin-bottom: 0.6rem; }
+    .key-papers li { font-size: 0.82rem; color: var(--text2); margin-bottom: 0.4rem; list-style: none; padding-left: 1rem; position: relative; }
+    .key-papers li::before { content: '★'; position: absolute; left: 0; color: var(--amber); font-size: 0.65rem; top: 0.15rem; }
+    .research-icon-lg { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+    .impact-box { background: rgba(14,165,233,0.08); border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1rem; margin-top: 0.8rem; display: flex; align-items: center; gap: 0.6rem; font-size: 0.82rem; color: var(--sky); }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle" aria-label="Toggle menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Research Programme</span>
+      <h1>Key Research Areas</h1>
+      <p>Seven interconnected domains spanning energy materials, semiconductor physics, ion-beam science, 2D materials, and space instrumentation — unified by experimental precision and indigenous instrumentation.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- R1 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">01</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-fire-flame-curved" style="margin-right:0.4rem;"></i>Thermoelectric Materials &amp; Energy Harvesting</span>
+        <h3>Converting Waste Heat into Usable Power</h3>
+        <p>Thermoelectric devices offer a direct pathway for converting temperature gradients into electricity without moving parts — ideal for waste-heat recovery, remote power generation, and flexible wearable electronics. This research programme investigates both inorganic wide-bandgap thermoelectrics (GaN, β-Ga₂O₃, SiC) operating at elevated temperatures, and organic-inorganic hybrid composites (PEDOT:PSS/Bi₂Te₃/rGO) as printable, flexible energy harvesters.</p>
+        <p>Key milestones include the first comprehensive thermoelectric characterisation of β-Ga₂O₃ single crystals across 80–630 K, and the most complete combined experimental and DFT study of GaN as a thermoelectric material. The group has demonstrated that swift heavy ion irradiation can precision-engineer thermopower in GaN — a research direction that opened an entirely new international niche.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">GaN · β-Ga₂O₃ · SiC</span>
+          <span class="tag">PEDOT:PSS / Bi₂Te₃ / rGO</span>
+          <span class="tag">Seebeck Coefficient</span>
+          <span class="tag">ZT Measurement</span>
+          <span class="tag gold-tag">SERB Funded</span>
+        </div>
+        <div class="key-papers">
+          <h5>Landmark Papers</h5>
+          <ul>
+            <li>Wide Range (80–630 K) Seebeck Study of β-Ga₂O₃ Single Crystals · Appl. Phys. Lett. 2021</li>
+            <li>GaN Thermoelectric Properties: Experimental &amp; DFT Study · Phys. Chem. Chem. Phys. 2021</li>
+            <li>Enhancement of Thermopower in GaN by Ion Irradiation · Appl. Phys. Lett. 2017</li>
+            <li>PEDOT:PSS/Bi₂Te₃/rGO Ternary Composite Films · RSC Advances 2024 — RSC Outstanding Paper Award</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- R2 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">02</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-atom" style="margin-right:0.4rem;"></i>Defects in Wide-Bandgap Semiconductors</span>
+        <h3>Deep-Level Physics in Next-Generation Materials</h3>
+        <p>Wide-bandgap semiconductors (GaN, SiC, β-Ga₂O₃, AlN, ZnO) are the backbone of modern power electronics and high-frequency devices. Their performance is determined critically by native and radiation-induced deep-level defects. This programme uses Deep Level Transient Spectroscopy (DLTS), 1/f noise analysis, Hall-effect transport, and in-situ beamline characterisation to map defect landscapes in these materials across cryogenic to high temperatures (80 K – 500 K).</p>
+        <p>A defining achievement is the world-first in-situ DLTS measurement of GaN Schottky diodes under live swift heavy ion beam irradiation — capturing defect formation and annealing kinetics in real time, impossible to observe through post-irradiation measurements alone.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">DLTS</span><span class="tag">1/f Noise</span><span class="tag">Hall Effect</span>
+          <span class="tag">GaN · SiC · Ga₂O₃</span><span class="tag">Defect Engineering</span>
+        </div>
+        <div class="impact-box"><i class="fas fa-star"></i> World's first in-situ DLTS under live SHI beam — no other Indian group has demonstrated this capability</div>
+        <div class="key-papers">
+          <h5>Key Papers</h5>
+          <ul>
+            <li>In-Situ DLTS of GaN SBDs under Live SHI Irradiation · Semicond. Sci. Technol. 2018</li>
+            <li>Trap Analysis on Pt-AlGaN/GaN SBD through DLTS · J. Semicond. 2023</li>
+            <li>Ion-Induced Transformation of Shallow to Deep Defects in GaN · Nucl. Instrum. Methods B 2024</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- R3 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">03</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-bolt" style="margin-right:0.4rem;"></i>III-V / IV Semiconductor Devices</span>
+        <h3>Radiation-Hard Devices for Defence &amp; Space</h3>
+        <p>GaN/AlGaN HEMT structures, SiC Schottky contacts, and GaN-based Schottky barrier diodes are critical for next-generation radar, satellite communications, and power conversion. This programme studies their electrical transport, barrier physics, surface passivation strategies (ruthenium-based passivation — a decade-long body of work published in APL 2014 and APL 2023), and radiation hardness under gamma, proton, and heavy-ion exposure.</p>
+        <p>The active DRDO CARS project extends this work to radiation hardness requirements for defence-grade semiconductor components, while the ongoing IUAC project investigates ion-beam modification as a precision tool for device engineering.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">GaN HEMT</span><span class="tag">Schottky Diodes</span>
+          <span class="tag">Surface Passivation</span><span class="tag gold-tag">DRDO CARS · IUAC Funded</span>
+        </div>
+        <div class="key-papers">
+          <h5>Key Papers</h5>
+          <ul>
+            <li>Barrier Height Enhancement using Ru-Based Passivation · Appl. Phys. Lett. 2014</li>
+            <li>Surface States Passivation in GaN by Ruthenium Solution · Appl. Phys. Lett. 2023 — Featured in Compound Semiconductor magazine</li>
+            <li>In-Situ Transport &amp; Microstructural Evolution in GaN under SHI · J. Appl. Phys. 2018</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- R4 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">04</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-radiation" style="margin-right:0.4rem;"></i>Ion–Matter Interactions</span>
+        <h3>Engineering Materials with Swift Heavy Ions</h3>
+        <p>Swift heavy ions (SHI) — typically hundreds of MeV heavy ions from particle accelerators — deposit energy into solids via electronic excitation, creating cylindrical latent damage tracks. This programme exploits SHI irradiation as a precision tool for modifying electrical, optical, and thermoelectric properties of semiconductor materials.</p>
+        <p>All experimental work is conducted at IUAC beamlines (New Delhi), where unique in-situ capabilities — developed by the PI — allow real-time electrical measurement during live beam irradiation. Collaborations with TEM groups at HZDR, Germany enable direct correlation of electrical modification with atomic-scale structural changes.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">SHI Irradiation</span><span class="tag">IUAC Beamlines</span>
+          <span class="tag">In-Situ I-V / C-V</span><span class="tag">TEM Correlation</span><span class="tag gold-tag">Active IUAC Project</span>
+        </div>
+        <div class="key-papers">
+          <h5>Key Papers</h5>
+          <ul>
+            <li>Electrical &amp; Microstructural Analyses of 200 MeV Ag-Irradiated Ni/GaN SBD · Appl. Phys. Lett. 2012 — Foundational PhD paper</li>
+            <li>Dynamics of Modification in Ni/GaN SBDs Irradiated at Low Temperature · Appl. Phys. Lett. 2014</li>
+            <li>Engineering Electronic Properties of Graphene by SHI · J. Appl. Phys. 2018</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- R5 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">05</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-layer-group" style="margin-right:0.4rem;"></i>2D Materials</span>
+        <h3>Graphene, MoS₂ &amp; Carbon Nanostructures</h3>
+        <p>Two-dimensional materials offer extraordinary electrical, thermal, and optical properties suitable for ultrathin thermoelectric generators, photodetectors, and novel Schottky junctions. This programme investigates graphene modification via swift heavy ion irradiation, MoS₂-based Schottky junctions with controlled barrier heights, and the role of graphene derivatives (rGO) in enhancing composite thermoelectric performance.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">Graphene</span><span class="tag">rGO</span><span class="tag">MoS₂</span>
+          <span class="tag">Carbon Nanostructures</span><span class="tag">Thermoelectric Applications</span>
+        </div>
+        <div class="key-papers">
+          <h5>Key Papers</h5>
+          <ul>
+            <li>Engineering Electronic Properties of Single-Layer Graphene by SHI · J. Appl. Phys. 2018</li>
+            <li>Pt/MoS₂ Schottky Barrier Junction Transport Properties · J. Alloys Compd. 2019</li>
+            <li>Graphene-Derived Composites in Thermoelectric Energy Conversion (Review) · Energy Adv. 2024</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- R6 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">06</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-satellite" style="margin-right:0.4rem;"></i>EUV / X-ray Space Exploration</span>
+        <h3>Nanomaterial Mirrors for Polarimetric Space Missions</h3>
+        <p>This programme — supported by ISRO RESPOND (₹60 Lakh) — develops nanomaterial-based multilayer mirror prototypes for extreme ultraviolet (EUV) and soft X-ray polarimetric space missions. The work combines thin film deposition, nanoscale characterisation, and optical modeling to design mirrors with precisely engineered reflectivity and polarimetric efficiency.</p>
+        <p>This is an exciting new direction that leverages the group's expertise in thin film physics and materials characterisation to address a direct need of the Indian space programme.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">EUV Optics</span><span class="tag">Multilayer Mirrors</span>
+          <span class="tag">Space Polarimetry</span><span class="tag gold-tag">ISRO RESPOND · ₹60 L</span>
+        </div>
+        <div class="impact-box"><i class="fas fa-rocket"></i> Active collaboration with ISRO for India's future space polarimetry missions</div>
+      </div>
+    </div>
+
+    <!-- R7 -->
+    <div class="research-block" data-anim>
+      <div class="research-num">07</div>
+      <div class="research-body">
+        <span class="sub"><i class="fas fa-thermometer-half" style="margin-right:0.4rem;"></i>Precision Cryogenic Instrumentation</span>
+        <h3>Building the Instruments that Build the Science</h3>
+        <p>A defining and internationally distinctive aspect of this research programme is the indigenous design and commissioning of five custom measurement systems — enabling a fully self-contained experimental capability without dependence on commercial or shared infrastructure. These systems operate across 80 K – 1000 K and collectively enable thermoelectric, defect, noise, and optical characterisation.</p>
+        <p>The Seebeck coefficient and resistivity system (80 K – 650 K, published in Rev. Sci. Instrum. 2019) is one of very few designed indigenously in India and is now used by multiple national collaborators. The in-situ DLTS system, developed for IUAC beamline use, represents a world-first capability.</p>
+        <div class="tags" style="margin-bottom:1rem;">
+          <span class="tag">Seebeck / ZT Systems</span><span class="tag">DLTS Setup</span>
+          <span class="tag">1/f Noise System</span><span class="tag">Cryogenics (80–1000 K)</span>
+          <span class="tag gold-tag">Published Rev. Sci. Instrum.</span>
+        </div>
+        <div class="key-papers">
+          <h5>Instrumentation Publication</h5>
+          <ul>
+            <li>Apparatus for Seebeck Coefficient Measurement of Wire, Thin Film &amp; Bulk Materials (80–650 K) · Rev. Sci. Instrum. 2019</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Dr. Ashish Kumar</div>
+        <p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p>
+      </div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar · Central University of Jammu</p><p>Research drives every line</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+    .contact-row { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .contact-row:last-child { border-bottom: none; }
+    .ci { width: 44px; height: 44px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--amber); flex-shrink: 0; }
+    .ci.teal { background: rgba(14,165,233,0.08); border-color: var(--border); color: var(--sky); }
+    .contact-info-text h4 { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 0.3rem; }
+    .contact-info-text a, .contact-info-text p { font-size: 0.92rem; color: var(--text2); line-height: 1.6; }
+    .contact-info-text a:hover { color: var(--amber); }
+    .profile-link { display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; transition: var(--transition); }
+    .profile-link:hover { border-color: var(--amber); background: var(--bg3); }
+    .profile-link .pl-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--amber); flex-shrink: 0; }
+    .profile-link .pl-info { flex: 1; }
+    .profile-link .pl-info h4 { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.15rem; }
+    .profile-link .pl-info p { font-size: 0.75rem; color: var(--text3); }
+    .profile-link .pl-arrow { color: var(--text3); font-size: 0.85rem; }
+    .teaching-row { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.88rem; display: flex; justify-content: space-between; align-items: center; }
+    .teaching-row:last-child { border-bottom: none; }
+    .teaching-course { color: var(--text); }
+    .teaching-level { font-size: 0.72rem; font-family: var(--font-sans); font-weight: 600; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .level-pg { background: var(--bg3); color: var(--amber); border: 1px solid var(--border); }
+    .level-ug { background: rgba(14,165,233,0.08); color: var(--sky); border: 1px solid var(--border); }
+    .membership-chip { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-family: var(--font-sans); color: var(--text2); padding: 0.4rem 0.9rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Get in Touch</span>
+      <h1>Contact</h1>
+      <p>For research collaborations, PhD inquiries, speaking invitations, or academic correspondence — Dr. Ashish Kumar welcomes your message.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+
+      <!-- LEFT: Contact Info -->
+      <div data-anim>
+        <span class="section-label">Direct Contact</span>
+        <h2 class="section-title" style="margin-bottom:0.5rem;">Reach Out</h2>
+        <div class="section-divider"></div>
+
+        <div class="contact-card" style="margin-bottom:1.5rem;">
+          <div class="contact-row">
+            <div class="ci"><i class="fas fa-envelope"></i></div>
+            <div class="contact-info-text">
+              <h4>Institutional Email</h4>
+              <a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="ci"><i class="fas fa-envelope-open"></i></div>
+            <div class="contact-info-text">
+              <h4>Personal Email</h4>
+              <a href="mailto:dr.akmr@gmail.com">dr.akmr@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="ci"><i class="fas fa-phone"></i></div>
+            <div class="contact-info-text">
+              <h4>Phone</h4>
+              <p>+91-9718686667</p>
+            </div>
+          </div>
+          <div class="contact-row">
+            <div class="ci teal"><i class="fas fa-building"></i></div>
+            <div class="contact-info-text">
+              <h4>Office Address</h4>
+              <p>Department of Physics &amp; Astronomical Sciences<br>Central University of Jammu<br>Jammu &amp; Kashmir — 181143, India</p>
+            </div>
+          </div>
+        </div>
+
+        <span class="section-label" style="margin-top:2rem;display:block;">Academic Profiles</span>
+        <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:0.8rem;">
+          <a href="https://scholar.google.com" target="_blank" class="profile-link">
+            <div class="pl-icon"><i class="fas fa-graduation-cap"></i></div>
+            <div class="pl-info"><h4>Google Scholar</h4><p>78 papers · h-index: 26 · 1,680 citations</p></div>
+            <div class="pl-arrow"><i class="fas fa-external-link-alt"></i></div>
+          </a>
+          <a href="https://orcid.org" target="_blank" class="profile-link">
+            <div class="pl-icon"><i class="fab fa-orcid"></i></div>
+            <div class="pl-info"><h4>ORCID</h4><p>Verified researcher profile</p></div>
+            <div class="pl-arrow"><i class="fas fa-external-link-alt"></i></div>
+          </a>
+          <a href="https://www.researchgate.net" target="_blank" class="profile-link">
+            <div class="pl-icon"><i class="fab fa-researchgate"></i></div>
+            <div class="pl-info"><h4>ResearchGate</h4><p>Full publication list and metrics</p></div>
+            <div class="pl-arrow"><i class="fas fa-external-link-alt"></i></div>
+          </a>
+          <a href="#" class="profile-link">
+            <div class="pl-icon"><i class="fas fa-database"></i></div>
+            <div class="pl-info"><h4>Web of Science</h4><p>Clarivate Analytics researcher profile</p></div>
+            <div class="pl-arrow"><i class="fas fa-external-link-alt"></i></div>
+          </a>
+        </div>
+      </div>
+
+      <!-- RIGHT: Teaching + Memberships + Awards -->
+      <div data-anim data-delay="2">
+        <span class="section-label">Teaching (Current)</span>
+        <h2 class="section-title">Courses at CUJ</h2>
+        <div class="section-divider"></div>
+        <div class="contact-card" style="margin-bottom:2rem;">
+          <div class="teaching-row">
+            <span class="teaching-course">Condensed Matter Physics</span>
+            <span class="teaching-level level-pg">PG</span>
+          </div>
+          <div class="teaching-row">
+            <span class="teaching-course">Astronomy &amp; Astrophysics</span>
+            <span class="teaching-level level-pg">PG / UG</span>
+          </div>
+          <div class="teaching-row">
+            <span class="teaching-course">Modern Physics</span>
+            <span class="teaching-level level-ug">UG</span>
+          </div>
+          <div class="teaching-row">
+            <span class="teaching-course">Thermal Physics</span>
+            <span class="teaching-level level-ug">UG / PG</span>
+          </div>
+          <div class="teaching-row">
+            <span class="teaching-course">Semiconductor Physics &amp; Materials Characterisation</span>
+            <span class="teaching-level level-pg">PG</span>
+          </div>
+        </div>
+
+        <span class="section-label">Professional Memberships</span>
+        <div style="display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1rem;margin-bottom:2rem;">
+          <span class="membership-chip"><i class="fas fa-atom" style="color:var(--amber);"></i> Ion Beam Society of India (IBSI)</span>
+          <span class="membership-chip"><i class="fas fa-microchip" style="color:var(--amber);"></i> Semiconductor Society of India (SSI)</span>
+          <span class="membership-chip"><i class="fas fa-flask" style="color:var(--amber);"></i> Indian Physics Association (IPA)</span>
+          <span class="membership-chip"><i class="fas fa-layer-group" style="color:var(--amber);"></i> Materials Research Society India (MRSI)</span>
+        </div>
+
+        <span class="section-label">Peer Review Service</span>
+        <div class="contact-card" style="margin-top:1rem;">
+          <p style="font-size:0.82rem;color:var(--text3);margin-bottom:0.8rem;">Regular reviewer for:</p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+            <span class="chip">Applied Physics Letters (AIP)</span>
+            <span class="chip">Journal of Applied Physics (AIP)</span>
+            <span class="chip">Semicond. Sci. &amp; Technology (IOP)</span>
+            <span class="chip">Current Applied Physics (Elsevier)</span>
+            <span class="chip">Materials Science &amp; Engineering B</span>
+            <span class="chip">Review of Scientific Instruments</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center" data-anim style="margin-bottom:2rem;">
+      <span class="section-label">Location</span>
+      <h2 class="section-title">Central University of Jammu</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+    <div data-anim style="background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius);height:300px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:1rem;">
+      <i class="fas fa-map-marker-alt" style="font-size:2rem;color:var(--amber);"></i>
+      <div style="text-align:center;">
+        <div style="color:var(--text);font-family:var(--font-serif);font-size:1.1rem;margin-bottom:0.3rem;">Department of Physics &amp; Astronomical Sciences</div>
+        <div style="color:var(--text2);font-size:0.88rem;">Central University of Jammu, Jammu &amp; Kashmir — 181143</div>
+        <a href="https://maps.google.com/?q=Central+University+of+Jammu" target="_blank" class="btn btn-outline" style="margin-top:1rem;font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-map"></i> View on Google Maps</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK LINKS -->
+<section class="section">
+  <div class="container">
+    <div class="text-center" data-anim>
+      <span class="section-label">Quick Access</span>
+      <h2 class="section-title">Explore the Website</h2>
+      <div class="section-divider" style="margin:0 auto 1.5rem;"></div>
+      <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+        <a href="research.html" class="btn btn-outline"><i class="fas fa-flask"></i> Research Areas</a>
+        <a href="publications.html" class="btn btn-outline"><i class="fas fa-book-open"></i> Publications</a>
+        <a href="lab.html" class="btn btn-outline"><i class="fas fa-microscope"></i> Laboratory</a>
+        <a href="group.html" class="btn btn-gold"><i class="fas fa-users"></i> Join the Group</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Dr. Ashish Kumar</div>
+        <p class="footer-desc">Associate Professor of Physics &amp; Astronomical Sciences, Central University of Jammu. Experimental physicist, PI of three national research projects, Lindau Nobel Laureate Meeting Alumni 2019.</p>
+        <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+          <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.researchgate.net" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li><a href="mailto:dr.akmr@gmail.com">dr.akmr@gmail.com</a></li><li style="color:var(--text3);font-size:0.82rem;">Dept. Physics &amp; Astronomical Sciences</li><li style="color:var(--text3);font-size:0.82rem;">CUJ, J&amp;K — 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Ashish Kumar · Central University of Jammu</p>
+      <p>Built with care · Research drives every line</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

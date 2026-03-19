@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>News — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .news-full-timeline { position: relative; padding-left: 2.5rem; }
+    .news-full-timeline::before { content:''; position:absolute; left:0; top:0; bottom:0; width:2px; background: linear-gradient(to bottom, var(--amber), var(--sky), rgba(124,58,237,0.2)); }
+    .news-entry { position: relative; margin-bottom: 2.5rem; padding-bottom: 2.5rem; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .news-entry:last-child { border-bottom: none; }
+    .news-dot { position: absolute; left: -2.9rem; top: 0.4rem; width: 14px; height: 14px; border-radius: 50%; border: 2px solid var(--bg); flex-shrink: 0; }
+    .news-dot.gold { background: var(--amber); box-shadow: 0 0 10px rgba(124,58,237,0.5); }
+    .news-dot.teal { background: var(--sky); box-shadow: 0 0 10px rgba(14,165,233,0.5); }
+    .news-dot.green { background: #22c55e; box-shadow: 0 0 10px rgba(34,197,94,0.5); }
+    .news-cat { font-size: 0.68rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 0.2rem 0.7rem; border-radius: 4px; display: inline-flex; margin-bottom: 0.6rem; }
+    .cat-award { background: var(--bg3); color: var(--amber); border: 1px solid var(--border); }
+    .cat-publication { background: rgba(14,165,233,0.08); color: var(--sky); border: 1px solid var(--border); }
+    .cat-talk { background: rgba(139,92,246,0.1); color: #a78bfa; border: 1px solid rgba(139,92,246,0.2); }
+    .cat-project { background: rgba(34,197,94,0.1); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+    .cat-student { background: rgba(251,146,60,0.1); color: #fb923c; border: 1px solid rgba(251,146,60,0.2); }
+    .cat-conference { background: rgba(236,72,153,0.1); color: #f472b6; border: 1px solid rgba(236,72,153,0.2); }
+    .news-entry h3 { font-family: var(--font-serif); font-size: 1.15rem; color: var(--text); margin-bottom: 0.5rem; }
+    .news-entry p { font-size: 0.9rem; color: var(--text2); line-height: 1.7; }
+    .news-date { font-size: 0.75rem; font-family: var(--font-sans); font-weight: 600; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.4rem; }
+    .year-marker { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: var(--amber); background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; padding: 0.35rem 1rem; display: inline-block; margin: 1.5rem 0; position: relative; left: -2.5rem; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html" class="active">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Latest Updates</span>
+      <h1>News &amp; Highlights</h1>
+      <p>Awards, publications, talks, student achievements, and milestones from the group.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="news-full-timeline" data-anim>
+
+      <!-- 2026 -->
+      <div class="year-marker">2026</div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">March 2026</div>
+        <span class="news-cat cat-talk">Invited Talk</span>
+        <h3>Resource Person — Refresher Course in Physics, CUH Mahendergarh</h3>
+        <p>Invited as Resource Person at the Refresher Course in Physics organised by Central University of Haryana (CUH), Mahendergarh (February 2026). Lecture delivered on "Probing Defects in Semiconductors: Deep Level Transient Spectroscopy Technique." Part of UGC-HRDC continuing education programme for college and university teachers.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot green"></div>
+        <div class="news-date">March 2026</div>
+        <span class="news-cat cat-project">PhD Awarded</span>
+        <h3>Third PhD Degree Awarded — April 2026</h3>
+        <p>The group's third doctoral student successfully completed their PhD degree. The thesis defended in April 2026 contributes to the growing portfolio of research output from the group at Central University of Jammu.</p>
+      </div>
+
+      <!-- 2025 -->
+      <div class="year-marker">2025</div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">2025</div>
+        <span class="news-cat cat-award">🏆 Award — Supervised Scholar</span>
+        <h3>Best PhD Thesis Award — Dr. Vaishali Rathi</h3>
+        <p>Doctoral student Dr. Vaishali Rathi's thesis, <em>"Fabrication of Printable Flexible Thermoelectric Material and Devices"</em>, was awarded the <strong>Best PhD Thesis</strong> at the UPES Dehradun Convocation 2025. The work, conducted under Dr. Ashish Kumar's supervision, demonstrated a high-performance printable flexible thermoelectric composite combining PEDOT:PSS, Bi₂Te₃, and rGO — directly advancing the SERB-funded thermoelectric programme.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">December 2025</div>
+        <span class="news-cat cat-student">🌟 Student Achievement</span>
+        <h3>Best Poster Award — Ms. Muskan at DAE-SSPS 2025</h3>
+        <p>PhD student Ms. Muskan was awarded the <strong>Best Poster Award</strong> at the DAE Solid State Physics Symposium (DAE-SSPS 2025) — one of the most prestigious annual physics symposia in India, organised by the Department of Atomic Energy. A proud milestone for the group at Central University of Jammu.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">November 2025</div>
+        <span class="news-cat cat-project">PhD Awarded</span>
+        <h3>Second PhD Degree Awarded</h3>
+        <p>The group's second doctoral student at UPES Dehradun successfully defended and completed their PhD degree in November 2025, bringing the total number of PhD degrees awarded under Dr. Kumar's supervision to two.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">2025</div>
+        <span class="news-cat cat-talk">Resource Person</span>
+        <h3>Electrical Characterisation Techniques for Semiconductors — CUH, July 2025</h3>
+        <p>Invited as Resource Person for a lecture on "Electrical Characterisation Techniques for Semiconductors" at Central University of Haryana (CUH), Mahendergarh (July 07, 2025).</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">June 2025</div>
+        <span class="news-cat cat-publication">Publication</span>
+        <h3>New Papers: NiO-GO Composites, TiO₂ Films &amp; Bi₂Te₃ (2025)</h3>
+        <p>Three new peer-reviewed papers published in 2025: (1) "Enhanced Optical and Electrical Properties of NiO-GO Composite Films on PET" in <em>Chemistry of Inorganic Materials</em>; (2) "UV Protection and Photocatalytic Activity in Sm/Eu Co-Doped TiO₂ Thin Films" in <em>Materials Science &amp; Engineering B</em>; (3) "Enhancement in Power Factor of Sn/Zn Co-Doped Bismuth Telluride" in <em>Journal of Materials Science: Materials in Electronics</em>.</p>
+      </div>
+
+      <!-- 2024 -->
+      <div class="year-marker">2024</div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">2024</div>
+        <span class="news-cat cat-award">🏆 RSC Outstanding Paper Award</span>
+        <h3>RSC Advances Outstanding Paper Award — Flexible Thermoelectric Composites</h3>
+        <p>The paper <em>"Improved Thermoelectric Performance of PEDOT:PSS/Bi₂Te₃/rGO Ternary Composite Films for Energy Harvesting"</em> (RSC Advances, 2024) was selected for the <strong>RSC Advances Outstanding Student Paper Award</strong> by the Royal Society of Chemistry — competitive international recognition for the group's flexible thermoelectric research.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">October 2024</div>
+        <span class="news-cat cat-conference">Conference Organisation</span>
+        <h3>Secretary — International Conference on Physics for Sustainable Development (ICPSD 2024)</h3>
+        <p>Dr. Ashish Kumar served as Secretary of the <strong>International Conference on Physics for Sustainable Development (ICPSD 2024)</strong>, hosted at Central University of Jammu. The conference brought together researchers from across India and internationally to discuss physics-driven approaches to sustainable development challenges.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">March 2024</div>
+        <span class="news-cat cat-talk">Invited Lecture</span>
+        <h3>Invited Lecture — Faculty Development Programme, Patna University</h3>
+        <p>Delivered an invited lecture on <em>"Electrical Transport Properties Measurement in Materials"</em> at the Faculty Development Programme on Advances in Experimental &amp; Theoretical Research in Physical Sciences, Dept. of Physics, Patna University (March 4–16, 2024).</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">2024</div>
+        <span class="news-cat cat-publication">Publication</span>
+        <h3>Four New Papers in 2024: GaN Defects, Bi₂Te₃, Reviews &amp; Phosphors</h3>
+        <p>Four new papers published in 2024 in journals including <em>RSC Advances</em>, <em>Organic Electronics</em>, <em>Nuclear Instruments and Methods B</em> (two papers), and <em>Ceramics International</em>. Topics span flexible thermoelectrics, ion-induced defect transformation in GaN, and luminescence of nanophosphors.</p>
+      </div>
+
+      <!-- 2023 -->
+      <div class="year-marker">2023</div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">November 2023</div>
+        <span class="news-cat cat-project">PhD Awarded</span>
+        <h3>First PhD Degree Awarded at UPES/CUJ</h3>
+        <p>The first doctoral student supervised by Dr. Ashish Kumar successfully completed their PhD degree in November 2023, marking a proud milestone for the group's supervisory record.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">October 2023</div>
+        <span class="news-cat cat-talk">International Invited Talk</span>
+        <h3>Invited Lecture at MESD 2023, JNU New Delhi</h3>
+        <p>Delivered an invited lecture on <em>"Wide-Bandgap Materials as Thermoelectric Materials for High-Temperature Applications"</em> at the International Conference on Materials for Energy &amp; Sustainable Development (MESD 2023), JNU New Delhi (October 27–29, 2023).</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">August 2023</div>
+        <span class="news-cat cat-project">Career Milestone</span>
+        <h3>Joins Central University of Jammu as Associate Professor</h3>
+        <p>Dr. Ashish Kumar joins the Department of Physics &amp; Astronomical Sciences at Central University of Jammu as Associate Professor (August 2023). He arrives with active DRDO CARS, IUAC, and ISRO RESPOND projects, three PhD students, and a well-established publication record — immediately becoming one of the most externally-funded faculty in the department.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">January 2023</div>
+        <span class="news-cat cat-talk">Invited Talk</span>
+        <h3>I-STEM Tech Management Conclave 2023, IISc Bangalore</h3>
+        <p>Invited talk on <em>"Wide-Bandgap Semiconductors as Thermoelectric Materials"</em> at the I-STEM Tech Management Conclave 2023 held at IISc Bangalore (January 19–20, 2023).</p>
+      </div>
+
+      <!-- 2019 -->
+      <div class="year-marker">2019 · A Historic Year</div>
+
+      <div class="news-entry">
+        <div class="news-dot gold"></div>
+        <div class="news-date">July 2019</div>
+        <span class="news-cat cat-award">🏅 Lindau Nobel Laureate Meeting</span>
+        <h3>Selected for 69th Lindau Nobel Laureate Meeting, Germany</h3>
+        <p>Selected among approximately 600 outstanding young scientists globally to attend the 69th Lindau Nobel Laureate Meeting (Physics) in Lindau, Germany — a once-in-a-career honour. Approximately 15–20 Indian nominees are selected nationally across all disciplines each year. The meeting brings Nobel Prize winners and the next generation of leading scientists together for a week of dialogue and inspiration.</p>
+      </div>
+
+      <div class="news-entry">
+        <div class="news-dot teal"></div>
+        <div class="news-date">2019</div>
+        <span class="news-cat cat-publication">Publication — Rev. Sci. Instrum.</span>
+        <h3>Seebeck Measurement System Published in Review of Scientific Instruments</h3>
+        <p>The indigenous Seebeck coefficient and resistivity measurement system (80–650 K) designed from scratch was published in <em>Review of Scientific Instruments</em> (AIP, 2019) — one of very few such systems designed indigenously in India, and now used by multiple collaborating national groups.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>Research drives every line</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

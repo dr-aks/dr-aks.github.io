@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Laboratory — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .system-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem; transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .system-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--amber), transparent); }
+    .system-card.teal-bar::before { background: linear-gradient(90deg, var(--sky), transparent); }
+    .system-card:hover { border-color: rgba(124,58,237,0.35); transform: translateY(-3px); }
+    .system-num { font-family: var(--font-sans); font-size: 3.5rem; font-weight: 800; color: rgba(124,58,237,0.1); position: absolute; bottom: 1rem; right: 1.5rem; line-height: 1; }
+    .spec-row { display: flex; justify-content: space-between; align-items: center; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.85rem; }
+    .spec-row:last-child { border-bottom: none; }
+    .spec-label { color: var(--text3); font-family: var(--font-sans); }
+    .spec-val { color: var(--text); font-weight: 500; }
+    .spec-val.gold { color: var(--amber); }
+    .spec-val.teal { color: var(--sky); }
+    .capability-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px,1fr)); gap: 0.8rem; margin-top: 1.5rem; }
+    .cap-chip { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 0.8rem 1rem; font-size: 0.82rem; color: var(--text2); font-family: var(--font-sans); display: flex; align-items: center; gap: 0.6rem; }
+    .cap-chip i { color: var(--amber); font-size: 0.9rem; }
+    .project-row { display: grid; grid-template-columns: auto 1fr auto; gap: 1.5rem; align-items: center; padding: 1.2rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 1rem; transition: var(--transition); }
+    .project-row:hover { border-color: rgba(124,58,237,0.3); }
+    .project-row .agency-badge { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: #000; background: var(--amber); border-radius: 6px; padding: 0.4rem 0.7rem; }
+    .project-row .agency-badge.teal { background: var(--sky); }
+    .project-row h4 { font-family: var(--font-sans); font-size: 0.9rem; color: var(--text); margin-bottom: 0.2rem; }
+    .project-row p { font-size: 0.8rem; color: var(--text2); }
+    .project-row .amount { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 700; color: var(--amber); text-align: right; }
+    .world-first { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(14,165,233,0.1); border: 1px solid var(--sky); border-radius: 6px; padding: 0.4rem 0.9rem; font-size: 0.75rem; font-family: var(--font-sans); font-weight: 600; color: var(--sky); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 0.8rem; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="lab.html" class="active">Lab</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Laboratory</span>
+      <h1>The Measurement Lab</h1>
+      <p>Five indigenous precision measurement systems, three concurrent national projects, and an experimental philosophy rooted in building the instruments that build the science.</p>
+    </div>
+  </div>
+</div>
+
+<!-- OVERVIEW -->
+<section class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+      <div data-anim>
+        <span class="section-label">Overview</span>
+        <h2 class="section-title">An Indigenous Experimental Programme</h2>
+        <div class="section-divider"></div>
+        <p style="margin-bottom:1rem;">The laboratory philosophy is simple but powerful: <strong>build what you need, and understand it completely.</strong> Five custom measurement systems — each independently designed, fabricated, and commissioned — give the group complete control over experiment design, data quality, and measurement range, without dependence on commercial instruments or shared infrastructure.</p>
+        <p style="margin-bottom:1rem;">The lab enables continuous measurement from <strong>liquid nitrogen temperature (80 K) to 1000 K</strong>, spanning cryogenic solid-state physics through high-temperature thermoelectric characterisation. Systems include Seebeck/resistivity, ZT, in-situ DLTS under live ion-beam, 1/f noise, and a dipstick optical cryostat.</p>
+        <p>The in-situ DLTS system, operated at the <strong>IUAC beamlines (New Delhi)</strong>, represents a world-first capability — no other Indian group has demonstrated real-time DLTS of semiconductor devices under live swift heavy ion irradiation.</p>
+      </div>
+      <div data-anim data-delay="2">
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+          <div class="card text-center" style="padding:1.5rem 1rem;">
+            <div style="font-size:2rem;font-weight:700;color:var(--amber);font-family:var(--font-sans);">5</div>
+            <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Custom Systems</div>
+          </div>
+          <div class="card text-center" style="padding:1.5rem 1rem;">
+            <div style="font-size:2rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">80–1000K</div>
+            <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Temperature Range</div>
+          </div>
+          <div class="card text-center" style="padding:1.5rem 1rem;">
+            <div style="font-size:2rem;font-weight:700;color:var(--amber);font-family:var(--font-sans);">₹96L</div>
+            <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Active Funding</div>
+          </div>
+          <div class="card text-center" style="padding:1.5rem 1rem;">
+            <div style="font-size:2rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">3</div>
+            <div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Active Projects</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSTRUMENTS -->
+<section class="section section-alt" id="instruments">
+  <div class="container">
+    <div class="text-center mb-3" data-anim>
+      <span class="section-label">Instrumentation</span>
+      <h2 class="section-title">Custom Measurement Systems</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:1.5rem;">
+
+      <div class="system-card" data-anim data-delay="1">
+        <div class="world-first" style="background:var(--bg3);border-color:var(--amber);color:var(--amber);">📄 Published · Rev. Sci. Instrum.</div>
+        <h3 style="color:var(--amber);margin-bottom:0.5rem;">System I — Seebeck &amp; Resistivity</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Versatile system for simultaneous Seebeck coefficient and electrical resistivity measurement of wires, thin films, and bulk materials from liquid nitrogen to above room temperature.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ (80 K) – 650 K</span></div>
+        <div class="spec-row"><span class="spec-label">Sample Geometry</span><span class="spec-val">Wire · Thin Film · Bulk</span></div>
+        <div class="spec-row"><span class="spec-label">Publication</span><span class="spec-val teal">Rev. Sci. Instrum. (2019)</span></div>
+        <div class="spec-row"><span class="spec-label">Users</span><span class="spec-val">Multiple national collaborators</span></div>
+        <div class="system-num">01</div>
+      </div>
+
+      <div class="system-card" data-anim data-delay="2">
+        <div class="world-first" style="background:var(--bg3);border-color:var(--amber);color:var(--amber);">🔬 Rare Capability in India</div>
+        <h3 style="color:var(--amber);margin-bottom:0.5rem;">System II — ZT &amp; Thermal Conductivity</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Complete thermoelectric figure-of-merit (ZT) characterisation for bulk pellets and sintered materials at elevated temperatures. Full thermoelectric characterisation suite in a single lab.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">300 K – 1000 K</span></div>
+        <div class="spec-row"><span class="spec-label">Sample Type</span><span class="spec-val">Bulk Pellets · Sintered Materials</span></div>
+        <div class="spec-row"><span class="spec-label">Measures</span><span class="spec-val">κ, S, σ → ZT</span></div>
+        <div class="spec-row"><span class="spec-label">Status</span><span class="spec-val teal">Operational</span></div>
+        <div class="system-num">02</div>
+      </div>
+
+      <div class="system-card teal-bar" data-anim data-delay="3">
+        <div class="world-first">🌍 World First · In-Situ DLTS under Live SHI Beam</div>
+        <h3 style="color:var(--sky);margin-bottom:0.5rem;">System III — In-Situ DLTS</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Real-time deep-level transient spectroscopy of semiconductor devices during live swift heavy ion beam irradiation at IUAC beamlines. Captures defect formation and recovery kinetics impossible to extract from post-irradiation measurements.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ – 500 K</span></div>
+        <div class="spec-row"><span class="spec-label">Capability</span><span class="spec-val">Real-time under live SHI beam</span></div>
+        <div class="spec-row"><span class="spec-label">Location</span><span class="spec-val">IUAC Beamlines, New Delhi</span></div>
+        <div class="spec-row"><span class="spec-label">World Status</span><span class="spec-val teal">Unique — no other Indian group</span></div>
+        <div class="system-num">03</div>
+      </div>
+
+      <div class="system-card" data-anim data-delay="1">
+        <h3 style="color:var(--amber);margin-bottom:0.5rem;">System IV — 1/f Noise Measurement</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Custom-built low-noise electronics with cryogenic access for 1/f (flicker) noise spectroscopy of thin films, epilayers, and devices. 1/f noise is a sensitive probe of defect concentration and quality.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ (80 K) – 500 K</span></div>
+        <div class="spec-row"><span class="spec-label">Sample Types</span><span class="spec-val">Thin Films · Epilayers · Devices</span></div>
+        <div class="spec-row"><span class="spec-label">Electronics</span><span class="spec-val">Custom low-noise design</span></div>
+        <div class="system-num">04</div>
+      </div>
+
+      <div class="system-card" data-anim data-delay="2">
+        <h3 style="color:var(--amber);margin-bottom:0.5rem;">System V — Dipstick Optical Cryostat</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Low-temperature optical system enabling simultaneous photoluminescence, optical absorption, and electrical transport characterisation. Designed for in-situ optical probing at cryogenic temperatures.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">LN₂ (80 K) – 500 K</span></div>
+        <div class="spec-row"><span class="spec-label">Capability</span><span class="spec-val">Optical + Transport (simultaneous)</span></div>
+        <div class="spec-row"><span class="spec-label">Access</span><span class="spec-val">Dipstick — portable, flexible</span></div>
+        <div class="system-num">05</div>
+      </div>
+
+      <div class="system-card teal-bar" data-anim data-delay="3">
+        <h3 style="color:var(--sky);margin-bottom:0.5rem;">Bonus — Low-Cost Vacuum Oven</h3>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">An ingenious low-cost vacuum oven constructed from a desiccator for annealing organic thin film samples (PEDOT:PSS composites) under vacuum — enabling the flexible thermoelectric research programme without expensive commercial equipment.</p>
+        <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">RT – 450 K</span></div>
+        <div class="spec-row"><span class="spec-label">Design</span><span class="spec-val">Desiccator-based vacuum oven</span></div>
+        <div class="spec-row"><span class="spec-label">Use</span><span class="spec-val">Organic / flexible thermoelectrics</span></div>
+        <div class="system-num">06</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECHNICAL EXPERTISE -->
+<section class="section">
+  <div class="container">
+    <div class="text-center mb-3" data-anim>
+      <span class="section-label">Capabilities</span>
+      <h2 class="section-title">Technical Expertise</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div class="grid-3" data-anim style="margin-bottom:3rem;">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-atom"></i></div>
+        <h3 style="margin-bottom:1rem;color:var(--text);">Materials &amp; Device Systems</h3>
+        <div class="capability-grid" style="gap:0.5rem;margin-top:0;">
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> GaN / AlGaN</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> SiC</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> β-Ga₂O₃</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> PEDOT:PSS</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> Graphene</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> Carbon Nanotubes</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> MoS₂</div>
+          <div class="cap-chip"><i class="fas fa-circle-dot"></i> ZnO / AlN</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon teal"><i class="fas fa-magnifying-glass-chart"></i></div>
+        <h3 style="margin-bottom:1rem;color:var(--text);">Characterisation Techniques</h3>
+        <div class="capability-grid" style="gap:0.5rem;margin-top:0;">
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> DLTS</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> Hall Effect</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> Seebeck / ZT</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> 1/f Noise</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> I-V / C-V</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> TEM / AFM / STM</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> XRD / XPS</div>
+          <div class="cap-chip"><i class="fas fa-wave-square"></i> UV-Vis / PL</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-flask"></i></div>
+        <h3 style="margin-bottom:1rem;color:var(--text);">Fabrication &amp; Processing</h3>
+        <div class="capability-grid" style="gap:0.5rem;margin-top:0;">
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> Class 100 Cleanroom</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> e-Beam Evaporation</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> Photolithography</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> SHI Irradiation</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> Ion Implantation</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> RTA Annealing</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> Wet Passivation</div>
+          <div class="cap-chip"><i class="fas fa-layer-group"></i> ALD (ZnO)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-anim style="padding:1.5rem 2rem;">
+      <h3 style="color:var(--text);margin-bottom:0.8rem;">Computing &amp; Simulation</h3>
+      <div style="display:flex;flex-wrap:wrap;gap:0.6rem;">
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> LabVIEW</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> SRIM/TRIM</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> Quantum ATK</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> Wien2K</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> BoltzTrap</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> Origin Pro</span>
+        <span class="chip"><i class="fas fa-code" style="color:var(--amber);"></i> Test-Point</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDED PROJECTS -->
+<section class="section section-alt" id="projects">
+  <div class="container">
+    <div class="text-center mb-3" data-anim>
+      <span class="section-label">Sponsored Research</span>
+      <h2 class="section-title">Funded Projects (Principal Investigator)</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div data-anim style="margin-bottom:1.5rem;">
+      <div class="highlight-box" style="display:flex;justify-content:space-around;align-items:center;flex-wrap:wrap;gap:2rem;padding:2rem;">
+        <div class="text-center"><div style="font-size:2rem;font-weight:700;color:var(--amber);font-family:var(--font-sans);">₹1.45 Cr</div><div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Total External Funding</div></div>
+        <div class="text-center"><div style="font-size:2rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">₹96.07 L</div><div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Currently Active</div></div>
+        <div class="text-center"><div style="font-size:2rem;font-weight:700;color:var(--amber);font-family:var(--font-sans);">3</div><div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">Simultaneous Active Projects</div></div>
+        <div class="text-center"><div style="font-size:2rem;font-weight:700;color:var(--sky);font-family:var(--font-sans);">ISRO · DRDO · IUAC</div><div style="font-size:0.75rem;color:var(--text3);font-family:var(--font-sans);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.3rem;">National Agencies</div></div>
+      </div>
+    </div>
+
+    <h3 style="color:var(--amber);font-family:var(--font-sans);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin-bottom:1rem;" data-anim>🟢 Ongoing Projects</h3>
+    <div class="project-row" data-anim>
+      <div class="agency-badge">ISRO</div>
+      <div><h4>Nanomaterial-Based EUV/X-ray Multilayer Mirrors for Polarimetric Space Missions</h4><p>RESPOND Programme · Active · 2 manuscripts in progress</p></div>
+      <div class="amount">₹60 L</div>
+    </div>
+    <div class="project-row" data-anim>
+      <div class="agency-badge">DRDO</div>
+      <div><h4>Radiation Effects in GaN/AlGaN HEMT Structures for Defence Applications</h4><p>CARS Programme · Active · Defence semiconductor reliability</p></div>
+      <div class="amount">₹26.07 L</div>
+    </div>
+    <div class="project-row" data-anim>
+      <div class="agency-badge teal">IUAC</div>
+      <div><h4>Ion-Beam Defect Engineering in Wide-Bandgap Semiconductors</h4><p>UFR-76304 · Active · In-situ beamline experiments</p></div>
+      <div class="amount">₹10 L</div>
+    </div>
+
+    <h3 style="color:var(--text3);font-family:var(--font-sans);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;margin:2rem 0 1rem;" data-anim>✓ Completed Projects</h3>
+    <div class="project-row" data-anim>
+      <div class="agency-badge" style="background:var(--bg3);color:var(--text3);">SERB</div>
+      <div><h4>All-Printed Thermoelectric Generators</h4><p>Completed Oct 2020 – Oct 2022 · IUAC &amp; UPES Dehradun · as PI</p></div>
+      <div class="amount" style="color:var(--text3);">₹14 L</div>
+    </div>
+    <div class="project-row" data-anim>
+      <div class="agency-badge" style="background:var(--bg3);color:var(--text3);">DST</div>
+      <div><h4>Defect-Assisted Current Transport in III-V Semiconductors for Thermoelectric/Energy Applications</h4><p>DST-INSPIRE Faculty Project · Completed Aug 2015 – Aug 2020 · IUAC</p></div>
+      <div class="amount" style="color:var(--text3);">₹35 L</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>Research drives every line</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
