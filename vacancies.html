@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vacancies & Positions — Dr. Ashish Kumar</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .vacancy-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.8rem; margin-bottom: 1.2rem; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .vacancy-card:hover { border-color: rgba(124,58,237,0.35); box-shadow: var(--shadow); }
+    .vacancy-card.open { border-left: 4px solid #22c55e; }
+    .vacancy-card.closed { border-left: 4px solid var(--text3); opacity: 0.7; }
+    .vacancy-card.rolling { border-left: 4px solid var(--amber); }
+
+    .vacancy-status {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.72rem; font-family: var(--font-sans); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.25rem 0.7rem; border-radius: 50px; margin-bottom: 0.8rem;
+    }
+    .vacancy-status.open { background: rgba(34,197,94,0.12); color: #22c55e; border: 1px solid rgba(34,197,94,0.3); }
+    .vacancy-status.open::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 6px #22c55e; }
+    .vacancy-status.rolling { background: rgba(217,119,6,0.12); color: var(--amber); border: 1px solid rgba(217,119,6,0.3); }
+    .vacancy-status.rolling::before { content: ''; width: 6px; height: 6px; background: var(--amber); border-radius: 50%; }
+    .vacancy-status.closed { background: rgba(255,255,255,0.04); color: var(--text3); border: 1px solid var(--border); }
+
+    .vacancy-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--text); margin-bottom: 0.4rem; font-weight: 600; }
+    .vacancy-project { font-size: 0.82rem; font-family: var(--font-sans); color: var(--sky); margin-bottom: 0.8rem; }
+    .vacancy-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.7; margin-bottom: 1rem; }
+    .vacancy-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+    .vmeta-chip {
+      font-size: 0.75rem; font-family: var(--font-sans); color: var(--text2);
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; padding: 0.2rem 0.6rem;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .vmeta-chip i { font-size: 0.7rem; color: var(--violet); }
+    .req-list { margin: 0; padding-left: 1.2rem; }
+    .req-list li { font-size: 0.85rem; color: var(--text2); margin-bottom: 0.3rem; line-height: 1.5; }
+    .req-list li::marker { color: var(--amber); }
+
+    .section-note { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 2rem; font-size: 0.86rem; color: var(--text2); line-height: 1.7; }
+    .section-note i { color: var(--violet); margin-right: 0.5rem; }
+
+    .apply-box { background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(14,165,233,0.06) 100%); border: 1px solid rgba(124,58,237,0.2); border-radius: var(--radius); padding: 2rem; text-align: center; margin-top: 3rem; }
+    .apply-box h3 { font-family: var(--font-serif); color: var(--text); margin-bottom: 0.8rem; }
+    .apply-box p { font-size: 0.88rem; color: var(--text2); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.7; }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><div class="logo-badge">AK</div> Dr. Ashish Kumar</a>
+    <button class="nav-toggle">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="lab.html">Laboratory</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="vacancies.html" class="active">Vacancies</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Opportunities</span>
+      <h1>Vacancies &amp; Positions</h1>
+      <p>Open and rolling positions in the Energy Materials &amp; Devices Laboratory. Research funded by ISRO, DRDO, and IUAC. Central University of Jammu, Jammu &amp; Kashmir.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CURRENTLY OPEN -->
+<section class="section">
+  <div class="container">
+    <div style="margin-bottom:2rem;">
+      <span class="section-label">Current Openings</span>
+      <h2 class="section-title">Open Positions</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="section-note">
+      <i class="fas fa-info-circle"></i>
+      Positions are funded through active sponsored research projects from ISRO, DRDO, and IUAC. Candidates must independently meet the eligibility criteria of the respective funding agency. All positions are based at the Department of Physics &amp; Astronomical Sciences, Central University of Jammu.
+    </div>
+
+    <!-- JRF/SRF — ISRO -->
+    <div class="vacancy-card open">
+      <div class="vacancy-status open">Open — Applications Invited</div>
+      <div class="vacancy-title">Junior Research Fellow (JRF) / Senior Research Fellow (SRF)</div>
+      <div class="vacancy-project"><i class="fas fa-satellite" style="margin-right:0.4rem;"></i>ISRO RESPOND Project — EUV/X-ray Multilayer Mirror Prototypes for Space Instrumentation</div>
+      <div class="vacancy-desc">
+        The project aims to develop nanomaterial-based multilayer mirror prototypes for future EUV and X-ray polarimetric space missions funded by the Indian Space Research Organisation (ISRO). The fellow will work on thin film deposition, optical characterisation, and structural analysis of multilayer coatings.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-rupee-sign"></i> JRF: ₹31,000/month + HRA · SRF: ₹35,000/month + HRA (as per DST norms)</span>
+        <span class="vmeta-chip"><i class="fas fa-clock"></i> Duration: Up to project completion</span>
+        <span class="vmeta-chip"><i class="fas fa-map-marker-alt"></i> Central University of Jammu</span>
+      </div>
+      <div style="margin-bottom:0.8rem;">
+        <div style="font-size:0.78rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">Eligibility</div>
+        <ul class="req-list">
+          <li>M.Sc. Physics / Materials Science / Applied Physics or equivalent (minimum 55% marks)</li>
+          <li>Valid NET/JRF qualification (CSIR-UGC or equivalent) preferred; GATE score acceptable for SRF</li>
+          <li>Background in thin film physics, optics, or X-ray/EUV instrumentation is an advantage</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Apply / Enquire</a>
+    </div>
+
+    <!-- JRF/SRF — DRDO -->
+    <div class="vacancy-card open">
+      <div class="vacancy-status open">Open — Applications Invited</div>
+      <div class="vacancy-title">Junior Research Fellow (JRF) / Project Associate</div>
+      <div class="vacancy-project"><i class="fas fa-shield-alt" style="margin-right:0.4rem;"></i>DRDO CARS Project — Radiation Effects in GaN/AlGaN HEMT Devices</div>
+      <div class="vacancy-desc">
+        The project investigates radiation hardness and defect engineering in GaN-based High Electron Mobility Transistors (HEMTs) in collaboration with SSPL, DRDO Delhi. The fellow will work on device characterisation using DLTS, I-V/C-V, Hall effect measurements, and ion-beam experiments at IUAC New Delhi.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-rupee-sign"></i> As per DRDO CARS norms</span>
+        <span class="vmeta-chip"><i class="fas fa-clock"></i> Duration: Up to project completion</span>
+        <span class="vmeta-chip"><i class="fas fa-map-marker-alt"></i> CUJ / IUAC New Delhi (experimental visits)</span>
+      </div>
+      <div style="margin-bottom:0.8rem;">
+        <div style="font-size:0.78rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">Eligibility</div>
+        <ul class="req-list">
+          <li>M.Sc. Physics / Electronics / Applied Physics or equivalent</li>
+          <li>NET/JRF qualification preferred; strong background in semiconductor devices or solid-state electronics</li>
+          <li>Experience with electrical characterisation techniques (I-V, C-V, Hall, or DLTS) is an advantage</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Apply / Enquire</a>
+    </div>
+
+    <!-- IUAC -->
+    <div class="vacancy-card open">
+      <div class="vacancy-status open">Open — Applications Invited</div>
+      <div class="vacancy-title">Project Fellow / JRF</div>
+      <div class="vacancy-project"><i class="fas fa-atom" style="margin-right:0.4rem;"></i>IUAC UFR Project — Defect Evolution in Wide-Bandgap Semiconductors under Swift Heavy Ion Irradiation</div>
+      <div class="vacancy-desc">
+        Experimental project using the Pelletron accelerator at IUAC New Delhi to study defect formation and evolution in wide-bandgap semiconductors (GaN, β-Ga₂O₃) under MeV heavy ion irradiation. Characterisation by in-situ DLTS, 1/f noise, and Hall effect measurements.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-rupee-sign"></i> As per IUAC/DST norms</span>
+        <span class="vmeta-chip"><i class="fas fa-clock"></i> Duration: Up to project completion</span>
+        <span class="vmeta-chip"><i class="fas fa-map-marker-alt"></i> CUJ / IUAC New Delhi (beamline visits)</span>
+      </div>
+      <div style="margin-bottom:0.8rem;">
+        <div style="font-size:0.78rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">Eligibility</div>
+        <ul class="req-list">
+          <li>M.Sc. Physics / Materials Science or equivalent (minimum 55% marks)</li>
+          <li>Interest in experimental condensed matter / semiconductor physics</li>
+          <li>NET/JRF qualification or GATE score preferred</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="btn btn-gold" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Apply / Enquire</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ROLLING / GENERAL POSITIONS -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2rem;">
+      <span class="section-label">Always Open</span>
+      <h2 class="section-title">Rolling Positions</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <!-- PhD -->
+    <div class="vacancy-card rolling">
+      <div class="vacancy-status rolling">Rolling Admission</div>
+      <div class="vacancy-title">PhD Research Scholars</div>
+      <div class="vacancy-project"><i class="fas fa-graduation-cap" style="margin-right:0.4rem;"></i>PhD Programme — Central University of Jammu</div>
+      <div class="vacancy-desc">
+        We regularly welcome motivated PhD students to work on thermoelectric materials, wide-bandgap semiconductor devices, ion-beam physics, and EUV/X-ray optical coatings. Students joining through active funded projects receive JRF/SRF fellowships (₹31,000–35,000/month + HRA). Self-funded or externally funded (CSIR-JRF, ICAR-JRF, GATE, etc.) candidates are also welcome.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-flask"></i> Thermoelectrics · Wide-bandgap semiconductors · Ion-beam physics · EUV coatings</span>
+        <span class="vmeta-chip"><i class="fas fa-calendar"></i> CUJ PhD admissions: typically July and January cycles</span>
+      </div>
+      <div style="margin-bottom:0.8rem;">
+        <div style="font-size:0.78rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">Minimum Eligibility</div>
+        <ul class="req-list">
+          <li>M.Sc. Physics / Materials Science / Applied Physics (minimum 55% or equivalent CGPA)</li>
+          <li>Valid NET/JRF or GATE qualification (mandatory for fellowship; not mandatory for admission)</li>
+          <li>Strong motivation for experimental physics; prior lab experience is a plus but not required</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Contact for Pre-Admission Discussion</a>
+    </div>
+
+    <!-- M.Sc. / M.Tech Project -->
+    <div class="vacancy-card rolling">
+      <div class="vacancy-status rolling">Rolling</div>
+      <div class="vacancy-title">M.Sc. / M.Tech Project Students</div>
+      <div class="vacancy-project"><i class="fas fa-flask" style="margin-right:0.4rem;"></i>Dissertation / Project — Short-term (4–12 months)</div>
+      <div class="vacancy-desc">
+        M.Sc. (Physics) and M.Tech students are supervised on dissertation projects in experimental semiconductor physics and materials characterisation. Students get hands-on experience with our custom-built measurement systems (Seebeck, DLTS, Hall, 1/f noise) and access to the IUAC beamline facility.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-university"></i> Open to students from CUJ, UPES, and other institutions</span>
+        <span class="vmeta-chip"><i class="fas fa-calendar"></i> Contact at least 2 months before project start</span>
+      </div>
+      <a href="contact.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Express Interest</a>
+    </div>
+
+    <!-- Postdoc -->
+    <div class="vacancy-card rolling">
+      <div class="vacancy-status rolling">By Discussion</div>
+      <div class="vacancy-title">Postdoctoral Researchers</div>
+      <div class="vacancy-project"><i class="fas fa-microscope" style="margin-right:0.4rem;"></i>Postdoctoral Positions — Self-funded / Fellowship Holders</div>
+      <div class="vacancy-desc">
+        Exceptional candidates with their own fellowship (NPDF, Raman Fellowship, SERB-CRG, Marie Curie, etc.) or those interested in jointly applying for postdoctoral funding are encouraged to reach out. We have active collaborations with IUAC New Delhi, IISc Bangalore, IIT Delhi, and international groups in Germany, Taiwan, and South Africa.
+      </div>
+      <div class="vacancy-meta">
+        <span class="vmeta-chip"><i class="fas fa-award"></i> SERB-NPDF · Raman Fellowship · IUAC Research Associateship · DST-INSPIRE</span>
+      </div>
+      <div style="margin-bottom:0.8rem;">
+        <div style="font-size:0.78rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--amber);margin-bottom:0.5rem;">Research Areas of Interest</div>
+        <ul class="req-list">
+          <li>Thermoelectric energy harvesting — GaN, β-Ga₂O₃, SiC, flexible/printable composites</li>
+          <li>Defect characterisation in wide-bandgap semiconductors (DLTS, deep-level spectroscopy)</li>
+          <li>EUV/X-ray optical multilayer coatings for space instrumentation</li>
+          <li>Ion-beam modification and in-situ characterisation of semiconductor devices</li>
+        </ul>
+      </div>
+      <a href="contact.html" class="btn btn-outline" style="font-size:0.82rem;padding:0.5rem 1.2rem;"><i class="fas fa-envelope"></i> Get in Touch</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- HOW TO APPLY -->
+<section class="section">
+  <div class="container">
+    <div style="margin-bottom:2rem;">
+      <span class="section-label">Application Process</span>
+      <h2 class="section-title">How to Apply</h2>
+      <div class="section-divider"></div>
+    </div>
+
+    <div class="grid-2" style="gap:1.5rem;">
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-envelope-open-text"></i></div>
+        <h4 style="color:var(--text);margin-bottom:0.5rem;">Send an Enquiry Email</h4>
+        <p style="font-size:0.85rem;color:var(--text2);line-height:1.7;">Write to <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--sky);">ashish.phy@cujammu.ac.in</a> with subject line <em>"Application — [Position Name]"</em>. Include a brief statement of research interest and your CV.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon teal"><i class="fas fa-file-alt"></i></div>
+        <h4 style="color:var(--text);margin-bottom:0.5rem;">What to Include</h4>
+        <p style="font-size:0.85rem;color:var(--text2);line-height:1.7;">Full academic CV, mark sheets (UG and PG), qualification test certificates (JRF/NET/GATE), and a short paragraph describing your research interests and why you want to join this group.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"><i class="fas fa-comments"></i></div>
+        <h4 style="color:var(--text);margin-bottom:0.5rem;">Shortlisting &amp; Interview</h4>
+        <p style="font-size:0.85rem;color:var(--text2);line-height:1.7;">Shortlisted candidates will be called for a research discussion (in-person or online). The discussion will focus on physics fundamentals and experimental methodology relevant to the project area.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon teal"><i class="fas fa-university"></i></div>
+        <h4 style="color:var(--text);margin-bottom:0.5rem;">Formal Enrolment</h4>
+        <p style="font-size:0.85rem;color:var(--text2);line-height:1.7;">JRF/SRF positions follow SERB/DST/IUAC guidelines. PhD scholars enrol through the Central University of Jammu PhD admission process. Candidates are encouraged to apply to CUJ PhD programmes independently during open admission cycles.</p>
+      </div>
+    </div>
+
+    <div class="apply-box">
+      <h3>Interested in joining the lab?</h3>
+      <p>We welcome applications year-round for PhD and project positions. Motivated students with a genuine interest in experimental physics are encouraged to reach out early — even before a formal opening is advertised.</p>
+      <a href="contact.html" class="btn btn-gold"><i class="fas fa-paper-plane"></i> Send an Application</a>
+      &nbsp;&nbsp;
+      <a href="research.html" class="btn btn-outline"><i class="fas fa-flask"></i> View Research Areas</a>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-logo">Dr. Ashish Kumar</div><p class="footer-desc">Associate Professor, Dept. of Physics &amp; Astronomical Sciences, Central University of Jammu.</p></div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="vacancies.html">Vacancies</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li style="color:var(--text3);font-size:0.82rem;">Central University of Jammu, J&amp;K 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom"><p>© 2026 Dr. Ashish Kumar</p><p>© 2026 · Central University of Jammu</p></div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
