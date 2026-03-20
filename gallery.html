@@ -81,10 +81,6 @@
     .lb-close:hover { background: rgba(255,255,255,0.2); }
 
     /* Add photo guide box */
-    .add-photo-guide { background: var(--bg3); border: 1px dashed var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 2rem; display: flex; align-items: center; gap: 1rem; }
-    .add-photo-guide i { color: var(--violet); font-size: 1.2rem; }
-    .add-photo-guide p { font-size: 0.83rem; color: var(--text2); margin: 0; }
-    .add-photo-guide code { background: var(--bg2); padding: 0.15rem 0.4rem; border-radius: 4px; color: var(--violet); font-size: 0.82rem; }
   </style>
 </head>
 <body class="lattice-bg">
@@ -131,11 +127,7 @@
       <button class="gal-btn" onclick="filterGallery('group', this)">Group</button>
     </div>
 
-    <!-- ============================
-         GALLERY GRID
-         To add a photo: copy any gal-item block, change src, caption, data-cat
-         Categories: award | conference | lab | group
-    ============================= -->
+    <!-- GALLERY GRID -->
     <div class="gallery-masonry" id="gallery-grid">
 
       <!-- ▶ PHOTO 1: With Nobel Laureate Donna Strickland -->
@@ -361,32 +353,12 @@
           <span>Lindau, Germany · July 9, 2019</span>
         </div>
       </div>
-
-      <!-- ▶ PLACEHOLDER: Lab group photo — replace with real photo -->
-      <div class="gal-item" data-cat="group" onclick="openLightbox('assets/images/group-cuj-2024.jpg','Research Group, Central University of Jammu · 2024')">
-        <img src="assets/images/group-cuj-2024.jpg"
-             alt="Research Group CUJ 2024"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:260px;">
-          <i class="fas fa-users icon" style="color:var(--amber);opacity:0.4;"></i>
-          <div class="caption">Research Group · CUJ 2024<br><small>Upload: group-cuj-2024.jpg</small></div>
-        </div>
         <div class="gal-tag-badge group">Group</div>
         <div class="gal-caption">
           <strong>Research Group — Central University of Jammu</strong>
           <span>Current PhD students, JRFs &amp; Project Fellows · 2024</span>
         </div>
       </div>
-
-      <!-- ▶ PLACEHOLDER: IUAC Beamline — replace with real photo -->
-      <div class="gal-item" data-cat="lab" onclick="openLightbox('assets/images/iuac-beamline.jpg','IUAC Pelletron Accelerator Beamline · Inter-University Accelerator Centre, New Delhi')">
-        <img src="assets/images/iuac-beamline.jpg"
-             alt="IUAC Beamline"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:220px;">
-          <i class="fas fa-radiation icon" style="color:var(--amber);opacity:0.4;"></i>
-          <div class="caption">IUAC Beamline Experiment<br><small>Upload: iuac-beamline.jpg</small></div>
-        </div>
         <div class="gal-tag-badge lab">IUAC</div>
         <div class="gal-caption">
           <strong>In-Situ DLTS Under Live SHI Beam</strong>
@@ -425,16 +397,6 @@
           <span>DAE Solid State Physics Symposium (DAE-SSPS 2025)</span>
         </div>
       </div>
-
-      <!-- ▶ PLACEHOLDER: RSC Award — replace with real photo -->
-      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/rsc-outstanding-paper-2024.jpg','RSC Advances Outstanding Paper Award 2024 · Royal Society of Chemistry')">
-        <img src="assets/images/rsc-outstanding-paper-2024.jpg"
-             alt="RSC Advances Outstanding Paper Award 2024"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:220px;">
-          <i class="fas fa-medal icon" style="color:var(--amber);opacity:0.4;"></i>
-          <div class="caption">RSC Outstanding Paper Award 2024<br><small>Upload: rsc-outstanding-paper-2024.jpg</small></div>
-        </div>
         <div class="gal-tag-badge award">RSC 2024</div>
         <div class="gal-caption">
           <strong>RSC Advances Outstanding Paper Award 2024</strong>
@@ -443,7 +405,6 @@
       </div>
 
     </div><!-- end gallery-masonry -->
-    </div>
 
   </div>
 </section>
