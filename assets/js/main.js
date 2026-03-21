@@ -19,7 +19,7 @@ if (navToggle && navLinks) {
     navToggle.setAttribute('aria-expanded', navLinks.classList.contains('open'));
   });
   document.addEventListener('click', (e) => {
-    if (!navbar.contains(e.target)) navLinks.classList.remove('open');
+    if (navbar && !navbar.contains(e.target)) navLinks.classList.remove('open');
   });
 }
 
@@ -34,15 +34,20 @@ document.querySelectorAll('.nav-links a').forEach(a => {
 
 // ---- SCROLL ANIMATIONS ----
 const animEls = document.querySelectorAll('[data-anim]');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), (e.target.dataset.delay || 0) * 100);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-animEls.forEach(el => observer.observe(el));
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), (e.target.dataset.delay || 0) * 100);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  animEls.forEach(el => observer.observe(el));
+} else {
+  // Fallback: make all animated elements visible immediately
+  animEls.forEach(el => el.classList.add('visible'));
+}
 
 // ---- COUNTER ANIMATION ----
 function animateCounter(el) {
@@ -64,18 +69,19 @@ function animateCounter(el) {
   requestAnimationFrame(update);
 }
 
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting && !e.target.dataset.done) {
-      e.target.dataset.done = 'true';
-      animateCounter(e.target);
-    }
+if ('IntersectionObserver' in window) {
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting && !e.target.dataset.done) {
+        e.target.dataset.done = 'true';
+        animateCounter(e.target);
+      }
+    });
+  }, { threshold: 0.5 });
+  document.querySelectorAll('.metric-num[data-target]').forEach(el => {
+    counterObserver.observe(el);
   });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.metric-num[data-target]').forEach(el => {
-  counterObserver.observe(el);
-});
+}
 
 // ---- LATTICE BACKGROUND ----
 document.querySelectorAll('.lattice-bg').forEach(el => {
@@ -85,6 +91,28 @@ document.querySelectorAll('.lattice-bg').forEach(el => {
 });
 
 // ---- SMOOTH SCROLL FOR ANCHOR LINKS ----
+// Polyfill for Safari iOS < 15.4 which doesn't support scrollTo({behavior:'smooth'})
+function smoothScrollTo(top) {
+  if ('scrollBehavior' in document.documentElement.style) {
+    window.scrollTo({ top: top, behavior: 'smooth' });
+  } else {
+    // Simple rAF-based fallback
+    const start = window.scrollY;
+    const change = top - start;
+    const duration = 500;
+    let startTime = null;
+    function step(timestamp) {
+      if (!startTime) startTime = timestamp;
+      const elapsed = timestamp - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const ease = progress < 0.5 ? 2 * progress * progress : -1 + (4 - 2 * progress) * progress;
+      window.scrollTo(0, start + change * ease);
+      if (elapsed < duration) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+}
+
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
     const target = document.querySelector(a.getAttribute('href'));
@@ -92,7 +120,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       e.preventDefault();
       const offset = parseInt(getComputedStyle(document.documentElement)
         .getPropertyValue('--nav-h')) || 72;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      smoothScrollTo(target.offsetTop - offset);
     }
   });
 });
