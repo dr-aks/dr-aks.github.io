@@ -2,14 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#7c3aed" />
   <title>Dr. Ashish Kumar — Associate Professor of Physics, CUJ</title>
   <meta name="description" content="Personal academic website of Dr. Ashish Kumar, Associate Professor, Department of Physics & Astronomical Sciences, Central University of Jammu. Expert in Thermoelectric Materials, Wide-Bandgap Semiconductors, and Ion-Beam Physics." />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dr-aks.github.io/" />
+  <meta property="og:title" content="Dr. Ashish Kumar — Associate Professor of Physics, CUJ" />
+  <meta property="og:description" content="Experimental physicist specialising in thermoelectric materials, wide-bandgap semiconductors, and ion-beam physics. Associate Professor, Central University of Jammu." />
+  <meta property="og:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dr. Ashish Kumar — Associate Professor of Physics" />
+  <meta name="twitter:description" content="Experimental physicist · CUJ · 78 publications · h-index 26 · Lindau Nobel Laureate Meeting Alumni 2019" />
+  <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <link rel="canonical" href="https://dr-aks.github.io/index.html" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <!-- Preload hero image for faster LCP on mobile -->
+  <link rel="preload" as="image" href="assets/images/profile-photo.jpg" />
   <style>
     /* ---- HERO PARTICLE CANVAS ---- */
     #hero-canvas { position:absolute; inset:0; pointer-events:none; opacity:0.35; }
@@ -61,7 +79,7 @@
     <a href="index.html" class="nav-logo">
       Dr. Ashish Kumar
     </a>
-    <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="research.html">Research</a></li>
@@ -119,9 +137,9 @@
         </div>
 
         <div class="hero-social fade-in delay-4" style="margin-top:1.5rem;">
-          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank"><i class="fas fa-graduation-cap"></i> Scholar</a>
-          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank"><i class="fab fa-orcid"></i> ORCID</a>
-          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank"><i class="fab fa-researchgate"></i> ResearchGate</a>
+          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer"><i class="fas fa-graduation-cap"></i> Scholar</a>
+          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer"><i class="fab fa-orcid"></i> ORCID</a>
+          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer"><i class="fab fa-researchgate"></i> ResearchGate</a>
           <a href="mailto:ashish.phy@cujammu.ac.in"><i class="fas fa-envelope"></i> Email</a>
         </div>
       </div>
@@ -130,8 +148,9 @@
       <div class="profile-wrap fade-in delay-2">
         <div class="profile-deco"></div>
         <div class="profile-photo">
-          <img src="assets/images/profile-photo.jpg"
+          <img loading="eager" decoding="async" src="assets/images/profile-photo.jpg"
                alt="Dr. Ashish Kumar — Associate Professor, Central University of Jammu"
+               width="460" height="520"
                style="width:100%;display:block;"
                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
           <div class="placeholder" style="display:none;">
@@ -250,7 +269,7 @@
           </div>
           <div class="award-item">
             <span class="award-year">2024</span>
-            <div><div class="award-name">RSC Advances Outstanding Paper Award</div><div class="award-body">Royal Society of Chemistry &middot; <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" style="color:var(--sky);font-size:0.82rem;">View announcement &#8599;</a></div></div>
+            <div><div class="award-name">RSC Advances Outstanding Paper Award</div><div class="award-body">Royal Society of Chemistry &middot; <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky);font-size:0.82rem;">View announcement &#8599;</a></div></div>
           </div>
         </div>
       </div>
@@ -471,7 +490,7 @@
             <div class="timeline-dot"></div>
             <div class="timeline-date">2024</div>
             <div class="timeline-title">RSC Advances Outstanding Paper Award</div>
-            <div class="timeline-desc">Paper on PEDOT:PSS/Bi₂Te₃/rGO flexible thermoelectric composites selected for Outstanding Paper Award by the Royal Society of Chemistry. <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" style="color:var(--sky);">View announcement &#8599;</a></div>
+            <div class="timeline-desc">Paper on PEDOT:PSS/Bi₂Te₃/rGO flexible thermoelectric composites selected for Outstanding Paper Award by the Royal Society of Chemistry. <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky);">View announcement &#8599;</a></div>
           </div>
         </div>
         <a href="news.html" class="btn btn-outline" style="margin-top:1rem;font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-newspaper"></i> All News</a>
@@ -539,9 +558,9 @@
         <p class="footer-desc">Associate Professor of Physics &amp; Astronomical Sciences, Central University of Jammu. Experimental physicist, PI of three national research projects, Lindau Nobel Laureate Meeting Alumni 2019.</p>
         <div style="display:flex;gap:0.8rem;margin-top:1rem;">
           <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-envelope"></i></a>
-          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
-          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
-          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
+          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
         </div>
       </div>
       <div class="footer-col">
@@ -583,9 +602,11 @@
 
 <script src="assets/js/main.js"></script>
 <script>
-  // Particle canvas animation
+  // Particle canvas animation — skip on mobile (< 768px) or prefers-reduced-motion
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var isMobile = window.innerWidth < 768;
   const canvas = document.getElementById('hero-canvas');
-  if (canvas) {
+  if (canvas && !prefersReduced && !isMobile) {
     const ctx = canvas.getContext('2d');
     let W, H, particles = [];
     function resize() { W = canvas.width = window.innerWidth; H = canvas.height = window.innerHeight; }

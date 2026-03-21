@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="The CSEM Laboratory at Central University of Jammu — five custom cryogenic systems, DLTS, Seebeck coefficient setup, and in-situ ion-beam facilities built by Dr. Ashish Kumar." />
   <title>Energy Materials &amp; Devices Laboratory — Dr. Ashish Kumar</title>
+  <meta name="theme-color" content="#7c3aed" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dr-aks.github.io/lab.html" />
+  <meta property="og:title" content="CSEM Laboratory — Dr. Ashish Kumar" />
+  <meta property="og:description" content="The CSEM Laboratory at Central University of Jammu — five custom cryogenic systems, DLTS, Seebeck coefficient setup, and in-situ ion-beam facilities built by Dr. Ashish Kumar." />
+  <meta property="og:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CSEM Laboratory — Dr. Ashish Kumar" />
+  <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <link rel="canonical" href="https://dr-aks.github.io/lab.html" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -38,7 +56,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Dr. Ashish Kumar</a>
-    <button class="nav-toggle">&#9776;</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
@@ -116,7 +134,7 @@
         <h3 style="color:var(--amber);margin-bottom:0.5rem;">System I — Seebeck &amp; Resistivity</h3>
         <!-- Circuit diagram -->
         <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-          <img src="assets/images/seebeck.png"
+          <img loading="lazy" decoding="async" src="assets/images/seebeck.png"
                alt="Seebeck &amp; Resistivity Measurement Setup — Circuit Diagram"
                style="width:100%;height:auto;display:block;"
                onerror="this.parentElement.style.display='none';">
@@ -134,7 +152,7 @@
         <div class="world-first" style="background:var(--bg3);border-color:var(--amber);color:var(--amber);">🔬 Rare Capability in India</div>
         <h3 style="color:var(--amber);margin-bottom:0.5rem;">System II — ZT &amp; Thermal Conductivity</h3>
         <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-          <img src="assets/images/zt-system.png"
+          <img loading="lazy" decoding="async" src="assets/images/zt-system.png"
                alt="ZT &amp; Thermal Conductivity Measurement Setup"
                style="width:100%;height:auto;display:block;"
                onerror="this.parentElement.style.display='none';">
@@ -152,10 +170,10 @@
         <h3 style="color:var(--sky);margin-bottom:0.5rem;">System III — In-Situ DLTS</h3>
         <div style="margin:0.8rem 0;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
           <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-            <img src="assets/images/dlts-system.png" alt="DLTS System" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';">
+            <img loading="lazy" decoding="async" src="assets/images/dlts-system.png" alt="DLTS System" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';">
           </div>
           <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-            <img src="assets/images/dlts-insitu.png" alt="In-Situ DLTS Setup at IUAC" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';">
+            <img loading="lazy" decoding="async" src="assets/images/dlts-insitu.png" alt="In-Situ DLTS Setup at IUAC" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';">
           </div>
         </div>
         <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Real-time deep-level transient spectroscopy of semiconductor devices during live swift heavy ion beam irradiation at IUAC beamlines. Captures defect formation and recovery kinetics impossible to extract from post-irradiation measurements.</p>
@@ -179,7 +197,7 @@
         <h3 style="color:var(--amber);margin-bottom:0.5rem;">System V — Dipstick Optical Cryostat</h3>
         <!-- Cryostat schematic -->
         <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-          <img src="assets/images/cryostat-schematic.png"
+          <img loading="lazy" decoding="async" src="assets/images/cryostat-schematic.png"
                alt="Dipstick Optical Cryostat — Schematic Design"
                style="width:100%;height:auto;display:block;"
                onerror="this.parentElement.style.display='none';">

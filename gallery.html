@@ -1,9 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Photo gallery from Dr. Ashish Kumar's research journey — lab work, international conferences, Lindau Nobel Laureate Meeting 2019, and group activities." />
   <title>Gallery — Dr. Ashish Kumar</title>
+  <meta name="theme-color" content="#7c3aed" />
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <!-- Open Graph / Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dr-aks.github.io/gallery.html" />
+  <meta property="og:title" content="Gallery — Dr. Ashish Kumar" />
+  <meta property="og:description" content="Photo gallery from Dr. Ashish Kumar's research journey — lab work, international conferences, Lindau Nobel Laureate Meeting 2019, and group activities." />
+  <meta property="og:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Gallery — Dr. Ashish Kumar" />
+  <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <link rel="canonical" href="https://dr-aks.github.io/gallery.html" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
@@ -87,7 +105,7 @@
 <nav id="navbar">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">Dr. Ashish Kumar</a>
-    <button class="nav-toggle">&#9776;</button>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="research.html">Research</a></li>
@@ -132,7 +150,7 @@
 
       <!-- ▶ PHOTO: DAE-SSPS Best Poster Award — Ms. Muskan -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/daessps-best-poster-2025.jpg','Ms. Muskan receiving Best Poster Award at DAE-SSPS 2025')">
-        <img src="assets/images/daessps-best-poster-2025.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/daessps-best-poster-2025.jpg"
              alt="Best Poster Award DAE-SSPS 2025"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:250px;">
@@ -148,7 +166,7 @@
 
       <!-- ▶ Best PhD Thesis Award 2025 — Dr. Vaishali Rathi -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/best-thesis-award-2025.jpg','Best PhD Thesis Award · Dr. Vaishali Rathi · UPES Dehradun Convocation 2025 · Thesis: Fabrication of Printable Flexible Thermoelectric Material and Devices')">
-        <img src="assets/images/best-thesis-award-2025.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/best-thesis-award-2025.jpg"
              alt="Best PhD Thesis Award — Dr. Vaishali Rathi, UPES 2025"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:260px;">
@@ -164,7 +182,7 @@
 
       <!-- ▶ PHOTO: Segovia, Spain — Roman Aqueduct -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/segovia-spain-2017.jpg','Dr. Ashish Kumar at the Roman Aqueduct of Segovia, Spain · DRIP XVII Conference · December 2017')">
-        <img src="assets/images/segovia-spain-2017.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/segovia-spain-2017.jpg"
              alt="Dr. Ashish Kumar at Segovia Roman Aqueduct, Spain, 2023"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:270px;">
@@ -180,7 +198,7 @@
 
       <!-- ▶ PHOTO 6: Helmholtz-Institut Mainz Group -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/helmholtz-mainz-2019.png','Group photo at Helmholtz-Institut Mainz · July 10, 2019 · Part of the 69th Lindau Nobel Laureate Meeting scientific excursion')">
-        <img src="assets/images/helmholtz-mainz-2019.png"
+        <img loading="lazy" decoding="async" src="assets/images/helmholtz-mainz-2019.png"
              alt="Group photo at Helmholtz-Institut Mainz 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:230px;">
@@ -196,7 +214,7 @@
 
       <!-- ▶ PHOTO 5: Lindau Discussion -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/lindau-discussion.png','Scientific discussion at the 69th Lindau Nobel Laureate Meeting · July 2019, Lindau, Germany')">
-        <img src="assets/images/lindau-discussion.png"
+        <img loading="lazy" decoding="async" src="assets/images/lindau-discussion.png"
              alt="Scientific discussion at Lindau Nobel Laureate Meeting 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:300px;">
@@ -212,7 +230,7 @@
 
       <!-- ▶ PHOTO 4: Profile at Lindau Nobel backdrop -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/profile-lindau-backdrop.png','Dr. Ashish Kumar at the 69th Lindau Nobel Laureate Meeting · July 2019 · Lindau, Germany')">
-        <img src="assets/images/profile-lindau-backdrop.png"
+        <img loading="lazy" decoding="async" src="assets/images/profile-lindau-backdrop.png"
              alt="Dr. Ashish Kumar at Lindau Nobel Laureate Meeting 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:320px;">
@@ -228,7 +246,7 @@
 
       <!-- ▶ PHOTO 3: With Sir Konstantin Novoselov -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-novoselov.png','With Sir Konstantin S. Novoselov (Nobel Prize in Physics 2010, discoverer of Graphene) · Lindau Nobel Laureate Meeting, July 2019')">
-        <img src="assets/images/with-novoselov.png"
+        <img loading="lazy" decoding="async" src="assets/images/with-novoselov.png"
              alt="With Nobel Laureate Sir Konstantin Novoselov"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:360px;">
@@ -244,7 +262,7 @@
 
       <!-- ▶ PHOTO 1: With Nobel Laureate Donna Strickland -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-donna-strickland.png','With Prof. Donna Strickland (Nobel Prize in Physics 2018) · Lindau Nobel Laureate Meeting, Germany, July 2019')">
-        <img src="assets/images/with-donna-strickland.png"
+        <img loading="lazy" decoding="async" src="assets/images/with-donna-strickland.png"
              alt="With Nobel Laureate Prof. Donna Strickland"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:340px;">
@@ -260,7 +278,7 @@
 
       <!-- ▶ PHOTO 8: Germany/Lindau group outside building -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/lindau-india-group-2019.png','Indian participants at the 69th Lindau Nobel Laureate Meeting · July 9, 2019, Germany')">
-        <img src="assets/images/lindau-india-group-2019.png"
+        <img loading="lazy" decoding="async" src="assets/images/lindau-india-group-2019.png"
              alt="Indian delegates at Lindau Nobel Laureate Meeting 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:240px;">
@@ -276,7 +294,7 @@
 
       <!-- ▶ PHOTO: Venice Canal — side trip from ICTP Trieste -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/venice-trip-2019.jpg','Dr. Ashish Kumar at the Grand Canal, Venice · Side trip during ICTP Conference, Trieste · March 12, 2019')">
-        <img src="assets/images/venice-trip-2019.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/venice-trip-2019.jpg"
              alt="Dr. Ashish Kumar at Venice Grand Canal 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:240px;">
@@ -292,7 +310,7 @@
 
       <!-- ▶ PHOTO: Trieste City — Piazza Unità d'Italia, during ICTP visit -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/trieste-city-2019.jpg','Dr. Ashish Kumar at Piazza Unità d\'Italia, Trieste · During ICTP Thermoelectricity Conference visit · March 12, 2019')">
-        <img src="assets/images/trieste-city-2019.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/trieste-city-2019.jpg"
              alt="Dr. Ashish Kumar at Piazza Unità d'Italia, Trieste 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:220px;">
@@ -308,7 +326,7 @@
 
       <!-- ▶ PHOTO: ICTP Participants Group Selfie 2019 -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/ictp-group-selfie-2019.jpg','International participants at the Conference on Modern Concepts and New Materials for Thermoelectricity · ICTP, Trieste, Italy · March 2019')">
-        <img src="assets/images/ictp-group-selfie-2019.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/ictp-group-selfie-2019.jpg"
              alt="International participants group selfie at ICTP Thermoelectricity Conference 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:260px;">
@@ -324,7 +342,7 @@
 
       <!-- ▶ PHOTO 2: ICTP Conference Group Photo -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/ictp-thermoelectricity-2019.png','Conference on Modern Concepts and New Materials for Thermoelectricity · ICTP, Trieste, Italy · March 11–15, 2019')">
-        <img src="assets/images/ictp-thermoelectricity-2019.png"
+        <img loading="lazy" decoding="async" src="assets/images/ictp-thermoelectricity-2019.png"
              alt="ICTP Thermoelectricity Conference Group Photo 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:220px;">
@@ -340,7 +358,7 @@
 
       <!-- ▶ PHOTO: Glasgow Science Museum — touching the oldest meteorite -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/glasgow-museum-2011.jpg','Dr. Ashish Kumar touching a 4.5-billion-year-old meteorite at Glasgow Science Centre · July 2011')">
-        <img src="assets/images/glasgow-museum-2011.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/glasgow-museum-2011.jpg"
              alt="Dr. Ashish Kumar touching meteorite at Glasgow Science Centre 2011"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:270px;">
@@ -356,7 +374,7 @@
 
       <!-- ▶ PHOTO: Glasgow Conference 2011 -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/glasgow-conference-2011.jpg','Dr. Ashish Kumar at an international conference in Glasgow, UK · July 2011')">
-        <img src="assets/images/glasgow-conference-2011.jpg"
+        <img loading="lazy" decoding="async" src="assets/images/glasgow-conference-2011.jpg"
              alt="Dr. Ashish Kumar at international conference, Glasgow 2011"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:250px;">
@@ -372,7 +390,7 @@
 
       <!-- ▶ PHOTO 7: PhD Group at IIT Delhi (with supervisor) -->
       <div class="gal-item" data-cat="group" onclick="openLightbox('assets/images/phd-group-iitdelhi.png','Research group at IIT Delhi — with Ph.D. supervisor Prof. Rajendra Singh · circa 2010–2013')">
-        <img src="assets/images/phd-group-iitdelhi.png"
+        <img loading="lazy" decoding="async" src="assets/images/phd-group-iitdelhi.png"
              alt="PhD Research Group at IIT Delhi with Supervisor Prof. Rajendra Singh"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:280px;">
@@ -394,7 +412,7 @@
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
   <button class="lb-close" onclick="closeLightbox()"><i class="fas fa-times"></i></button>
-  <img id="lb-img" src="" alt="" />
+  <img loading="lazy" decoding="async" id="lb-img" src="" alt="" />
   <div class="lb-caption" id="lb-caption"></div>
 </div>
 
