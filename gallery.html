@@ -141,12 +141,13 @@
       <button class="gal-btn active" onclick="filterGallery('all', this)">All</button>
       <button class="gal-btn" onclick="filterGallery('award', this)">Lindau &amp; Awards</button>
       <button class="gal-btn" onclick="filterGallery('conference', this)">Conferences</button>
-      <button class="gal-btn" onclick="filterGallery('lab', this)">Lab &amp; Instruments</button>
       <button class="gal-btn" onclick="filterGallery('group', this)">Group</button>
     </div>
 
-    <!-- GALLERY GRID -->
+    <!-- GALLERY GRID — Chronological order: latest first -->
     <div class="gallery-masonry" id="gallery-grid">
+
+      <!-- ══════════════════ 2025 — AWARDS ══════════════════ -->
 
       <!-- ▶ PHOTO: DAE-SSPS Best Poster Award — Ms. Muskan -->
       <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/daessps-best-poster-2025.jpg','Ms. Muskan receiving Best Poster Award at DAE-SSPS 2025')">
@@ -155,7 +156,7 @@
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:250px;">
           <i class="fas fa-trophy icon" style="color:var(--violet);opacity:0.4;"></i>
-          <div class="caption">Best Poster Award · DAE-SSPS 2025<br><small>Upload: daessps-best-poster-2025.jpg</small></div>
+          <div class="caption">Best Poster Award · DAE-SSPS 2025</div>
         </div>
         <div class="gal-tag-badge award">Award 2025</div>
         <div class="gal-caption">
@@ -180,94 +181,34 @@
         </div>
       </div>
 
-      <!-- ▶ PHOTO: Segovia, Spain — Roman Aqueduct -->
-      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/segovia-spain-2017.jpg','Dr. Ashish Kumar at the Roman Aqueduct of Segovia, Spain · DRIP XVII Conference · December 2017')">
-        <img loading="lazy" decoding="async" src="assets/images/segovia-spain-2017.jpg"
-             alt="Dr. Ashish Kumar at Segovia Roman Aqueduct, Spain, 2023"
+      <!-- ══════════════════ 2022 — WITH MENTOR ══════════════════ -->
+
+      <!-- ▶ PHOTO: With Dr. D.K. Kanjilal — 2022 -->
+      <div class="gal-item" data-cat="group" onclick="openLightbox('assets/images/with%20Dr%20kanjilal%202022.jpg','With Dr. D.K. Kanjilal (Distinguished Scientist, IUAC New Delhi) · Postdoc Mentor · 2022')">
+        <img loading="lazy" decoding="async" src="assets/images/with%20Dr%20kanjilal%202022.jpg"
+             alt="Dr. Ashish Kumar with Dr. D.K. Kanjilal, Postdoc Mentor, 2022"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:270px;">
-          <i class="fas fa-archway icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">Segovia, Spain · 2023</div>
+          <i class="fas fa-user-tie icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">With Dr. D.K. Kanjilal · 2022</div>
         </div>
-        <div class="gal-tag-badge conference">Spain 2023</div>
+        <div class="gal-tag-badge group">Mentor 2022</div>
         <div class="gal-caption">
-          <strong>Roman Aqueduct of Segovia · Spain</strong>
-          <span>Conference visit · December 2023</span>
+          <strong>With Dr. D.K. Kanjilal</strong>
+          <span>Distinguished Scientist, IUAC New Delhi · Postdoc Mentor · 2022</span>
         </div>
       </div>
 
-      <!-- ▶ PHOTO 6: Helmholtz-Institut Mainz Group -->
-      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/helmholtz-mainz-2019.png','Group photo at Helmholtz-Institut Mainz · July 10, 2019 · Part of the 69th Lindau Nobel Laureate Meeting scientific excursion')">
-        <img loading="lazy" decoding="async" src="assets/images/helmholtz-mainz-2019.png"
-             alt="Group photo at Helmholtz-Institut Mainz 2019"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:230px;">
-          <i class="fas fa-building icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">Helmholtz-Institut Mainz Group Photo<br><small>Upload: helmholtz-mainz-2019.png</small></div>
-        </div>
-        <div class="gal-tag-badge conference">Mainz 2019</div>
-        <div class="gal-caption">
-          <strong>Group Photo · Helmholtz-Institut Mainz</strong>
-          <span>Lindau Meeting Excursion · July 10, 2019</span>
-        </div>
-      </div>
+      <!-- ══════════════════ 2019 — LINDAU NOBEL LAUREATE MEETING (July) ══════════════════ -->
 
-      <!-- ▶ PHOTO 5: Lindau Discussion -->
-      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/lindau-discussion.png','Scientific discussion at the 69th Lindau Nobel Laureate Meeting · July 2019, Lindau, Germany')">
-        <img loading="lazy" decoding="async" src="assets/images/lindau-discussion.png"
-             alt="Scientific discussion at Lindau Nobel Laureate Meeting 2019"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:300px;">
-          <i class="fas fa-comments icon" style="color:var(--violet);opacity:0.4;"></i>
-          <div class="caption">Scientific Discussion · Lindau Meeting<br><small>Upload: lindau-discussion.png</small></div>
-        </div>
-        <div class="gal-tag-badge award">Lindau 2019</div>
-        <div class="gal-caption">
-          <strong>Scientific Discussion at Lindau Nobel Laureate Meeting</strong>
-          <span>69th Lindau Nobel Laureate Meeting · "Educate. Inspire. Connect." · 2019</span>
-        </div>
-      </div>
-
-      <!-- ▶ PHOTO 4: Profile at Lindau Nobel backdrop -->
-      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/profile-lindau-backdrop.png','Dr. Ashish Kumar at the 69th Lindau Nobel Laureate Meeting · July 2019 · Lindau, Germany')">
-        <img loading="lazy" decoding="async" src="assets/images/profile-lindau-backdrop.png"
-             alt="Dr. Ashish Kumar at Lindau Nobel Laureate Meeting 2019"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:320px;">
-          <i class="fas fa-user icon" style="color:var(--violet);opacity:0.4;"></i>
-          <div class="caption">Dr. Ashish Kumar · Lindau Nobel Laureate Meeting<br><small>Upload: profile-lindau-backdrop.png</small></div>
-        </div>
-        <div class="gal-tag-badge award">Lindau 2019</div>
-        <div class="gal-caption">
-          <strong>Dr. Ashish Kumar at Lindau Nobel Laureate Meeting</strong>
-          <span>69th Lindau Nobel Laureate Meeting · July 2019 · Germany</span>
-        </div>
-      </div>
-
-      <!-- ▶ PHOTO 3: With Sir Konstantin Novoselov -->
-      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-novoselov.png','With Sir Konstantin S. Novoselov (Nobel Prize in Physics 2010, discoverer of Graphene) · Lindau Nobel Laureate Meeting, July 2019')">
-        <img loading="lazy" decoding="async" src="assets/images/with-novoselov.png"
-             alt="With Nobel Laureate Sir Konstantin Novoselov"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:360px;">
-          <i class="fas fa-atom icon" style="color:var(--violet);opacity:0.4;"></i>
-          <div class="caption">With Sir Konstantin Novoselov<br><small>Nobel Prize in Physics 2010 · Upload: with-novoselov.png</small></div>
-        </div>
-        <div class="gal-tag-badge award">Nobel Laureate</div>
-        <div class="gal-caption">
-          <strong>With Sir Konstantin S. Novoselov</strong>
-          <span>Nobel Prize in Physics 2010 (Graphene) · Lindau, Germany · July 2019</span>
-        </div>
-      </div>
-
-      <!-- ▶ PHOTO 1: With Nobel Laureate Donna Strickland -->
-      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-donna-strickland.png','With Prof. Donna Strickland (Nobel Prize in Physics 2018) · Lindau Nobel Laureate Meeting, Germany, July 2019')">
+      <!-- ▶ PHOTO: With Prof. Donna Strickland — NO hover animation (PNG with transparency) -->
+      <div class="gal-item no-hover-anim" data-cat="award" onclick="openLightbox('assets/images/with-donna-strickland.png','With Prof. Donna Strickland (Nobel Prize in Physics 2018) · Lindau Nobel Laureate Meeting, Germany, July 2019')">
         <img loading="lazy" decoding="async" src="assets/images/with-donna-strickland.png"
-             alt="With Nobel Laureate Prof. Donna Strickland"
+             alt="With Nobel Laureate Prof. Donna Strickland, Lindau 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:340px;">
           <i class="fas fa-user-graduate icon" style="color:var(--violet);opacity:0.4;"></i>
-          <div class="caption">With Prof. Donna Strickland<br><small>Nobel Prize in Physics 2018 · Upload: with-donna-strickland.png</small></div>
+          <div class="caption">With Prof. Donna Strickland<br><small>Nobel Prize in Physics 2018</small></div>
         </div>
         <div class="gal-tag-badge award">Nobel Laureate</div>
         <div class="gal-caption">
@@ -276,14 +217,94 @@
         </div>
       </div>
 
-      <!-- ▶ PHOTO 8: Germany/Lindau group outside building -->
+      <!-- ▶ PHOTO: With Prof. Wolfgang Ketterle (Nobel Laureate) -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/%20with%20prof%20ketterle.png','With Prof. Wolfgang Ketterle (Nobel Prize in Physics 2001, Bose-Einstein Condensate) · 69th Lindau Nobel Laureate Meeting, Germany, July 2019')">
+        <img loading="lazy" decoding="async" src="assets/images/%20with%20prof%20ketterle.png"
+             alt="With Nobel Laureate Prof. Wolfgang Ketterle, Lindau 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:300px;">
+          <i class="fas fa-atom icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">With Prof. Wolfgang Ketterle<br><small>Nobel Prize in Physics 2001</small></div>
+        </div>
+        <div class="gal-tag-badge award">Nobel Laureate</div>
+        <div class="gal-caption">
+          <strong>With Prof. Wolfgang Ketterle</strong>
+          <span>Nobel Prize in Physics 2001 (BEC) · Lindau, Germany · July 2019</span>
+        </div>
+      </div>
+
+      <!-- ▶ PHOTO: With Sir Konstantin Novoselov (Nobel Laureate) -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/with-novoselov.png','With Sir Konstantin S. Novoselov (Nobel Prize in Physics 2010, discoverer of Graphene) · Lindau Nobel Laureate Meeting, July 2019')">
+        <img loading="lazy" decoding="async" src="assets/images/with-novoselov.png"
+             alt="With Nobel Laureate Sir Konstantin Novoselov, Lindau 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:360px;">
+          <i class="fas fa-atom icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">With Sir Konstantin Novoselov<br><small>Nobel Prize in Physics 2010</small></div>
+        </div>
+        <div class="gal-tag-badge award">Nobel Laureate</div>
+        <div class="gal-caption">
+          <strong>With Sir Konstantin S. Novoselov</strong>
+          <span>Nobel Prize in Physics 2010 (Graphene) · Lindau, Germany · July 2019</span>
+        </div>
+      </div>
+
+      <!-- ▶ PHOTO: Profile at Lindau Nobel backdrop -->
+      <div class="gal-item" data-cat="award" onclick="openLightbox('assets/images/profile-lindau-backdrop.png','Dr. Ashish Kumar at the 69th Lindau Nobel Laureate Meeting · July 2019 · Lindau, Germany')">
+        <img loading="lazy" decoding="async" src="assets/images/profile-lindau-backdrop.png"
+             alt="Dr. Ashish Kumar at Lindau Nobel Laureate Meeting 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:320px;">
+          <i class="fas fa-user icon" style="color:var(--violet);opacity:0.4;"></i>
+          <div class="caption">Dr. Ashish Kumar · Lindau Nobel Laureate Meeting</div>
+        </div>
+        <div class="gal-tag-badge award">Lindau 2019</div>
+        <div class="gal-caption">
+          <strong>Dr. Ashish Kumar at Lindau Nobel Laureate Meeting</strong>
+          <span>69th Lindau Nobel Laureate Meeting · July 2019 · Germany</span>
+        </div>
+      </div>
+
+      <!-- ▶ PHOTO: Lindau — Rhine trip to Cologne -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/Lindau%20cologn%20germany%202019.jpg','Rhine boat trip to Cologne during the 69th Lindau Nobel Laureate Meeting · July 2019, Germany')">
+        <img loading="lazy" decoding="async" src="assets/images/Lindau%20cologn%20germany%202019.jpg"
+             alt="Rhine trip to Cologne during Lindau Nobel Laureate Meeting 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:250px;">
+          <i class="fas fa-ship icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Rhine Trip · Cologne · Lindau Meeting 2019</div>
+        </div>
+        <div class="gal-tag-badge conference">Lindau 2019</div>
+        <div class="gal-caption">
+          <strong>Rhine Boat Trip · Cologne</strong>
+          <span>Excursion during 69th Lindau Nobel Laureate Meeting · July 2019</span>
+        </div>
+      </div>
+
+      <!-- ▶ PHOTO: Helmholtz-Institut Mainz Group -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/helmholtz-mainz-2019.png','Group photo at Helmholtz-Institut Mainz · July 10, 2019 · Part of the 69th Lindau Nobel Laureate Meeting scientific excursion')">
+        <img loading="lazy" decoding="async" src="assets/images/helmholtz-mainz-2019.png"
+             alt="Group photo at Helmholtz-Institut Mainz 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:230px;">
+          <i class="fas fa-building icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Helmholtz-Institut Mainz Group Photo</div>
+        </div>
+        <div class="gal-tag-badge conference">Mainz 2019</div>
+        <div class="gal-caption">
+          <strong>Group Photo · Helmholtz-Institut Mainz</strong>
+          <span>Lindau Meeting Excursion · July 10, 2019</span>
+        </div>
+      </div>
+
+      <!-- ▶ PHOTO: Indian delegates at Lindau -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/lindau-india-group-2019.png','Indian participants at the 69th Lindau Nobel Laureate Meeting · July 9, 2019, Germany')">
         <img loading="lazy" decoding="async" src="assets/images/lindau-india-group-2019.png"
              alt="Indian delegates at Lindau Nobel Laureate Meeting 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:240px;">
           <i class="fas fa-flag icon" style="color:var(--amber);opacity:0.4;"></i>
-          <div class="caption">Indian Delegates · Lindau Meeting 2019<br><small>Upload: lindau-india-group-2019.png</small></div>
+          <div class="caption">Indian Delegates · Lindau Meeting 2019</div>
         </div>
         <div class="gal-tag-badge conference">Lindau 2019</div>
         <div class="gal-caption">
@@ -292,35 +313,21 @@
         </div>
       </div>
 
-      <!-- ▶ PHOTO: Venice Canal — side trip from ICTP Trieste -->
-      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/venice-trip-2019.jpg','Dr. Ashish Kumar at the Grand Canal, Venice · Side trip during ICTP Conference, Trieste · March 12, 2019')">
-        <img loading="lazy" decoding="async" src="assets/images/venice-trip-2019.jpg"
-             alt="Dr. Ashish Kumar at Venice Grand Canal 2019"
-             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:240px;">
-          <i class="fas fa-water icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">Venice Grand Canal · March 2019</div>
-        </div>
-        <div class="gal-tag-badge conference">ICTP 2019</div>
-        <div class="gal-caption">
-          <strong>Grand Canal · Venice</strong>
-          <span>Side visit during ICTP Conference · March 12, 2019</span>
-        </div>
-      </div>
+      <!-- ══════════════════ 2019 — ICTP TRIESTE (March) ══════════════════ -->
 
-      <!-- ▶ PHOTO: Trieste City — Piazza Unità d'Italia, during ICTP visit -->
-      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/trieste-city-2019.jpg','Dr. Ashish Kumar at Piazza Unità d\'Italia, Trieste · During ICTP Thermoelectricity Conference visit · March 12, 2019')">
-        <img loading="lazy" decoding="async" src="assets/images/trieste-city-2019.jpg"
-             alt="Dr. Ashish Kumar at Piazza Unità d'Italia, Trieste 2019"
+      <!-- ▶ PHOTO: ICTP Conference Group Photo -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/ictp-thermoelectricity-2019.png','Conference on Modern Concepts and New Materials for Thermoelectricity · ICTP, Trieste, Italy · March 11–15, 2019')">
+        <img loading="lazy" decoding="async" src="assets/images/ictp-thermoelectricity-2019.png"
+             alt="ICTP Thermoelectricity Conference Group Photo 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:220px;">
-          <i class="fas fa-map-marker-alt icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">Trieste, Italy · ICTP Visit 2019</div>
+          <i class="fas fa-users icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">ICTP Thermoelectricity Conference 2019</div>
         </div>
         <div class="gal-tag-badge conference">ICTP 2019</div>
         <div class="gal-caption">
-          <strong>Piazza Unità d'Italia · Trieste</strong>
-          <span>During ICTP Thermoelectricity Conference · March 12, 2019</span>
+          <strong>Conference on Modern Concepts &amp; New Materials for Thermoelectricity</strong>
+          <span>ICTP, Trieste, Italy · March 11–15, 2019</span>
         </div>
       </div>
 
@@ -340,21 +347,57 @@
         </div>
       </div>
 
-      <!-- ▶ PHOTO 2: ICTP Conference Group Photo -->
-      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/ictp-thermoelectricity-2019.png','Conference on Modern Concepts and New Materials for Thermoelectricity · ICTP, Trieste, Italy · March 11–15, 2019')">
-        <img loading="lazy" decoding="async" src="assets/images/ictp-thermoelectricity-2019.png"
-             alt="ICTP Thermoelectricity Conference Group Photo 2019"
+      <!-- ▶ PHOTO: Venice Canal — side trip from ICTP Trieste -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/venice-trip-2019.jpg','Dr. Ashish Kumar at the Grand Canal, Venice · Side trip during ICTP Conference, Trieste · March 12, 2019')">
+        <img loading="lazy" decoding="async" src="assets/images/venice-trip-2019.jpg"
+             alt="Dr. Ashish Kumar at Venice Grand Canal 2019"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-        <div class="gal-placeholder" style="display:none; height:220px;">
-          <i class="fas fa-users icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">ICTP Thermoelectricity Conference 2019<br><small>Upload: ictp-thermoelectricity-2019.png</small></div>
+        <div class="gal-placeholder" style="display:none; height:240px;">
+          <i class="fas fa-water icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Venice Grand Canal · March 2019</div>
         </div>
         <div class="gal-tag-badge conference">ICTP 2019</div>
         <div class="gal-caption">
-          <strong>Conference on Modern Concepts &amp; New Materials for Thermoelectricity</strong>
-          <span>ICTP, Trieste, Italy · March 11–15, 2019</span>
+          <strong>Grand Canal · Venice</strong>
+          <span>Side visit during ICTP Conference · March 12, 2019</span>
         </div>
       </div>
+
+      <!-- ▶ PHOTO: Trieste City — Piazza Unità d'Italia -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/trieste-city-2019.jpg','Dr. Ashish Kumar at Piazza Unità d\'Italia, Trieste · During ICTP Thermoelectricity Conference visit · March 12, 2019')">
+        <img loading="lazy" decoding="async" src="assets/images/trieste-city-2019.jpg"
+             alt="Dr. Ashish Kumar at Piazza Unità d'Italia, Trieste 2019"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:220px;">
+          <i class="fas fa-map-marker-alt icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Trieste, Italy · ICTP Visit 2019</div>
+        </div>
+        <div class="gal-tag-badge conference">ICTP 2019</div>
+        <div class="gal-caption">
+          <strong>Piazza Unità d'Italia · Trieste</strong>
+          <span>During ICTP Thermoelectricity Conference · March 12, 2019</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════ 2017 — SEGOVIA, SPAIN ══════════════════ -->
+
+      <!-- ▶ PHOTO: Segovia, Spain — Roman Aqueduct (main photo) -->
+      <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/segovia-spain-2017.jpg','Dr. Ashish Kumar at the Roman Aqueduct of Segovia, Spain · DRIP XVII Conference · December 2017')">
+        <img loading="lazy" decoding="async" src="assets/images/segovia-spain-2017.jpg"
+             alt="Dr. Ashish Kumar at Segovia Roman Aqueduct, Spain, 2017"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gal-placeholder" style="display:none; height:270px;">
+          <i class="fas fa-archway icon" style="color:var(--sky);opacity:0.4;"></i>
+          <div class="caption">Segovia, Spain · 2017</div>
+        </div>
+        <div class="gal-tag-badge conference">Spain 2017</div>
+        <div class="gal-caption">
+          <strong>Roman Aqueduct of Segovia · Spain</strong>
+          <span>DRIP XVII Conference visit · December 2017</span>
+        </div>
+      </div>
+
+      <!-- ══════════════════ 2011 — GLASGOW, UK ══════════════════ -->
 
       <!-- ▶ PHOTO: Glasgow Science Museum — touching the oldest meteorite -->
       <div class="gal-item" data-cat="conference" onclick="openLightbox('assets/images/glasgow-museum-2011.jpg','Dr. Ashish Kumar touching a 4.5-billion-year-old meteorite at Glasgow Science Centre · July 2011')">
@@ -388,14 +431,16 @@
         </div>
       </div>
 
-      <!-- ▶ PHOTO 7: PhD Group at IIT Delhi (with supervisor) -->
+      <!-- ══════════════════ GROUP ══════════════════ -->
+
+      <!-- ▶ PHOTO: PhD Group at IIT Delhi (with supervisor) -->
       <div class="gal-item" data-cat="group" onclick="openLightbox('assets/images/phd-group-iitdelhi.png','Research group at IIT Delhi — with Ph.D. supervisor Prof. Rajendra Singh · circa 2010–2013')">
         <img loading="lazy" decoding="async" src="assets/images/phd-group-iitdelhi.png"
              alt="PhD Research Group at IIT Delhi with Supervisor Prof. Rajendra Singh"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
         <div class="gal-placeholder" style="display:none; height:280px;">
           <i class="fas fa-university icon" style="color:var(--sky);opacity:0.4;"></i>
-          <div class="caption">PhD Group · IIT Delhi<br><small>Upload: phd-group-iitdelhi.png</small></div>
+          <div class="caption">PhD Group · IIT Delhi</div>
         </div>
         <div class="gal-tag-badge group">IIT Delhi</div>
         <div class="gal-caption">

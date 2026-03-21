@@ -55,6 +55,33 @@
     .pub-chip { font-size: 0.72rem; font-family: var(--font-sans); color: var(--text2); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.2rem 0.6rem; }
     .status-active-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.72rem; font-family: var(--font-sans); font-weight: 600; color: #22c55e; margin-top: 0.5rem; }
     .status-active-badge::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 6px #22c55e; }
+
+    /* ── PI Card responsive grid ── */
+    .pi-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .pi-avatar {
+      width: 280px; height: 280px;
+      margin: 0 auto;
+      font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      .pi-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .pi-card > div:first-child { text-align: center; }
+    }
+
+    /* ── Alumni card: stack vertically on mobile, keep photo size ── */
+    @media (max-width: 600px) {
+      .alumni-card { flex-direction: column; align-items: center; }
+      .alumni-info { text-align: left; width: 100%; }
+    }
   </style>
 </head>
 <body class="lattice-bg">
@@ -91,9 +118,9 @@
 <section class="section">
   <div class="container">
     <span class="section-label">Principal Investigator</span>
-    <div class="card" style="display:grid;grid-template-columns:300px 1fr;gap:2.5rem;align-items:center;margin-top:1.5rem;">
+    <div class="card pi-card">
       <div style="text-align:center;">
-        <div class="avatar" style="width:280px;height:280px;margin:0 auto;font-size:3rem;">
+        <div class="avatar pi-avatar">
           <img loading="lazy" decoding="async" src="assets/images/profile-photo.jpg" alt="Dr. Ashish Kumar" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
           <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">AK</span>
         </div>

@@ -51,6 +51,23 @@
     .journal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--violet); flex-shrink: 0; }
     .journal-name { color: var(--text2); flex: 1; }
     .journal-pub { font-size: 0.72rem; font-family: var(--font-sans); color: var(--text3); }
+
+    /* ── Mentor Cards ── */
+    .mentor-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; margin-bottom: 2.5rem; }
+    @media (max-width: 768px) { .mentor-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 480px) and (max-width: 768px) { .mentor-grid { grid-template-columns: repeat(2, 1fr); } }
+    .mentor-card { background: white; border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 2rem 1.5rem; text-align: center; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .mentor-card:hover { border-color: rgba(124,58,237,0.18); transform: translateY(-4px); box-shadow: var(--shadow); }
+    .mentor-photo { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 1.2rem; border: 3px solid var(--border); overflow: hidden; background: var(--bg3); }
+    .mentor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .mentor-name { font-family: var(--font-serif); color: var(--text); font-size: 1.08rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .mentor-role { font-size: 0.7rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--violet); margin-bottom: 0.3rem; }
+    .mentor-affil { font-size: 0.78rem; color: var(--text3); font-family: var(--font-sans); margin-bottom: 0.9rem; }
+    .mentor-desc { font-size: 0.84rem; color: var(--text2); line-height: 1.75; text-align: left; }
+    .acknowledgement-card { background: linear-gradient(135deg, rgba(124,58,237,0.04), rgba(14,165,233,0.03)); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem 2.5rem; position: relative; overflow: hidden; }
+    .acknowledgement-card::before { content: '\201C'; position: absolute; top: -0.5rem; left: 1.5rem; font-size: 6rem; font-family: var(--font-serif); color: var(--violet); opacity: 0.08; line-height: 1; pointer-events: none; }
+    .acknowledgement-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.85; margin-bottom: 0.8rem; }
+    .acknowledgement-card p:last-child { margin-bottom: 0; }
   </style>
 </head>
 <body class="lattice-bg">
@@ -177,6 +194,89 @@
 
 
     </div>
+  </div>
+</section>
+
+<!-- TEACHERS WHO SHAPED ME -->
+<section class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem;text-align:center;">
+      <span class="section-label">Gratitude</span>
+      <h2 class="section-title">Teachers Who Shaped Me</h2>
+      <div class="section-divider" style="margin:0 auto 1.2rem;"></div>
+      <p style="color:var(--text2);font-size:0.92rem;max-width:620px;margin:0 auto;">Every teacher carries within them the echoes of those who taught them. These are the mentors whose guidance — in the laboratory, the lecture hall, and beyond — defined the physicist and teacher I have become.</p>
+    </div>
+
+    <!-- Three mentor cards -->
+    <div class="mentor-grid">
+
+      <!-- Prof. Fakir Chand — M.Sc. guide -->
+      <div class="mentor-card" data-anim data-delay="0">
+        <div class="mentor-photo">
+          <img loading="lazy" decoding="async"
+               src="assets/images/Prof%20Fakir%20Chand.jpg"
+               alt="Prof. Fakir Chand, M.Sc. Mentor, Kurukshetra University"
+               onerror="this.style.display='none';">
+        </div>
+        <div class="mentor-name">Prof. Fakir Chand</div>
+        <div class="mentor-role">M.Sc. Mentor</div>
+        <div class="mentor-affil">Kurukshetra University, Kurukshetra</div>
+        <div class="mentor-desc">
+          Prof. Fakir Chand taught Electronics during my M.Sc. years and took a genuine personal interest in my career from the very beginning — something that went well beyond the classroom. He would guide me on matters of academic direction, professional choices, and life decisions, not just course content. What struck me most was his exemplary personal integrity: an honesty and ethical commitment in everything he did that quietly set the standard for how I try to conduct myself as a teacher today. Seeing such high ethics lived out naturally — never preached — is a far more lasting lesson than any lecture.
+        </div>
+      </div>
+
+      <!-- Prof. Rajendra Singh — Ph.D. supervisor -->
+      <div class="mentor-card" data-anim data-delay="1">
+        <div class="mentor-photo">
+          <img loading="lazy" decoding="async"
+               src="assets/images/Prof%20Rajendra%20Singh.JPG"
+               alt="Prof. Rajendra Singh, Ph.D. Supervisor, IIT Delhi"
+               onerror="this.style.display='none';">
+        </div>
+        <div class="mentor-name">Prof. Rajendra Singh</div>
+        <div class="mentor-role">Ph.D. Supervisor</div>
+        <div class="mentor-affil">Department of Physics, IIT Delhi</div>
+        <div class="mentor-desc">
+          Prof. Rajendra Singh supervised my doctoral research at IIT Delhi with a calm, steady presence that gave every student space to think and grow. He always supported my ideas, even unconventional ones, and never imposed a direction — he trusted the process. He was emphatic about ethical research and about staying above the noise of academic politics: his philosophy was to let ideas speak, never personal agendas. He also taught me the lasting value of networking — not in any transactional sense, but in building genuine relationships within the scientific community that sustain a career over decades. His example of quiet dignity in the laboratory continues to guide me.
+        </div>
+      </div>
+
+      <!-- Dr. D.K. Kanjilal — Postdoc mentor -->
+      <div class="mentor-card" data-anim data-delay="2">
+        <div class="mentor-photo">
+          <img loading="lazy" decoding="async"
+               src="assets/images/Kanjilal.JPG"
+               alt="Dr. D.K. Kanjilal, Distinguished Scientist, IUAC New Delhi"
+               onerror="this.style.display='none';">
+        </div>
+        <div class="mentor-name">Dr. D.K. Kanjilal</div>
+        <div class="mentor-role">Postdoc Mentor</div>
+        <div class="mentor-affil">Distinguished Scientist, IUAC New Delhi</div>
+        <div class="mentor-desc">
+          Dr. D.K. Kanjilal, Distinguished Scientist at the Inter-University Accelerator Centre (IUAC), New Delhi, gave me something that transformed how I work: complete independence. He trusted me to pursue new ideas in ion-beam physics and materials science on my own terms, and that confidence in my capabilities changed my relationship with research fundamentally — from executing someone else's programme to owning my own scientific questions. He also modelled something I have tried to carry forward: a student-centric way of leading, and an unshakeable positivity in the face of experimental setbacks. He never let the difficulties of research diminish his enthusiasm for the people doing it.
+        </div>
+      </div>
+
+    </div><!-- end mentor-grid -->
+
+    <!-- Broad acknowledgement -->
+    <div class="acknowledgement-card" data-anim data-delay="3">
+      <div class="mentor-role" style="margin-bottom:0.8rem;text-align:left;">A Lifetime of Teachers</div>
+      <p>
+        No scientist is self-made. The foundations were laid long before any laboratory — by schoolteachers whose patience with a curious student I only properly appreciate now, and by undergraduate teachers who first made physics feel like a living discipline rather than a body of facts to be memorised. I carry gratitude to every teacher from high school onward who treated their subject as something worth caring about deeply.
+      </p>
+      <p>
+        At Kurukshetra University, <strong>Prof. R.K. Modgil</strong> shaped my understanding of physics in ways that became clear only much later. At UPES Dehradun, <strong>Dr. Ram Sharma</strong> and <strong>Prof. Ranjeet Brajpuriya</strong> were colleagues and teachers together — collaborative, generous with their time, and models of engaged academic citizenship. At IUAC New Delhi, <strong>Dr. Sundeep Chopra</strong> and the wider community of scientists and researchers there showed me what a genuinely open scientific culture looks like: one where ideas are tested on their merits, and where every interaction — across career stages — is a potential learning. I am grateful to every colleague and scientist at IUAC whose passion for their work became, by example, a form of teaching.
+      </p>
+      <p>
+        The debt I owe extends equally to my students, who have taught me far more than they know — about explaining things clearly, about questioning assumptions, and about the responsibility that comes with standing at the front of a room. Teaching is a relay: one generation passes something to the next, and the chain only breaks when a teacher stops believing that what they carry matters.
+      </p>
+      <p style="font-family:var(--font-serif);font-style:italic;color:var(--text);font-size:0.93rem;">
+        I became a teacher because of teachers. Everything I do in the classroom and the laboratory is, in some measure, a tribute to that chain.
+      </p>
+    </div>
+
   </div>
 </section>
 
