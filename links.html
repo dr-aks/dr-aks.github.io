@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="description" content="Comprehensive resources for physics researchers, students, and educators — funding, fellowships, free courses, and software curated by Dr. Ashish Kumar, CUJ." />
+  <title>Resources — Dr. Ashish Kumar</title>
+  <meta name="theme-color" content="#7c3aed" />
+  <link rel="icon" href="assets/images/favicon.ico" sizes="any" />
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://dr-aks.github.io/links.html" />
+  <meta property="og:title" content="Resources — Dr. Ashish Kumar" />
+  <meta property="og:description" content="Comprehensive resources for physics researchers, students, and educators — funding, fellowships, free courses, and software." />
+  <meta property="og:image" content="https://dr-aks.github.io/assets/images/profile-photo.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://dr-aks.github.io/links.html" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── TOC chips ── */
+    .toc-bar { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem; }
+    .toc-chip { display: inline-flex; align-items: center; gap: 0.45rem; font-family: var(--font-sans); font-size: 0.78rem; font-weight: 600; padding: 0.4rem 1rem; border-radius: 50px; text-decoration: none; border: 1px solid var(--border); background: var(--card); color: var(--text2); transition: var(--transition); }
+    .toc-chip:hover, .toc-chip.violet { border-color: rgba(124,58,237,0.3); color: var(--violet); background: var(--violet-dim); }
+    .toc-chip.amber  { border-color: rgba(217,119,6,0.3); color: var(--amber); background: rgba(217,119,6,0.06); }
+    .toc-chip.sky    { border-color: rgba(14,165,233,0.3); color: var(--sky); background: var(--sky-dim); }
+    .toc-chip.green  { border-color: rgba(22,163,74,0.3); color: #16a34a; background: rgba(22,163,74,0.06); }
+
+    /* ── Section heading ── */
+    .link-section { margin-bottom: 3.8rem; scroll-margin-top: 5rem; }
+    .link-section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.6rem; padding-bottom: 0.9rem; border-bottom: 2px solid var(--border); }
+    .link-section-icon { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; flex-shrink: 0; }
+    .link-section-icon.violet { background: var(--violet-dim); color: var(--violet); border: 1px solid rgba(124,58,237,0.2); }
+    .link-section-icon.amber  { background: rgba(217,119,6,0.08); color: var(--amber); border: 1px solid rgba(217,119,6,0.2); }
+    .link-section-icon.sky    { background: var(--sky-dim); color: var(--sky); border: 1px solid rgba(14,165,233,0.2); }
+    .link-section-icon.green  { background: rgba(22,163,74,0.07); color: #16a34a; border: 1px solid rgba(22,163,74,0.2); }
+    .link-section-title { font-family: var(--font-serif); font-size: 1.32rem; color: var(--text); margin: 0; }
+    .link-section-sub  { font-size: 0.8rem; color: var(--text3); font-family: var(--font-sans); margin-top: 0.15rem; }
+
+    /* ── Link card grid ── */
+    .link-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 0.85rem; }
+    .link-card {
+      display: flex; align-items: flex-start; gap: 0.9rem;
+      padding: 1rem 1.1rem; background: var(--card);
+      border: 1px solid var(--border); border-radius: var(--radius);
+      text-decoration: none; transition: var(--transition);
+    }
+    .link-card:hover { border-color: var(--amber); background: var(--bg3); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .link-card .lc-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: var(--amber); flex-shrink: 0; }
+    .link-card:hover .lc-icon { background: var(--violet-dim); color: var(--violet); border-color: rgba(124,58,237,0.2); }
+    .link-card .lc-body { flex: 1; min-width: 0; }
+    .link-card .lc-title { font-family: var(--font-sans); font-size: 0.875rem; font-weight: 600; color: var(--text); margin: 0 0 0.18rem; line-height: 1.3; }
+    .link-card .lc-desc  { font-size: 0.76rem; color: var(--text3); line-height: 1.5; margin: 0; }
+    .lc-tags { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-top: 0.38rem; }
+    .lc-tag  { font-size: 0.62rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0.1rem 0.42rem; border-radius: 3px; }
+    .lc-tag.faculty { background: rgba(124,58,237,0.08); color: var(--violet); border: 1px solid rgba(124,58,237,0.15); }
+    .lc-tag.postdoc { background: rgba(14,165,233,0.08); color: #0284c7; border: 1px solid rgba(14,165,233,0.15); }
+    .lc-tag.phd     { background: rgba(217,119,6,0.08); color: var(--amber); border: 1px solid rgba(217,119,6,0.18); }
+    .lc-tag.ug      { background: rgba(22,163,74,0.07); color: #16a34a; border: 1px solid rgba(22,163,74,0.18); }
+    .lc-tag.school  { background: rgba(234,179,8,0.1); color: #92680a; border: 1px solid rgba(217,119,6,0.2); }
+    .lc-tag.teacher { background: rgba(124,58,237,0.06); color: var(--violet); border: 1px solid rgba(124,58,237,0.12); }
+    .lc-tag.free    { background: rgba(22,163,74,0.07); color: #16a34a; border: 1px solid rgba(22,163,74,0.18); }
+    .lc-tag.paid    { background: rgba(239,68,68,0.06); color: #b91c1c; border: 1px solid rgba(239,68,68,0.15); }
+    .lc-tag.intl    { background: rgba(14,165,233,0.08); color: #0369a1; border: 1px solid rgba(14,165,233,0.15); }
+
+    .intro-note { background: linear-gradient(135deg, rgba(124,58,237,0.04), rgba(14,165,233,0.03)); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem 1.8rem; margin-bottom: 2.2rem; font-size: 0.87rem; color: var(--text2); line-height: 1.8; }
+
+    @media (max-width: 600px) { .link-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body class="lattice-bg">
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Dr. Ashish Kumar</a>
+    <button class="nav-toggle" type="button" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="lab.html">Laboratory</a></li>
+      <li><a href="group.html">Group</a></li>
+      <li><a href="teaching.html">Teaching</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="vacancies.html">Vacancies</a></li>
+      <li><a href="links.html" class="active">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content fade-in">
+      <span class="section-label">Curated Resources</span>
+      <h1>Resources</h1>
+      <p>A comprehensive, hand-curated collection of funding schemes, fellowships, free courses, and research tools — useful for anyone in Physics &amp; Materials Science, from school students to faculty.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+
+    <!-- Quick-jump TOC -->
+    <div class="toc-bar">
+      <a href="#funding" class="toc-chip violet"><i class="fas fa-rupee-sign"></i> Research Funding</a>
+      <a href="#fellowships" class="toc-chip amber"><i class="fas fa-award"></i> Fellowships &amp; Internships</a>
+      <a href="#education" class="toc-chip sky"><i class="fas fa-play-circle"></i> Learning &amp; Courses</a>
+      <a href="#software" class="toc-chip green"><i class="fas fa-laptop-code"></i> Software &amp; Tools</a>
+    </div>
+
+    <div class="intro-note">
+      All links lead to official or well-established sources and have been verified. Funding deadlines change each year — always check the respective portal for current calls. <strong>Tags:</strong> <span style="color:var(--violet);font-weight:600;">Faculty</span> · <span style="color:#0284c7;font-weight:600;">Postdoc</span> · <span style="color:var(--amber);font-weight:600;">PhD</span> · <span style="color:#16a34a;font-weight:600;">UG/PG</span> · <span style="color:#92680a;font-weight:600;">School</span> · <span style="color:#16a34a;font-weight:600;">Free</span> · <span style="color:#b91c1c;font-weight:600;">Commercial</span> · <span style="color:#0369a1;font-weight:600;">International</span>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         A.  RESEARCH FUNDING — Faculty / Postdoc / PhD
+    ══════════════════════════════════════════════ -->
+    <div class="link-section" id="funding">
+      <div class="link-section-header">
+        <div class="link-section-icon violet"><i class="fas fa-rupee-sign"></i></div>
+        <div>
+          <div class="link-section-title">Research Funding Schemes</div>
+          <div class="link-section-sub">Grants for Physics faculty, principal investigators, postdocs &amp; doctoral students in India</div>
+        </div>
+      </div>
+      <div class="link-grid">
+
+        <a href="https://anrfonline.in/ANRF/crg" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-flask"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ANRF Core Research Grant (CRG)</p>
+            <p class="lc-desc">Main extramural funding for individual researchers or groups at any Indian institution; no fixed upper budget; 3-year tenure. Flagship scheme of Anusandhan National Research Foundation.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://anrfonline.in/ANRF/srg" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-seedling"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SERB Start-up Research Grant (SRG)</p>
+            <p class="lc-desc">Two-year seed grant of ₹30 lakh for early-career faculty (within 5 years of first regular appointment) to establish an independent research programme.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://anrfonline.in/ANRF/arg_anrf" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-star"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ANRF Advanced Research Grant (ARG)</p>
+            <p class="lc-desc">Competitive grant for high-impact frontier research by established groups with a strong publication record; larger budgets for ambitious proposals.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://prism.serbonline.in/RS-MATRICS" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-infinity"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SERB MATRICS</p>
+            <p class="lc-desc">Fixed grant of ₹2 lakh p.a. + overheads tailored for active mathematicians and theoretical physicists with a strong credentials and publication record.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://anrfonline.in/ANRF/serbPowerInstructions" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-female"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SERB-POWER Grant</p>
+            <p class="lc-desc">Promoting Opportunities for Women in Exploratory Research — supports women scientists at all career stages with dedicated research grants and fellowships.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://anrfonline.in/ANRF/npdf" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-user-graduate"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SERB National Post Doctoral Fellowship (N-PDF)</p>
+            <p class="lc-desc">₹80,000/month + HRA for PhD holders within 5 years of viva; 2-year fellowship at any recognised Indian institution. One of the most competitive postdoc awards in India.</p>
+            <div class="lc-tags"><span class="lc-tag postdoc">Postdoc</span></div>
+          </div>
+        </a>
+
+        <a href="https://anrfonline.in/ANRF/Ramanujan_fellowship" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-globe"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SERB Ramanujan Fellowship</p>
+            <p class="lc-desc">For brilliant Indian scientists returning from abroad; ₹1,35,000/month + research grant for 5 years. Age limit: below 40 years. Helps reintegrate into India's research ecosystem.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span><span class="lc-tag postdoc">Postdoc</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.indiascienceandtechnology.gov.in/nurturing-minds/scholarships/post-doctoral/csir-nehru-science-postdoctoral-research-fellowship-scheme" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-atom"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">CSIR–Nehru Science Postdoctoral Fellowship</p>
+            <p class="lc-desc">₹50,000/month + HRA for fresh PhD holders in CSIR labs; 2-year fellowship (extendable to 3 for outstanding work). Covers sciences including Physics and Materials Science.</p>
+            <div class="lc-tags"><span class="lc-tag postdoc">Postdoc</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.indiascienceandtechnology.gov.in/nurturing-minds/scholarships/faculty-and-scientists/csir-raman-research-fellowship-rrf" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-plane"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">CSIR–Raman Research Fellowship (RRF)</p>
+            <p class="lc-desc">For CSIR scientists to conduct collaborative research at premier foreign institutions; USD 2,500/month + travel; duration 2–6 months. Stimulates international exposure.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://indiabioscience.org/grants/raman-charpak-fellowship-program" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-flag"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Raman–Charpak Fellowship (Indo-French)</p>
+            <p class="lc-desc">DST–CEFIPRA exchange programme for Indian PhD students &amp; postdocs to undertake 3–6 month research visits at French laboratories in any area of science.</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://csirnet.nta.ac.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-pencil-alt"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">CSIR NET JRF — Physical Sciences</p>
+            <p class="lc-desc">Gateway to PhD fellowship in India: ₹31,000–35,000/month + ₹20,000 p.a. contingency; conducted twice a year by NTA. Mandatory qualification for most funded PhDs.</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.ugc.gov.in/ugc_schemes.aspx" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-university"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">UGC Schemes Portal</p>
+            <p class="lc-desc">All UGC-funded schemes: Major/Minor Research Projects, STRIDE, BSR fellowships, Junior Research Fellowships for university faculty &amp; their PhD students.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span><span class="lc-tag phd">PhD</span></div>
+          </div>
+        </a>
+
+        <a href="https://dst.gov.in/fellowship-opportunities-researchers" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-list-alt"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">DST Fellowship Opportunities — Master List</p>
+            <p class="lc-desc">DST's consolidated portal listing all national fellowships, career-development awards, and women scientist schemes. Best starting point for any Indian researcher exploring funding.</p>
+            <div class="lc-tags"><span class="lc-tag faculty">Faculty</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag phd">PhD</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div><!-- end funding section -->
+
+
+    <!-- ══════════════════════════════════════════════
+         B.  FELLOWSHIPS & INTERNSHIPS — Students / Teachers
+    ══════════════════════════════════════════════ -->
+    <div class="link-section" id="fellowships">
+      <div class="link-section-header">
+        <div class="link-section-icon amber"><i class="fas fa-award"></i></div>
+        <div>
+          <div class="link-section-title">Fellowships &amp; Internships</div>
+          <div class="link-section-sub">For school, UG, PG &amp; PhD students and college teachers in Physics &amp; Materials Science</div>
+        </div>
+      </div>
+      <div class="link-grid">
+
+        <a href="https://online-inspire.gov.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-bolt"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">DST-INSPIRE Fellowship &amp; Scholarship</p>
+            <p class="lc-desc">Scholarship for top BSc/MSc students in Natural Sciences: ₹80,000/year + ₹20,000 summer attachment grant. Also offers INSPIRE Faculty Award and PhD Fellowship.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span><span class="lc-tag phd">PhD</span><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.inspireawards-dst.gov.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-lightbulb"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">INSPIRE–MANAK (Innovation Award)</p>
+            <p class="lc-desc">DST scheme for school students (Class 6–10) to submit innovative ideas; ₹10,000 award to selected entries; national exhibition with mentorship at premier institutions.</p>
+            <div class="lc-tags"><span class="lc-tag school">School</span></div>
+          </div>
+        </a>
+
+        <a href="https://webjapps.ias.ac.in/fellowship2026/index.html" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-scroll"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Science Academies' SRFP (IAS / INSA / NASI)</p>
+            <p class="lc-desc">Joint Summer Research Fellowship Programme by India's three national science academies; 2-month placement with a Fellow of the Academy; open to students AND college teachers.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span><span class="lc-tag teacher">Teacher</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.tifr.res.in/~vsrp/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-star-of-life"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">TIFR Visiting Students Research Programme (VSRP)</p>
+            <p class="lc-desc">Summer research at TIFR Mumbai in Physics, Chemistry, Computer Science, Astronomy; for final-year UG/PG students; stipend and accommodation provided.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.prl.res.in/prl-eng/summer_internship" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-sun"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">PRL Summer Internship Programme</p>
+            <p class="lc-desc">8-week programme at Physical Research Laboratory, Ahmedabad in Space, Atmospheric &amp; Planetary Sciences, Theoretical Physics; minimum 60% aggregate required.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.jncasr.ac.in/academic/fandeprogrammes/srfp" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-microscope"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">JNCASR Summer Research Fellowship (SRFP)</p>
+            <p class="lc-desc">Two-month summer placement at JNCASR Bengaluru in Physical, Chemical and Life Sciences; for BSc/MSc students with strong academic record.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="http://www.ncra.tifr.res.in/ncra/graduate-school/visiting-students" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-satellite-dish"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">NCRA–TIFR Visiting Students Programme</p>
+            <p class="lc-desc">Summer research at National Centre for Radio Astrophysics, Pune in Radio Astronomy and Astrophysics; stipend + accommodation for selected students.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.iiserpune.ac.in/research/summer-internship" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">IISER Summer Student Programme</p>
+            <p class="lc-desc">Competitive summer research across IISERs in all science disciplines; excellent exposure to frontier research culture; multiple IISER campuses accept applications.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://iuac.res.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-atom"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">IUAC Training &amp; Research Visitors Programme</p>
+            <p class="lc-desc">Inter-University Accelerator Centre, New Delhi: short-term research visits and accelerator-based experiment training; open to PhD students, postdocs, and faculty.</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag faculty">Faculty</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.isro.gov.in/YUVIKA.html" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-rocket"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ISRO YUVIKA — Young Scientist Programme</p>
+            <p class="lc-desc">Annual residential programme at ISRO centres for Class 9 students; covers space science, rocketry, remote sensing, robotics; fully sponsored including travel and accommodation.</p>
+            <div class="lc-tags"><span class="lc-tag school">School</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.lindau-nobel.org/apply/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-globe-europe"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Lindau Nobel Laureate Meetings</p>
+            <p class="lc-desc">Annual meetings in Germany; highly competitive selection by DST/SERB; connects young researchers with Nobel Laureates. Physics meetings held every 3 years (interleaved with Chemistry &amp; Medicine).</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.ictp.it/opportunities/calls" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-globe"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ICTP Schools &amp; Research Visits (Trieste)</p>
+            <p class="lc-desc">Abdus Salam ICTP, Trieste — workshops, schools &amp; associate programmes for physicists from developing countries; fully funded; exceptional for condensed matter, optics, and high energy.</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag faculty">Faculty</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/fulbright-nehru-postdoctoral-research-fellowships/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-flag-usa"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Fulbright–Nehru Postdoctoral Fellowship (USA)</p>
+            <p class="lc-desc">8–24 month research fellowship at a US institution for Indian early-career faculty; covers living allowance, J-1 visa, travel and professional allowance. Prestigious government exchange.</p>
+            <div class="lc-tags"><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag faculty">Faculty</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.usief.org.in/fulbright-fellowships/fellowships-for-indian-citizen/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-university"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Fulbright–Nehru Doctoral Research Fellowship</p>
+            <p class="lc-desc">6–9 month fellowship at a US university for Indian PhD students to carry out part of their doctoral research; managed by USIEF India.</p>
+            <div class="lc-tags"><span class="lc-tag phd">PhD</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.daad.in/en/find-funding/scholarship-database/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-border-all"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">DAAD Scholarships — Study &amp; Research in Germany</p>
+            <p class="lc-desc">Multiple DAAD programmes for Indian students and researchers: Research Grants for PhD/postdoc (2–12 months in Germany), RISE Worldwide for undergrads, bi-national PhD programmes.</p>
+            <div class="lc-tags"><span class="lc-tag ug">UG/PG</span><span class="lc-tag phd">PhD</span><span class="lc-tag postdoc">Postdoc</span><span class="lc-tag intl">International</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div><!-- end fellowships section -->
+
+
+    <!-- ══════════════════════════════════════════════
+         C.  LEARNING, COURSES & EDUCATIONAL RESOURCES
+    ══════════════════════════════════════════════ -->
+    <div class="link-section" id="education">
+      <div class="link-section-header">
+        <div class="link-section-icon sky"><i class="fas fa-play-circle"></i></div>
+        <div>
+          <div class="link-section-title">Learning, Courses &amp; Educational Resources</div>
+          <div class="link-section-sub">YouTube channels, MOOC platforms, open courseware, textbooks &amp; preprint libraries for Physics</div>
+        </div>
+      </div>
+      <div class="link-grid">
+
+        <!-- YouTube Channels -->
+        <a href="https://www.youtube.com/@veritasium" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Veritasium</p>
+            <p class="lc-desc">Deep-dive science videos by Dr. Derek Muller — physics, maths, engineering — exceptional production with rigorous content; from quantum mechanics to real-world phenomena.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@minutephysics" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">MinutePhysics</p>
+            <p class="lc-desc">Short animated explanations of physics concepts — from classical mechanics to quantum field theory — in under five minutes. Perfect for building intuition quickly.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@3blue1brown" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">3Blue1Brown</p>
+            <p class="lc-desc">Visual mathematics and physics — linear algebra, calculus, Fourier transforms, neural networks — with beautiful animated geometric intuition. Essential for any physicist.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@fermilab" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Fermilab (Don Lincoln)</p>
+            <p class="lc-desc">Particle physics, cosmology, and quantum mechanics explained by FNAL physicist Dr. Don Lincoln; 100+ videos on Higgs boson, dark matter, Standard Model and beyond.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@pbsspacetime" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">PBS Space Time</p>
+            <p class="lc-desc">Graduate-level astrophysics and cosmology — dark matter, general relativity, quantum gravity, black holes — explained rigorously yet accessibly. For serious students.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@SabineHossenfelder" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Sabine Hossenfelder</p>
+            <p class="lc-desc">Theoretical physicist offering clear, critical-minded takes on quantum mechanics, foundations of physics, dark energy, and science news. Cuts through hype with precision.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.youtube.com/@physicsgirl" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-youtube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Physics Girl</p>
+            <p class="lc-desc">Experiment-driven demos of physical phenomena; ideal for undergraduates and school students looking to develop intuition for physics through hands-on exploration.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span><span class="lc-tag school">School</span></div>
+          </div>
+        </a>
+
+        <!-- MOOC Platforms -->
+        <a href="https://swayam.gov.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-chalkboard"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">SWAYAM — India's National MOOC Portal</p>
+            <p class="lc-desc">Government of India free online courses from IITs, IIMs and Central Universities; 2,000+ courses in Physics, Engineering, Sciences; certifiable credits transferable to degrees.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://nptel.ac.in/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-play"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">NPTEL — IIT/IISc Video Lectures</p>
+            <p class="lc-desc">National Programme on Technology Enhanced Learning: full-semester video courses from IIT faculty in all branches of Physics, Electronics and Engineering. Certificate exams available.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span><span class="lc-tag ug">UG/PG</span></div>
+          </div>
+        </a>
+
+        <a href="https://ocw.mit.edu/courses/physics/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-university"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">MIT OpenCourseWare — Physics</p>
+            <p class="lc-desc">Full lecture notes, problem sets and exams from MIT physics courses — Classical Mechanics, E&amp;M, Quantum Mechanics, Statistical Physics through QFT. A gold standard resource.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.coursera.org/browse/physical-science-and-engineering/physics-and-astronomy" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-laptop"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Coursera — Physics &amp; Astronomy Courses</p>
+            <p class="lc-desc">Structured online courses from top global universities (Duke, Yale, MIT, Caltech) in Quantum Mechanics, Particle Physics, Astrophysics; free to audit, paid for certificates.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (audit)</span><span class="lc-tag paid">Paid (cert)</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.edx.org/learn/physics" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">edX — Physics Courses (MIT, Harvard, Berkeley)</p>
+            <p class="lc-desc">University-level physics from MIT, Harvard, CalTech, Berkeley and others; includes professional certificates; many can be audited free of charge.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (audit)</span></div>
+          </div>
+        </a>
+
+        <!-- Libraries & Preprints -->
+        <a href="https://arxiv.org/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-file-alt"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">arXiv.org — Preprint Server</p>
+            <p class="lc-desc">Where physics research appears first — before journal publication. Browse cond-mat, physics, quant-ph, astro-ph and more; millions of papers freely accessible.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://phys.libretexts.org/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-book-open"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Physics LibreTexts</p>
+            <p class="lc-desc">Open-access physics textbook library: Mechanics, E&amp;M, Quantum, Statistical, Optics, Modern Physics — all freely downloadable and editable. Growing community resource.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://openstax.org/subjects/science" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-book"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">OpenStax Free Textbooks</p>
+            <p class="lc-desc">Peer-reviewed, openly licensed textbooks for University Physics Vols. 1–3 and College Physics — PDF, HTML or app; widely adopted by institutions worldwide.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.khanacademy.org/science/physics" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Khan Academy — Physics</p>
+            <p class="lc-desc">Structured video courses from school to introductory university physics; excellent for building conceptual foundations; used widely for JEE and NEET preparation.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span><span class="lc-tag school">School</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.ncert.nic.in/textbook/textbook.htm" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-book-reader"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">NCERT Physics Textbooks (XI &amp; XII)</p>
+            <p class="lc-desc">Official NCERT textbooks — free PDF download; the essential foundation reference for school and early-college physics in India. Clearly written, conceptually sound.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span><span class="lc-tag school">School</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div><!-- end education section -->
+
+
+    <!-- ══════════════════════════════════════════════
+         D.  RESEARCH & LABORATORY SOFTWARE TOOLS
+    ══════════════════════════════════════════════ -->
+    <div class="link-section" id="software">
+      <div class="link-section-header">
+        <div class="link-section-icon green"><i class="fas fa-laptop-code"></i></div>
+        <div>
+          <div class="link-section-title">Research &amp; Laboratory Software</div>
+          <div class="link-section-sub">Tools for data acquisition, analysis, crystal structure, DFT, drawing, and scientific writing — free and commercial</div>
+        </div>
+      </div>
+      <div class="link-grid">
+
+        <!-- Measurement & Analysis -->
+        <a href="https://www.ni.com/en/support/downloads/software-products/download.labview.html" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-wave-square"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">LabVIEW (NI)</p>
+            <p class="lc-desc">Industry-standard graphical programming for instrument control, DAQ, and automated test systems; widely used in experimental physics labs worldwide. Student edition available.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Commercial</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.originlab.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">OriginPro (OriginLab)</p>
+            <p class="lc-desc">Scientific graphing and data analysis: curve fitting, statistical analysis, signal processing, publication-quality figures. The standard tool for experimental physics papers.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Commercial</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.mathworks.com/products/matlab.html" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-square-root-alt"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">MATLAB (MathWorks)</p>
+            <p class="lc-desc">Numerical computing, matrix operations, simulation, and signal processing; ubiquitous in experimental and computational physics. Academic licensing available for institutions.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Commercial</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.python.org/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fab fa-python"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Python (NumPy / SciPy / Matplotlib)</p>
+            <p class="lc-desc">Free, open-source; rapidly becoming the standard language for data analysis in experimental physics. Install Anaconda for a complete scientific computing environment in one step.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <!-- Crystal Structure & Diffraction -->
+        <a href="https://jp-minerals.org/vesta/en/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-cube"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">VESTA</p>
+            <p class="lc-desc">Free 3D crystal structure visualisation; reads VASP, CIF, WIEN2k and many formats; simulates electron density and diffraction patterns. Essential for materials characterisation.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.ill.eu/sites/fullprof/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-wave-square"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">FullProf Suite (Rietveld Refinement)</p>
+            <p class="lc-desc">Free standard software for Rietveld structural refinement of XRD and neutron powder diffraction data; developed at ILL, Grenoble; widely used in condensed matter physics.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="http://jana.fzu.cz/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-project-diagram"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">JANA2020</p>
+            <p class="lc-desc">Free crystallographic software for Rietveld refinement and structure solution from powder and single-crystal diffraction; handles modulated and composite structures.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://crystalmaker.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-gem"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">CrystalMaker</p>
+            <p class="lc-desc">Powerful crystal and molecular structure visualiser; simulates powder and single-crystal diffraction; excellent for teaching and presentations. Mac/Windows; academic license available.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Commercial</span></div>
+          </div>
+        </a>
+
+        <!-- DFT / Computational -->
+        <a href="https://www.quantum-espresso.org/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-atom"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Quantum ESPRESSO (DFT)</p>
+            <p class="lc-desc">Open-source DFT code for electronic structure, band structure, phonon calculations and materials modelling; widely used for condensed matter theory and first-principles research.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free / Open Source</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.wien2k.at/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-cogs"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">WIEN2k (All-Electron DFT)</p>
+            <p class="lc-desc">Augmented plane-wave DFT code for electronic, magnetic and optical properties; highly accurate full-potential method; affordable academic licence widely used in India.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Licensed (academic)</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.vasp.at/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-microchip"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">VASP (Vienna Ab initio Simulation Package)</p>
+            <p class="lc-desc">Industry-standard plane-wave DFT code; ab initio molecular dynamics, geometry optimisation, band structures; most widely cited computational materials science software.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Commercial</span></div>
+          </div>
+        </a>
+
+        <!-- Molecule & Chemistry Drawing -->
+        <a href="https://www.acdlabs.com/resources/free-chemistry-software-apps/chemsketch-freeware/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-draw-polygon"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ACD/ChemSketch (Free)</p>
+            <p class="lc-desc">Draw chemical and molecular structures, organometallics, polymers; calculate molecular properties; free for academic non-commercial use. Windows only. Widely used in teaching.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (academic)</span></div>
+          </div>
+        </a>
+
+        <a href="https://avogadro.cc/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-shapes"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Avogadro (Molecule Editor)</p>
+            <p class="lc-desc">Free, open-source advanced molecular editor and visualiser for computational chemistry, molecular modelling and materials science. Cross-platform (Windows, macOS, Linux).</p>
+            <div class="lc-tags"><span class="lc-tag free">Free / Open Source</span></div>
+          </div>
+        </a>
+
+        <!-- Design / Schematic -->
+        <a href="https://www.autodesk.com/education/edu-software/overview" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-drafting-compass"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">AutoCAD (Autodesk Education)</p>
+            <p class="lc-desc">Free for verified students and educators through Autodesk Education Community; essential for designing experimental setups, vacuum chambers, cryostat parts, and lab schematics.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (edu)</span></div>
+          </div>
+        </a>
+
+        <!-- Scientific Writing -->
+        <a href="https://www.overleaf.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-file-code"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Overleaf — Online LaTeX Editor</p>
+            <p class="lc-desc">Browser-based LaTeX editor with real-time collaboration; free tier available; used by virtually all journals and conference submissions; pre-loaded journal templates.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (basic)</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.zotero.org/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-bookmark"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Zotero — Reference Manager</p>
+            <p class="lc-desc">Free, open-source reference manager with browser plugin for one-click paper capture from any journal; integrates seamlessly with Word, LibreOffice, and LaTeX/BibTeX.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.mendeley.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-layer-group"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Mendeley — Reference Manager</p>
+            <p class="lc-desc">Elsevier's free desktop and web reference manager with PDF annotation, social networking for researchers, and Word/BibTeX plug-in; 2 GB free cloud storage.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free</span></div>
+          </div>
+        </a>
+
+        <!-- Databases -->
+        <a href="https://www.ccdc.cam.ac.uk/structures/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-database"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">Cambridge Structural Database (CSD)</p>
+            <p class="lc-desc">World repository for organic &amp; metal-organic crystal structures (~1.2 million entries); CSD Web search is freely accessible for browsing and downloading structures in CIF format.</p>
+            <div class="lc-tags"><span class="lc-tag free">Free (web)</span></div>
+          </div>
+        </a>
+
+        <a href="https://icsd.products.fiz-karlsruhe.de/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-database"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ICSD — Inorganic Crystal Structure Database</p>
+            <p class="lc-desc">Comprehensive database of inorganic crystal structures (160,000+ entries); covers oxides, nitrides, semiconductors, intermetallics. Institutional subscription required for full access.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Institutional</span></div>
+          </div>
+        </a>
+
+        <a href="https://www.icdd.com/" target="_blank" rel="noopener noreferrer" class="link-card">
+          <div class="lc-icon"><i class="fas fa-table"></i></div>
+          <div class="lc-body">
+            <p class="lc-title">ICDD Powder Diffraction File (PDF)</p>
+            <p class="lc-desc">The gold-standard XRD reference database (1.1 million+ entries, Release 2026) for phase identification in materials science; supplied with most diffractometer software suites.</p>
+            <div class="lc-tags"><span class="lc-tag paid">Licensed</span></div>
+          </div>
+        </a>
+
+      </div>
+    </div><!-- end software section -->
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Dr. Ashish Kumar</div>
+        <p class="footer-desc">Associate Professor of Physics &amp; Astronomical Sciences, Central University of Jammu. Experimental physicist, PI of three national research projects, Lindau Nobel Laureate Meeting Alumni 2019.</p>
+        <div style="display:flex;gap:0.8rem;margin-top:1rem;">
+          <a href="mailto:ashish.phy@cujammu.ac.in" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-envelope"></i></a>
+          <a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fas fa-graduation-cap"></i></a>
+          <a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-orcid"></i></a>
+          <a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer" style="color:var(--text3);font-size:1.1rem;"><i class="fab fa-researchgate"></i></a>
+        </div>
+      </div>
+      <div class="footer-col"><h5>Navigation</h5><ul><li><a href="index.html">Home</a></li><li><a href="research.html">Research</a></li><li><a href="lab.html">Laboratory</a></li><li><a href="group.html">Group</a></li></ul></div>
+      <div class="footer-col"><h5>Resources</h5><ul><li><a href="publications.html">Publications</a></li>
+      <li><a href="teaching.html">Teaching</a></li><li><a href="news.html">News</a></li><li><a href="gallery.html">Gallery</a></li><li><a href="vacancies.html">Vacancies</a></li>
+      <li><a href="links.html">Resources</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h5>Contact</h5><ul><li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li><li><a href="mailto:dr.akmr@gmail.com">dr.akmr@gmail.com</a></li><li style="color:var(--text3);font-size:0.82rem;">Dept. Physics &amp; Astronomical Sciences</li><li style="color:var(--text3);font-size:0.82rem;">CUJ, J&amp;K — 181143</li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Dr. Ashish Kumar · Central University of Jammu</p>
+    </div>
+  </div>
+</footer>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
