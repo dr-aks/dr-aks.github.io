@@ -1,0 +1,39 @@
+name: Update Scholar Metrics
+
+on:
+  schedule:
+    - cron: "0 3 * * 0"
+  workflow_dispatch:
+
+jobs:
+  update-metrics:
+    name: Fetch Google Scholar metrics
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python dependencies
+        run: |
+          pip install --upgrade pip
+          pip install scholarly requests
+
+      - name: Fetch Scholar metrics
+        run: python scripts/fetch_scholar.py
+
+      - name: Commit and push updated metrics
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name  "github-actions[bot]"
+          git add data/scholar_metrics.json
+          git diff --staged --quiet && echo "No changes — metrics unchanged." || \
+            (git commit -m "chore: auto-update Scholar metrics [skip ci]" && git push)
