@@ -69,6 +69,59 @@ function animateCounter(el) {
   requestAnimationFrame(update);
 }
 
+// Map metric label text → JSON field in scholar_metrics.json
+const SCHOLAR_LABEL_MAP = {
+  'h-index':          'h_index',
+  'i10-index':        'i10_index',
+  'Citations':        'citations',
+  'Journal Articles': 'publications',
+  'Publications':     'publications'
+};
+
+// Patch a single metric-num element with a live value
+function patchMetricEl(el, val) {
+  if (val == null || isNaN(val)) return;
+  const prefix  = el.dataset.prefix  || '';
+  const suffix  = el.dataset.suffix  || '';
+  el.dataset.target = String(val);
+  if (el.dataset.done) {
+    // Counter already animated — update text directly
+    el.textContent = prefix + (val >= 1000 ? val.toLocaleString() : val) + suffix;
+  }
+  // else: counter will pick up the updated data-target when it fires
+}
+
+// Apply fetched metrics to all matching elements on the page
+function applyScholarMetrics(data) {
+  document.querySelectorAll('.metric-item').forEach(function (item) {
+    const label = item.querySelector('.metric-label');
+    const num   = item.querySelector('.metric-num');
+    if (!label || !num) return;
+    const key = SCHOLAR_LABEL_MAP[label.textContent.trim()];
+    if (key && data[key] != null) patchMetricEl(num, data[key]);
+  });
+
+  // Show "last updated" date in any element with data-scholar-updated attribute
+  if (data.last_updated) {
+    document.querySelectorAll('[data-scholar-updated]').forEach(function (el) {
+      el.textContent = 'Scholar: ' + data.last_updated;
+    });
+  }
+}
+
+// ---- SCHOLAR AUTO-FETCH ----
+// Reads /data/scholar_metrics.json (updated weekly by GitHub Actions).
+// Falls back silently to hardcoded HTML values if the fetch fails.
+// Fetch is started immediately but applied with a short delay so it
+// doesn't block the initial render.
+(function () {
+  fetch('data/scholar_metrics.json')
+    .then(function (r) { return r.ok ? r.json() : Promise.reject('not found'); })
+    .then(function (data) { applyScholarMetrics(data); })
+    .catch(function () { /* keep hardcoded values silently */ });
+})();
+
+// ---- COUNTER OBSERVER (set up after fetch is initiated) ----
 if ('IntersectionObserver' in window) {
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
