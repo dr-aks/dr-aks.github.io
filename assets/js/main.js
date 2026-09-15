@@ -26,10 +26,8 @@ if (navToggle && navLinks) {
 // ---- ACTIVE NAV LINK ----
 const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(a => {
-  const href = a.getAttribute('href');
-  if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-    a.classList.add('active');
-  }
+  const href = (a.getAttribute('href') || '').split('#')[0].split('?')[0];
+  if (href && href === currentPage) a.classList.add('active');
 });
 
 // ---- SCROLL ANIMATIONS ----
@@ -63,19 +61,25 @@ function animateCounter(el) {
     const progress = Math.min(elapsed / duration, 1);
     const ease     = 1 - Math.pow(1 - progress, 3);
     const current  = target * ease;
-    el.textContent = prefix + current.toFixed(decimals) + suffix;
+    const shown    = decimals ? current.toFixed(decimals) : Math.round(current).toLocaleString('en-IN');
+    el.textContent = prefix + shown + suffix;
     if (progress < 1) requestAnimationFrame(update);
   }
   requestAnimationFrame(update);
 }
 
-// Map metric label text → JSON field in scholar_metrics.json
-const SCHOLAR_LABEL_MAP = {
-  'h-index':          'h_index',
-  'i10-index':        'i10_index',
-  'Citations':        'citations',
-  'Journal Articles': 'publications',
-  'Publications':     'publications'
+// Metric tile label -> field in data/metrics.json.
+// "Publications" is Google Scholar's indexed-item count, which is the headline
+// figure the site quotes. The ORCID fields stay available for any tile that
+// wants the narrower peer-reviewed-journal count instead.
+const METRIC_LABEL_MAP = {
+  'h-index':           'h_index',
+  'i10-index':         'i10_index',
+  'Citations':         'citations',
+  'Publications':      'scholar_items',
+  'Journal Articles':  'orcid_journal_articles',
+  'Indexed Works':     'orcid_works',
+  'WoS Documents':     'wos_documents'
 };
 
 // Patch a single metric-num element with a live value
@@ -92,17 +96,35 @@ function patchMetricEl(el, val) {
 }
 
 // Apply fetched metrics to all matching elements on the page
-function applyScholarMetrics(data) {
+function applyMetrics(data) {
   document.querySelectorAll('.metric-item').forEach(function (item) {
     const label = item.querySelector('.metric-label');
     const num   = item.querySelector('.metric-num');
     if (!label || !num) return;
-    const key = SCHOLAR_LABEL_MAP[label.textContent.trim()];
+    const key = METRIC_LABEL_MAP[label.textContent.trim()];
     if (key && data[key] != null) patchMetricEl(num, data[key]);
   });
 
-  // Show "last updated" date in any element with data-scholar-updated attribute
+  // Inline prose figures: <span data-scholar="citations">1,836</span>
+  document.querySelectorAll('[data-scholar]').forEach(function (el) {
+    var k = el.getAttribute('data-scholar');
+    if (data[k] != null && !isNaN(data[k])) {
+      el.textContent = Number(data[k]).toLocaleString('en-IN');
+    }
+  });
+
+  // Provenance line: which source each figure came from, and when
   if (data.last_updated) {
+    // Name the sources, not competing counts — a second number beside the
+    // headline figure only invites the question of which one is right.
+    var src = [];
+    if (data.scholar_items != null) src.push('Google Scholar');
+    if (data.orcid_works != null)   src.push('ORCID');
+    if (data.wos_documents != null) src.push('Web of Science');
+    var line = 'Source: ' + src.join(', ') + ' \u00b7 updated ' + data.last_updated;
+    document.querySelectorAll('[data-metrics-updated]').forEach(function (el) {
+      el.textContent = line;
+    });
     document.querySelectorAll('[data-scholar-updated]').forEach(function (el) {
       el.textContent = 'Scholar: ' + data.last_updated;
     });
@@ -115,10 +137,15 @@ function applyScholarMetrics(data) {
 // Fetch is started immediately but applied with a short delay so it
 // doesn't block the initial render.
 (function () {
-  fetch('data/scholar_metrics.json')
-    .then(function (r) { return r.ok ? r.json() : Promise.reject('not found'); })
-    .then(function (data) { applyScholarMetrics(data); })
-    .catch(function () { /* keep hardcoded values silently */ });
+  function load(url) {
+    return fetch(url).then(function (r) {
+      return r.ok ? r.json() : Promise.reject(new Error(url + ' ' + r.status));
+    });
+  }
+  load('data/metrics.json')
+    .catch(function () { return load('data/scholar_metrics.json'); })
+    .then(function (data) { applyMetrics(data); })
+    .catch(function () { /* keep the values baked into the HTML */ });
 })();
 
 // ---- COUNTER OBSERVER (set up after fetch is initiated) ----
@@ -173,7 +200,8 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
       e.preventDefault();
       const offset = parseInt(getComputedStyle(document.documentElement)
         .getPropertyValue('--nav-h')) || 72;
-      smoothScrollTo(target.offsetTop - offset);
+      const top = target.getBoundingClientRect().top + window.scrollY;
+      smoothScrollTo(top - offset);
     }
   });
 });

@@ -10,6 +10,9 @@ html {
   /* Firefox custom scrollbar */
   scrollbar-width: thin;
   scrollbar-color: #a78bfa #fafaf9;
+
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* ---- AURORA GLOW PALETTE ---- */
@@ -173,6 +176,7 @@ strong { color: var(--text); font-weight: 600; }
   font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700;
   color: var(--text); letter-spacing: -0.02em;
   display: flex; align-items: center; gap: 0.65rem;
+  white-space: nowrap;   /* the brand was breaking onto 3 lines between 820px and 1180px */
 }
 .nav-logo .logo-badge {
   width: 36px; height: 36px;
@@ -183,7 +187,8 @@ strong { color: var(--text); font-weight: 600; }
   font-family: var(--font-sans); flex-shrink: 0;
   box-shadow: 0 3px 12px rgba(124,58,237,0.35);
 }
-.nav-links { display: flex; align-items: center; gap: 0.15rem; list-style: none; }
+.nav-links { display: flex; align-items: center; gap: 0.15rem; list-style: none; flex-wrap: nowrap; }
+.nav-links a { white-space: nowrap; }
 .nav-links a {
   font-family: var(--font-sans); font-size: 0.82rem; font-weight: 500;
   letter-spacing: 0.02em; color: var(--text2);
@@ -205,6 +210,7 @@ strong { color: var(--text); font-weight: 600; }
 /* ---- HERO ---- */
 .hero {
   min-height: 100vh;
+  min-height: 100svh;   /* iOS Safari: 100vh includes the area behind the URL bar */
   display: flex; align-items: center;
   padding-top: var(--nav-h);
   background: var(--grad-hero);
@@ -316,7 +322,14 @@ a, button, .filter-btn, .gal-btn, .nav-links a, .profile-link {
   box-shadow: 0 2px 20px rgba(0,0,0,0.04);
   padding: 2.5rem 0;
 }
-.metrics-grid { display: grid; grid-template-columns: repeat(8, 1fr); gap: 0; }
+.metrics-grid {
+  display: grid;
+  /* auto-fit rather than a fixed 8 columns: the publications page carries 9
+     tiles, which left a single orphan on a second row. This adapts to the
+     tile count on every page, and to any tile added later. */
+  grid-template-columns: repeat(auto-fit, minmax(118px, 1fr));
+  gap: 0;
+}
 .metric-item { text-align: center; padding: 1rem 0.5rem; position: relative; }
 .metric-item:not(:last-child)::after {
   content: ''; position: absolute; right: 0; top: 20%; bottom: 20%;
@@ -685,6 +698,33 @@ footer {
 [data-anim].visible { opacity: 1; transform: translateY(0); }
 
 /* ---- RESPONSIVE ---- */
+/* ------------------------------------------------------------------
+   NAVBAR BREAKPOINTS
+   The 11-item bar does not fit beside the brand below ~1240px. Until this
+   was added the desktop nav stayed on until 768px, so every tablet in
+   landscape and every small laptop window rendered a two-row navbar with
+   the brand broken over three lines.
+   ------------------------------------------------------------------ */
+@media (max-width: 1240px) and (min-width: 1025px) {
+  .nav-inner { padding: 0 1.1rem; }
+  .nav-links { gap: 0; }
+  .nav-links a { font-size: 0.76rem; padding: 0.4rem 0.5rem; }
+  .nav-logo { font-size: 1.05rem; gap: 0.5rem; }
+  .nav-logo .logo-badge { width: 30px; height: 30px; font-size: 0.72rem; }
+}
+@media (max-width: 1024px) {
+  .nav-links {
+    display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
+    background: rgba(250,250,249,0.98);
+    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
+    flex-direction: column; align-items: stretch; padding: 1rem;
+    border-bottom: 1px solid var(--border-soft); gap: 0; box-shadow: var(--shadow);
+    max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.7rem 0.8rem; font-size: 0.9rem; }
+  .nav-toggle { display: block; }
+}
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .metrics-grid { grid-template-columns: repeat(4, 1fr); }
@@ -694,9 +734,6 @@ footer {
 }
 @media (max-width: 768px) {
   :root { --nav-h: 64px; --text2: #2d2926; --text3: #57534e; }
-  .nav-links { display: none; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(250,250,249,0.98); backdrop-filter: blur(20px); flex-direction: column; padding: 1rem; border-bottom: 1px solid var(--border-soft); gap: 0; box-shadow: var(--shadow); }
-  .nav-links.open { display: flex; }
-  .nav-toggle { display: block; }
   .hero-grid { grid-template-columns: 1fr; }
   .profile-wrap { display: block; max-width: 240px; margin: 0 auto 2rem; }
   .profile-deco, .profile-deco2 { display: none; } /* hide decorative borders on mobile */
@@ -727,3 +764,79 @@ footer {
   .grad-text, .section-label, .award-year, .metric-num,
   .year-heading, .member-role { -webkit-text-fill-color: #333; color: #333; background: none; }
 }
+
+/* ============================================================
+   ACCESSIBILITY ADDITIONS
+   ============================================================ */
+
+/* Skip link — first tab stop, visible only when focused */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  padding: 0.7rem 1.2rem;
+  background: var(--violet, #7c3aed);
+  color: #fff;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+  /* Held just above the viewport. Moving it with transform rather than a large
+     negative `left` keeps the generic `a { transition }` from animating it in
+     across 9999px when it receives focus. */
+  transform: translateY(-120%);
+  transition: transform 0.15s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: 3px solid var(--amber, #c9a84c);
+  outline-offset: -3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .skip-link { transition: none; }
+}
+
+/* Visible keyboard focus. The sheet previously defined none, so keyboard users
+   had no indication of position anywhere on the site. */
+a:focus-visible,
+button:focus-visible,
+[tabindex]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+.filter-btn:focus-visible,
+.gal-item:focus-visible {
+  outline: 3px solid var(--sky, #0ea5e9);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* Sections targeted by the skip link should not draw a focus ring */
+section:focus, section:focus-visible,
+div[id]:focus, div[id]:focus-visible,
+span[id]:focus, span[id]:focus-visible { outline: none; }
+
+/* Respect the OS "reduce motion" setting. Nothing in the sheet honoured it:
+   scroll reveals, counters, hover lifts and the marquee all ran regardless. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  [data-anim],
+  .fade-in { opacity: 1 !important; transform: none !important; }
+  .gal-item:hover,
+  .card:hover,
+  .link-card:hover { transform: none !important; }
+}
+
+/* Footer additions — the inline styles these replace differed page to page */
+.footer-social { display: flex; gap: 0.8rem; margin-top: 1rem; }
+.footer-social a { color: var(--text3); font-size: 1.1rem; }
+.footer-social a:hover { color: var(--violet); }
+.footer-addr { color: var(--text3); font-size: 0.82rem; }

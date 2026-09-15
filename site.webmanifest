@@ -1,0 +1,13 @@
+{
+  "name": "Dr. Ashish Kumar — Professor of Physics, CUJ",
+  "short_name": "Dr. Ashish Kumar",
+  "description": "Academic site of Prof. Ashish Kumar — defect physics, wide-bandgap semiconductors, DLTS and thermoelectrics.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#faf9f7",
+  "theme_color": "#7c3aed",
+  "icons": [
+    { "src": "/assets/images/favicon.svg", "sizes": "any", "type": "image/svg+xml" },
+    { "src": "/assets/images/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

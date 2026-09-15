@@ -1,0 +1,28 @@
+{
+  "citations": 1854,
+  "h_index": 27,
+  "i10_index": 44,
+  "scholar_items": 91,
+  "orcid_works": 77,
+  "orcid_journal_articles": 71,
+  "last_updated": "2026-09-15",
+  "sources": {
+    "scholar": {
+      "status": "ok",
+      "fetched": "2026-09-15"
+    },
+    "orcid": {
+      "status": "ok",
+      "fetched": "2026-09-15"
+    },
+    "wos": {
+      "status": "failed",
+      "error": "WOS_API_KEY not set \u2014 skipping Web of Science",
+      "last_ok": null
+    }
+  },
+  "profiles": {
+    "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
+    "orcid": "https://orcid.org/0000-0002-5240-3472"
+  }
+}
