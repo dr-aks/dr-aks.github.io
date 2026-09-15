@@ -2,7 +2,7 @@ name: Update publication metrics
 
 on:
   schedule:
-    - cron: "15 3 * * 0"
+    - cron: "15 3 * * *"
   workflow_dispatch:
 
 permissions:
