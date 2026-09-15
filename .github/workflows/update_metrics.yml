@@ -1,0 +1,39 @@
+name: Update publication metrics
+
+on:
+  schedule:
+    - cron: "15 3 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-metrics:
+    name: Fetch Scholar, ORCID and Web of Science
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch metrics
+        env:
+          WOS_API_KEY: ${{ secrets.WOS_API_KEY }}
+        run: python scripts/fetch_metrics.py
+
+      - name: Commit updated metrics
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name  "github-actions[bot]"
+          git add data/metrics.json data/scholar_metrics.json
+          if git diff --staged --quiet; then
+            echo "No change — metrics identical to last run."
+          else
+            git commit -m "chore: update publication metrics [skip ci]"
+            git push
+          fi
