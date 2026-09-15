@@ -25,9 +25,11 @@ Env:    WOS_API_KEY  (optional) Clarivate Web of Science Starter API key
 
 import datetime
 import json
+import random
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.request
 
@@ -54,9 +56,27 @@ def get(url, headers=None, timeout=30):
         return r.read().decode("utf-8", errors="replace")
 
 
+def get_with_retry(url, headers=None, attempts=4, timeout=30):
+    """Google rate-limits GitHub Actions IP ranges hard, so a single 403 is not
+    a real failure — it is the runner's address being unlucky. Retry a few times
+    with growing, jittered gaps before giving up."""
+    last = None
+    for i in range(attempts):
+        try:
+            return get(url, headers=headers, timeout=timeout)
+        except Exception as exc:                      # noqa: BLE001
+            last = exc
+            if i < attempts - 1:
+                delay = (2 ** i) * 15 + random.randint(0, 20)
+                print("    attempt %d/%d failed (%s) — retrying in %ds"
+                      % (i + 1, attempts, exc, delay))
+                time.sleep(delay)
+    raise last
+
+
 # ── Google Scholar ────────────────────────────────────────────────────────────
 def fetch_scholar():
-    html = get(SCHOLAR_URL, {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
+    html = get_with_retry(SCHOLAR_URL, {"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
     if re.search(r"/sorry/|unusual traffic|captcha", html, re.I):
         raise RuntimeError("Scholar served a CAPTCHA (the runner's IP is rate-limited)")
 
