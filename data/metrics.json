@@ -9,16 +9,16 @@
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-09-18",
+  "last_updated": "2026-09-17",
   "sources": {
     "scholar": {
       "status": "failed",
-      "error": "Scholar served a CAPTCHA (the runner's IP is rate-limited)",
+      "error": "HTTP Error 403: Forbidden",
       "last_ok": "2026-09-15"
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-09-18"
+      "fetched": "2026-09-17"
     },
     "wos": {
       "status": "failed",

@@ -19,7 +19,8 @@
 ## Research — six areas
 1. Energy: thermoelectric power conversion. Organic (PEDOT:PSS, FeCl3-doped
    P3HT), inorganic (Bi2Te3 with Sn and Zn, CoSb3, SrTiO3, and the wide-bandgap
-   route through GaN and beta-Ga2O3 past the 150 C ceiling of Bi2Te3), hybrid
+   route through GaN and beta-Ga2O3, beyond the narrow window in which Bi2Te3
+   stays efficient), hybrid
    (PEDOT:PSS/Bi2Te3 with rGO, PVDF with Ni nanowires), flexible and printed
    devices. RSC Advances Outstanding Student Paper Award 2024.
 2. Power semiconductor devices: SiC, GaN, beta-Ga2O3 and graphene on silicon;
@@ -28,8 +29,9 @@
    and cut reverse leakage by two orders of magnitude. DRDO CARS.
 3. Defects in semiconductors: native and induced (irradiation, implantation).
    DLTS 80-500 K, 1/f noise, Hall transport. In-situ DLTS under a live swift
-   heavy ion beam at the IUAC 15UD Pelletron — the only facility of its kind
-   anywhere.
+   heavy ion beam at the IUAC 15UD Pelletron — a pioneering capability for
+   real-time measurement during irradiation, first reported by the group in
+   Semicond. Sci. Technol. 33, 085008 (2018).
 4. A dual approach: experiment answered by theory — SRIM/TRIM, molecular
    dynamics, DFT in Quantum ATK and WIEN2k, Boltzmann transport.
 5. Building infrastructure: more than five instruments designed and built in
@@ -46,9 +48,10 @@ Indian space programme — EUV/X-ray multilayer mirror prototypes for
 polarimetric missions and radiation-tolerant coatings (ISRO RESPOND).
 
 ## Instruments built in the group
-Five custom systems designed and commissioned by the PI: in-situ I–V, C–V and
+More than five custom systems designed and commissioned by the PI: in-situ I–V, C–V and
 DLTS under a live ion beam at the IUAC Pelletron; Seebeck coefficient and
-resistivity, 80–650 K (Rev. Sci. Instrum. 90, 104901, 2019 — now used by
+resistivity, 80–650 K (Rev. Sci. Instrum. 90, 104901, 2019,
+doi:10.1063/1.5116186 — now used by
 collaborating national groups); ZT and thermal conductivity, 300–1000 K;
 1/f noise; a dipstick optical cryostat. A CVD system to 1400 C is commissioned
 in the Department at CU Jammu.

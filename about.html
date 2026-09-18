@@ -22,15 +22,25 @@
 <meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="About — Ashish K Sharma">
 <meta name="twitter:description" content="Profile and CV, courses taught at Central University of Jammu, the teachers this work descends from, and how to get in touch.">
 <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta name="twitter:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <!-- Critical, inline: WebKit was rendering images at natural size while the
      third-party font stylesheet blocked everything behind it. -->
 <style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<!-- Theme preference, applied before first paint so an explicit light/dark
+     choice never flashes the wrong palette. Absence of this script leaves the
+     page on the OS setting, which is the documented default. -->
+<script>(function(){try{var t=localStorage.getItem("aks-theme");
+if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);
+var l=document.querySelector('meta[name="theme-color"][media*="light"]'),
+d=document.querySelector('meta[name="theme-color"][media*="dark"]');
+if(l&&d){l.media=(t==="light")?"all":"not all";d.media=(t==="dark")?"all":"not all";}}}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +52,7 @@
      and the request no longer leaves the site. -->
 <link rel="stylesheet" href="assets/css/icons.css">
 <link rel="preload" href="assets/fonts/fa-solid-900-subset.woff2" as="font" type="font/woff2">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfilePage","@id":"https://dr-aks.github.io/about.html#page","name":"About — Ashish K Sharma","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dr-aks.github.io/"},{"@type":"ListItem","position":2,"name":"About","item":"https://dr-aks.github.io/about.html"}]},"mainEntity":{"@id":"https://dr-aks.github.io/#person"}}</script>
 <style>
 /* ---- ported from the original teaching.html ---- */
 
@@ -189,6 +199,13 @@
         <i>Energy Materials &amp; Devices Laboratory</i>
       </span>
     </a>
+    <button class="theme-toggle" type="button" id="themeToggle" data-theme-pref="auto"
+            aria-label="Colour theme: following system setting. Activate to choose light."
+            title="Colour theme: following system setting">
+      <svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>
+      <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.1" fill="currentColor"/><g stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2.2v2.5M12 19.3v2.5M2.2 12h2.5M19.3 12h2.5M5.1 5.1l1.8 1.8M17.1 17.1l1.8 1.8M18.9 5.1l-1.8 1.8M6.9 17.1l-1.8 1.8"/></g></svg>
+      <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 14.8A8.7 8.7 0 0 1 9.2 3.4a9 9 0 1 0 11.4 11.4z" fill="currentColor"/></svg>
+    </button>
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
             aria-label="Main menu"><span></span><span></span><span></span></button>
     <nav class="mainmenu" id="mainmenu" aria-label="Main">
@@ -246,8 +263,9 @@
           measurement systems designed and commissioned so far &mdash; one of them published
           in <em>Review of Scientific Instruments</em> and now used by collaborating national
           groups &mdash; and the in-situ DLTS facility at the IUAC Pelletron, which reads
-          defects while the ion beam is still arriving. The last of those has no counterpart
-          anywhere.</p>
+          defects while the ion beam is still arriving &mdash; a pioneering in-situ capability for
+          real-time measurement during swift-heavy-ion irradiation, first reported by the group
+          in <em>Semiconductor Science and Technology</em> in 2018.</p>
         <p style="color:var(--text2);line-height:1.8;">Publishes under the name
           <strong>Ashish Kumar</strong>: 91 papers, three patents, an <em>h</em>-index of 27
           and about 1,850 citations. Continuous funding as principal investigator since 2015

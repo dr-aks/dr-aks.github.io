@@ -22,15 +22,25 @@
 <meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Research — Ashish K Sharma">
 <meta name="twitter:description" content="Thermoelectric energy conversion, SiC and GaN power devices, defects, theory alongside experiment, and instruments built in-house.">
 <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta name="twitter:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <!-- Critical, inline: WebKit was rendering images at natural size while the
      third-party font stylesheet blocked everything behind it. -->
 <style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<!-- Theme preference, applied before first paint so an explicit light/dark
+     choice never flashes the wrong palette. Absence of this script leaves the
+     page on the OS setting, which is the documented default. -->
+<script>(function(){try{var t=localStorage.getItem("aks-theme");
+if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);
+var l=document.querySelector('meta[name="theme-color"][media*="light"]'),
+d=document.querySelector('meta[name="theme-color"][media*="dark"]');
+if(l&&d){l.media=(t==="light")?"all":"not all";d.media=(t==="dark")?"all":"not all";}}}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,7 +52,7 @@
      and the request no longer leaves the site. -->
 <link rel="stylesheet" href="assets/css/icons.css">
 <link rel="preload" href="assets/fonts/fa-solid-900-subset.woff2" as="font" type="font/woff2">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","@id":"https://dr-aks.github.io/research.html#page","name":"Research — Ashish K Sharma","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://dr-aks.github.io/"},{"@type":"ListItem","position":2,"name":"Research","item":"https://dr-aks.github.io/research.html"}]},"mainEntity":{"@type":"ResearchProject","name":"Energy Materials & Devices Laboratory","parentOrganization":{"@type":"CollegeOrUniversity","name":"Central University of Jammu"},"founder":{"@id":"https://dr-aks.github.io/#person"},"member":{"@id":"https://dr-aks.github.io/#person"}}}</script>
 <style>
 /* ---- ported from the original research.html ---- */
 
@@ -159,6 +169,13 @@
         <i>Energy Materials &amp; Devices Laboratory</i>
       </span>
     </a>
+    <button class="theme-toggle" type="button" id="themeToggle" data-theme-pref="auto"
+            aria-label="Colour theme: following system setting. Activate to choose light."
+            title="Colour theme: following system setting">
+      <svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>
+      <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.1" fill="currentColor"/><g stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2.2v2.5M12 19.3v2.5M2.2 12h2.5M19.3 12h2.5M5.1 5.1l1.8 1.8M17.1 17.1l1.8 1.8M18.9 5.1l-1.8 1.8M6.9 17.1l-1.8 1.8"/></g></svg>
+      <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 14.8A8.7 8.7 0 0 1 9.2 3.4a9 9 0 1 0 11.4 11.4z" fill="currentColor"/></svg>
+    </button>
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
             aria-label="Main menu"><span></span><span></span><span></span></button>
     <nav class="mainmenu" id="mainmenu" aria-label="Main">
@@ -253,7 +270,7 @@
           <ul>
             <li>Wide Range (80&ndash;630 K) Seebeck Study of &beta;-Ga<sub>2</sub>O<sub>3</sub> Single Crystals &middot; Appl. Phys. Lett. 2021</li>
             <li>GaN Thermoelectric Properties: Experimental &amp; DFT Study &middot; Phys. Chem. Chem. Phys. 2021</li>
-            <li>PEDOT:PSS/Bi<sub>2</sub>Te<sub>3</sub>/rGO Ternary Composite Films &middot; RSC Advances 2024 &mdash; RSC Outstanding Paper Award</li>
+            <li>PEDOT:PSS/Bi<sub>2</sub>Te<sub>3</sub>/rGO Ternary Composite Films &middot; RSC Advances 2024 &mdash; RSC Outstanding Student Paper Award</li>
             <li>PVDF/Ni-NW Composite Films: n-Type Thermoelectric for Flexible Harvesting &middot; Polym. Compos. 2025</li>
           </ul>
         </div>
@@ -498,10 +515,10 @@
         <h3 style="color:var(--amber-ink);margin-bottom:0.5rem;" data-h="3">System I — Seebeck &amp; Resistivity</h3>
         <!-- Circuit diagram -->
         <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-          <picture><source type="image/webp" srcset="assets/images/seebeck-480.webp 480w, assets/images/seebeck-720.webp 720w, assets/images/seebeck-960.webp 960w, assets/images/seebeck.webp 1772w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/seebeck.jpg"
+          <picture><source type="image/webp" srcset="assets/images/seebeck-480.webp 480w, assets/images/seebeck-720.webp 720w, assets/images/seebeck-960.webp 960w, assets/images/seebeck.webp 1200w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/seebeck.jpg"
                alt="Seebeck &amp; Resistivity Measurement Setup — Circuit Diagram"
                style="width:100%;height:auto;display:block;"
-               onerror="this.parentElement.style.display='none';" width="1772" height="1800" srcset="assets/images/seebeck-480.jpg 480w, assets/images/seebeck-720.jpg 720w, assets/images/seebeck-960.jpg 960w, assets/images/seebeck.jpg 1772w" sizes="(max-width:700px) 92vw, 560px"></picture>
+               onerror="this.parentElement.style.display='none';" width="1772" height="1800" srcset="assets/images/seebeck-480.jpg 480w, assets/images/seebeck-720.jpg 720w, assets/images/seebeck-960.jpg 960w, assets/images/seebeck.jpg 1200w" sizes="(max-width:700px) 92vw, 560px"></picture>
         </div>
         <p style="font-size:0.82rem;color:var(--text3);font-style:italic;margin-bottom:0.8rem;font-family:var(--font-sans);">Circuit diagram of the custom-built measurement setup. DMM + SMU controlled via IEEE-488 with LabVIEW automation.</p>
         <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Versatile system for simultaneous Seebeck coefficient and electrical resistivity measurement of wires, thin films, and bulk materials from liquid nitrogen to above room temperature.</p>
@@ -516,10 +533,10 @@
         <div class="world-first" style="background:var(--bg3);border-color:var(--amber-ink);color:var(--amber-ink);">🔬 Rare Capability in India</div>
         <h3 style="color:var(--amber-ink);margin-bottom:0.5rem;" data-h="3">System II — ZT &amp; Thermal Conductivity</h3>
         <div style="margin:0.8rem 0;border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-          <picture><source type="image/webp" srcset="assets/images/zt-system-480.webp 480w, assets/images/zt-system-720.webp 720w, assets/images/zt-system-960.webp 960w, assets/images/zt-system.webp 1800w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/zt-system.jpg"
+          <picture><source type="image/webp" srcset="assets/images/zt-system-480.webp 480w, assets/images/zt-system-720.webp 720w, assets/images/zt-system-960.webp 960w, assets/images/zt-system.webp 1200w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/zt-system.jpg"
                alt="ZT &amp; Thermal Conductivity Measurement Setup"
                style="width:100%;height:auto;display:block;"
-               onerror="this.parentElement.style.display='none';" width="1800" height="1686" srcset="assets/images/zt-system-480.jpg 480w, assets/images/zt-system-720.jpg 720w, assets/images/zt-system-960.jpg 960w, assets/images/zt-system.jpg 1800w" sizes="(max-width:700px) 92vw, 560px"></picture>
+               onerror="this.parentElement.style.display='none';" width="1800" height="1686" srcset="assets/images/zt-system-480.jpg 480w, assets/images/zt-system-720.jpg 720w, assets/images/zt-system-960.jpg 960w, assets/images/zt-system.jpg 1200w" sizes="(max-width:700px) 92vw, 560px"></picture>
         </div>
         <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;">Complete thermoelectric figure-of-merit (ZT) characterisation for bulk pellets and sintered materials at elevated temperatures. Full thermoelectric characterisation suite in a single lab.</p>
         <div class="spec-row"><span class="spec-label">Temperature Range</span><span class="spec-val gold">300 K – 1000 K</span></div>
@@ -530,11 +547,11 @@
       </div>
 
       <div class="system-card teal-bar" data-delay="3">
-        <div class="world-first">🔬 Unique Facility · In-Situ DLTS under Live SHI Beam</div>
+        <div class="world-first">🔬 Pioneering Capability · In-Situ DLTS under Live SHI Beam</div>
         <h3 style="color:var(--sky-ink);margin-bottom:0.5rem;" data-h="3">System III — In-Situ DLTS</h3>
         <div style="margin:0.8rem 0;display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;">
           <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
-            <picture><source type="image/webp" srcset="assets/images/dlts-system-480.webp 480w, assets/images/dlts-system-720.webp 720w, assets/images/dlts-system-960.webp 960w, assets/images/dlts-system.webp 1800w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/dlts-system.jpg" alt="DLTS System" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';" width="1800" height="962" srcset="assets/images/dlts-system-480.jpg 480w, assets/images/dlts-system-720.jpg 720w, assets/images/dlts-system-960.jpg 960w, assets/images/dlts-system.jpg 1800w" sizes="(max-width:700px) 92vw, 560px"></picture>
+            <picture><source type="image/webp" srcset="assets/images/dlts-system-480.webp 480w, assets/images/dlts-system-720.webp 720w, assets/images/dlts-system-960.webp 960w, assets/images/dlts-system.webp 1200w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/dlts-system.jpg" alt="DLTS System" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';" width="1800" height="962" srcset="assets/images/dlts-system-480.jpg 480w, assets/images/dlts-system-720.jpg 720w, assets/images/dlts-system-960.jpg 960w, assets/images/dlts-system.jpg 1200w" sizes="(max-width:700px) 92vw, 560px"></picture>
           </div>
           <div style="border-radius:8px;overflow:hidden;border:1px solid var(--border);">
             <picture><source type="image/webp" srcset="assets/images/dlts-insitu-480.webp 480w, assets/images/dlts-insitu-720.webp 720w, assets/images/dlts-insitu-960.webp 960w, assets/images/dlts-insitu.webp 1063w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/dlts-insitu.jpg" alt="In-Situ DLTS Setup at IUAC" style="width:100%;height:auto;display:block;" onerror="this.parentElement.style.display='none';" width="1063" height="941" srcset="assets/images/dlts-insitu-480.jpg 480w, assets/images/dlts-insitu-720.jpg 720w, assets/images/dlts-insitu-960.jpg 960w, assets/images/dlts-insitu.jpg 1063w" sizes="(max-width:700px) 92vw, 560px"></picture>

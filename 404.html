@@ -8,7 +8,7 @@
 <title>Page not found — Ashish K Sharma</title>
 <meta name="description" content="That address does not exist on this site.">
 <meta name="author" content="Ashish K Sharma">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="robots" content="noindex, follow">
 <link rel="canonical" href="https://dr-aks.github.io/404.html">
 <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="assets/images/favicon.ico" sizes="any">
@@ -22,15 +22,25 @@
 <meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Page not found — Ashish K Sharma">
 <meta name="twitter:description" content="That address does not exist on this site.">
 <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta name="twitter:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <!-- Critical, inline: WebKit was rendering images at natural size while the
      third-party font stylesheet blocked everything behind it. -->
 <style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<!-- Theme preference, applied before first paint so an explicit light/dark
+     choice never flashes the wrong palette. Absence of this script leaves the
+     page on the OS setting, which is the documented default. -->
+<script>(function(){try{var t=localStorage.getItem("aks-theme");
+if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);
+var l=document.querySelector('meta[name="theme-color"][media*="light"]'),
+d=document.querySelector('meta[name="theme-color"][media*="dark"]');
+if(l&&d){l.media=(t==="light")?"all":"not all";d.media=(t==="dark")?"all":"not all";}}}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -65,6 +75,13 @@
         <i>Energy Materials &amp; Devices Laboratory</i>
       </span>
     </a>
+    <button class="theme-toggle" type="button" id="themeToggle" data-theme-pref="auto"
+            aria-label="Colour theme: following system setting. Activate to choose light."
+            title="Colour theme: following system setting">
+      <svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>
+      <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.1" fill="currentColor"/><g stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2.2v2.5M12 19.3v2.5M2.2 12h2.5M19.3 12h2.5M5.1 5.1l1.8 1.8M17.1 17.1l1.8 1.8M18.9 5.1l-1.8 1.8M6.9 17.1l-1.8 1.8"/></g></svg>
+      <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 14.8A8.7 8.7 0 0 1 9.2 3.4a9 9 0 1 0 11.4 11.4z" fill="currentColor"/></svg>
+    </button>
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
             aria-label="Main menu"><span></span><span></span><span></span></button>
     <nav class="mainmenu" id="mainmenu" aria-label="Main">

@@ -22,15 +22,25 @@
 <meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
 <meta property="og:locale" content="en_IN">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
 <meta name="twitter:description" content="Prof. Ashish K Sharma — thermoelectrics, wide-bandgap semiconductor devices and ion-beam defect engineering at Central University of Jammu.">
 <meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta name="twitter:image:alt" content="Prof. Ashish K Sharma — Energy Materials &amp; Devices Laboratory, Central University of Jammu">
 <!-- Critical, inline: WebKit was rendering images at natural size while the
      third-party font stylesheet blocked everything behind it. -->
 <style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<!-- Theme preference, applied before first paint so an explicit light/dark
+     choice never flashes the wrong palette. Absence of this script leaves the
+     page on the OS setting, which is the documented default. -->
+<script>(function(){try{var t=localStorage.getItem("aks-theme");
+if(t==="light"||t==="dark"){document.documentElement.setAttribute("data-theme",t);
+var l=document.querySelector('meta[name="theme-color"][media*="light"]'),
+d=document.querySelector('meta[name="theme-color"][media*="dark"]');
+if(l&&d){l.media=(t==="light")?"all":"not all";d.media=(t==="dark")?"all":"not all";}}}catch(e){}})();</script>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/shell.css">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -107,7 +117,7 @@
     "Lindau Nobel Laureate Meeting Alumnus (2019)",
     "DST-INSPIRE Faculty Award",
     "SERB Research Scientist",
-    "RSC Advances Outstanding Paper Award"
+    "RSC Advances Outstanding Student Paper Award 2024"
   ],
   "sameAs": [
     "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
@@ -243,6 +253,13 @@
         <i>Energy Materials &amp; Devices Laboratory</i>
       </span>
     </a>
+    <button class="theme-toggle" type="button" id="themeToggle" data-theme-pref="auto"
+            aria-label="Colour theme: following system setting. Activate to choose light."
+            title="Colour theme: following system setting">
+      <svg class="ti ti-auto" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.9"/><path d="M12 3.6a8.4 8.4 0 0 1 0 16.8z" fill="currentColor"/></svg>
+      <svg class="ti ti-light" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.1" fill="currentColor"/><g stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><path d="M12 2.2v2.5M12 19.3v2.5M2.2 12h2.5M19.3 12h2.5M5.1 5.1l1.8 1.8M17.1 17.1l1.8 1.8M18.9 5.1l-1.8 1.8M6.9 17.1l-1.8 1.8"/></g></svg>
+      <svg class="ti ti-dark" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.6 14.8A8.7 8.7 0 0 1 9.2 3.4a9 9 0 1 0 11.4 11.4z" fill="currentColor"/></svg>
+    </button>
     <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
             aria-label="Main menu"><span></span><span></span><span></span></button>
     <nav class="mainmenu" id="mainmenu" aria-label="Main">
@@ -306,7 +323,7 @@
           The common thread is defects &mdash; what they do to charge and heat transport, and how
           far that can be turned to use, from thermoelectric legs that make power out of waste heat
           to devices that keep working in a satellite or a reactor hall. The group measures them on
-          instruments it builds itself, including the only facility anywhere that records a
+          instruments it builds itself, including a pioneering in-situ capability that records a
           deep-level spectrum <em>while</em> the ion beam is still arriving. Funded without a break
           since 2015 by DST, SERB, ISRO, DRDO, UGC and IUAC.
         </p>
@@ -336,11 +353,11 @@
       <div class="profile-wrap fade-in delay-2">
         <div class="profile-deco"></div>
         <div class="profile-photo">
-          <picture><source type="image/webp" srcset="assets/images/profile-photo-480.webp 480w, assets/images/profile-photo-720.webp 720w, assets/images/profile-photo.webp 900w" sizes="(max-width:700px) 92vw, 560px"><img loading="eager" decoding="async" src="assets/images/profile-photo.jpg"
+          <picture><source type="image/webp" srcset="assets/images/profile-photo-480.webp 480w, assets/images/profile-photo-720.webp 720w, assets/images/profile-photo.webp 900w" sizes="(max-width:700px) 92vw, 560px"><img loading="eager" fetchpriority="high" decoding="async" src="assets/images/profile-photo.jpg"
                alt="Prof. Ashish K Sharma — Professor, Central University of Jammu"
                width="460" height="520"
                style="width:100%;display:block;"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" srcset="assets/images/profile-photo-480.jpg 480w, assets/images/profile-photo-720.jpg 720w, assets/images/profile-photo.jpg 900w" sizes="(max-width:700px) 92vw, 560px"></picture>
+               onerror="this.style.display='none';var p=this.parentNode,n=(p&&p.tagName==='PICTURE'?p:this).nextElementSibling;if(n)n.style.display='flex';" srcset="assets/images/profile-photo-480.jpg 480w, assets/images/profile-photo-720.jpg 720w, assets/images/profile-photo.jpg 900w" sizes="(max-width:700px) 92vw, 560px"></picture>
           <div class="placeholder" style="display:none;">
             <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="40" cy="28" r="18" stroke="#7c3aed" stroke-width="2"/>
@@ -415,8 +432,8 @@
         </p>
         <p style="margin-bottom:2rem;">
           The programme runs on two legs. <strong>Energy</strong> — thermoelectric conversion,
-          organic and inorganic, printed and bulk, reaching temperatures where bismuth telluride
-          gives up. <strong>Power devices</strong> — SiC, GaN and &beta;-Ga<sub>2</sub>O<sub>3</sub>
+          organic and inorganic, printed and bulk, reaching temperatures beyond the narrow window
+          in which bismuth telluride stays efficient. <strong>Power devices</strong> — SiC, GaN and &beta;-Ga<sub>2</sub>O<sub>3</sub>
           for the electronics that radar, satellites and power conversion depend on. Defect
           engineering with ion beams is the method common to both, and what it measures is
           answered by calculation rather than left as a number.
@@ -464,7 +481,7 @@
           </div>
           <div class="award-item">
             <span class="award-year">2024</span>
-            <div><div class="award-name">RSC Advances Outstanding Paper Award</div><div class="award-body">Royal Society of Chemistry &middot; <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky-ink);font-size:0.82rem;">View announcement &#8599;</a></div></div>
+            <div><div class="award-name">RSC Advances Outstanding Student Paper Award 2024</div><div class="award-body">Royal Society of Chemistry &middot; <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky-ink);font-size:0.82rem;">View announcement &#8599;</a></div></div>
           </div>
         </div>
       </div>
@@ -499,7 +516,7 @@
       <div class="card" data-delay="3">
         <div class="card-icon"><i class="fas fa-circle-dot" aria-hidden="true"></i></div>
         <h3 data-h="3">Defects in Semiconductors</h3>
-        <p style="margin:0.6rem 0 1rem;">Native and induced &mdash; from growth, from irradiation, from implantation. Deep level transient spectroscopy across 80&ndash;500&nbsp;K, with 1/<i>f</i> noise and Hall transport, including the only facility anywhere that records the spectrum <em>during</em> irradiation.</p>
+        <p style="margin:0.6rem 0 1rem;">Native and induced &mdash; from growth, from irradiation, from implantation. Deep level transient spectroscopy across 80&ndash;500&nbsp;K, with 1/<i>f</i> noise and Hall transport, including a pioneering in-situ DLTS capability that reads the spectrum <em>during</em> irradiation.</p>
         <div class="tags"><span class="tag">DLTS &middot; 1/f noise</span><span class="tag">Native &amp; induced</span><span class="tag gold-tag">IUAC funded</span></div>
       </div>
 
@@ -611,7 +628,7 @@
         </div>
         <div class="pub-mini">
           <div class="pub-mini-title">Improved Thermoelectric Performance of PEDOT:PSS/Bi₂Te₃/rGO Ternary Composite Films</div>
-          <div class="journal">RSC Advances (2024) · Rathi V., Kumar A. et al. — <strong style="color:var(--amber-ink);">RSC Outstanding Paper Award</strong> <span class="year-badge">2024</span></div>
+          <div class="journal">RSC Advances (2024) · Rathi V., Kumar A. et al. — <strong style="color:var(--amber-ink);">RSC Outstanding Student Paper Award</strong> <span class="year-badge">2024</span></div>
         </div>
         <div class="pub-mini">
           <div class="pub-mini-title">Ion-Induced Transformation of Shallow Defects into Deep-Level Defects in GaN</div>
@@ -632,7 +649,7 @@
       <span class="section-label">Indigenous Instrumentation</span>
       <h2 class="section-title" data-h="2">Custom-Built Scientific Systems</h2>
       <div class="section-divider" style="margin:0 auto 1rem;"></div>
-      <p class="section-subtitle" style="margin:0 auto;">Five precision measurement systems independently designed, fabricated, and commissioned — a defining feature of the research programme</p>
+      <p class="section-subtitle" style="margin:0 auto;">More than five precision measurement systems independently designed, fabricated, and commissioned — a defining feature of the research programme</p>
     </div>
     <div class="grid-3" style="grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));">
       <div class="card" data-delay="1" style="border-left:3px solid var(--amber);">
@@ -693,8 +710,8 @@
           <div class="timeline-item">
             <div class="timeline-dot"></div>
             <div class="timeline-date">2024</div>
-            <div class="timeline-title">RSC Advances Outstanding Paper Award</div>
-            <div class="timeline-desc">Paper on PEDOT:PSS/Bi₂Te₃/rGO flexible thermoelectric composites selected for Outstanding Paper Award by the Royal Society of Chemistry. <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky-ink);">View announcement &#8599;</a></div>
+            <div class="timeline-title">RSC Advances Outstanding Student Paper Award 2024</div>
+            <div class="timeline-desc">Paper on PEDOT:PSS/Bi₂Te₃/rGO flexible thermoelectric composites selected for the RSC Advances Outstanding Student Paper Award 2024 by the Royal Society of Chemistry. <a href="https://blogs.rsc.org/ra/2025/11/18/rsc-advances-outstanding-student-paper-awards-2024/" target="_blank" rel="noopener noreferrer" style="color:var(--sky-ink);">View announcement &#8599;</a></div>
           </div>
         </div>
         <a href="news.html" class="btn btn-outline" style="margin-top:1rem;font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-newspaper" aria-hidden="true"></i> All News</a>
