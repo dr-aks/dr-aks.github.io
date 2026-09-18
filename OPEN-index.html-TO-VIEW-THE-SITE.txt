@@ -1,0 +1,6 @@
+This folder is the website.
+
+Open  index.html  in a browser. Everything else follows from there.
+
+To publish: upload the CONTENTS of this folder to the root of the
+dr-aks.github.io repository.

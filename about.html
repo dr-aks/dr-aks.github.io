@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#7c3aed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14131a" media="(prefers-color-scheme: dark)">
+<title>About — Ashish K Sharma</title>
+<meta name="description" content="Profile and CV, courses taught at Central University of Jammu, the teachers this work descends from, and how to get in touch.">
+<meta name="author" content="Ashish K Sharma">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://dr-aks.github.io/about.html">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Structured summary for AI assistants">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dr-aks.github.io/about.html">
+<meta property="og:title" content="About — Ashish K Sharma">
+<meta property="og:description" content="Profile and CV, courses taught at Central University of Jammu, the teachers this work descends from, and how to get in touch.">
+<meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About — Ashish K Sharma">
+<meta name="twitter:description" content="Profile and CV, courses taught at Central University of Jammu, the teachers this work descends from, and how to get in touch.">
+<meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<!-- Critical, inline: WebKit was rendering images at natural size while the
+     third-party font stylesheet blocked everything behind it. -->
+<style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"></noscript>
+<!-- Font Awesome, subset to the 84 icons this site actually uses and served
+     from here: 102 KB of CSS plus 270 KB of webfonts became 4 KB and 10 KB,
+     and the request no longer leaves the site. -->
+<link rel="stylesheet" href="assets/css/icons.css">
+<link rel="preload" href="assets/fonts/fa-solid-900-subset.woff2" as="font" type="font/woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"}}</script>
+<style>
+/* ---- ported from the original teaching.html ---- */
+
+    .course-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.8rem; transition: var(--transition); position: relative; overflow: hidden;
+    }
+    .course-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--violet), transparent); }
+    .course-card.sky-bar::before { background: linear-gradient(90deg, var(--sky), transparent); }
+    .course-card.amber-bar::before { background: linear-gradient(90deg, var(--amber), transparent); }
+    .course-card:hover { border-color: rgba(124,58,237,0.3); transform: translateY(-3px); }
+    .course-level { font-size: 0.75rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.2rem 0.6rem; border-radius: 4px; display: inline-block; margin-bottom: 0.6rem; }
+    .level-pg { color: var(--violet); background: rgba(124,58,237,0.08); border: 1px solid rgba(124,58,237,0.2); }
+    .level-ug { color: var(--sky-ink); background: rgba(14,165,233,0.08); border: 1px solid rgba(14,165,233,0.2); }
+    .level-both { color: var(--amber-ink); background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); }
+    .course-title { font-family: var(--font-serif); font-size: 1.05rem; color: var(--text); margin-bottom: 0.5rem; line-height: 1.4; }
+    .course-desc { font-size: 0.85rem; color: var(--text2); line-height: 1.65; }
+    .course-topics { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .topic-chip { font-size: 0.75rem; font-family: var(--font-sans); color: var(--text3); background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.5rem; }
+    .membership-row { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border); }
+    .membership-row:last-child { border-bottom: none; }
+    .mem-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--amber-ink); flex-shrink: 0; }
+    .mem-info [data-h="4"] { font-family: var(--font-sans); font-size: 0.88rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+    .mem-info p { font-size: 0.8rem; color: var(--text3); }
+    .journal-row { padding: 0.7rem 0; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; }
+    .journal-row:last-child { border-bottom: none; }
+    .journal-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--violet); flex-shrink: 0; }
+    .journal-name { color: var(--text2); flex: 1; }
+    .journal-pub { font-size: 0.75rem; font-family: var(--font-sans); color: var(--text3); }
+
+    /* ── Mentor Cards — Primary (2-col) ── */
+    .mentor-grid-primary { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.8rem; margin-bottom: 2.5rem; }
+    @media (max-width: 600px) { .mentor-grid-primary { grid-template-columns: 1fr; } }
+    /* ── Mentor Cards — Secondary (3-col, 6 teachers) ── */
+    .mentor-grid-secondary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-bottom: 1.8rem; }
+    @media (max-width: 768px) { .mentor-grid-secondary { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .mentor-grid-secondary { grid-template-columns: 1fr; } }
+    /* ── Shared card styles ── */
+    .mentor-card { background: var(--card); border: 1px solid var(--border-soft); border-radius: var(--radius); padding: 1.8rem 1.5rem; text-align: center; box-shadow: var(--shadow-sm); transition: var(--transition); }
+    .mentor-card:hover { border-color: rgba(124,58,237,0.18); box-shadow: var(--shadow); }
+    .mentor-card.compact { padding: 1.3rem 1rem; }
+    .mentor-photo { width: 130px; height: 130px; border-radius: 50%; margin: 0 auto 1.2rem; border: 3px solid var(--border); overflow: hidden; background: var(--bg3); }
+    .mentor-photo img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+    .mentor-photo.sm { width: 90px; height: 90px; border-width: 2px; margin-bottom: 0.9rem; }
+    .mentor-name { font-family: var(--font-serif); color: var(--text); font-size: 1.08rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .mentor-name.sm { font-size: 0.9rem; }
+    .mentor-role { font-size: 0.75rem; font-family: var(--font-sans); font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--violet); margin-bottom: 0.3rem; }
+    .mentor-affil { font-size: 0.78rem; color: var(--text3); font-family: var(--font-sans); margin-bottom: 0.9rem; }
+    .mentor-affil.sm { font-size: 0.75rem; margin-bottom: 0; }
+    .mentor-desc { font-size: 0.84rem; color: var(--text2); line-height: 1.75; text-align: left; }
+    .collective-desc { background: linear-gradient(135deg, rgba(124,58,237,0.04), rgba(14,165,233,0.03)); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.8rem 2.2rem; font-size: 0.88rem; color: var(--text2); line-height: 1.85; margin-bottom: 2rem; }
+    .acknowledgement-card { background: linear-gradient(135deg, rgba(124,58,237,0.04), rgba(14,165,233,0.03)); border: 1px solid var(--border); border-radius: var(--radius); padding: 2.2rem 2.5rem; position: relative; overflow: hidden; }
+    .acknowledgement-card::before { content: '\201C'; position: absolute; top: -0.5rem; left: 1.5rem; font-size: 6rem; font-family: var(--font-serif); color: var(--violet); opacity: 0.08; line-height: 1; pointer-events: none; }
+    .acknowledgement-card p { font-size: 0.9rem; color: var(--text2); line-height: 1.85; margin-bottom: 0.8rem; }
+    .acknowledgement-card p:last-child { margin-bottom: 0; }
+  
+
+  /* Scroll-reveal elements start at opacity:0 and are revealed by JS.
+     Without JS they would stay invisible forever — show them immediately. */
+  [data-anim]{opacity:1!important;transform:none!important}
+  .fade-in{animation:none!important;opacity:1!important}
+
+/* ---- ported from the original contact.html ---- */
+
+    .contact-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 2rem; }
+    .contact-row { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .contact-row:last-child { border-bottom: none; }
+    .ci { width: 44px; height: 44px; border-radius: 10px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1rem; color: var(--amber-ink); flex-shrink: 0; }
+    .ci.teal { background: rgba(14,165,233,0.08); border-color: var(--border); color: var(--sky-ink); }
+    .contact-info-text [data-h="4"] { font-family: var(--font-sans); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 0.3rem; }
+    .contact-info-text a, .contact-info-text p { font-size: 0.92rem; color: var(--text2); line-height: 1.6; }
+    .contact-info-text a:hover { color: var(--amber-ink); }
+    .profile-link { display: flex; align-items: center; gap: 0.8rem; padding: 1rem; background: var(--card); border: 1px solid var(--border); border-radius: 10px; transition: var(--transition); }
+    .profile-link:hover { border-color: var(--amber-ink); background: var(--bg3); }
+    .profile-link .pl-icon { width: 40px; height: 40px; border-radius: 8px; background: var(--bg3); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; color: var(--amber-ink); flex-shrink: 0; }
+    .profile-link .pl-info { flex: 1; }
+    .profile-link .pl-info [data-h="4"] { font-family: var(--font-sans); font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.15rem; }
+    .profile-link .pl-info p { font-size: 0.75rem; color: var(--text3); }
+    .profile-link .pl-arrow { color: var(--text3); font-size: 0.85rem; }
+    .teaching-row { padding: 0.8rem 0; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 0.88rem; display: flex; justify-content: space-between; align-items: center; }
+    .teaching-row:last-child { border-bottom: none; }
+    .teaching-course { color: var(--text); }
+    .teaching-level { font-size: 0.75rem; font-family: var(--font-sans); font-weight: 600; text-transform: uppercase; padding: 0.15rem 0.5rem; border-radius: 4px; }
+    .level-pg { background: var(--bg3); color: var(--amber-ink); border: 1px solid var(--border); }
+    .level-ug { background: rgba(14,165,233,0.08); color: var(--sky-ink); border: 1px solid var(--border); }
+    .membership-chip { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-family: var(--font-sans); color: var(--text2); padding: 0.4rem 0.9rem; background: var(--card); border: 1px solid var(--border); border-radius: 8px; }
+  
+
+  /* Scroll-reveal elements start at opacity:0 and are revealed by JS.
+     Without JS they would stay invisible forever — show them immediately. */
+  [data-anim]{opacity:1!important;transform:none!important}
+  .fade-in{animation:none!important;opacity:1!important}
+
+/* ---- corrections applied after the ported page CSS ---- */
+.pi-avatar{width:min(280px,100%);height:auto;aspect-ratio:1;max-width:100%}
+.pi-card{grid-template-columns:minmax(0,300px) minmax(0,1fr)}
+@media (max-width:768px){ .pi-card{grid-template-columns:minmax(0,1fr)} }
+.funding-item{flex-wrap:wrap}
+.funding-item .funding-amount{flex:none;white-space:nowrap}
+.funding-item > div:not(.funding-amount){flex:1 1 10rem;min-width:0}
+.spec-row{flex-wrap:wrap;gap:0.2rem 1rem}
+.spec-label,.spec-val{min-width:0;overflow-wrap:anywhere}
+@media (max-width:560px){
+  .research-block{grid-template-columns:minmax(0,1fr);gap:0.4rem}
+  .project-row{grid-template-columns:minmax(0,1fr)}
+}
+.research-block,.project-row{min-width:0}
+.research-block > *,.project-row > *{min-width:0}
+/* a stat tile's figure must shrink with its tile, not spill out of it */
+.card.text-center > div:first-child{font-size:clamp(1.15rem,5.5vw,2rem)!important;
+  overflow-wrap:anywhere;hyphens:auto}
+.card.text-center > div{overflow-wrap:anywhere}
+
+/* The ten landmark papers sit in bordered cards with 1.3rem of left padding;
+   the live ORCID list was rendering flush against the container, so the two
+   lists on the same page started at different left edges. They match now. */
+#orcid-pubs-container .pub-item{border:1px solid var(--border);
+  border-radius:var(--radius);background:var(--card);
+  padding:0.85rem 1.5rem 0.85rem 1.3rem;margin-bottom:0.55rem;
+  border-left:3px solid var(--border2)}
+#orcid-pubs-container .pub-item:hover{border-color:rgba(124,58,237,0.3);
+  border-left-color:var(--violet)}
+#orcid-pubs-container .pub-item:last-child{border-bottom:1px solid var(--border)}
+#orcid-pubs-container .year-heading{padding-left:0.1rem}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" role="region" aria-label="Announcement">
+  <div class="wrap announce-in">
+    <span class="ann-tag">Open</span>
+    <p><span class="ann-long">PhD and project positions are open for candidates with NET/JRF, INSPIRE or institutional fellowships.</span><span class="ann-short">PhD and project positions are open.</span> <a href="people.html#join">How to apply &rarr;</a></p>
+    <button type="button" class="ann-x" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+<header class="site-head" id="siteHead">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <img src="assets/images/cuj-logo.png"
+           srcset="assets/images/cuj-logo@2x.png 2x, assets/images/cuj-logo@3x.png 3x"
+           width="56" height="53" alt="Central University of Jammu">
+      <span class="brand-txt">
+        <b>Ashish K Sharma</b>
+        <i>Energy Materials &amp; Devices Laboratory</i>
+      </span>
+    </a>
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
+            aria-label="Main menu"><span></span><span></span><span></span></button>
+    <nav class="mainmenu" id="mainmenu" aria-label="Main">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="people.html">People</a></li>
+      <li><a href="news.html">News &amp; Gallery</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html" aria-current="page">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="onthispage" id="onthispage" aria-label="On this page">
+  <div class="otp-head">
+    <span class="otp-label">On this page</span>
+    <button type="button" class="otp-toggle" aria-expanded="false" aria-controls="otp-list">Sections</button>
+  </div>
+  <ul id="otp-list">
+        <li><a href="#profile">Profile &amp; CV</a></li>
+        <li><a href="#teaching">Teaching</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#mentors">Teachers &amp; mentors</a></li>
+        <li><a href="#honours">Honours</a></li>
+        <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">About</span>
+      <h1>Profile, Teaching &amp; Contact</h1>
+      <p>Who I am and what I have done, what I teach at Central University of Jammu, the teachers this work descends from, and how to reach me.</p>
+    </div>
+  </div>
+</div><section class="section" id="profile">
+  <div class="container">
+    <div class="grid-2" style="gap:2.5rem;align-items:start;">
+
+      <div>
+        <span class="section-label">Profile</span>
+        <h2 class="section-title" data-h="2">Ashish K Sharma</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text2);line-height:1.8;">Professor in the Department of
+          Physics &amp; Astronomical Sciences at Central University of Jammu, since July
+          2026. An experimental condensed-matter physicist: the work is thermoelectric
+          energy conversion and power semiconductor devices, and the method is defect
+          engineering with ion beams, answered by first-principles calculation.</p>
+        <p style="color:var(--text2);line-height:1.8;">The through-line since the doctorate
+          has been building the instrument before running the experiment. Five cryogenic
+          measurement systems designed and commissioned so far &mdash; one of them published
+          in <em>Review of Scientific Instruments</em> and now used by collaborating national
+          groups &mdash; and the in-situ DLTS facility at the IUAC Pelletron, which reads
+          defects while the ion beam is still arriving. The last of those has no counterpart
+          anywhere.</p>
+        <p style="color:var(--text2);line-height:1.8;">Publishes under the name
+          <strong>Ashish Kumar</strong>: 91 papers, three patents, an <em>h</em>-index of 27
+          and about 1,850 citations. Continuous funding as principal investigator since 2015
+          from DST, SERB, ISRO, DRDO, UGC and IUAC.</p>
+        <p style="margin-top:1.4rem;">
+          <a class="btn btn-gold" href="ashish-kumar-biosketch.pdf"><i class="fas fa-file-pdf" aria-hidden="true"></i> Download biosketch (PDF)</a>
+          <a class="btn btn-outline" href="research.html"><i class="fas fa-flask" aria-hidden="true"></i> Research programme</a>
+        </p>
+      </div>
+
+      <div>
+        <div class="card" style="margin-bottom:1.2rem;">
+          <h3 style="font-family:var(--font-sans);font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;" data-h="3">Positions</h3>
+          <ul class="cv-list">
+            <li><span class="cv-when">2026&ndash;</span><span class="cv-what"><strong>Professor</strong><br>Central University of Jammu</span></li>
+            <li><span class="cv-when">2023&ndash;26</span><span class="cv-what"><strong>Associate Professor</strong><br>Central University of Jammu</span></li>
+            <li><span class="cv-when">2021&ndash;23</span><span class="cv-what"><strong>Associate Professor</strong><br>UPES Dehradun</span></li>
+            <li><span class="cv-when">2020&ndash;21</span><span class="cv-what"><strong>SERB Research Scientist</strong><br>Inter-University Accelerator Centre, New Delhi</span></li>
+            <li><span class="cv-when">2015&ndash;20</span><span class="cv-what"><strong>DST-INSPIRE Faculty</strong><br>Inter-University Accelerator Centre, New Delhi</span></li>
+            <li><span class="cv-when">2013&ndash;15</span><span class="cv-what"><strong>Postdoctoral Researcher</strong><br>Inter-University Accelerator Centre, New Delhi</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="font-family:var(--font-sans);font-size:0.78rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;color:var(--text3);margin-bottom:1rem;" data-h="3">Education</h3>
+          <ul class="cv-list">
+            <li><span class="cv-when">2013</span><span class="cv-what"><strong>Ph.D. in Physics</strong><br>IIT Delhi &mdash; GaN Schottky barrier diodes under swift heavy ion irradiation, under Prof. Rajendra Singh</span></li>
+            <li><span class="cv-when">2007</span><span class="cv-what"><strong>M.Sc. Physics</strong><br>Kurukshetra University, Haryana</span></li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section id="teaching" class="section">
+  <div class="container">
+    <div class="grid-2" style="gap:3rem;align-items:start;">
+      <div>
+        <span class="section-label">Approach</span>
+        <h2 class="section-title" data-h="2">Teaching Philosophy</h2>
+        <div class="section-divider"></div>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;margin-bottom:1.2rem;">Physics is best taught through the lens of active enquiry. Courses at CUJ are structured to connect foundational principles directly with open experimental questions — students in Condensed Matter Physics, for instance, regularly encounter material drawn from the group's own ongoing measurements, including live data from thermoelectric and defect-spectroscopy experiments.</p>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;margin-bottom:1.2rem;">This approach has a demonstrable record: three of the group's PhD students — including Dr. Vaishali Rathi, recipient of the Best PhD Thesis Award at UPES Dehradun — were first introduced to experimental research through taught courses before joining the laboratory. The boundary between classroom and research group is deliberately kept permeable.</p>
+        <p style="color:var(--text2);font-size:0.92rem;line-height:1.8;">Emphasis is placed on problem solving, quantitative reasoning, and the physical interpretation of data, with problem sets that draw on published literature wherever appropriate. Students are encouraged to engage with primary sources from the first year of postgraduate study.</p>
+        <blockquote style="margin-top:1.5rem;padding:1.2rem 1.5rem;border-left:3px solid var(--violet);background:var(--bg2);border-radius:0 var(--radius) var(--radius) 0;">
+          <p style="font-family:var(--font-serif);font-style:italic;color:var(--text);font-size:0.98rem;line-height:1.6;margin:0;">"The laboratory and the lecture hall should be a continuous learning environment — not separate activities."</p>
+        </blockquote>
+      </div>
+      <div data-delay="2">
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-icon"><i class="fas fa-users" aria-hidden="true"></i></div>
+          <h3 style="color:var(--text);margin-bottom:0.5rem;" data-h="4">Research-Integrated Instruction</h3>
+          <p style="font-size:0.85rem;color:var(--text2);">Lecture content in advanced courses is supplemented by primary literature, including the group's own publications. Students in Semiconductor Physics encounter real DLTS spectra, ZT measurements, and device I–V data as worked examples.</p>
+        </div>
+        <div class="card" style="margin-bottom:1.5rem;">
+          <div class="card-icon teal"><i class="fas fa-microscope" aria-hidden="true"></i></div>
+          <h4 style="color:var(--text);margin-bottom:0.5rem;" data-h="4">Laboratory-First Projects</h4>
+          <p style="font-size:0.85rem;color:var(--text2);">Over 20 M.Sc./M.Tech project students have been supervised at CUJ, UPES, and IUAC New Delhi. Projects are structured to generate data contributing to the group's research programme, giving students genuine scientific ownership.</p>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-chalkboard-teacher" aria-hidden="true"></i></div>
+          <h4 style="color:var(--text);margin-bottom:0.5rem;" data-h="4">Resource Person — National Workshops</h4>
+          <p style="font-size:0.85rem;color:var(--text2);">Regularly invited to deliver lectures at national refresher courses, workshops, and winter schools — including the UGC-HRDC Refresher Course in Physics (CUH, 2026) and the IUAC Winter School on Ion Beam Physics (2023).</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="courses" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem;">
+      <span class="section-label">Current Academic Year</span>
+      <h2 class="section-title" data-h="2">Courses Taught</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text2);font-size:0.88rem;">Central University of Jammu — Department of Physics &amp; Astronomical Sciences.</p>
+    </div>
+    <div class="grid-3">
+
+      <div class="course-card">
+        <span class="course-level level-pg">Postgraduate</span>
+        <div class="course-title">Condensed Matter Physics</div>
+        <div class="course-desc">Crystal structure, lattice dynamics, free electron theory, energy bands, semiconductors, magnetism, and superconductivity. The course draws directly on experimental examples from the group's thermoelectric and GaN device research.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Phonons</span>
+          <span class="topic-chip">Band theory</span>
+          <span class="topic-chip">Semiconductors</span>
+          <span class="topic-chip">Magnetism</span>
+        </div>
+      </div>
+
+      <div class="course-card sky-bar">
+        <span class="course-level level-both">PG / UG</span>
+        <div class="course-title">Astronomy &amp; Astrophysics</div>
+        <div class="course-desc">Stellar structure and evolution, galactic astronomy, cosmology, and observational techniques. Offered at both undergraduate and postgraduate level, with graded mathematical treatment.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Stellar physics</span>
+          <span class="topic-chip">Cosmology</span>
+          <span class="topic-chip">Observational methods</span>
+        </div>
+      </div>
+
+      <div class="course-card amber-bar">
+        <span class="course-level level-ug">Undergraduate</span>
+        <div class="course-title">Modern Physics</div>
+        <div class="course-desc">Relativity, origins of quantum mechanics, atomic and nuclear structure, radioactivity, elementary particle physics. Emphasises historical development alongside the mathematical framework.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Special relativity</span>
+          <span class="topic-chip">Quantum origins</span>
+          <span class="topic-chip">Nuclear physics</span>
+        </div>
+      </div>
+
+      <div class="course-card sky-bar">
+        <span class="course-level level-both">UG / PG</span>
+        <div class="course-title">Thermal Physics</div>
+        <div class="course-desc">Thermodynamic laws and potentials, statistical mechanics (Maxwell–Boltzmann, Fermi–Dirac, Bose–Einstein distributions), kinetic theory, and phase transitions. Strong emphasis on physical intuition and entropy.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Thermodynamics</span>
+          <span class="topic-chip">Statistical mechanics</span>
+          <span class="topic-chip">Phase transitions</span>
+        </div>
+      </div>
+
+
+
+      <div class="course-card">
+        <span class="course-level level-pg">Postgraduate</span>
+        <div class="course-title">Science &amp; Technology of Thin Films</div>
+        <div class="course-desc">Nucleation and growth, vacuum technology, physical and chemical deposition &mdash; sputtering, thermal and e-beam evaporation, pulsed laser deposition, CVD &mdash; and the characterisation that follows. Taught against the deposition and measurement systems running in the Department.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Vacuum &amp; growth</span>
+          <span class="topic-chip">PVD / CVD / PLD</span>
+          <span class="topic-chip">Film characterisation</span>
+        </div>
+      </div>
+
+      <div class="course-card sky-bar">
+        <span class="course-level level-both">PG / UG</span>
+        <div class="course-title">Special Theory of Relativity</div>
+        <div class="course-desc">Inertial frames and the constancy of <i>c</i>, Lorentz transformations, simultaneity and time dilation, relativistic momentum and energy, four-vectors and the invariant interval. Worked through the experiments that forced each conclusion rather than as a set of formulae.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Lorentz transformations</span>
+          <span class="topic-chip">Four-vectors</span>
+          <span class="topic-chip">Mass&ndash;energy</span>
+        </div>
+      </div>
+
+      <div class="course-card">
+        <span class="course-level level-ug">Undergraduate</span>
+        <div class="course-title">Physics in Everyday Life</div>
+        <div class="course-desc">Why a pressure cooker works, where the energy in a phone battery goes, what a thermoelectric cooler actually does, how a semiconductor sensor reads a temperature. For students meeting physics as a general course, taught from objects they already own.</div>
+        <div class="course-topics">
+          <span class="topic-chip">Heat &amp; energy</span>
+          <span class="topic-chip">Everyday devices</span>
+          <span class="topic-chip">Measurement</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mentors" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem;text-align:center;">
+      <span class="section-label">Gratitude</span>
+      <h2 class="section-title" data-h="2">Teachers Who Shaped Me</h2>
+      <div class="section-divider" style="margin:0 auto 1.2rem;"></div>
+      <p style="color:var(--text2);font-size:0.92rem;max-width:620px;margin:0 auto;">Every teacher carries within them the echoes of those who taught them. These are the mentors whose guidance — in the laboratory, the lecture hall, and beyond — defined the physicist and teacher I have become.</p>
+    </div>
+
+    <!-- Primary mentors: Rajendra Singh + Kanjilal -->
+    <div class="mentor-grid-primary">
+
+      <!-- Prof. Rajendra Singh — Ph.D. supervisor -->
+      <div class="mentor-card" data-anim data-delay="0">
+        <div class="mentor-photo">
+          <picture><source type="image/webp" srcset="assets/images/prof-rajendra-singh.webp"><img loading="lazy" decoding="async"
+               src="assets/images/prof-rajendra-singh.jpg"
+               alt="Prof. Rajendra Singh, Ph.D. Supervisor, IIT Delhi"
+               onerror="this.style.display='none';" width="201" height="235"></picture>
+        </div>
+        <div class="mentor-name">Prof. Rajendra Singh</div>
+        <div class="mentor-role">Ph.D. Supervisor</div>
+        <div class="mentor-affil">Professor (Physics) & Associate Dean Research, IIT Delhi</div>
+        <div class="mentor-desc">
+          Supervised my doctoral research at IIT Delhi with calm steadiness and quiet authority. He backed unconventional ideas, championed ethical research, and taught me that honest conduct — not politics — is the only currency worth holding in academic life. His model of building deep, genuine scientific relationships over decades has shaped how I network and collaborate to this day.
+        </div>
+      </div>
+
+      <!-- Dr. D.K. Kanjilal — Postdoc mentor -->
+      <div class="mentor-card" data-anim data-delay="1">
+        <div class="mentor-photo">
+          <picture><source type="image/webp" srcset="assets/images/kanjilal-480.webp 480w, assets/images/kanjilal-720.webp 720w, assets/images/kanjilal.webp 800w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async"
+               src="assets/images/kanjilal.jpg"
+               alt="Dr. D.K. Kanjilal, Distinguished Scientist, IUAC New Delhi"
+               onerror="this.style.display='none';" width="800" height="800" srcset="assets/images/kanjilal-480.jpg 480w, assets/images/kanjilal-720.jpg 720w, assets/images/kanjilal.jpg 800w" sizes="(max-width:700px) 92vw, 560px"></picture>
+        </div>
+        <div class="mentor-name">Dr. D.K. Kanjilal</div>
+        <div class="mentor-role">Postdoc Mentor</div>
+        <div class="mentor-affil">FNA, FNASc, Former Director & DAE Raja Ramanna Fellow, IUAC New Delhi</div>
+        <div class="mentor-desc">
+          Gave me the most transformative gift a mentor can offer: complete independence. As a postdoc at IUAC he trusted me to pursue new ideas entirely on my own terms, and that confidence changed my relationship with research — from executing a programme to owning my own scientific questions. A true visionary, he always saw the larger scientific horizon and led with genuine empathy — never letting the pressures of running a large programme diminish his warmth for the people doing the work. His student-centric approach and unshakeable positivity in the face of setbacks remain my benchmark for how a laboratory leader should be.
+        </div>
+      </div>
+
+    </div><!-- end mentor-grid-primary -->
+
+    <!-- Section label for additional influences -->
+    <div style="margin-top:2.2rem;margin-bottom:1.4rem;">
+      <span class="section-label">Mentors &amp; Further Influences</span>
+      <h3 style="font-family:var(--font-serif);font-size:1.35rem;color:var(--text);margin:0.4rem 0 0.6rem;" data-h="3">Teachers, Leaders &amp; Collaborators</h3>
+    </div>
+
+    <!-- Collective description -->
+    <div class="collective-desc" data-anim data-delay="2">
+      Each of these teachers, leaders, and collaborators has directly influenced my learning, research, and approach to teaching. Through their example I absorbed the values of discipline, intellectual honesty, empathy towards students, staying true to oneself in the face of pressure, and maintaining a broad vision in both science and life. They showed — by how they treated their own students, collaborators, and colleagues — what it means to hold authority with grace and responsibility.
+    </div>
+
+    <!-- Six secondary mentor cards -->
+    <div class="mentor-grid-secondary">
+
+      <!-- Prof. M. Jagadesh Kumar -->
+      <div class="mentor-card compact" data-anim data-delay="3">
+        <div class="mentor-photo sm">
+          <picture><source type="image/webp" srcset="assets/images/jagdish-mamidal-480.webp 480w, assets/images/jagdish-mamidal-720.webp 720w, assets/images/jagdish-mamidal.webp 902w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async"
+               src="assets/images/jagdish-mamidal.jpg"
+               alt="Prof. M. Jagadesh Kumar"
+               onerror="this.style.display='none';" width="902" height="875" srcset="assets/images/jagdish-mamidal-480.jpg 480w, assets/images/jagdish-mamidal-720.jpg 720w, assets/images/jagdish-mamidal.jpg 902w" sizes="(max-width:700px) 92vw, 560px"></picture>
+        </div>
+        <div class="mentor-name sm">Prof. M. Jagadesh Kumar</div>
+        <div class="mentor-role">Ph.D. SRC Chairman &amp; Teacher</div>
+        <div class="mentor-affil sm">Former UGC Chairman &amp; VC JNU; Prof., Dept. of Electrical Engineering, IIT Delhi</div>
+      </div>
+
+      <!-- Dr. Seema Vinayak -->
+      <div class="mentor-card compact" data-anim data-delay="4">
+        <div class="mentor-photo sm">
+          <picture><source type="image/webp" srcset="assets/images/seema-vinayak-480.webp 480w, assets/images/seema-vinayak.webp 582w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async"
+               src="assets/images/seema-vinayak.jpg"
+               alt="Dr. Seema Vinayak"
+               onerror="this.style.display='none';" width="582" height="527" srcset="assets/images/seema-vinayak-480.jpg 480w, assets/images/seema-vinayak.jpg 582w" sizes="(max-width:700px) 92vw, 560px"></picture>
+        </div>
+        <div class="mentor-name sm">Dr. Seema Vinayak</div>
+        <div class="mentor-role">Collaborator &amp; Mentor</div>
+        <div class="mentor-affil sm">Former Director, Solid State Physics Laboratory (SSPL), DRDO, Delhi</div>
+      </div>
+
+      <!-- Dr. Sundeep Chopra -->
+      <div class="mentor-card compact" data-anim data-delay="5">
+        <div class="mentor-photo sm">
+          <picture><source type="image/webp" srcset="assets/images/sundeep-chopra-iuac-480.webp 480w, assets/images/sundeep-chopra-iuac.webp 531w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async"
+               src="assets/images/sundeep-chopra-iuac.jpg"
+               alt="Dr. Sundeep Chopra"
+               onerror="this.style.display='none';" width="531" height="531" srcset="assets/images/sundeep-chopra-iuac-480.jpg 480w, assets/images/sundeep-chopra-iuac.jpg 531w" sizes="(max-width:700px) 92vw, 560px"></picture>
+        </div>
+        <div class="mentor-name sm">Dr. Sundeep Chopra</div>
+        <div class="mentor-role">Scientist &amp; Mentor</div>
+        <div class="mentor-affil sm">Scientist, Inter-University Accelerator Centre (IUAC), New Delhi</div>
+      </div>
+
+      <!-- Dr. Ram Sharma -->
+      <div class="mentor-card compact" data-anim data-delay="6">
+        <div class="mentor-photo sm">
+          <picture><source type="image/webp" srcset="assets/images/ram-sharma.webp"><img loading="lazy" decoding="async"
+               src="assets/images/ram-sharma.jpg"
+               alt="Dr. Ram Sharma"
+               onerror="this.style.display='none';" width="300" height="168"></picture>
+        </div>
+        <div class="mentor-name sm">Dr. Ram Sharma</div>
+        <div class="mentor-role"> Colleague &amp; Mentor &amp; Leader</div>
+        <div class="mentor-affil sm">Former Vice-Chancellor, University of Petroleum and Energy Studies (UPES), Dehradun</div>
+      </div>
+
+      <!-- Prof. Fakir Chand -->
+      <div class="mentor-card compact" data-anim data-delay="7">
+        <div class="mentor-photo sm">
+          <picture><source type="image/webp" srcset="assets/images/prof-fakir-chand-480.webp 480w, assets/images/prof-fakir-chand-720.webp 720w, assets/images/prof-fakir-chand-960.webp 960w, assets/images/prof-fakir-chand.webp 1170w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async"
+               src="assets/images/prof-fakir-chand.jpg"
+               alt="Prof. Fakir Chand"
+               onerror="this.style.display='none';" width="1170" height="1170" srcset="assets/images/prof-fakir-chand-480.jpg 480w, assets/images/prof-fakir-chand-720.jpg 720w, assets/images/prof-fakir-chand-960.jpg 960w, assets/images/prof-fakir-chand.jpg 1170w" sizes="(max-width:700px) 92vw, 560px"></picture>
+        </div>
+        <div class="mentor-name sm">Prof. Fakir Chand</div>
+        <div class="mentor-role">M.Sc. Teacher &amp; Mentor</div>
+        <div class="mentor-affil sm">Professor of Physics, Kurukshetra University, Kurukshetra</div>
+      </div>
+
+    </div><!-- end mentor-grid-secondary -->
+
+    <!-- Closing reflection -->
+    <div class="acknowledgement-card" data-anim data-delay="9">
+      <div class="mentor-role" style="margin-bottom:0.8rem;text-align:left;">A Lifetime of Teachers</div>
+      <p>
+        No scientist is self-made. Long before any laboratory, the foundations were built by school teachers whose patience with a curious student I only fully appreciate now — and by undergraduate teachers who first made physics feel like a living discipline rather than a body of facts to memorise.
+      </p>
+      <p>
+        I carry gratitude to every teacher, colleague, and scientist who treated their subject as something worth caring about deeply: to the broader community at IUAC New Delhi, where an open scientific culture showed me that every interaction — across career stages — is a potential learning; and to my own students, who have taught me far more than they know about explaining things clearly, questioning assumptions, and the responsibility that comes with standing at the front of a room.
+      </p>
+      <p style="font-family:var(--font-serif);font-style:italic;color:var(--text);font-size:0.93rem;">
+        Teaching is a relay. I became a teacher because of teachers — and everything I do in the classroom and the laboratory is, in some measure, a tribute to that chain.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section id="honours" class="section">
+  <div class="container">
+    <div class="text-center mb-3">
+      <span class="section-label">Recognition</span>
+      <h2 class="section-title" data-h="2">Honours &amp; Fellowships</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div class="tight" style="margin:0 auto;">
+      <div>
+        <h3 style="font-family:var(--font-sans);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--amber-ink);margin-bottom:1rem;" data-h="3">Awards &amp; Fellowships</h3>
+        <ul class="clean-list">
+          <li><strong>69th Lindau Nobel Laureate Meeting, Germany (2019)</strong> &mdash; selected among roughly 600 young scientists worldwide, from an Indian nomination pool of about 15&ndash;20 across all disciplines.</li>
+          <li><strong>SERB Research Scientist Award (2020)</strong> &mdash; Government of India.</li>
+          <li><strong>DST-INSPIRE Faculty Award (2015)</strong> &mdash; five-year national fellowship carrying &#8377;35 L of project support.</li>
+          <li><strong>RSC Advances Outstanding Student Paper Award (2024)</strong> &mdash; for the PEDOT:PSS/Bi<sub>2</sub>Te<sub>3</sub>/rGO ternary composite work.</li>
+          <li><strong>DST&ndash;IST Visiting Fellowship (2017)</strong> &mdash; University of Valladolid, Spain.</li>
+          <li><strong>ICTP travel grant (2019)</strong> &mdash; Conference on Thermoelectricity, Trieste.</li>
+          <li><strong>DST-ITS award</strong> &mdash; for DRIP XVII, the 17th International Conference on Defect Recognition, Imaging and Physics in Semiconductors.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section section-alt" id="contact">
+  <div class="container">
+    <div class="text-center mb-3">
+      <span class="section-label">Get in Touch</span>
+      <h2 class="section-title" data-h="2">Contact</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div class="grid-2" style="gap:2.5rem;align-items:start;">
+
+      <div>
+        <div class="contact-block">
+          <h3 data-h="3"><i class="fas fa-envelope" aria-hidden="true"></i> Email</h3>
+          <p class="contact-value"><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></p>
+          <p class="contact-note">For research collaborations, invited lectures and
+            academic correspondence.</p>
+        </div>
+
+        <div class="contact-block">
+          <h3 data-h="3"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Office</h3>
+          <address class="contact-value" style="font-style:normal;line-height:1.8;">
+            Room No. 120&#8202;F, First Floor<br>
+            Aryabhatta Bhawan (Science Block)<br>
+            Department of Physics &amp; Astronomical Sciences<br>
+            Central University of Jammu<br>
+            Rahya-Suchani, Samba<br>
+            Jammu &amp; Kashmir 181143, India
+          </address>
+          <p style="margin-top:0.9rem;">
+            <a class="btn btn-outline" href="https://maps.google.com/?q=Central+University+of+Jammu,+Rahya-Suchani,+Samba,+Jammu+and+Kashmir+181143"
+               target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> View on Google Maps</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="highlight-box">
+        <h3 style="margin-bottom:0.8rem;" data-h="3">Thinking of joining the group?</h3>
+        <p style="color:var(--text2);margin-bottom:1rem;">PhD, dissertation and
+          postdoctoral positions, what the group can offer, and what to put in the email
+          &mdash; including the case for bringing a research question of your own rather
+          than picking one off the list &mdash; are all on the People page.</p>
+        <p style="margin-bottom:0;">
+          <a class="btn btn-gold" href="people.html#join"><i class="fas fa-users" aria-hidden="true"></i> Join the group</a>
+        </p>
+
+        <hr style="border:0;border-top:1px solid var(--border);margin:1.6rem 0;">
+
+        <h3 style="margin-bottom:0.8rem;" data-h="3">Academic profiles</h3>
+        <ul class="clean-list" style="margin-bottom:0;">
+          <li><a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer">ORCID &mdash; 0000-0002-5240-3472</a></li>
+          <li><a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+          <li><a href="ashish-kumar-biosketch.pdf">Biosketch (PDF)</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <img class="foot-logo" src="assets/images/cuj-logo.png"
+         srcset="assets/images/cuj-logo@2x.png 2x, assets/images/cuj-logo@3x.png 3x"
+         width="56" height="53" alt="" aria-hidden="true">
+    <div class="fgrid">
+      <div>
+        <h2>Laboratory</h2>
+        <address>
+          Energy Materials &amp; Devices Laboratory<br>
+          Department of Physics &amp; Astronomical Sciences<br>
+          Central University of Jammu<br>
+          Rahya-Suchani, Samba, Jammu &amp; Kashmir 181143, India
+        </address>
+      </div>
+      <div>
+        <h2>Office</h2>
+        <address>
+          Room 120&#8202;F, First Floor<br>
+          Aryabhatta Bhawan (Science Block)<br>
+          Department of Physics &amp; Astronomical Sciences<br>
+          Central University of Jammu<br>
+          Rahya-Suchani, Samba, Jammu &amp; Kashmir 181143, India
+        </address>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li>
+          <li><a href="ashish-kumar-biosketch.pdf">Biosketch (PDF)</a></li>
+          <li><a href="about.html#contact">Directions &amp; map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Profiles</h2>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+          <li><a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+          <li><a href="https://www.webofscience.com/wos/author/search" target="_blank" rel="noopener noreferrer">Web of Science</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html#join">Join the group</a></li>
+          <li><a href="resources.html">Resources for students</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 Ashish K Sharma &middot; Central University of Jammu</span>
+      <span class="visits" id="visits" hidden></span>
+      <span>Publishes as <b>Ashish Kumar</b> &middot; figures update from ORCID and Google Scholar.</span>
+    </div>
+    <p class="fdisc">A personal academic page. Not an official publication of Central University of Jammu.</p>
+  </div>
+</footer>
+<script src="assets/js/shell.js" defer></script>
+</body>
+</html>

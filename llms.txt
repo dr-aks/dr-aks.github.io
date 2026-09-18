@@ -1,0 +1,93 @@
+# Ashish K Sharma — Energy Materials & Devices Laboratory, Central University of Jammu
+
+> Experimental condensed-matter physicist. Thermoelectric energy conversion and
+> wide-bandgap semiconductor devices, with ion-beam defect engineering as the
+> method. **Publishes under the name Ashish Kumar.** ORCID 0000-0002-5240-3472.
+
+## Identity
+- Display name: Ashish K Sharma
+- Publication name: Ashish Kumar — every paper, patent and award is under this name
+- Laboratory: Energy Materials & Devices Laboratory
+- Position: Professor, Department of Physics & Astronomical Sciences, Central University of Jammu,
+  Samba, J&K 181143, India. Professor from July 2026; joined CU Jammu 2023.
+- Earlier: UPES Dehradun (2021–2023); IUAC New Delhi (2013–2021), as
+  DST-INSPIRE Faculty then SERB Research Scientist
+- PhD: IIT Delhi, 2013, under Prof. Rajendra Singh
+- ORCID: https://orcid.org/0000-0002-5240-3472
+- Google Scholar: https://scholar.google.com/citations?user=eSKL8HgAAAAJ
+
+## Research — six areas
+1. Energy: thermoelectric power conversion. Organic (PEDOT:PSS, FeCl3-doped
+   P3HT), inorganic (Bi2Te3 with Sn and Zn, CoSb3, SrTiO3, and the wide-bandgap
+   route through GaN and beta-Ga2O3 past the 150 C ceiling of Bi2Te3), hybrid
+   (PEDOT:PSS/Bi2Te3 with rGO, PVDF with Ni nanowires), flexible and printed
+   devices. RSC Advances Outstanding Student Paper Award 2024.
+2. Power semiconductor devices: SiC, GaN, beta-Ga2O3 and graphene on silicon;
+   Schottky diodes, AlGaN/GaN HEMTs, photodetectors, heterostructures.
+   Ruthenium passivation raised the GaN Schottky barrier from 0.78 to 0.91 eV
+   and cut reverse leakage by two orders of magnitude. DRDO CARS.
+3. Defects in semiconductors: native and induced (irradiation, implantation).
+   DLTS 80-500 K, 1/f noise, Hall transport. In-situ DLTS under a live swift
+   heavy ion beam at the IUAC 15UD Pelletron — the only facility of its kind
+   anywhere.
+4. A dual approach: experiment answered by theory — SRIM/TRIM, molecular
+   dynamics, DFT in Quantum ATK and WIEN2k, Boltzmann transport.
+5. Building infrastructure: more than five instruments designed and built in
+   house, for high precision at low cost — see below.
+6. New materials and applications: 2D materials (graphene, MoS2) and carbon
+   nanotubes for space missions; EUV and soft X-ray multilayer optics.
+
+## National mission alignment
+India Semiconductor Mission — qualified ohmic and Schottky contacts and
+radiation-tolerant devices on SiC and GaN (DRDO CARS).
+National Quantum Mission — deep-level spectroscopy of the single-defect states
+that govern coherence and yield in wide-bandgap and 2D platforms.
+Indian space programme — EUV/X-ray multilayer mirror prototypes for
+polarimetric missions and radiation-tolerant coatings (ISRO RESPOND).
+
+## Instruments built in the group
+Five custom systems designed and commissioned by the PI: in-situ I–V, C–V and
+DLTS under a live ion beam at the IUAC Pelletron; Seebeck coefficient and
+resistivity, 80–650 K (Rev. Sci. Instrum. 90, 104901, 2019 — now used by
+collaborating national groups); ZT and thermal conductivity, 300–1000 K;
+1/f noise; a dipstick optical cryostat. A CVD system to 1400 C is commissioned
+in the Department at CU Jammu.
+
+## Funding as Principal Investigator — Rs 204.83 L across eight grants
+Active (Rs 95.38 L): ISRO RESPOND RES-URSC-2023-010, Rs 59.31 L, 2024–2027;
+DRDO CARS, Rs 26.07 L, 2023–2026; IUAC UFR-76304, Rs 10.00 L, 2024–2027.
+Completed: DST-INSPIRE Faculty Rs 35.00 L (2015–2020); SERB Research Scientist
+Rs 14.00 L (2020–2022); UPES SEED Infra Rs 33.00 L (electrical
+characterisation: impedance spectroscopy, I–V, C–V) and Rs 27.00 L
+(thermoelectric transport: Seebeck and thermal conductivity);
+UGC-DAE-CSR Rs 0.45 L (2022–2023). DST-FIST sanctioned to the Department 2024.
+
+## Group
+Four doctoral candidates: Muskan Verma, Ritu Rani, Satyarth Verma,
+Vikas Dhiman. Three PhDs awarded: Navneet Kumar (2023), Vaishali Rathi (2025,
+Best PhD Thesis, UPES), Kamal Singh (2026). About twenty M.Tech, M.Sc. and
+B.Tech projects supervised.
+
+## Honours
+69th Lindau Nobel Laureate Meeting, Germany (2019); SERB Research Scientist
+Award (2020); DST-INSPIRE Faculty Award (2015); RSC Advances Outstanding
+Student Paper Award (2024); DST–IST Visiting Fellowship, Valladolid (2017).
+
+## Teaching
+Condensed Matter Physics; Astronomy and Astrophysics; Modern Physics;
+Thermal and Statistical Physics — Central University of Jammu.
+
+## Pages
+- Home: https://dr-aks.github.io/
+- Research, projects and instruments: https://dr-aks.github.io/research.html
+- Publications, patents and talks (searchable, live from ORCID): https://dr-aks.github.io/publications.html
+- People, collaborators and open positions: https://dr-aks.github.io/people.html
+- News and gallery: https://dr-aks.github.io/news.html
+- Curated resources for students and researchers: https://dr-aks.github.io/resources.html
+- Teaching, mentors, service and contact: https://dr-aks.github.io/about.html
+
+## Contact
+ashish.phy@cujammu.ac.in
+Room 120F, First Floor, Aryabhatta Bhawan (Science Block),
+Department of Physics & Astronomical Sciences, Central University of Jammu,
+Rahya-Suchani, Samba, Jammu & Kashmir 181143, India

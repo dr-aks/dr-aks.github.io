@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#7c3aed" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14131a" media="(prefers-color-scheme: dark)">
+<title>People — Ashish K Sharma</title>
+<meta name="description" content="The group: principal investigator, doctoral students, alumni, collaborators, open positions and how to apply.">
+<meta name="author" content="Ashish K Sharma">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<link rel="canonical" href="https://dr-aks.github.io/people.html">
+<link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="alternate" type="text/markdown" href="/llms.txt" title="Structured summary for AI assistants">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dr-aks.github.io/people.html">
+<meta property="og:title" content="People — Ashish K Sharma">
+<meta property="og:description" content="The group: principal investigator, doctoral students, alumni, collaborators, open positions and how to apply.">
+<meta property="og:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="Ashish K Sharma — Energy Materials &amp; Devices Laboratory">
+<meta property="og:locale" content="en_IN">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="People — Ashish K Sharma">
+<meta name="twitter:description" content="The group: principal investigator, doctoral students, alumni, collaborators, open positions and how to apply.">
+<meta name="twitter:image" content="https://dr-aks.github.io/assets/images/og-card.jpg">
+<!-- Critical, inline: WebKit was rendering images at natural size while the
+     third-party font stylesheet blocked everything behind it. -->
+<style>img,picture,video,svg{max-width:100%}picture{display:block}body{margin:0}</style>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/shell.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"></noscript>
+<!-- Font Awesome, subset to the 84 icons this site actually uses and served
+     from here: 102 KB of CSS plus 270 KB of webfonts became 4 KB and 10 KB,
+     and the request no longer leaves the site. -->
+<link rel="stylesheet" href="assets/css/icons.css">
+<link rel="preload" href="assets/fonts/fa-solid-900-subset.woff2" as="font" type="font/woff2">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","isPartOf":{"@id":"https://dr-aks.github.io/#website"},"about":{"@id":"https://dr-aks.github.io/#person"},"author":{"@id":"https://dr-aks.github.io/#person"}}</script>
+<style>
+/* ---- ported from the original group.html ---- */
+
+    .member-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 2rem 1.5rem; text-align: center; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .member-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--amber), var(--sky)); transform: scaleX(0); transition: transform 0.3s ease; }
+    .member-card:hover { border-color: rgba(124,58,237,0.35); transform: translateY(-4px); }
+    .member-card:hover::after { transform: scaleX(1); }
+    .avatar { width: 220px; height: 220px; border-radius: 50%; margin: 0 auto 1.2rem; border: 3px solid var(--border); background: var(--bg3); display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-size: 2.5rem; font-weight: 700; color: var(--amber-ink); overflow: hidden; }
+    .member-name { font-family: var(--font-serif); color: var(--text); font-size: 1.05rem; margin-bottom: 0.2rem; }
+    .member-role { font-size: 0.75rem; font-family: var(--font-sans); font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--amber-ink); margin-bottom: 0.5rem; }
+    .member-topic { font-size: 0.82rem; color: var(--text2); line-height: 1.5; }
+    .member-year { font-size: 0.75rem; color: var(--text3); margin-top: 0.5rem; }
+    .alumni-card { display: flex; gap: 1rem; align-items: flex-start; padding: 1.2rem; background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: 0.8rem; transition: var(--transition); }
+    .alumni-card:hover { border-color: rgba(124,58,237,0.25); }
+    .alumni-initial { width: 220px; height: 220px; border-radius: 50%; background: var(--bg3); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--font-sans); font-weight: 700; color: var(--amber-ink); font-size: 2.5rem; flex-shrink: 0; }
+    .alumni-info [data-h="4"] { font-family: var(--font-serif); color: var(--text); font-size: 0.95rem; margin-bottom: 0.2rem; }
+    .alumni-info .thesis { font-size: 0.8rem; color: var(--text2); margin-bottom: 0.3rem; font-style: italic; }
+    .alumni-info .award-tag { font-size: 0.75rem; color: var(--amber-ink); background: var(--bg3); border: 1px solid var(--border); border-radius: 4px; padding: 0.15rem 0.5rem; font-family: var(--font-sans); font-weight: 600; }
+    .collab-section { padding: 2rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .collab-section:last-child { border-bottom: none; }
+    .collab-header { display: flex; gap: 1.5rem; align-items: flex-start; }
+    .collab-flag-lg { font-size: 2.5rem; }
+    .collab-header-info [data-h="3"] { color: var(--text); margin-bottom: 0.2rem; }
+    .collab-header-info .inst { font-size: 0.85rem; color: var(--sky-ink); margin-bottom: 0.5rem; }
+    .collab-header-info p { font-size: 0.88rem; color: var(--text2); line-height: 1.6; }
+    .joint-pubs { margin-top: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .pub-chip { font-size: 0.75rem; font-family: var(--font-sans); color: var(--text2); background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 0.2rem 0.6rem; }
+    .status-active-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.75rem; font-family: var(--font-sans); font-weight: 600; color: var(--green-ink); margin-top: 0.5rem; }
+    .status-active-badge::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 6px #22c55e; }
+
+    /* ── PI Card responsive grid ── */
+    .pi-card {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 2.5rem;
+      align-items: center;
+      margin-top: 1.5rem;
+    }
+    .pi-avatar {
+      width: 280px; height: 280px;
+      margin: 0 auto;
+      font-size: 3rem;
+    }
+    @media (max-width: 768px) {
+      .pi-card {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .pi-card > div:first-child { text-align: center; }
+    }
+
+    /* ── Alumni card: stack vertically on mobile, keep photo size ── */
+    @media (max-width: 600px) {
+      .alumni-card { flex-direction: column; align-items: center; }
+      .alumni-info { text-align: left; width: 100%; }
+    }
+  
+
+  /* Scroll-reveal elements start at opacity:0 and are revealed by JS.
+     Without JS they would stay invisible forever — show them immediately. */
+  [data-anim]{opacity:1!important;transform:none!important}
+  .fade-in{animation:none!important;opacity:1!important}
+
+/* ---- ported from the original vacancies.html ---- */
+
+    .vacancy-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.8rem; margin-bottom: 1.2rem; transition: var(--transition);
+      position: relative; overflow: hidden;
+    }
+    .vacancy-card:hover { border-color: rgba(124,58,237,0.35); box-shadow: var(--shadow); }
+    .vacancy-card.open { border-left: 4px solid #22c55e; }
+    .vacancy-card.closed { border-left: 4px solid var(--text3); opacity: 0.7; }
+    .vacancy-card.rolling { border-left: 4px solid var(--amber); }
+
+    .vacancy-status {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-size: 0.75rem; font-family: var(--font-sans); font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      padding: 0.25rem 0.7rem; border-radius: 50px; margin-bottom: 0.8rem;
+    }
+    .vacancy-status.open { background: rgba(34,197,94,0.12); color: var(--green-ink); border: 1px solid rgba(34,197,94,0.3); }
+    .vacancy-status.open::before { content: ''; width: 6px; height: 6px; background: #22c55e; border-radius: 50%; box-shadow: 0 0 6px #22c55e; }
+    .vacancy-status.rolling { background: rgba(217,119,6,0.12); color: var(--amber-ink); border: 1px solid rgba(217,119,6,0.3); }
+    .vacancy-status.rolling::before { content: ''; width: 6px; height: 6px; background: var(--amber); border-radius: 50%; }
+    .vacancy-status.closed { background: rgba(255,255,255,0.04); color: var(--text3); border: 1px solid var(--border); }
+
+    .vacancy-title { font-family: var(--font-serif); font-size: 1.15rem; color: var(--text); margin-bottom: 0.4rem; font-weight: 600; }
+    .vacancy-project { font-size: 0.82rem; font-family: var(--font-sans); color: var(--sky-ink); margin-bottom: 0.8rem; }
+    .vacancy-desc { font-size: 0.88rem; color: var(--text2); line-height: 1.7; margin-bottom: 1rem; }
+    .vacancy-meta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 1rem; }
+    .vmeta-chip {
+      font-size: 0.75rem; font-family: var(--font-sans); color: var(--text2);
+      background: var(--bg3); border: 1px solid var(--border);
+      border-radius: 4px; padding: 0.2rem 0.6rem;
+      display: flex; align-items: center; gap: 0.35rem;
+    }
+    .vmeta-chip i { font-size: 0.75rem; color: var(--violet); }
+    .req-list { margin: 0; padding-left: 1.2rem; }
+    .req-list li { font-size: 0.85rem; color: var(--text2); margin-bottom: 0.3rem; line-height: 1.5; }
+    .req-list li::marker { color: var(--amber-ink); }
+
+    .section-note { background: var(--bg3); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.2rem 1.5rem; margin-bottom: 2rem; font-size: 0.86rem; color: var(--text2); line-height: 1.7; }
+    .section-note i { color: var(--violet); margin-right: 0.5rem; }
+
+    .apply-box { background: linear-gradient(135deg, rgba(124,58,237,0.08) 0%, rgba(14,165,233,0.06) 100%); border: 1px solid rgba(124,58,237,0.2); border-radius: var(--radius); padding: 2rem; text-align: center; margin-top: 3rem; }
+    .apply-box [data-h="3"] { font-family: var(--font-serif); color: var(--text); margin-bottom: 0.8rem; }
+    .apply-box p { font-size: 0.88rem; color: var(--text2); max-width: 560px; margin: 0 auto 1.5rem; line-height: 1.7; }
+  
+
+  /* Scroll-reveal elements start at opacity:0 and are revealed by JS.
+     Without JS they would stay invisible forever — show them immediately. */
+  [data-anim]{opacity:1!important;transform:none!important}
+  .fade-in{animation:none!important;opacity:1!important}
+
+/* ---- corrections applied after the ported page CSS ---- */
+.pi-avatar{width:min(280px,100%);height:auto;aspect-ratio:1;max-width:100%}
+.pi-card{grid-template-columns:minmax(0,300px) minmax(0,1fr)}
+@media (max-width:768px){ .pi-card{grid-template-columns:minmax(0,1fr)} }
+.funding-item{flex-wrap:wrap}
+.funding-item .funding-amount{flex:none;white-space:nowrap}
+.funding-item > div:not(.funding-amount){flex:1 1 10rem;min-width:0}
+.spec-row{flex-wrap:wrap;gap:0.2rem 1rem}
+.spec-label,.spec-val{min-width:0;overflow-wrap:anywhere}
+@media (max-width:560px){
+  .research-block{grid-template-columns:minmax(0,1fr);gap:0.4rem}
+  .project-row{grid-template-columns:minmax(0,1fr)}
+}
+.research-block,.project-row{min-width:0}
+.research-block > *,.project-row > *{min-width:0}
+/* a stat tile's figure must shrink with its tile, not spill out of it */
+.card.text-center > div:first-child{font-size:clamp(1.15rem,5.5vw,2rem)!important;
+  overflow-wrap:anywhere;hyphens:auto}
+.card.text-center > div{overflow-wrap:anywhere}
+
+/* The ten landmark papers sit in bordered cards with 1.3rem of left padding;
+   the live ORCID list was rendering flush against the container, so the two
+   lists on the same page started at different left edges. They match now. */
+#orcid-pubs-container .pub-item{border:1px solid var(--border);
+  border-radius:var(--radius);background:var(--card);
+  padding:0.85rem 1.5rem 0.85rem 1.3rem;margin-bottom:0.55rem;
+  border-left:3px solid var(--border2)}
+#orcid-pubs-container .pub-item:hover{border-color:rgba(124,58,237,0.3);
+  border-left-color:var(--violet)}
+#orcid-pubs-container .pub-item:last-child{border-bottom:1px solid var(--border)}
+#orcid-pubs-container .year-heading{padding-left:0.1rem}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="announce" role="region" aria-label="Announcement">
+  <div class="wrap announce-in">
+    <span class="ann-tag">Open</span>
+    <p><span class="ann-long">PhD and project positions are open for candidates with NET/JRF, INSPIRE or institutional fellowships.</span><span class="ann-short">PhD and project positions are open.</span> <a href="people.html#join">How to apply &rarr;</a></p>
+    <button type="button" class="ann-x" aria-label="Dismiss announcement">&times;</button>
+  </div>
+</div>
+<header class="site-head" id="siteHead">
+  <div class="wrap head-in">
+    <a class="brand" href="index.html">
+      <img src="assets/images/cuj-logo.png"
+           srcset="assets/images/cuj-logo@2x.png 2x, assets/images/cuj-logo@3x.png 3x"
+           width="56" height="53" alt="Central University of Jammu">
+      <span class="brand-txt">
+        <b>Ashish K Sharma</b>
+        <i>Energy Materials &amp; Devices Laboratory</i>
+      </span>
+    </a>
+    <button class="nav-burger" type="button" aria-expanded="false" aria-controls="mainmenu"
+            aria-label="Main menu"><span></span><span></span><span></span></button>
+    <nav class="mainmenu" id="mainmenu" aria-label="Main">
+      <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="publications.html">Publications</a></li>
+      <li><a href="people.html" aria-current="page">People</a></li>
+      <li><a href="news.html">News &amp; Gallery</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="about.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<nav class="onthispage" id="onthispage" aria-label="On this page">
+  <div class="otp-head">
+    <span class="otp-label">On this page</span>
+    <button type="button" class="otp-toggle" aria-expanded="false" aria-controls="otp-list">Sections</button>
+  </div>
+  <ul id="otp-list">
+        <li><a href="#pi">Principal investigator</a></li>
+        <li><a href="#current">Current members</a></li>
+        <li><a href="#alumni">Alumni</a></li>
+        <li><a href="#collaborators">Collaborators</a></li>
+        <li><a href="#join">Join the group</a></li>
+  </ul>
+</nav>
+<main id="main" tabindex="-1">
+<div class="page-hero lattice-bg">
+  <div class="container">
+    <div class="page-hero-content">
+      <span class="section-label">Research Group</span>
+      <h1>People</h1>
+      <p>Research group in the Department of Physics &amp; Astronomical Sciences, Central University of Jammu. Three PhDs awarded; four candidates currently pursuing doctoral research.</p>
+    </div>
+  </div>
+</div><section id="pi" class="section">
+  <div class="container">
+    <span class="section-label">Principal Investigator</span>
+    <div class="card pi-card">
+      <div style="text-align:center;">
+        <div class="avatar pi-avatar">
+          <picture><source type="image/webp" srcset="assets/images/profile-photo-480.webp 480w, assets/images/profile-photo-720.webp 720w, assets/images/profile-photo.webp 900w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/profile-photo.jpg" alt="Prof. Ashish K Sharma" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" width="480" height="640" srcset="assets/images/profile-photo-480.jpg 480w, assets/images/profile-photo-720.jpg 720w, assets/images/profile-photo.jpg 900w" sizes="(max-width:700px) 92vw, 560px"></picture>
+          <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;">AK</span>
+        </div>
+      </div>
+      <div>
+        <h2 style="color:var(--text);margin-bottom:0.25rem;font-size:1.6rem;" data-h="2">Prof. Ashish K Sharma</h2>
+        <div style="font-size:0.75rem;font-family:var(--font-sans);font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--amber-ink);margin-bottom:0.8rem;">Professor of Physics</div>
+        <p style="font-size:0.92rem;color:var(--text2);margin-bottom:1rem;line-height:1.7;">Department of Physics &amp; Astronomical Sciences, Central University of Jammu<br>Ph.D. — IIT Delhi (2013) &nbsp;|&nbsp; Lindau Nobel Laureate Meeting Alumni (2019)</p>
+        <p style="font-size:0.88rem;color:var(--text2);margin-bottom:1rem;line-height:1.7;font-style:italic;">“Research-active courses taught with direct reference to current experimental results — making the laboratory and the lecture hall a continuous learning environment.”</p>
+        <div style="display:flex;flex-wrap:wrap;gap:0.5rem;">
+          <span class="badge badge-gold">DST-INSPIRE Faculty</span>
+          <span class="badge badge-teal">SERB Research Scientist</span>
+          <span class="badge badge-muted">h-index: <span data-scholar="h_index">27</span></span>
+          <span class="badge badge-muted"><span data-scholar="scholar_items">91</span>+ Publications</span>
+        
+          <p style="margin-top:1.1rem;">
+            <a class="btn btn-gold" href="about.html#profile"><i class="fas fa-file-lines" aria-hidden="true"></i> Full CV &amp; profile</a>
+            <a class="btn btn-outline" href="ashish-kumar-biosketch.pdf"><i class="fas fa-file-pdf" aria-hidden="true"></i> Biosketch (PDF)</a>
+          </p>
+</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="current" class="section section-alt">
+  <div class="container">
+    <div style="margin-bottom:2.5rem;">
+      <span class="section-label">Current Members</span>
+      <h2 class="section-title" data-h="2">PhD Students (Pursuing)</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="people-grid">
+
+      <!-- Ms. Muskan Verma -->
+      <div class="member-card">
+        <div class="avatar" style="background:var(--bg3);">
+          <picture><source type="image/webp" srcset="assets/images/student-muskan-480.webp 480w, assets/images/student-muskan-720.webp 720w, assets/images/student-muskan-960.webp 960w, assets/images/student-muskan.webp 1280w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/student-muskan.jpg" alt="Ms. Muskan Verma" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" width="1280" height="1020" srcset="assets/images/student-muskan-480.jpg 480w, assets/images/student-muskan-720.jpg 720w, assets/images/student-muskan-960.jpg 960w, assets/images/student-muskan.jpg 1280w" sizes="(max-width:700px) 92vw, 560px"></picture>
+          <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:1.4rem;font-weight:700;color:var(--amber-ink);">M</span>
+        </div>
+        <div class="member-name">Ms. Muskan Verma</div>
+        <div class="member-role">PhD Candidate · 2023–</div>
+        <div class="member-topic">Study of Defect Evolution in Wide-Bandgap Semiconductors due to Swift Ion Irradiation and Implantation</div>
+        <div class="member-year">Central University of Jammu</div>
+        <div style="margin-top:0.6rem;font-size:0.75rem;color:var(--green-ink);font-family:var(--font-sans);font-weight:600;">🏆 Best Poster — DAE-SSPS 2025</div>
+      </div>
+
+      <!-- Ms. Ritu Rani -->
+      <div class="member-card">
+        <div class="avatar" style="background:var(--bg3);">
+          <picture><source type="image/webp" srcset="assets/images/student-ritu-rani-480.webp 480w, assets/images/student-ritu-rani.webp 640w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/student-ritu-rani.jpg" alt="Ms. Ritu Rani" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" width="640" height="640" srcset="assets/images/student-ritu-rani-480.jpg 480w, assets/images/student-ritu-rani.jpg 640w" sizes="(max-width:700px) 92vw, 560px"></picture>
+          <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:1.4rem;font-weight:700;color:var(--amber-ink);">RR</span>
+        </div>
+        <div class="member-name">Ms. Ritu Rani</div>
+        <div class="member-role">PhD Candidate · 2022–</div>
+        <div class="member-topic">Optoelectronic and Photocatalytic Activity of Barium Titanate and Related Oxide Ceramics</div>
+        <div class="member-year">UPES Dehradun</div>
+      </div>
+
+      <!-- Mr. Satyarth Verma -->
+      <div class="member-card">
+        <div class="avatar" style="background:var(--bg3);">
+          <picture><source type="image/webp" srcset="assets/images/student-satyarth-verma-480.webp 480w, assets/images/student-satyarth-verma.webp 611w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/student-satyarth-verma.jpg" alt="Mr. Satyarth Verma" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" width="611" height="619" srcset="assets/images/student-satyarth-verma-480.jpg 480w, assets/images/student-satyarth-verma.jpg 611w" sizes="(max-width:700px) 92vw, 560px"></picture>
+          <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:1.4rem;font-weight:700;color:var(--amber-ink);">SV</span>
+        </div>
+        <div class="member-name">Mr. Satyarth Verma</div>
+        <div class="member-role">PhD Candidate · 2024–</div>
+        <div class="member-topic">Investigation of Organic-Inorganic Composite Materials for Energy Applications</div>
+        <div class="member-year">Central University of Jammu</div>
+      </div>
+
+      <!-- Mr. Vikas Dhiman -->
+      <div class="member-card">
+        <div class="avatar" style="background:var(--bg3);">
+          <picture><source type="image/webp" srcset="assets/images/student-vikas-dhiman-480.webp 480w, assets/images/student-vikas-dhiman-720.webp 720w, assets/images/student-vikas-dhiman-960.webp 960w, assets/images/student-vikas-dhiman.webp 1016w" sizes="(max-width:700px) 92vw, 560px"><img loading="lazy" decoding="async" src="assets/images/student-vikas-dhiman.jpg" alt="Mr. Vikas Dhiman" style="width:100%;height:100%;object-fit:cover;border-radius:50%;" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" width="1016" height="1280" srcset="assets/images/student-vikas-dhiman-480.jpg 480w, assets/images/student-vikas-dhiman-720.jpg 720w, assets/images/student-vikas-dhiman-960.jpg 960w, assets/images/student-vikas-dhiman.jpg 1016w" sizes="(max-width:700px) 92vw, 560px"></picture>
+          <span style="display:none;width:100%;height:100%;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:1.4rem;font-weight:700;color:var(--amber-ink);">VD</span>
+        </div>
+        <div class="member-name">Mr. Vikas Dhiman</div>
+        <div class="member-role">PhD Candidate · 2024–</div>
+        <div class="member-topic">Synthesis and Characterisation of 1D and 2D Carbon-Based Nanostructures for Energy and Sensing Applications</div>
+        <div class="member-year">Central University of Jammu</div>
+      </div>
+
+    </div>
+    <p style="font-size:0.82rem;color:var(--text3);margin-top:1.5rem;font-style:italic;">The group also supervises M.Tech, M.Sc., and B.Tech project students.</p>
+  </div>
+</section>
+
+<section id="alumni" class="section">
+  <div class="container">
+    <div style="margin-bottom:2rem;">
+      <span class="section-label">Alumni</span>
+      <h2 class="section-title" data-h="2">PhD Degrees Awarded</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div>
+
+      <!-- Alumni 1: Navneet Kumar -->
+      <div class="alumni-card">
+        <div class="alumni-initial" style="overflow:hidden;padding:0;">
+          <picture><source type="image/webp" srcset="assets/images/alumni-navneet-kumar-480.webp 480w, assets/images/alumni-navneet-kumar.webp 565w" sizes="(max-width:700px) 40vw, 180px"><img loading="lazy" decoding="async" src="assets/images/alumni-navneet-kumar.jpg" alt="Dr. Navneet Kumar"
+               style="width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.parentElement.innerHTML='NK';" width="565" height="565" srcset="assets/images/alumni-navneet-kumar-480.jpg 480w, assets/images/alumni-navneet-kumar.jpg 565w" sizes="(max-width:700px) 40vw, 180px"></picture>
+        </div>
+        <div class="alumni-info">
+          <h3 data-h="4">Dr. Navneet Kumar</h3>
+          <div class="thesis">"Investigation of Surface/Interface Properties of Gallium Nitride and Modifications using Passivation and Irradiation Techniques for Device Applications"</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+            <span style="font-size:0.8rem;color:var(--text3);">Ph.D. Awarded: Nov 2023 · Kurukshetra University</span>
+          </div>
+          <div style="font-size:0.8rem;color:var(--sky-ink);font-family:var(--font-sans);"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>Assistant Professor, Govt. College for Women, Ateli, Haryana (Education Department)</div>
+        </div>
+      </div>
+
+      <!-- Alumni 2: Vaishali Rathi -->
+      <div class="alumni-card">
+        <div class="alumni-initial" style="overflow:hidden;padding:0;">
+          <picture><source type="image/webp" srcset="assets/images/alumni-vaishali-rathi-480.webp 480w, assets/images/alumni-vaishali-rathi.webp 640w" sizes="(max-width:700px) 40vw, 180px"><img loading="lazy" decoding="async" src="assets/images/alumni-vaishali-rathi.jpg" alt="Dr. Vaishali Rathi"
+               style="width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.parentElement.innerHTML='VR';" width="640" height="640" srcset="assets/images/alumni-vaishali-rathi-480.jpg 480w, assets/images/alumni-vaishali-rathi.jpg 640w" sizes="(max-width:700px) 40vw, 180px"></picture>
+        </div>
+        <div class="alumni-info">
+          <h4 data-h="4">Dr. Vaishali Rathi</h4>
+          <div class="thesis">"Fabrication of Printable Flexible Thermoelectric Material and Devices"</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+            <span style="font-size:0.8rem;color:var(--text3);">Ph.D. Awarded: Nov 2025 · UPES Dehradun</span>
+            <span class="award-tag">🏆 Best PhD Thesis Award — UPES Convocation 2025</span>
+          </div>
+          <div style="font-size:0.8rem;color:var(--sky-ink);font-family:var(--font-sans);"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>Senior Scientist, TACC Limited, Industrial Area Sirsoda, Sonkatch, Dewas, Madhya Pradesh</div>
+        </div>
+      </div>
+
+      <!-- Alumni 3: Kamal Singh -->
+      <div class="alumni-card">
+        <div class="alumni-initial" style="overflow:hidden;padding:0;">
+          <picture><source type="image/webp" srcset="assets/images/alumni-kamal-singh-480.webp 480w, assets/images/alumni-kamal-singh.webp 640w" sizes="(max-width:700px) 40vw, 180px"><img loading="lazy" decoding="async" src="assets/images/alumni-kamal-singh.jpg" alt="Dr. Kamal Singh"
+               style="width:100%;height:100%;object-fit:cover;display:block;"
+               onerror="this.parentElement.innerHTML='KS';" width="640" height="640" srcset="assets/images/alumni-kamal-singh-480.jpg 480w, assets/images/alumni-kamal-singh.jpg 640w" sizes="(max-width:700px) 40vw, 180px"></picture>
+        </div>
+        <div class="alumni-info">
+          <h4 data-h="4">Dr. Kamal Singh</h4>
+          <div class="thesis">"Probing the Defect Landscape of GaN Epitaxial Layers and Devices under Swift Heavy Ion Irradiation: Implications for Material Quality and Device Reliability"</div>
+          <div style="display:flex;flex-wrap:wrap;gap:0.5rem;align-items:center;margin-bottom:0.5rem;">
+            <span style="font-size:0.8rem;color:var(--text3);">Ph.D. Awarded: Apr 2026 · UPES, Dehradun</span>
+          </div>
+          <div style="font-size:0.8rem;color:var(--sky-ink);font-family:var(--font-sans);"><i class="fas fa-briefcase" style="margin-right:0.4rem;"></i>Postdoctoral Researcher, National Institute of Technology Delhi</div>
+        </div>
+      </div>
+
+    </div>
+    <p style="font-size:0.82rem;color:var(--text3);margin-top:1rem;font-style:italic;">Additionally supervised approximately 20 M.Tech, M.Sc., and B.Tech student projects across IUAC New Delhi, UPES Dehradun, and Central University of Jammu.</p>
+  </div>
+</section>
+
+<section class="section section-alt" id="collaborators">
+  <div class="container">
+    <div class="text-center mb-3">
+      <span class="section-label">Collaborations</span>
+      <h2 class="section-title" data-h="2">National &amp; International Partners</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+      <p class="tight" style="color:var(--text2);margin:0 auto;">Each partnership supplies
+        a capability the group does not hold in-house &mdash; transmission electron
+        microscopy of irradiated devices, synchrotron spectroscopy, ultra-high-vacuum
+        device fabrication.</p>
+    </div>
+
+    <h3 style="font-family:var(--font-sans);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sky-ink);margin:2rem 0 1rem;" data-h="3">National</h3>
+    <div class="grid-3" style="gap:1.2rem;align-items:start;">
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. D. Kanjilal &amp; Dr. K. Asokan</h4>
+        <div class="collab-place">Inter-University Accelerator Centre, New Delhi</div>
+        <p class="collab-what">Swift heavy ion irradiation, in-situ characterisation and
+          defect kinetics. The longest-running partnership in the programme and the source
+          of the beam time the in-situ work depends on.</p>
+        <div class="joint-pubs"><span class="pub-chip">40+ co-authored papers</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Seema Vinayak &amp; Dr. D. S. Rawal</h4>
+        <div class="collab-place">Solid State Physics Laboratory, DRDO, Delhi</div>
+        <p class="collab-what">GaN device fabrication and AlGaN/GaN HEMT radiation effects.
+          SSPL fabricates; the group characterises and reports back. The delivery route for
+          the DRDO CARS contact work.</p>
+        <div class="joint-pubs"><span class="pub-chip">DRDO CARS project</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Rupesh Chaubey</h4>
+        <div class="collab-place">Solid State Physics Laboratory, DRDO, Delhi</div>
+        <p class="collab-what">Device processing and characterisation of GaN and SiC
+          structures at SSPL, alongside the contact metallurgy work under DRDO CARS.</p>
+        <div class="joint-pubs"><span class="pub-chip">DRDO CARS project</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Prof. Rajendra Singh</h4>
+        <div class="collab-place">Indian Institute of Technology Delhi</div>
+        <p class="collab-what">GaN Schottky barrier physics and device fabrication.
+          Doctoral supervisor, and a collaborator continuously since 2008.</p>
+        <div class="joint-pubs"><span class="pub-chip">20+ joint papers since 2008</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Sundeep Chopra &amp; Dr. Sunil Ojha</h4>
+        <div class="collab-place">Inter-University Accelerator Centre, New Delhi</div>
+        <p class="collab-what">Atomic force microscopy and Rutherford backscattering of
+          irradiated films and SERS substrates. The RBS depth profile is what ties an
+          electrical change to a particular damage distribution rather than to fluence
+          alone.</p>
+        <div class="joint-pubs"><span class="pub-chip">AFM / RBS characterisation</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Gagan Kumar</h4>
+        <div class="collab-place">Indian Institute of Technology Ropar</div>
+        <p class="collab-what">Terahertz applications of GaN and SiC &mdash; generation,
+          detection and device geometry. The newest of the national lines.</p>
+        <div class="joint-pubs"><span class="pub-chip">Manuscripts in preparation</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Trilok Singh</h4>
+        <div class="collab-place">Centre for Energy Studies, IIT Delhi</div>
+        <p class="collab-what">Perovskite solar cells, ZnO thin films and semiconductor
+          characterisation, including joint work on lead-free tin halide perovskites.</p>
+        <div class="joint-pubs"><span class="pub-chip">Curr. Appl. Phys. (2014)</span><span class="pub-chip">Phys. Status Solidi A (2022)</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+    </div>
+
+    <h3 style="font-family:var(--font-sans);font-size:0.8rem;font-weight:700;text-transform:uppercase;letter-spacing:0.12em;color:var(--sky-ink);margin:2.6rem 0 1rem;" data-h="3">International</h3>
+    <div class="grid-3" style="gap:1.2rem;align-items:start;">
+
+      <div class="card">
+        <span class="flagline">&#127465;&#127466; Germany</span>
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Angelika H&auml;hnel</h4>
+        <div class="collab-place">Helmholtz-Zentrum Dresden-Rossendorf</div>
+        <p class="collab-what">Transmission electron microscopy of the microstructure of
+          ion-irradiated GaN Schottky devices. Correlating electrical damage with what the
+          lattice actually looks like after 200&nbsp;MeV heavy ions is what makes this
+          partnership hard to replace.</p>
+        <div class="joint-pubs"><span class="pub-chip">Appl. Phys. Lett. (2012)</span><span class="pub-chip">Appl. Phys. Lett. (2014)</span></div>
+      </div>
+
+      <div class="card">
+        <span class="flagline">&#127465;&#127466; Germany</span>
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">DESY, Hamburg</h4>
+        <div class="collab-place">PETRA III synchrotron &mdash; beam time</div>
+        <p class="collab-what">Synchrotron beam-time campaign on ion-irradiated
+          wide-bandgap semiconductors, August 2026. The group's first student-led
+          experiment at an international light source.</p>
+        <div class="joint-pubs"><span class="pub-chip">EXAFS on GaN and SiC</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <span class="flagline">&#127465;&#127466; Germany</span>
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Prof. M. C. Amann &amp; Dr. S. Arafin</h4>
+        <div class="collab-place">Technische Universit&auml;t M&uuml;nchen</div>
+        <p class="collab-what">Ultra-high-vacuum electron-beam fabrication of GaN Schottky
+          diodes, begun during doctoral work at IIT Delhi.</p>
+        <div class="joint-pubs"><span class="pub-chip">Nanoscale Res. Lett. (2013)</span></div>
+      </div>
+
+      <div class="card">
+        <span class="flagline">&#127481;&#127484; Taiwan</span>
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. Chung-Li Dong &amp; Dr. Chun-Liang Chen</h4>
+        <div class="collab-place">National Synchrotron Radiation Research Center, Hsinchu</div>
+        <p class="collab-what">X-ray absorption spectroscopy and electronic structure of
+          thermoelectric films &mdash; SrTiO<sub>3</sub> and CoSb<sub>3</sub> systems.</p>
+        <div class="joint-pubs"><span class="pub-chip">Sci. Rep. (2019)</span><span class="pub-chip">J. Appl. Phys. (2021)</span></div>
+        <div class="status-active-badge">Active</div>
+      </div>
+
+      <div class="card">
+        <span class="flagline">&#127479;&#127482; Russia</span>
+        <h4 style="color:var(--text);margin-bottom:0.3rem;" data-h="4">Dr. P. A. Karaseov &amp; Dr. A. I. Titov</h4>
+        <div class="collab-place">Peter the Great St. Petersburg Polytechnic University</div>
+        <p class="collab-what">Ion-beam degradation and electrical isolation of GaN, as
+          joint experiment and modelling.</p>
+        <div class="joint-pubs"><span class="pub-chip">Springer Proc. (2020)</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="join">
+  <div class="container">
+    <div class="text-center mb-3">
+      <span class="section-label">Opportunities</span>
+      <h2 class="section-title" data-h="2">Join the Group</h2>
+      <div class="section-divider" style="margin:0 auto 1rem;"></div>
+    </div>
+
+    <div class="tight" style="margin:0 auto 2.2rem;">
+      <p style="color:var(--text2);font-size:0.97rem;line-height:1.75;">
+        The six research lines on the <a href="research.html">research page</a> are where
+        the group's funding and equipment currently sit &mdash; but they are not a fence.
+        <strong>If you arrive with a problem of your own that is worth doing, bring it.</strong>
+        Several of the lines above started as a student's idea rather than a project
+        proposal, and a candidate who has thought hard about a question of their own is
+        more useful than one who has read the website carefully. Say what the question is
+        and why it interests you; the fit is something we can work out together.
+      </p>
+      <p style="color:var(--text2);font-size:0.97rem;line-height:1.75;">
+        What the group can offer is a fully instrumented bench &mdash; five measurement
+        systems built in-house, beam time at IUAC, and synchrotron access through DESY and
+        NSRRC &mdash; and the expectation that you will run your own experiments rather
+        than watch someone else run them.
+      </p>
+    </div>
+
+    <div class="grid-3" style="gap:1.2rem;align-items:start;">
+
+      <div class="vacancy-card">
+        <div class="vacancy-status rolling">Rolling</div>
+        <h3 data-h="3">PhD Positions</h3>
+        <p>Through the Central University of Jammu doctoral admission cycle, which runs
+          roughly twice a year. Fellowship comes from UGC&ndash;CSIR NET/JRF, DST-INSPIRE,
+          or a project position on one of the active grants; NET/GATE is needed for the
+          fellowship, not for admission.</p>
+        <ul class="clean-list" style="font-size:0.88rem;">
+          <li>M.Sc. in Physics, Materials Science or Applied Physics, 55% or equivalent</li>
+          <li>NET/JRF or GATE for a fellowship; apply to the CUJ cycle independently</li>
+          <li>Experimental inclination matters more than prior lab experience</li>
+        </ul>
+      </div>
+
+      <div class="vacancy-card">
+        <div class="vacancy-status rolling">Rolling</div>
+        <h3 data-h="3">M.Sc. / M.Tech Dissertation</h3>
+        <p>Four to twelve months on a problem that feeds the group's own work, with
+          hands-on time on the custom measurement systems. Around twenty such projects have
+          been supervised across IUAC, UPES and CUJ. Open to students from other
+          institutions as well as CUJ.</p>
+        <ul class="clean-list" style="font-size:0.88rem;">
+          <li>Write at least two months before your project semester begins</li>
+          <li>Say which technique or material you want to work on, and why</li>
+        </ul>
+      </div>
+
+      <div class="vacancy-card">
+        <div class="vacancy-status rolling">Rolling</div>
+        <h3 data-h="3">Postdoctoral Researchers</h3>
+        <p>For candidates holding or applying for their own fellowship &mdash; SERB-NPDF,
+          Ramanujan, IUAC Research Associateship, DST-INSPIRE Faculty, Marie
+          Sk&#322;odowska-Curie. Joint applications are welcome and the group will write
+          the host side.</p>
+        <ul class="clean-list" style="font-size:0.88rem;">
+          <li>Send a CV and a page on what you would do here</li>
+          <li>Independent direction is expected, not discouraged</li>
+        </ul>
+      </div>
+
+      <div class="vacancy-card">
+        <div class="vacancy-status rolling">Project-linked</div>
+        <h3 data-h="3">JRF / SRF on Funded Projects</h3>
+        <p>Positions open as the ISRO RESPOND, DRDO CARS and IUAC projects need them, and
+          are advertised when they do. Fellowship rates follow DST/SERB norms &mdash; JRF
+          &#8377;31,000 per month plus HRA, SRF &#8377;35,000 plus HRA. Work is split
+          between CUJ and beam time at IUAC New Delhi.</p>
+        <ul class="clean-list" style="font-size:0.88rem;">
+          <li>M.Sc. Physics, Materials Science, Electronics or Applied Physics</li>
+          <li>NET/JRF preferred; GATE accepted for SRF</li>
+          <li>Prior work with I&ndash;V, C&ndash;V, Hall or DLTS is an advantage, not a requirement</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="highlight-box" style="margin-top:2rem;">
+      <h3 style="margin-bottom:0.8rem;" data-h="3">How to apply</h3>
+      <p style="color:var(--text2);margin-bottom:0.8rem;">One email to
+        <a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a>, subject
+        line naming the position. Attach a CV, your mark sheets, any NET/JRF/GATE
+        certificate, and &mdash; the part that actually gets read &mdash; a short paragraph
+        on what you want to work on and why.</p>
+      <p style="color:var(--text2);margin-bottom:0;">Shortlisted candidates are invited to
+        a research discussion, in person or online. It is about physics fundamentals and
+        how you would go about measuring something, not about what you have memorised.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <img class="foot-logo" src="assets/images/cuj-logo.png"
+         srcset="assets/images/cuj-logo@2x.png 2x, assets/images/cuj-logo@3x.png 3x"
+         width="56" height="53" alt="" aria-hidden="true">
+    <div class="fgrid">
+      <div>
+        <h2>Laboratory</h2>
+        <address>
+          Energy Materials &amp; Devices Laboratory<br>
+          Department of Physics &amp; Astronomical Sciences<br>
+          Central University of Jammu<br>
+          Rahya-Suchani, Samba, Jammu &amp; Kashmir 181143, India
+        </address>
+      </div>
+      <div>
+        <h2>Office</h2>
+        <address>
+          Room 120&#8202;F, First Floor<br>
+          Aryabhatta Bhawan (Science Block)<br>
+          Department of Physics &amp; Astronomical Sciences<br>
+          Central University of Jammu<br>
+          Rahya-Suchani, Samba, Jammu &amp; Kashmir 181143, India
+        </address>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:ashish.phy@cujammu.ac.in">ashish.phy@cujammu.ac.in</a></li>
+          <li><a href="ashish-kumar-biosketch.pdf">Biosketch (PDF)</a></li>
+          <li><a href="about.html#contact">Directions &amp; map</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Profiles</h2>
+        <ul>
+          <li><a href="https://scholar.google.com/citations?user=eSKL8HgAAAAJ" target="_blank" rel="noopener noreferrer">Google Scholar</a></li>
+          <li><a href="https://orcid.org/0000-0002-5240-3472" target="_blank" rel="noopener noreferrer">ORCID</a></li>
+          <li><a href="https://www.researchgate.net/profile/Ashish-Kumar-54" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+          <li><a href="https://www.webofscience.com/wos/author/search" target="_blank" rel="noopener noreferrer">Web of Science</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="people.html#join">Join the group</a></li>
+          <li><a href="resources.html">Resources for students</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="fbot">
+      <span>&copy; 2026 Ashish K Sharma &middot; Central University of Jammu</span>
+      <span class="visits" id="visits" hidden></span>
+      <span>Publishes as <b>Ashish Kumar</b> &middot; figures update from ORCID and Google Scholar.</span>
+    </div>
+    <p class="fdisc">A personal academic page. Not an official publication of Central University of Jammu.</p>
+  </div>
+</footer>
+<script src="assets/js/shell.js" defer></script>
+</body>
+</html>
