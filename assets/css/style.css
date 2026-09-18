@@ -156,61 +156,13 @@ strong { color: var(--text); font-weight: 600; }
 .mt-1 { margin-top: 1rem; }  .mt-2 { margin-top: 2rem; }
 .text-center { text-align: center; }
 
-/* ---- NAVIGATION ---- */
-#navbar {
-  position: fixed; top: 0; left: 0; right: 0;
-  height: var(--nav-h); z-index: 1000;
-  background: rgba(250,250,249,0.88);
-  backdrop-filter: blur(24px) saturate(180%);
-  -webkit-backdrop-filter: blur(24px) saturate(180%);
-  border-bottom: 1px solid var(--border-soft);
-  transition: var(--transition);
-  /* iOS safe area for notch / Dynamic Island */
-  padding-top: env(safe-area-inset-top, 0);
-}
-#navbar.scrolled {
-  background: rgba(250,250,249,0.96);
-  box-shadow: var(--shadow-sm);
-}
-.nav-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 2rem;
-  height: 100%;
-}
-.nav-logo {
-  font-family: var(--font-serif); font-size: 1.25rem; font-weight: 700;
-  color: var(--text); letter-spacing: -0.02em;
-  display: flex; align-items: center; gap: 0.65rem;
-  white-space: nowrap;   /* the brand was breaking onto 3 lines between 820px and 1180px */
-}
-.nav-logo .logo-badge {
-  width: 36px; height: 36px;
-  background: var(--grad-main);
-  border-radius: 9px;
-  display: flex; align-items: center; justify-content: center;
-  font-size: 0.82rem; font-weight: 800; color: #fff;
-  font-family: var(--font-sans); flex-shrink: 0;
-  box-shadow: 0 3px 12px rgba(124,58,237,0.35);
-}
-.nav-links { display: flex; align-items: center; gap: 0.15rem; list-style: none; flex-wrap: nowrap; }
-.nav-links a { white-space: nowrap; }
-.nav-links a {
-  font-family: var(--font-sans); font-size: 0.82rem; font-weight: 500;
-  letter-spacing: 0.02em; color: var(--text2);
-  padding: 0.45rem 0.8rem; border-radius: 7px;
-  transition: var(--transition); position: relative;
-}
-.nav-links a:hover { color: var(--violet); background: var(--violet-dim); }
-.nav-links a.active {
-  color: var(--violet); background: var(--violet-dim); font-weight: 600;
-}
-.nav-links a.active::after {
-  content: '';
-  position: absolute; bottom: 2px; left: 50%; transform: translateX(-50%);
-  width: 14px; height: 2px;
-  background: var(--grad-main); border-radius: 1px;
-}
-.nav-toggle { display: none; background: none; border: 1px solid var(--border-soft); border-radius: 7px; padding: 0.4rem 0.6rem; cursor: pointer; color: var(--text2); font-size: 1.1rem; min-width: 44px; min-height: 44px; touch-action: manipulation; }
+/* ---- NAVIGATION ----
+   The fixed #navbar and its .nav-inner / .nav-logo / .nav-links / .nav-toggle
+   rules were retired when the sticky .site-head shell replaced them. They are
+   gone rather than dormant: while they sat here the iOS safe-area inset was
+   being applied to an element no page renders. The live header lives in
+   shell.css, safe-area handling included. --nav-h survives because the
+   on-this-page rail and section scroll-margins still measure against it. */
 
 /* ---- HERO ---- */
 .hero {
@@ -303,7 +255,7 @@ strong { color: var(--text); font-weight: 600; }
   touch-action: manipulation; /* removes 300ms tap delay on mobile */
 }
 /* Touch-action for all interactive elements */
-a, button, .filter-btn, .gal-btn, .nav-links a, .profile-link {
+a, button, .filter-btn, .gal-btn, .mainmenu a, .nav-burger, .theme-toggle {
   touch-action: manipulation;
 }
 .btn-violet {
@@ -699,26 +651,6 @@ footer {
    landscape and every small laptop window rendered a two-row navbar with
    the brand broken over three lines.
    ------------------------------------------------------------------ */
-@media (max-width: 1240px) and (min-width: 1025px) {
-  .nav-inner { padding: 0 1.1rem; }
-  .nav-links { gap: 0; }
-  .nav-links a { font-size: 0.76rem; padding: 0.4rem 0.5rem; }
-  .nav-logo { font-size: 1.05rem; gap: 0.5rem; }
-  .nav-logo .logo-badge { width: 30px; height: 30px; font-size: 0.75rem; }
-}
-@media (max-width: 1024px) {
-  .nav-links {
-    display: none; position: absolute; top: var(--nav-h); left: 0; right: 0;
-    background: rgba(250,250,249,0.98);
-    -webkit-backdrop-filter: blur(20px); backdrop-filter: blur(20px);
-    flex-direction: column; align-items: stretch; padding: 1rem;
-    border-bottom: 1px solid var(--border-soft); gap: 0; box-shadow: var(--shadow);
-    max-height: calc(100vh - var(--nav-h)); overflow-y: auto;
-  }
-  .nav-links.open { display: flex; }
-  .nav-links a { padding: 0.7rem 0.8rem; font-size: 0.9rem; }
-  .nav-toggle { display: block; }
-}
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(2, 1fr); }
   .metrics-grid { grid-template-columns: repeat(4, 1fr); }
@@ -746,7 +678,8 @@ footer {
 
 /* ---- PRINT STYLES ---- */
 @media print {
-  #navbar, .hero, .metrics-strip, footer, canvas,
+  .site-head, .onthispage, .announce, .skip-link,
+  .hero, .metrics-strip, footer, canvas,
   .hero-cta, .news-chip-row, .gallery-filter { display: none !important; }
   body { color: #000; background: var(--card); font-size: 11pt; }
   .section, .page-hero { padding: 1rem 0; }
@@ -854,7 +787,6 @@ span[id]:focus, span[id]:focus-visible { outline: none; }
 @media (max-width: 420px) {
   .grid, .cards, .card-grid, .system-grid, .member-grid,
   .project-list, .contact-grid { grid-template-columns: 1fr !important; }
-  .nav-toggle { margin-right: 0; }
   h2, h3 { overflow-wrap: anywhere; }
 }/* the lab page overflowed at 360px on the system headings */
 .system-card h3, .system-card h3, .system-card h4, .system-card h5{ overflow-wrap: anywhere; hyphens: auto; }

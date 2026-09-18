@@ -19,6 +19,78 @@
     });
   }
 
+  /* ---- colour theme: auto -> light -> dark, remembered --------------- */
+  /* The palette itself lives in CSS: prefers-color-scheme handles "auto",
+     and :root[data-theme="light"|"dark"] overrides it. This only sets the
+     attribute, so the page is correct with JavaScript off or broken. */
+  (function () {
+    var btn = document.getElementById("themeToggle");
+    if (!btn) return;
+    var KEY = "aks-theme";
+    var ORDER = ["auto", "light", "dark"];
+    var LABEL = {
+      auto:  "following system setting",
+      light: "light",
+      dark:  "dark"
+    };
+
+    function read() {
+      try {
+        var v = localStorage.getItem(KEY);
+        return (v === "light" || v === "dark") ? v : "auto";
+      } catch (e) { return "auto"; }
+    }
+
+    /* the two media-scoped theme-color metas cannot know about an explicit
+       choice, so swap which one is live */
+    function paintChrome(pref) {
+      var l = document.querySelector('meta[name="theme-color"][media*="light"]');
+      var d = document.querySelector('meta[name="theme-color"][media*="dark"]');
+      if (!l || !d) return;
+      if (pref === "auto") {
+        l.media = "(prefers-color-scheme: light)";
+        d.media = "(prefers-color-scheme: dark)";
+      } else {
+        l.media = (pref === "light") ? "all" : "not all";
+        d.media = (pref === "dark")  ? "all" : "not all";
+      }
+    }
+
+    function apply(pref, announce) {
+      if (pref === "auto") document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme", pref);
+      btn.setAttribute("data-theme-pref", pref);
+      var next = ORDER[(ORDER.indexOf(pref) + 1) % ORDER.length];
+      var msg = "Colour theme: " + LABEL[pref];
+      btn.setAttribute("title", msg);
+      btn.setAttribute("aria-label", msg + ". Activate to choose " + LABEL[next] + ".");
+      paintChrome(pref);
+      if (announce) {
+        var live = document.getElementById("theme-live");
+        if (!live) {
+          live = document.createElement("p");
+          live.id = "theme-live";
+          live.className = "visually-hidden";
+          live.setAttribute("role", "status");
+          live.setAttribute("aria-live", "polite");
+          document.body.appendChild(live);
+        }
+        live.textContent = msg;
+      }
+    }
+
+    apply(read(), false);
+
+    btn.addEventListener("click", function () {
+      var next = ORDER[(ORDER.indexOf(read()) + 1) % ORDER.length];
+      try {
+        if (next === "auto") localStorage.removeItem(KEY);
+        else localStorage.setItem(KEY, next);
+      } catch (e) { /* private window: the choice holds for this page only */ }
+      apply(next, true);
+    });
+  })();
+
   var head = document.getElementById("siteHead");
 
   /* ---- announcement: dismissible, remembered per visitor ------------- */
@@ -145,8 +217,15 @@
       otp.classList.remove("open");
       var tgl = document.querySelector(".otp-toggle");
       if (tgl) tgl.setAttribute("aria-expanded", "false");
-      // keep the chosen topic in view in the scrolling strip
-      try { a.scrollIntoView({ block: "nearest", inline: "center", behavior: "smooth" }); }
+      // keep the chosen topic in view in the scrolling strip.
+      // A reader who asked the OS for reduced motion gets an instant jump.
+      var reduce = false;
+      try {
+        reduce = window.matchMedia &&
+                 window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      } catch (err) { reduce = false; }
+      try { a.scrollIntoView({ block: "nearest", inline: "center",
+                               behavior: reduce ? "auto" : "smooth" }); }
       catch (err) { /* older browsers: the jump still works */ }
     });
   }

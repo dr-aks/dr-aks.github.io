@@ -2,6 +2,15 @@
    Defining it here keeps both spellings working. */
 .wrap{max-width:1200px;margin-inline:auto;padding-inline:2rem}
 @media (max-width:560px){ .wrap{padding-inline:1rem} }
+/* landscape on notched iPhones: the side insets are non-zero */
+.site-head .wrap{
+  padding-left:max(2rem,env(safe-area-inset-left,0px));
+  padding-right:max(2rem,env(safe-area-inset-right,0px))}
+@media (max-width:560px){
+  .site-head .wrap{
+    padding-left:max(1rem,env(safe-area-inset-left,0px));
+    padding-right:max(1rem,env(safe-area-inset-right,0px))}
+}
 
 /* ============================================================
    SHELL — header, announcement bar, on-this-page menu, footer
@@ -38,7 +47,11 @@
 /* ---- header -------------------------------------------------------- */
 .site-head{position:sticky;top:0;z-index:50;background:var(--bg-glass);
   backdrop-filter:saturate(180%) blur(12px);-webkit-backdrop-filter:saturate(180%) blur(12px);
-  border-bottom:1px solid var(--border);transition:padding .2s ease}
+  border-bottom:1px solid var(--border);transition:padding .2s ease;
+  /* viewport-fit=cover lets the page run under the notch / Dynamic Island.
+     The sticky header is the element that actually touches that area, so the
+     inset belongs here, not on the retired #navbar rule in style.css. */
+  padding-top:env(safe-area-inset-top,0px)}
 .head-in{display:flex;align-items:center;gap:1rem;padding-block:0.7rem;
   justify-content:space-between}
 .brand{display:flex;align-items:center;gap:0.7rem;text-decoration:none;min-width:0}
@@ -62,6 +75,24 @@
   background:var(--card);border-radius:8px;width:44px;height:44px;cursor:pointer;
   flex-direction:column;justify-content:center;align-items:center;gap:4px;flex:none}
 .nav-burger span{display:block;width:18px;height:2px;background:var(--text2);border-radius:2px}
+
+/* ---- theme toggle: auto -> light -> dark --------------------------- */
+.theme-toggle{appearance:none;border:1px solid var(--border);background:var(--card);
+  border-radius:8px;width:44px;height:44px;flex:none;cursor:pointer;color:var(--text2);
+  display:flex;align-items:center;justify-content:center;
+  margin-left:auto;transition:var(--transition)}
+.theme-toggle:hover{color:var(--violet);border-color:var(--violet)}
+.theme-toggle .ti{width:20px;height:20px;display:none}
+.theme-toggle[data-theme-pref="auto"]  .ti-auto {display:block}
+.theme-toggle[data-theme-pref="light"] .ti-light{display:block}
+.theme-toggle[data-theme-pref="dark"]  .ti-dark {display:block}
+/* the menu already owns the free space on wide screens */
+@media (min-width:901px){ .theme-toggle{margin-left:0;order:3} .mainmenu{order:2} }
+@media (prefers-reduced-motion:reduce){ .theme-toggle{transition:none} }
+@media (forced-colors:active){
+  .theme-toggle{border-color:ButtonBorder;color:ButtonText}
+  .theme-toggle .ti{forced-color-adjust:auto}
+}
 
 @media (max-width:900px){
   .nav-burger{display:flex}
