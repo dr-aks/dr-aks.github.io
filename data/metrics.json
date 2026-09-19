@@ -13,8 +13,9 @@
   "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
   "sources": {
     "scholar": {
-      "status": "ok",
-      "fetched": "2026-09-19"
+      "status": "failed",
+      "error": "HTTP Error 403: Forbidden",
+      "last_ok": "2026-09-19"
     },
     "orcid": {
       "status": "ok",
