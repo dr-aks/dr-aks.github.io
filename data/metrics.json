@@ -3,13 +3,13 @@
   "h_index": 27,
   "i10_index": 44,
   "scholar_items": 91,
-  "orcid_works": 90,
-  "orcid_journal_articles": 87,
+  "orcid_works": 77,
+  "orcid_journal_articles": 71,
   "profiles": {
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-09-19",
+  "last_updated": "2026-09-17",
   "sources": {
     "scholar": {
       "status": "failed",
@@ -18,7 +18,7 @@
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-09-19"
+      "fetched": "2026-09-17"
     },
     "wos": {
       "status": "failed",
