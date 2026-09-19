@@ -1,28 +1,28 @@
 {
-  "citations": 1854,
+  "scholar_items": 91,
+  "citations": 1859,
   "h_index": 27,
   "i10_index": 44,
-  "scholar_items": 91,
-  "orcid_works": 77,
-  "orcid_journal_articles": 71,
+  "orcid_works": 90,
+  "orcid_journal_articles": 88,
   "profiles": {
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-09-17",
+  "last_updated": "2026-09-19",
+  "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
   "sources": {
     "scholar": {
-      "status": "failed",
-      "error": "HTTP Error 403: Forbidden",
-      "last_ok": "2026-09-15"
+      "status": "ok",
+      "fetched": "2026-09-19"
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-09-17"
+      "fetched": "2026-09-19"
     },
     "wos": {
       "status": "failed",
-      "error": "WOS_API_KEY not set \u2014 skipping Web of Science",
+      "error": "WOS_API_KEY not set — skipping Web of Science",
       "last_ok": null
     }
   }
