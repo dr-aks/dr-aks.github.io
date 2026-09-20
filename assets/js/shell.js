@@ -41,11 +41,23 @@
       } catch (e) { return "auto"; }
     }
 
-    /* the two media-scoped theme-color metas cannot know about an explicit
-       choice, so swap which one is live */
+    /* The two media-scoped theme-color metas cannot know about an explicit
+       choice, so swap which one is live. They are resolved ONCE, here: the
+       first version looked them up by their media attribute every time, and
+       since the swap rewrites that attribute to "all"/"not all" the second
+       lookup found nothing and the browser chrome stuck on the old colour. */
+    var metaLight = null, metaDark = null;
+    (function () {
+      var metas = document.querySelectorAll('meta[name="theme-color"]');
+      for (var i = 0; i < metas.length; i++) {
+        var m = (metas[i].getAttribute("media") || "");
+        if (m.indexOf("dark") > -1) metaDark = metas[i];
+        else if (m.indexOf("light") > -1) metaLight = metas[i];
+      }
+    })();
+
     function paintChrome(pref) {
-      var l = document.querySelector('meta[name="theme-color"][media*="light"]');
-      var d = document.querySelector('meta[name="theme-color"][media*="dark"]');
+      var l = metaLight, d = metaDark;
       if (!l || !d) return;
       if (pref === "auto") {
         l.media = "(prefers-color-scheme: light)";
@@ -230,7 +242,54 @@
     });
   }
 
-/* ---- visitor counter ----------------------------------------------- */
+/* ---- live figures ---------------------------------------------------
+   The headline numbers are Google Scholar's and are refreshed weekly by
+   .github/workflows/refresh-data.yml, which rewrites data/metrics.json.
+
+   The numbers are also written into the HTML, so the page is correct before
+   this runs and stays correct with JavaScript off -- this only closes the gap
+   between a weekly commit and a visitor arriving. Any failure is silent and
+   leaves the built-in figures in place, which is why nothing here throws. */
+  (function () {
+    var slots = document.querySelectorAll("[data-scholar],[data-metric]");
+    if (!slots.length || typeof fetch !== "function") return;
+    /* Opened straight off disk (file://) the fetch is blocked by CORS and the
+       browser logs it whatever we catch, so don't ask. The figures in the HTML
+       are already correct; this only matters on the live site. */
+    if (!/^https?:$/.test(location.protocol)) return;
+
+    /* 1859 -> "1,859". Deliberately not toLocaleString: the weekly job writes
+       the same figures into the HTML with Python's "{:,}", and a locale that
+       groups by lakh would make the two spellings disagree. */
+    function group(n) {
+      return String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    fetch("data/metrics.json", { cache: "no-cache" })
+      .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function (m) {
+        var stale = m.sources && m.sources.scholar &&
+                    m.sources.scholar.status !== "ok";
+        slots.forEach(function (el) {
+          var key = el.getAttribute("data-metric") || el.getAttribute("data-scholar");
+          var v = m[key];
+          if (typeof v !== "number" || !isFinite(v)) return;
+          var pre = el.getAttribute("data-prefix") || "";
+          var suf = el.getAttribute("data-suffix") || "";
+          el.textContent = pre + group(v) + suf;
+          if (el.hasAttribute("data-target")) el.setAttribute("data-target", v);
+          /* a figure Scholar could not confirm this week is still shown, but
+             says so on hover rather than silently passing itself off as live */
+          if (stale && m.sources.scholar.last_ok) {
+            el.title = "Last confirmed from Google Scholar on " +
+                       m.sources.scholar.last_ok;
+          }
+        });
+      })
+      .catch(function () { /* keep whatever the page shipped with */ });
+  })();
+
+  /* ---- visitor counter ----------------------------------------------- */
   /* Put your GoatCounter code between the quotes and the footer figure
      appears. Empty means no counter and no network request at all. */
   var GOATCOUNTER_CODE = "";
