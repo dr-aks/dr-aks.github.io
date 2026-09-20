@@ -1,39 +1,83 @@
+# The single scheduled job for this site. It replaces BOTH earlier workflows:
+# the daily "Update publication metrics" and the weekly "Refresh publication
+# data". Those ran two minutes apart and both committed data/metrics.json, so
+# whichever pushed second hit a stale ref and failed.
+#
+# Once a day it fetches:
+#   Google Scholar -> item count, citations, h-index, i10-index
+#   ORCID          -> the publication list (data/works.json and the offline
+#                     fallback compiled into assets/js/pubs.js)
+# then writes those figures into the HTML so the pages read correctly with
+# JavaScript off, and commits only if something actually changed.
+#
+# Scholar blocks datacenter addresses and GitHub's runners are datacenter
+# addresses, so a failed Scholar fetch is expected, not exceptional. The script
+# keeps the previous figures, records the failure in data/metrics.json and
+# exits 0. Judge a run by its summary table, not by the badge colour.
+
 name: Update publication metrics
 
 on:
   schedule:
+    # 03:15 UTC daily = 08:45 IST. Off the hour on purpose: GitHub sheds
+    # scheduled runs when too many fire on the same tick.
     - cron: "15 3 * * *"
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: site-data
+  cancel-in-progress: false
+
 jobs:
   update-metrics:
-    name: Fetch Scholar, ORCID and Web of Science
+    name: Fetch Scholar and ORCID
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      # v5/v6 run on Node 24; the v4/v5 pair still works but logs a
+      # deprecation warning on every run.
+      - uses: actions/checkout@v5
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
 
-      - name: Fetch metrics
-        env:
-          WOS_API_KEY: ${{ secrets.WOS_API_KEY }}
-        run: python scripts/fetch_metrics.py
+      - name: Refresh publication data
+        run: python tools/refresh_data.py
 
-      - name: Commit updated metrics
+      - name: Commit if anything changed
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name  "github-actions[bot]"
-          git add data/metrics.json data/scholar_metrics.json
-          if git diff --staged --quiet; then
-            echo "No change — metrics identical to last run."
-          else
-            git commit -m "chore: update publication metrics [skip ci]"
-            git push
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "Nothing changed."
+            exit 0
           fi
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: refresh publication data ($(date -u +%Y-%m-%d)) [skip ci]"
+          git push
+
+      - name: Report source health
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import json
+          m = json.load(open("data/metrics.json"))
+          print("### Publication data\n")
+          print("| figure | value |")
+          print("|---|---|")
+          for k in ("scholar_items", "citations", "h_index", "i10_index",
+                    "orcid_works", "orcid_journal_articles"):
+              if k in m:
+                  print(f"| {k} | {m[k]} |")
+          print("\n| source | status | last confirmed |")
+          print("|---|---|---|")
+          for name, s in (m.get("sources") or {}).items():
+              mark = "ok" if s.get("status") == "ok" else "**failed**"
+              print(f"| {name} | {mark} | {s.get('last_ok') or s.get('fetched') or '-'} |")
+          if any(s.get("status") != "ok" for s in (m.get("sources") or {}).values()):
+              print("\n> A failed source keeps its previous figure. "
+                    "Scholar blocks datacenter IPs, so this is routine.")
+          PY
