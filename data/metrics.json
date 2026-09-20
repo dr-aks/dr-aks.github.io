@@ -10,16 +10,15 @@
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
   "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
-  "last_updated": "2026-09-19",
+  "last_updated": "2026-09-20",
   "sources": {
     "scholar": {
-      "status": "failed",
-      "error": "HTTP Error 403: Forbidden",
-      "last_ok": "2026-09-19"
+      "status": "ok",
+      "fetched": "2026-09-20"
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-09-19"
+      "fetched": "2026-09-20"
     },
     "wos": {
       "status": "failed",
