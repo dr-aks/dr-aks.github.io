@@ -9,7 +9,7 @@
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-09-21",
+  "last_updated": "2026-09-22",
   "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
   "sources": {
     "scholar": {
@@ -19,7 +19,7 @@
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-09-21"
+      "fetched": "2026-09-22"
     },
     "wos": {
       "status": "failed",
