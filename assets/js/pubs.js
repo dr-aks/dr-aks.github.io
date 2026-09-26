@@ -5,7 +5,7 @@
   const API_URL  = "https://pub.orcid.org/v3.0/" + ORCID_ID + "/works";
   const container = document.getElementById("orcid-pubs-container");
 
-  /* ---------- last-saved fallback list (refreshed from ORCID, 25 Sep 2026) ---------- */
+  /* ---------- last-saved fallback list (refreshed from ORCID, 26 Sep 2026) ---------- */
   var FALLBACK_WORKS = [
     { title: "Deep-level transient spectroscopy in wide-bandgap semiconductors (GaN, 4H-SiC, and β-Ga2O3): Methods, defect fingerprints, and device-relevant insights", year: "2026", journal: "Materials Today Physics", doi: "10.1016/j.mtphys.2026.102204" },
     { title: "Effect of CuS on self-powered photodetective properties of flexible ZnO-P3HT heterojunction device", year: "2026", journal: "MATERIALS SCIENCE AND ENGINEERING B-ADVANCED FUNCTIONAL SOLID-STATE MATERIALS", doi: "10.1016/J.MSEB.2025.119146" },
