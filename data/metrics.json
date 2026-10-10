@@ -9,17 +9,17 @@
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-10-09",
+  "last_updated": "2026-10-10",
   "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
   "sources": {
     "scholar": {
       "status": "failed",
-      "error": "Scholar served a bot challenge",
+      "error": "HTTP Error 403: Forbidden",
       "last_ok": "2026-09-25"
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-10-09"
+      "fetched": "2026-10-10"
     },
     "wos": {
       "status": "failed",
