@@ -5,9 +5,10 @@
   const API_URL  = "https://pub.orcid.org/v3.0/" + ORCID_ID + "/works";
   const container = document.getElementById("orcid-pubs-container");
 
-  /* ---------- last-saved fallback list (refreshed from ORCID, 15 Oct 2026) ---------- */
+  /* ---------- last-saved fallback list (refreshed from ORCID, 16 Oct 2026) ---------- */
   var FALLBACK_WORKS = [
     { title: "Deep-level transient spectroscopy in wide-bandgap semiconductors (GaN, 4H-SiC, and β-Ga2O3): Methods, defect fingerprints, and device-relevant insights", year: "2026", journal: "Materials Today Physics", doi: "10.1016/j.mtphys.2026.102204" },
+    { title: "Dual-Gaussian Schottky barrier distribution in CVD graphene/n-Si diodes from temperature-dependent transport", year: "2026", journal: "Journal of Applied Physics", doi: "10.1063/5.0351497" },
     { title: "Effect of CuS on self-powered photodetective properties of flexible ZnO-P3HT heterojunction device", year: "2026", journal: "MATERIALS SCIENCE AND ENGINEERING B-ADVANCED FUNCTIONAL SOLID-STATE MATERIALS", doi: "10.1016/J.MSEB.2025.119146" },
     { title: "Flexible and printable thermoelectric films based on FeCl<sub>3</sub> doped P3HT", year: "2026", journal: "SCIENTIFIC REPORTS", doi: "10.1038/S41598-025-22821-6" },
     { title: "Investigation of swift heavy Ni and Au ion irradiation effects on the optical and structural evolution of GaN probed by synchrotron PL, XANES, and Raman spectroscopies", year: "2026", journal: "Journal of Alloys and Compounds", doi: "10.1016/j.jallcom.2026.187760" },
