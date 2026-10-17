@@ -5,7 +5,7 @@
   const API_URL  = "https://pub.orcid.org/v3.0/" + ORCID_ID + "/works";
   const container = document.getElementById("orcid-pubs-container");
 
-  /* ---------- last-saved fallback list (refreshed from ORCID, 16 Oct 2026) ---------- */
+  /* ---------- last-saved fallback list (refreshed from ORCID, 17 Oct 2026) ---------- */
   var FALLBACK_WORKS = [
     { title: "Deep-level transient spectroscopy in wide-bandgap semiconductors (GaN, 4H-SiC, and β-Ga2O3): Methods, defect fingerprints, and device-relevant insights", year: "2026", journal: "Materials Today Physics", doi: "10.1016/j.mtphys.2026.102204" },
     { title: "Dual-Gaussian Schottky barrier distribution in CVD graphene/n-Si diodes from temperature-dependent transport", year: "2026", journal: "Journal of Applied Physics", doi: "10.1063/5.0351497" },
