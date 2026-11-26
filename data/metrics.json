@@ -1,6 +1,6 @@
 {
-  "scholar_items": 95,
-  "citations": 1939,
+  "scholar_items": 96,
+  "citations": 1938,
   "h_index": 27,
   "i10_index": 44,
   "orcid_works": 92,
@@ -9,17 +9,16 @@
     "scholar": "https://scholar.google.com/citations?user=eSKL8HgAAAAJ",
     "orcid": "https://orcid.org/0000-0002-5240-3472"
   },
-  "last_updated": "2026-11-25",
+  "last_updated": "2026-11-26",
   "note": "Headline figures follow Google Scholar; the publication list follows the curated ORCID record. Scholar's item count runs ahead because it folds in preprints, chapters and duplicate records.",
   "sources": {
     "scholar": {
-      "status": "failed",
-      "error": "HTTP Error 403: Forbidden",
-      "last_ok": "2026-11-22"
+      "status": "ok",
+      "fetched": "2026-11-26"
     },
     "orcid": {
       "status": "ok",
-      "fetched": "2026-11-25"
+      "fetched": "2026-11-26"
     },
     "wos": {
       "status": "failed",
