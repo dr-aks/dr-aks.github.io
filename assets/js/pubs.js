@@ -5,7 +5,7 @@
   const API_URL  = "https://pub.orcid.org/v3.0/" + ORCID_ID + "/works";
   const container = document.getElementById("orcid-pubs-container");
 
-  /* ---------- last-saved fallback list (refreshed from ORCID, 27 Nov 2026) ---------- */
+  /* ---------- last-saved fallback list (refreshed from ORCID, 28 Nov 2026) ---------- */
   var FALLBACK_WORKS = [
     { title: "Deep-level transient spectroscopy in wide-bandgap semiconductors (GaN, 4H-SiC, and β-Ga2O3): Methods, defect fingerprints, and device-relevant insights", year: "2026", journal: "Materials Today Physics", doi: "10.1016/j.mtphys.2026.102204" },
     { title: "Dual-Gaussian Schottky barrier distribution in CVD graphene/n-Si diodes from temperature-dependent transport", year: "2026", journal: "Journal of Applied Physics", doi: "10.1063/5.0351497" },
@@ -15,6 +15,7 @@
     { title: "Ion irradiation and implantation as a precision tool for defect engineering of thermoelectric properties in inorganic materials: mechanisms, materials, and design principles", year: "2026", journal: "Journal of Materials Chemistry C", doi: "10.1039/D6TC02079H" },
     { title: "PVDF/Ni NWs Composite Films: A High-Performance N-Type Thermoelectric Material for Flexible Energy Harvesting", year: "2026", journal: "POLYMER COMPOSITES", doi: "10.1002/PC.70640" },
     { title: "Self-rectifying dynamic memristor based on 2D-graphene/V-doped Ga2O3 for neuromorphic processing", year: "2026", journal: "MATERIALS TODAY PHYSICS", doi: "10.1016/J.MTPHYS.2026.102064" },
+    { title: "Temperature-Dependent Charge Transport Mechanisms in Ni/4H-SiC Schottky Diodes", year: "2026", journal: "Semiconductor Science and Technology", doi: "10.1088/1361-6641/aec785" },
     { title: "Ag-Based Nanoparticle Synthesis and Its Applications", year: "2025", journal: "BIONANOSCIENCE", doi: "10.1007/S12668-025-01913-7" },
     { title: "Enhanced UV protection and photocatalytic activity in Samarium and Europium co-doped TiO2 thin films: A durable solution for protective coatings", year: "2025", journal: "Materials Science and Engineering B", doi: "10.1016/j.mseb.2025.118429" },
     { title: "Enhancement in power factor of Sn and Zn co-doped Bismuth Telluride for thermoelectric applications", year: "2025", journal: "JOURNAL OF MATERIALS SCIENCE-MATERIALS IN ELECTRONICS", doi: "10.1007/S10854-025-14383-0" },
